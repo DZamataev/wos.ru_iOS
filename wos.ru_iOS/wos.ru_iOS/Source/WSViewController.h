@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AudioPlayerView.h"
+#import <AudioPlayer.h>
 
-@interface WSViewController : UIViewController
-
+@interface WSViewController : UIViewController <AudioPlayerViewDelegate>
+{
+@private
+	AudioPlayer* audioPlayer;
+}
 @end
