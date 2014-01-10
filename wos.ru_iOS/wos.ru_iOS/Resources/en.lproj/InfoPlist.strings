@@ -1,2 +1,4 @@
 /* Localized versions of Info.plist keys */
 
+"CFBundleDisplayName" = "Radio w-o-s";
+"CFBundleName" = "Radio w-o-s";
