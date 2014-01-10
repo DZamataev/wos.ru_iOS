@@ -40,7 +40,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" minimumValueImage="ws_volume_slider_lower_icon.png" maximumValueImage="ws_volume_slider_higher_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="K6W-JS-oe0" customClass="WSVolumeSlider">
-                                <rect key="frame" x="101" y="267" width="118" height="34"/>
+                                <rect key="frame" x="50" y="267" width="220" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
                         </subviews>

@@ -11,6 +11,11 @@
 #define WSPlayButtonInitialAccentColor ([[UIColor alloc] initWithRed:240.0f/255.0f green:92.0f/255.0f blue:77.0f/255.0f alpha:1.0f])
 
 @interface WSPlayButton : UIControl
+{
+    CAShapeLayer *_bgLayer;
+    CAShapeLayer *_playLayer;
+    CAShapeLayer *_pauseLayer;
+}
 
 @property (strong, nonatomic) IBOutlet UIColor *accentColor;
 @property (assign, nonatomic) BOOL isPaused;

@@ -43,6 +43,10 @@
 
 #pragma Properties
 
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)setAccentColor:(UIColor *)accentColor
 {
     _accentColor = accentColor;

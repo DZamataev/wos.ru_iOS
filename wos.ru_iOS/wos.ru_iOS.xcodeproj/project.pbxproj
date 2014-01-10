@@ -29,6 +29,9 @@
 		92B1BF1318800E770027EAEC /* ws_volume_slider_lower_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF1118800E770027EAEC /* ws_volume_slider_lower_icon@2x.png */; };
 		92B1BF1618800F1E0027EAEC /* WSPlayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B1BF1518800F1E0027EAEC /* WSPlayButton.m */; };
 		92B1BF1918800F360027EAEC /* WSVolumeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B1BF1818800F360027EAEC /* WSVolumeSlider.m */; };
+		92B1BF1F1880409F0027EAEC /* iPhoneIcon_Big.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF1C1880409F0027EAEC /* iPhoneIcon_Big.png */; };
+		92B1BF201880409F0027EAEC /* iPhoneIcon_Medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF1D1880409F0027EAEC /* iPhoneIcon_Medium.png */; };
+		92B1BF211880409F0027EAEC /* iPhoneIcon_Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF1E1880409F0027EAEC /* iPhoneIcon_Small.png */; };
 		93F1036CDDBE462AAFED3F7B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF42631AAC344D08DA23F4C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +77,9 @@
 		92B1BF1518800F1E0027EAEC /* WSPlayButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPlayButton.m; sourceTree = "<group>"; };
 		92B1BF1718800F360027EAEC /* WSVolumeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSVolumeSlider.h; sourceTree = "<group>"; };
 		92B1BF1818800F360027EAEC /* WSVolumeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSVolumeSlider.m; sourceTree = "<group>"; };
+		92B1BF1C1880409F0027EAEC /* iPhoneIcon_Big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneIcon_Big.png; sourceTree = "<group>"; };
+		92B1BF1D1880409F0027EAEC /* iPhoneIcon_Medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneIcon_Medium.png; sourceTree = "<group>"; };
+		92B1BF1E1880409F0027EAEC /* iPhoneIcon_Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneIcon_Small.png; sourceTree = "<group>"; };
 		B178CA820DAF4716A1063D6A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FFF42631AAC344D08DA23F4C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -165,6 +171,9 @@
 		922A0BB618645B7A00802757 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				92B1BF1C1880409F0027EAEC /* iPhoneIcon_Big.png */,
+				92B1BF1D1880409F0027EAEC /* iPhoneIcon_Medium.png */,
+				92B1BF1E1880409F0027EAEC /* iPhoneIcon_Small.png */,
 				92B1BF0A1880090F0027EAEC /* ws_volume_slider_bg@2x.png */,
 				92B1BF1018800E770027EAEC /* ws_volume_slider_higher_icon@2x.png */,
 				92B1BF1118800E770027EAEC /* ws_volume_slider_lower_icon@2x.png */,
@@ -249,7 +258,7 @@
 				ORGANIZATIONNAME = DZamataev;
 				TargetAttributes = {
 					922A0B7918645B3500802757 = {
-						DevelopmentTeam = 68QJJA7HK9;
+						DevelopmentTeam = 24RC87V7LH;
 					};
 					922A0B9D18645B3500802757 = {
 						TestTargetID = 922A0B7918645B3500802757;
@@ -282,11 +291,14 @@
 			files = (
 				922A0BC718645B7A00802757 /* Main_iPhone.storyboard in Resources */,
 				92B1BF1218800E770027EAEC /* ws_volume_slider_higher_icon@2x.png in Resources */,
+				92B1BF1F1880409F0027EAEC /* iPhoneIcon_Big.png in Resources */,
 				92B1BF0B1880090F0027EAEC /* ws_volume_slider_bg@2x.png in Resources */,
 				922A0BC918645B7A00802757 /* Images.xcassets in Resources */,
 				922A0BC818645B7A00802757 /* InfoPlist.strings in Resources */,
 				922A0BC618645B7A00802757 /* Main_iPad.storyboard in Resources */,
+				92B1BF211880409F0027EAEC /* iPhoneIcon_Small.png in Resources */,
 				92B1BF1318800E770027EAEC /* ws_volume_slider_lower_icon@2x.png in Resources */,
+				92B1BF201880409F0027EAEC /* iPhoneIcon_Medium.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +492,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B178CA820DAF4716A1063D6A /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -497,7 +508,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B178CA820DAF4716A1063D6A /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
