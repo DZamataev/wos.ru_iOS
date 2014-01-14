@@ -37,6 +37,11 @@
 		92C3976C18853CC0001E46FA /* WSRadiostationButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92C3976B18853CC0001E46FA /* WSRadiostationButton.xib */; };
 		92C39771188544F6001E46FA /* WSRadioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C39770188544F6001E46FA /* WSRadioModel.m */; };
 		92C3977318854582001E46FA /* radio.json in Resources */ = {isa = PBXBuildFile; fileRef = 92C3977218854582001E46FA /* radio.json */; };
+		92C3977918855DC8001E46FA /* WSRStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C3977818855DC8001E46FA /* WSRStream.m */; };
+		92C3977C18855DD8001E46FA /* WSRStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C3977B18855DD8001E46FA /* WSRStation.m */; };
+		92C3977F18855E01001E46FA /* WSRadioData.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C3977E18855E01001E46FA /* WSRadioData.m */; };
+		92C3978218855E68001E46FA /* WSRColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C3978118855E68001E46FA /* WSRColor.m */; };
+		92C3978518856167001E46FA /* WSRadioMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C3978418856167001E46FA /* WSRadioMapper.m */; };
 		93F1036CDDBE462AAFED3F7B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF42631AAC344D08DA23F4C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +98,16 @@
 		92C3976F188544F6001E46FA /* WSRadioModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRadioModel.h; sourceTree = "<group>"; };
 		92C39770188544F6001E46FA /* WSRadioModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRadioModel.m; sourceTree = "<group>"; };
 		92C3977218854582001E46FA /* radio.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = radio.json; path = ../radio.json; sourceTree = "<group>"; };
+		92C3977718855DC8001E46FA /* WSRStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRStream.h; sourceTree = "<group>"; };
+		92C3977818855DC8001E46FA /* WSRStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRStream.m; sourceTree = "<group>"; };
+		92C3977A18855DD8001E46FA /* WSRStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRStation.h; sourceTree = "<group>"; };
+		92C3977B18855DD8001E46FA /* WSRStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRStation.m; sourceTree = "<group>"; };
+		92C3977D18855E01001E46FA /* WSRadioData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRadioData.h; sourceTree = "<group>"; };
+		92C3977E18855E01001E46FA /* WSRadioData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRadioData.m; sourceTree = "<group>"; };
+		92C3978018855E68001E46FA /* WSRColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRColor.h; sourceTree = "<group>"; };
+		92C3978118855E68001E46FA /* WSRColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRColor.m; sourceTree = "<group>"; };
+		92C3978318856167001E46FA /* WSRadioMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRadioMapper.h; sourceTree = "<group>"; };
+		92C3978418856167001E46FA /* WSRadioMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRadioMapper.m; sourceTree = "<group>"; };
 		B178CA820DAF4716A1063D6A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FFF42631AAC344D08DA23F4C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -212,8 +227,35 @@
 				922A0BC518645B7A00802757 /* WSViewController.m */,
 				922A0BCE18645E5400802757 /* AudioPlayerView.h */,
 				922A0BCF18645E5400802757 /* AudioPlayerView.m */,
-				92B1BF07187EC4C20027EAEC /* WSRadioViewController.h */,
-				92B1BF08187EC4C20027EAEC /* WSRadioViewController.m */,
+				92C3977618855DAC001E46FA /* Controller */,
+				92C3977518855DA3001E46FA /* View */,
+				92C3977418855D91001E46FA /* Model */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		92C3977418855D91001E46FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92C3976F188544F6001E46FA /* WSRadioModel.h */,
+				92C39770188544F6001E46FA /* WSRadioModel.m */,
+				92C3977D18855E01001E46FA /* WSRadioData.h */,
+				92C3977E18855E01001E46FA /* WSRadioData.m */,
+				92C3978318856167001E46FA /* WSRadioMapper.h */,
+				92C3978418856167001E46FA /* WSRadioMapper.m */,
+				92C3977A18855DD8001E46FA /* WSRStation.h */,
+				92C3977B18855DD8001E46FA /* WSRStation.m */,
+				92C3977718855DC8001E46FA /* WSRStream.h */,
+				92C3977818855DC8001E46FA /* WSRStream.m */,
+				92C3978018855E68001E46FA /* WSRColor.h */,
+				92C3978118855E68001E46FA /* WSRColor.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		92C3977518855DA3001E46FA /* View */ = {
+			isa = PBXGroup;
+			children = (
 				92B1BF1418800F1E0027EAEC /* WSPlayButton.h */,
 				92B1BF1518800F1E0027EAEC /* WSPlayButton.m */,
 				92B1BF1718800F360027EAEC /* WSVolumeSlider.h */,
@@ -222,10 +264,17 @@
 				92C3976618853948001E46FA /* WSRadiostationButton.m */,
 				92C397681885396A001E46FA /* WSRadiostationSelectorScrollView.h */,
 				92C397691885396A001E46FA /* WSRadiostationSelectorScrollView.m */,
-				92C3976F188544F6001E46FA /* WSRadioModel.h */,
-				92C39770188544F6001E46FA /* WSRadioModel.m */,
 			);
-			path = Source;
+			name = View;
+			sourceTree = "<group>";
+		};
+		92C3977618855DAC001E46FA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				92B1BF07187EC4C20027EAEC /* WSRadioViewController.h */,
+				92B1BF08187EC4C20027EAEC /* WSRadioViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,12 +422,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92C3978218855E68001E46FA /* WSRColor.m in Sources */,
 				92C3976718853948001E46FA /* WSRadiostationButton.m in Sources */,
 				922A0BCC18645B7A00802757 /* WSAppDelegate.m in Sources */,
 				92B1BF09187EC4C20027EAEC /* WSRadioViewController.m in Sources */,
 				922A0BCA18645B7A00802757 /* main.m in Sources */,
 				92B1BF1918800F360027EAEC /* WSVolumeSlider.m in Sources */,
+				92C3978518856167001E46FA /* WSRadioMapper.m in Sources */,
+				92C3977C18855DD8001E46FA /* WSRStation.m in Sources */,
 				92C3976A1885396A001E46FA /* WSRadiostationSelectorScrollView.m in Sources */,
+				92C3977918855DC8001E46FA /* WSRStream.m in Sources */,
+				92C3977F18855E01001E46FA /* WSRadioData.m in Sources */,
 				92B1BF1618800F1E0027EAEC /* WSPlayButton.m in Sources */,
 				922A0BD018645E5400802757 /* AudioPlayerView.m in Sources */,
 				922A0BCD18645B7A00802757 /* WSViewController.m in Sources */,

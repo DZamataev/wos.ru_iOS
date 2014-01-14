@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <RestKit.h>
 
-@interface WSRadioModel : NSObject
+@class WSRadioData;
+@class WSRadioMapper;
 
+extern NSString * const WSRawGithubRadioJSONPath;
+
+@interface WSRadioModel : NSObject
+@property (strong, nonatomic) RKObjectManager *rawGithubObjectManager;
 @end
