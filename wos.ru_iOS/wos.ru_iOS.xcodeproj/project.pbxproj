@@ -260,10 +260,10 @@
 				92B1BF1518800F1E0027EAEC /* WSPlayButton.m */,
 				92B1BF1718800F360027EAEC /* WSVolumeSlider.h */,
 				92B1BF1818800F360027EAEC /* WSVolumeSlider.m */,
-				92C3976518853948001E46FA /* WSRadiostationButton.h */,
-				92C3976618853948001E46FA /* WSRadiostationButton.m */,
 				92C397681885396A001E46FA /* WSRadiostationSelectorScrollView.h */,
 				92C397691885396A001E46FA /* WSRadiostationSelectorScrollView.m */,
+				92C3976518853948001E46FA /* WSRadiostationButton.h */,
+				92C3976618853948001E46FA /* WSRadiostationButton.m */,
 			);
 			name = View;
 			sourceTree = "<group>";

@@ -15,8 +15,26 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        [self setup];
     }
     return self;
+}
+
+- (void)awakeFromNib
+{
+    [self setup];
+}
+
+- (void)setup
+{
+    [self addTarget:self action:@selector(touchUpInsideHandler:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)touchUpInsideHandler:(id)sender
+{
+    if (self.touchUpInsideCallback) {
+        self.touchUpInsideCallback(sender);
+    }
 }
 
 /*

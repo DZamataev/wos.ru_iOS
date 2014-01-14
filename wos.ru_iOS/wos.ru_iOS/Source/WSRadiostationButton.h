@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface WSRadiostationButton : UIControl
-
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (nonatomic, copy) void (^touchUpInsideCallback)(WSRadiostationButton *sender);
 @end

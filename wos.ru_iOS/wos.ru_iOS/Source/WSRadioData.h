@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @class WSRStation;
+@class WSRStream;
+@class WSRColor;
 
 @interface WSRadioData : NSObject
 @property (nonatomic, strong) NSArray *stations; // objects of class WSRStation

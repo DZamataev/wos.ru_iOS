@@ -8,6 +8,8 @@
 
 #import "WSRadioData.h"
 #import "WSRStation.h"
+#import "WSRStream.h"
+#import "WSRColor.h"
 
 @implementation WSRadioData
 

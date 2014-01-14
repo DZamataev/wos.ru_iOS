@@ -11,5 +11,11 @@
 @class WSRadiostationButton;
 
 @interface WSRadiostationSelectorScrollView : UIScrollView
+{
+    UIView *_backgroundPatternView;
+    NSMutableArray *_buttons;
+}
+
+- (void)addButtonsWithTitles:(NSArray*)titles andColors:(NSArray*)colors andSelectionCallback:(void (^)(WSRadiostationButton *button, NSInteger index))selectionCallback;
 
 @end

@@ -43,16 +43,25 @@
                                 <rect key="frame" x="50" y="267" width="220" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYa-9H-SHM" customClass="WSRadiostationSelectorScrollView">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYa-9H-SHM" customClass="WSRadiostationSelectorScrollView">
                                 <rect key="frame" x="0.0" y="321" width="320" height="247"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="247" id="s6j-bD-8ef"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tYa-9H-SHM" secondAttribute="trailing" id="0Qu-yR-pAi"/>
+                            <constraint firstItem="l0a-am-UgR" firstAttribute="top" secondItem="tYa-9H-SHM" secondAttribute="bottom" id="NIf-k4-AVs"/>
+                            <constraint firstItem="tYa-9H-SHM" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" id="x8J-73-tOh"/>
+                        </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="playButton" destination="gpe-nV-SkX" id="GlZ-oK-mTj"/>
+                        <outlet property="selector" destination="tYa-9H-SHM" id="mec-86-S4q"/>
                         <outlet property="volumeSlider" destination="K6W-JS-oe0" id="dj7-Gu-iUQ"/>
                     </connections>
                 </viewController>

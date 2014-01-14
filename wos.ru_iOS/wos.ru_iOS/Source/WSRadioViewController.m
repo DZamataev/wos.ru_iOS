@@ -10,9 +10,12 @@
 
 #import "WSRadioModel.h"
 #import "WSRadioData.h"
+#import "WSRStation.h"
+#import "WSRColor.h"
 
 #import "WSVolumeSlider.h"
 #import "WSPlayButton.h"
+#import "WSRadiostationSelectorScrollView.h"
 
 
 @interface WSRadioViewController ()
@@ -33,11 +36,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    _stations = [NSMutableArray new];
     _radioModel = [[WSRadioModel alloc] init];
+    
+    typeof(self) __weak weakController = self;
+    
     [_radioModel loadRadioData:^(WSRadioData *data, NSError *error) {
         NSLog(@"%@ %@", data, data.stations);
-        
+        if (!error && weakController) {
+            [weakController insertStations:data.stations];
+        }
     }];
     self.accentColor = WSRadioViewControllerInitialAccentColor;
 }
@@ -46,6 +54,22 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)insertStations:(NSArray*)stations
+{
+    NSMutableArray *titles = [NSMutableArray new];
+    NSMutableArray *colors = [NSMutableArray new];
+    
+    for (WSRStation *station in stations) {
+        [_stations addObject:stations];
+        [titles addObject:station.name];
+        [colors addObject:station.color.UIColorFromComponents];
+    }
+    
+    [self.selector addButtonsWithTitles:titles andColors:colors andSelectionCallback:^(WSRadiostationButton *button, NSInteger index) {
+        
+    }];
 }
 
 #pragma Properties
