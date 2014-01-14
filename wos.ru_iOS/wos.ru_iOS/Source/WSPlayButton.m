@@ -30,7 +30,7 @@
     self.isPaused = NO;
     self.accentColor = WSPlayButtonInitialAccentColor;
     [self addTarget:self action:@selector(touchUpInside:) forControlEvents:UIControlEventTouchUpInside];
-    
+    [self addTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown];
     
     CGRect rect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     
@@ -84,6 +84,31 @@
     [self.layer addSublayer:_pauseLayer];
 }
 
+- (void)touchDown:(id)sender
+{
+    CGRect bgRect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    UIBezierPath *normalPath = [UIBezierPath bezierPathWithOvalInRect:bgRect];
+    UIBezierPath *smallerPath = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(bgRect, bgRect.size.width * 0.025f, bgRect.size.height * 0.025f)];
+    
+    
+    
+    [CATransaction begin];
+    CABasicAnimation* smallerPathAnimation = [CABasicAnimation animationWithKeyPath: @"path"];
+    smallerPathAnimation.fromValue = (id)normalPath.CGPath;
+    smallerPathAnimation.toValue = (id)smallerPath.CGPath;
+    smallerPathAnimation.duration  = 0.15f;
+    [CATransaction setCompletionBlock:^{
+        if (!_isAnimatingBiggerNormal) {
+            _bgLayer.path = smallerPath.CGPath;
+        }
+    }];
+    [_bgLayer addAnimation:smallerPathAnimation forKey:@"smallerPathAnimation"];
+    [CATransaction commit];
+    
+    
+    
+}
+
 - (void)touchUpInside:(id)sender
 {
     self.isPaused = !self.isPaused;
@@ -105,35 +130,37 @@
         } completion:nil];
     }
     
+    _isAnimatingBiggerNormal = YES;
+    
+    [_bgLayer removeAnimationForKey:@"smallerPathAnimation"];
+    
     /* pulse bg animation */
+    
     CGRect bgRect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     UIBezierPath *normalPath = [UIBezierPath bezierPathWithOvalInRect:bgRect];
     UIBezierPath *biggerPath = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(bgRect, bgRect.size.width * -0.05f, bgRect.size.height * -0.05f)];
-    UIBezierPath *smallerPath = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(bgRect, bgRect.size.width * 0.025f, bgRect.size.height * 0.025f)];
     
     CFTimeInterval beginTime = CACurrentMediaTime();
     
-    CABasicAnimation* smallerPathAnimation = [CABasicAnimation animationWithKeyPath: @"path"];
-    smallerPathAnimation.toValue = (id)smallerPath.CGPath;
-    smallerPathAnimation.duration  = 0.05f;
-    smallerPathAnimation.beginTime = beginTime;
-    
     CABasicAnimation* biggerPathAnimation = [CABasicAnimation animationWithKeyPath: @"path"];
-    biggerPathAnimation.fromValue = (id)smallerPath.CGPath;
     biggerPathAnimation.toValue = (id)biggerPath.CGPath;
     biggerPathAnimation.duration = 0.1f;
-    biggerPathAnimation.beginTime = smallerPathAnimation.beginTime + smallerPathAnimation.duration;
+    biggerPathAnimation.beginTime = beginTime;
+    [_bgLayer addAnimation:biggerPathAnimation forKey:@"biggerPathAnimation"];
     
+    [CATransaction begin];
     CABasicAnimation* normalPathAnimation = [CABasicAnimation animationWithKeyPath: @"path"];
     normalPathAnimation.fromValue = (id)biggerPath.CGPath;
     normalPathAnimation.toValue = (id)normalPath.CGPath;
     normalPathAnimation.duration = 0.2f;
     normalPathAnimation.beginTime = biggerPathAnimation.beginTime + biggerPathAnimation.duration;
+    [CATransaction setCompletionBlock:^{
+        _bgLayer.path = normalPath.CGPath;
+        _isAnimatingBiggerNormal = NO;
+    }];
+    [_bgLayer addAnimation:normalPathAnimation forKey:@"normalPathAnimation"];
+    [CATransaction commit];
     
-    
-    [_bgLayer addAnimation:smallerPathAnimation forKey:@"anim.smallerPathAnimation"];
-    [_bgLayer addAnimation:biggerPathAnimation forKey:@"anim.biggerPathAnimation"];
-    [_bgLayer addAnimation:normalPathAnimation forKey:@"anim.normalPathAnimation"];
 }
 
 //// Only override drawRect: if you perform custom drawing.

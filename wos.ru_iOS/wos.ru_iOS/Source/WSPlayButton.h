@@ -12,6 +12,8 @@
 
 @interface WSPlayButton : UIControl
 {
+    BOOL _isAnimatingBiggerNormal;
+    
     CAShapeLayer *_bgLayer;
     CAShapeLayer *_playLayer;
     CAShapeLayer *_pauseLayer;
