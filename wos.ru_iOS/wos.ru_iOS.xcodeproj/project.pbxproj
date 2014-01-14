@@ -32,6 +32,11 @@
 		92B1BF1F1880409F0027EAEC /* iPhoneIcon_Big.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF1C1880409F0027EAEC /* iPhoneIcon_Big.png */; };
 		92B1BF201880409F0027EAEC /* iPhoneIcon_Medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF1D1880409F0027EAEC /* iPhoneIcon_Medium.png */; };
 		92B1BF211880409F0027EAEC /* iPhoneIcon_Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF1E1880409F0027EAEC /* iPhoneIcon_Small.png */; };
+		92C3976718853948001E46FA /* WSRadiostationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C3976618853948001E46FA /* WSRadiostationButton.m */; };
+		92C3976A1885396A001E46FA /* WSRadiostationSelectorScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C397691885396A001E46FA /* WSRadiostationSelectorScrollView.m */; };
+		92C3976C18853CC0001E46FA /* WSRadiostationButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92C3976B18853CC0001E46FA /* WSRadiostationButton.xib */; };
+		92C39771188544F6001E46FA /* WSRadioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C39770188544F6001E46FA /* WSRadioModel.m */; };
+		92C3977318854582001E46FA /* radio.json in Resources */ = {isa = PBXBuildFile; fileRef = 92C3977218854582001E46FA /* radio.json */; };
 		93F1036CDDBE462AAFED3F7B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF42631AAC344D08DA23F4C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +85,14 @@
 		92B1BF1C1880409F0027EAEC /* iPhoneIcon_Big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneIcon_Big.png; sourceTree = "<group>"; };
 		92B1BF1D1880409F0027EAEC /* iPhoneIcon_Medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneIcon_Medium.png; sourceTree = "<group>"; };
 		92B1BF1E1880409F0027EAEC /* iPhoneIcon_Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneIcon_Small.png; sourceTree = "<group>"; };
+		92C3976518853948001E46FA /* WSRadiostationButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRadiostationButton.h; sourceTree = "<group>"; };
+		92C3976618853948001E46FA /* WSRadiostationButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRadiostationButton.m; sourceTree = "<group>"; };
+		92C397681885396A001E46FA /* WSRadiostationSelectorScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRadiostationSelectorScrollView.h; sourceTree = "<group>"; };
+		92C397691885396A001E46FA /* WSRadiostationSelectorScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRadiostationSelectorScrollView.m; sourceTree = "<group>"; };
+		92C3976B18853CC0001E46FA /* WSRadiostationButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WSRadiostationButton.xib; sourceTree = "<group>"; };
+		92C3976F188544F6001E46FA /* WSRadioModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRadioModel.h; sourceTree = "<group>"; };
+		92C39770188544F6001E46FA /* WSRadioModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRadioModel.m; sourceTree = "<group>"; };
+		92C3977218854582001E46FA /* radio.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = radio.json; path = ../radio.json; sourceTree = "<group>"; };
 		B178CA820DAF4716A1063D6A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FFF42631AAC344D08DA23F4C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -112,6 +125,7 @@
 		922A0B7118645B3500802757 = {
 			isa = PBXGroup;
 			children = (
+				92C3977218854582001E46FA /* radio.json */,
 				922A0BB518645B7A00802757 /* wos.ru_iOS */,
 				922A0BA518645B3500802757 /* wos.ru_iOSTests */,
 				922A0B7C18645B3500802757 /* Frameworks */,
@@ -181,6 +195,7 @@
 				922A0BB918645B7A00802757 /* Main_iPhone.storyboard */,
 				922A0BBB18645B7A00802757 /* InfoPlist.strings */,
 				922A0BBD18645B7A00802757 /* Images.xcassets */,
+				92C3976B18853CC0001E46FA /* WSRadiostationButton.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -203,6 +218,12 @@
 				92B1BF1518800F1E0027EAEC /* WSPlayButton.m */,
 				92B1BF1718800F360027EAEC /* WSVolumeSlider.h */,
 				92B1BF1818800F360027EAEC /* WSVolumeSlider.m */,
+				92C3976518853948001E46FA /* WSRadiostationButton.h */,
+				92C3976618853948001E46FA /* WSRadiostationButton.m */,
+				92C397681885396A001E46FA /* WSRadiostationSelectorScrollView.h */,
+				92C397691885396A001E46FA /* WSRadiostationSelectorScrollView.m */,
+				92C3976F188544F6001E46FA /* WSRadioModel.h */,
+				92C39770188544F6001E46FA /* WSRadioModel.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -290,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				922A0BC718645B7A00802757 /* Main_iPhone.storyboard in Resources */,
+				92C3976C18853CC0001E46FA /* WSRadiostationButton.xib in Resources */,
 				92B1BF1218800E770027EAEC /* ws_volume_slider_higher_icon@2x.png in Resources */,
 				92B1BF1F1880409F0027EAEC /* iPhoneIcon_Big.png in Resources */,
 				92B1BF0B1880090F0027EAEC /* ws_volume_slider_bg@2x.png in Resources */,
@@ -297,6 +319,7 @@
 				922A0BC818645B7A00802757 /* InfoPlist.strings in Resources */,
 				922A0BC618645B7A00802757 /* Main_iPad.storyboard in Resources */,
 				92B1BF211880409F0027EAEC /* iPhoneIcon_Small.png in Resources */,
+				92C3977318854582001E46FA /* radio.json in Resources */,
 				92B1BF1318800E770027EAEC /* ws_volume_slider_lower_icon@2x.png in Resources */,
 				92B1BF201880409F0027EAEC /* iPhoneIcon_Medium.png in Resources */,
 			);
@@ -350,13 +373,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92C3976718853948001E46FA /* WSRadiostationButton.m in Sources */,
 				922A0BCC18645B7A00802757 /* WSAppDelegate.m in Sources */,
 				92B1BF09187EC4C20027EAEC /* WSRadioViewController.m in Sources */,
 				922A0BCA18645B7A00802757 /* main.m in Sources */,
 				92B1BF1918800F360027EAEC /* WSVolumeSlider.m in Sources */,
+				92C3976A1885396A001E46FA /* WSRadiostationSelectorScrollView.m in Sources */,
 				92B1BF1618800F1E0027EAEC /* WSPlayButton.m in Sources */,
 				922A0BD018645E5400802757 /* AudioPlayerView.m in Sources */,
 				922A0BCD18645B7A00802757 /* WSViewController.m in Sources */,
+				92C39771188544F6001E46FA /* WSRadioModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

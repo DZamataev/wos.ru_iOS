@@ -1,0 +1,123 @@
+{
+  "radiostations": [
+    {
+      "Name": "red",
+      "Streams": [
+        {
+          "bitrate": 192,
+          "url": "http://archstreet.cc:8000/red-live192"
+        },
+        {
+          "bitrate": 128,
+          "url": "http://archstreet.cc:8000/red-live128"
+        },
+        {
+          "bitrate": 64,
+          "url": "http://archstreet.cc:8000/red-live64"
+        }
+      ],
+      "Color": {
+        "r": 255,
+        "g": 15,
+        "b": 15
+      }
+    },
+    {
+      "Name": "blue",
+      "Streams": [
+        {
+          "bitrate": 192,
+          "url": "http://archstreet.cc:8000/blue-live192"
+        },
+        {
+          "bitrate": 128,
+          "url": "http://archstreet.cc:8000/blue-live128"
+        },
+        {
+          "bitrate": 64,
+          "url": "http://archstreet.cc:8000/blue-live64"
+        }
+      ],
+      "Color": {
+        "r": 15,
+        "g": 255,
+        "b": 15
+      }
+    },
+    {
+      "Name": "jazz",
+      "Streams": [
+        {
+          "bitrate": 192,
+          "url": "http://archstreet.cc:8000/jazz-live192"
+        },
+        {
+          "bitrate": 128,
+          "url": "http://archstreet.cc:8000/jazz-live128"
+        },
+        {
+          "bitrate": 64,
+          "url": "http://archstreet.cc:8000/jazz-live64"
+        }
+      ],
+      "Color": {
+        "r": 15,
+        "g": 255,
+        "b": 255
+      }
+    },
+    {
+      "Name": "classic",
+      "StreamUrl": "http://archstreet.cc:8000/classic-live192",
+      "Color": {
+        "r": 255,
+        "g": 255,
+        "b": 255
+      }
+    },
+    {
+      "Name": "chanson",
+      "Streams": [
+        {
+          "bitrate": 192,
+          "url": "http://archstreet.cc:8000/chanson-live192"
+        },
+        {
+          "bitrate": 128,
+          "url": "http://archstreet.cc:8000/chanson-live128"
+        },
+        {
+          "bitrate": 64,
+          "url": "http://archstreet.cc:8000/chanson-live64"
+        }
+      ],
+      "Color": {
+        "r": 255,
+        "g": 15,
+        "b": 255
+      }
+    },
+    {
+      "Name": "sleeping",
+      "Streams": [
+        {
+          "bitrate": 192,
+          "url": "http://archstreet.cc:8000/sleeping-live192"
+        },
+        {
+          "bitrate": 128,
+          "url": "http://archstreet.cc:8000/sleeping-live128"
+        },
+        {
+          "bitrate": 64,
+          "url": "http://archstreet.cc:8000/sleeping-live64"
+        }
+      ],
+      "Color": {
+        "r": 40,
+        "g": 40,
+        "b": 40
+      }
+    }
+  ]
+}
