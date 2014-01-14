@@ -27,7 +27,7 @@
     [stationMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"color" toKeyPath:@"color" withMapping:colorMapping]];
     
     RKObjectMapping *radioDataMapping = [RKObjectMapping mappingForClass:[WSRadioData class]];
-    [radioDataMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"stations" toKeyPath:@"stations" withMapping:stationMapping]];
+    [radioDataMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"radiostations" toKeyPath:@"stations" withMapping:stationMapping]];
     
     return radioDataMapping;
 }

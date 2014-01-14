@@ -8,6 +8,9 @@
 
 #import "WSRadioViewController.h"
 
+#import "WSRadioModel.h"
+#import "WSRadioData.h"
+
 #import "WSVolumeSlider.h"
 #import "WSPlayButton.h"
 
@@ -31,7 +34,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-
+    _radioModel = [[WSRadioModel alloc] init];
+    [_radioModel loadRadioData:^(WSRadioData *data, NSError *error) {
+        NSLog(@"%@ %@", data, data.stations);
+        
+    }];
     self.accentColor = WSRadioViewControllerInitialAccentColor;
 }
 

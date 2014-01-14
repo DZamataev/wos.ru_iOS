@@ -16,4 +16,6 @@ extern NSString * const WSRawGithubRadioJSONPath;
 
 @interface WSRadioModel : NSObject
 @property (strong, nonatomic) RKObjectManager *rawGithubObjectManager;
+
+- (void)loadRadioData:(void (^)(WSRadioData* data, NSError *error))completionBlock;
 @end

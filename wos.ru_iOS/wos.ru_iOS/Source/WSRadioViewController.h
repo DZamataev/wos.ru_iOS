@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class WSRadioModel;
+@class WSRadioData;
+
 @class WSVolumeSlider;
 @class WSPlayButton;
 
@@ -15,6 +18,7 @@
 
 @interface WSRadioViewController : UIViewController
 {
+    WSRadioModel *_radioModel;
     UIColor *_accentColor;
 }
 @property (strong, nonatomic) IBOutlet UIColor *accentColor;
