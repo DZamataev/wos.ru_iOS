@@ -90,45 +90,39 @@
 {
     [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
         _pauseLayer.opacity = 0.0f;
-    } completion:nil];
-    [UIView animateWithDuration:0.5f delay:0.5f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
-        _playLayer.opacity = 1.0f;
-    } completion:nil];
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
+            _playLayer.opacity = 1.0f;
+        } completion:nil];
+    }];
+    
 }
 
 - (void)hidePlayShowPause
 {
     [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
         _playLayer.opacity = 0.0f;
-    } completion:nil];
-    [UIView animateWithDuration:0.5f delay:0.5f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
-        _pauseLayer.opacity = 1.0f;
-    } completion:nil];
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
+            _pauseLayer.opacity = 1.0f;
+        } completion:nil];
+    }];
+    
 }
 
 - (void)touchDown:(id)sender
 {
-    _isAnimatingNormalSmaller = YES;
-    
     CGRect bgRect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     UIBezierPath *normalPath = [UIBezierPath bezierPathWithOvalInRect:bgRect];
     UIBezierPath *smallerPath = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(bgRect, bgRect.size.width * 0.025f, bgRect.size.height * 0.025f)];
     
+    _bgLayer.path = smallerPath.CGPath; // set the final (destination) value
     
-    
-    [CATransaction begin];
     CABasicAnimation* smallerPathAnimation = [CABasicAnimation animationWithKeyPath: @"path"];
     smallerPathAnimation.fromValue = (id)normalPath.CGPath;
     smallerPathAnimation.toValue = (id)smallerPath.CGPath;
     smallerPathAnimation.duration  = 0.15f;
-    [CATransaction setCompletionBlock:^{
-        if (!_isAnimatingBiggerNormal) {
-            _bgLayer.path = smallerPath.CGPath;
-        }
-        _isAnimatingNormalSmaller = NO;
-    }];
     [_bgLayer addAnimation:smallerPathAnimation forKey:@"smallerPathAnimation"];
-    [CATransaction commit];
     
     
     
@@ -136,98 +130,71 @@
 
 - (void)touchUpInside:(id)sender
 {
-    self.isPaused = !self.isPaused;
-    if (self.isPaused) {
-        [self hidePauseShowPlay];
-       
-    }
-    else {
-        [self hidePlayShowPause];
-    }
+    BOOL shouldChange = NO;
     
-    _isAnimatingBiggerNormal = YES;
-    
-    [_bgLayer removeAnimationForKey:@"smallerPathAnimation"];
-    
-    /* pulse bg animation */
-    
-    CGRect bgRect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-    UIBezierPath *normalPath = [UIBezierPath bezierPathWithOvalInRect:bgRect];
-    UIBezierPath *biggerPath = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(bgRect, bgRect.size.width * -0.05f, bgRect.size.height * -0.05f)];
-    
-    CFTimeInterval beginTime = CACurrentMediaTime();
-    
-    CABasicAnimation* biggerPathAnimation = [CABasicAnimation animationWithKeyPath: @"path"];
-    biggerPathAnimation.toValue = (id)biggerPath.CGPath;
-    biggerPathAnimation.duration = 0.1f;
-    biggerPathAnimation.beginTime = beginTime;
-    [_bgLayer addAnimation:biggerPathAnimation forKey:@"biggerPathAnimation"];
-    
-    [CATransaction begin];
-    CABasicAnimation* normalPathAnimation = [CABasicAnimation animationWithKeyPath: @"path"];
-    normalPathAnimation.fromValue = (id)biggerPath.CGPath;
-    normalPathAnimation.toValue = (id)normalPath.CGPath;
-    normalPathAnimation.duration = 0.2f;
-    normalPathAnimation.beginTime = biggerPathAnimation.beginTime + biggerPathAnimation.duration;
-    [CATransaction setCompletionBlock:^{
-        if (!_isAnimatingNormalSmaller) {
-            _bgLayer.path = normalPath.CGPath;
+    if (self.delegate) {
+        if (self.isPaused) {
+            shouldChange = [self.delegate playButtonShouldPlay:self];
         }
-        _isAnimatingBiggerNormal = NO;
-    }];
-    [_bgLayer addAnimation:normalPathAnimation forKey:@"normalPathAnimation"];
-    [CATransaction commit];
+        else {
+            shouldChange = [self.delegate playButtonShouldPause:self];
+        }
+    }
     
+    if (shouldChange) {
+        self.isPaused = !self.isPaused;
+        self.isPaused ? [self hidePauseShowPlay] : [self hidePlayShowPause];
+        
+        [_bgLayer removeAnimationForKey:@"smallerPathAnimation"];
+        
+        /* pulse bg animation */
+        CGRect bgRect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+        UIBezierPath *normalPath = [UIBezierPath bezierPathWithOvalInRect:bgRect];
+        UIBezierPath *biggerPath = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(bgRect, bgRect.size.width * -0.05f, bgRect.size.height * -0.05f)];
+        
+        _bgLayer.path = normalPath.CGPath; // set the final (destination) value
+        
+        CFTimeInterval beginTime = CACurrentMediaTime();
+        
+        CABasicAnimation* biggerPathAnimation = [CABasicAnimation animationWithKeyPath: @"path"];
+        biggerPathAnimation.toValue = (id)biggerPath.CGPath;
+        biggerPathAnimation.duration = 0.1f;
+        biggerPathAnimation.beginTime = beginTime;
+        [_bgLayer addAnimation:biggerPathAnimation forKey:@"biggerPathAnimation"];
+        
+        CABasicAnimation* normalPathAnimation = [CABasicAnimation animationWithKeyPath: @"path"];
+        normalPathAnimation.fromValue = (id)biggerPath.CGPath;
+        normalPathAnimation.toValue = (id)normalPath.CGPath;
+        normalPathAnimation.duration = 0.2f;
+        normalPathAnimation.beginTime = biggerPathAnimation.beginTime + biggerPathAnimation.duration;
+        [_bgLayer addAnimation:normalPathAnimation forKey:@"normalPathAnimation"];
+    }
+}
+
+#pragma mark - Properties
+
+- (void)setAccentColor:(UIColor *)accentColor {
+    _accentColor = accentColor;
+    _bgLayer.fillColor = accentColor.CGColor;
+}
+
+- (UIColor*)accentColor {
+    return _accentColor;
+}
+
+- (void)setIsPaused:(BOOL)isPaused {
+    _isPaused = isPaused;
+    self.isPaused ? [self hidePauseShowPlay] : [self hidePlayShowPause];
+}
+
+- (BOOL)isPaused {
+    return _isPaused;
 }
 
 //// Only override drawRect: if you perform custom drawing.
 //// An empty implementation adversely affects performance during animation.
 //- (void)drawRect:(CGRect)rect
 //{
-//    // Get the contextRef
-//    CGContextRef ctx = UIGraphicsGetCurrentContext();
-//    
-//    /* Draw a circle */
-//    
-//    // Set the circle fill color to accentColor
-//    CGFloat accentRed, accentGreen, accentBlue, accentAlpha;
-//    [self.accentColor getRed:&accentRed green:&accentGreen blue:&accentBlue alpha:&accentAlpha];
-//    CGContextSetRGBFillColor(ctx, accentRed, accentGreen, accentBlue, accentAlpha);
-//    
-//    // Fill the circle with the fill color
-//    CGContextFillEllipseInRect(ctx, rect);
-//    
-//    
-//    
-//    if (self.isPaused)
-//    {
-//        /* Draw triangle (play sign) */
-//    
-//        CGRect midRect = CGRectInset(rect, rect.size.width * 0.32f, rect.size.height * 0.32f);
-//        CGRect triangleRect = CGRectOffset(midRect, rect.size.width * 0.04f, 0);
-//        
-//        CGContextBeginPath(ctx);
-//        CGContextMoveToPoint(ctx, CGRectGetMinX(triangleRect), CGRectGetMinY(triangleRect));  // top left
-//        CGContextAddLineToPoint(ctx, CGRectGetMaxX(triangleRect), CGRectGetMidY(triangleRect));  // mid right
-//        CGContextAddLineToPoint(ctx, CGRectGetMinX(triangleRect), CGRectGetMaxY(triangleRect));  // bottom left
-//        CGContextClosePath(ctx);
-//        
-//        CGContextSetRGBFillColor(ctx, 1, 1, 1, 1);
-//        CGContextFillPath(ctx);
-//    }
-//    else
-//    {
-//        /* Draw two stripes (pause sign) */
-//        
-//        CGRect midRect = CGRectInset(rect, rect.size.width * 0.35f, rect.size.height * 0.32f);
-//        CGRect leftRect = CGRectMake(midRect.origin.x, midRect.origin.y, midRect.size.width * 0.33f, midRect.size.height);
-//        CGRect rightRect = CGRectMake(midRect.origin.x + midRect.size.width * 0.67, midRect.origin.y, midRect.size.width * 0.33f, midRect.size.height);
-//        
-//        CGContextSetRGBFillColor(ctx, 1, 1, 1, 1);
-//        CGContextFillRect(ctx, leftRect);
-//        CGContextFillRect(ctx, rightRect);
-//    }
-//    
 //}
 
 

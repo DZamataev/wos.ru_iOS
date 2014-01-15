@@ -42,6 +42,7 @@
 		92C3977F18855E01001E46FA /* WSRadioData.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C3977E18855E01001E46FA /* WSRadioData.m */; };
 		92C3978218855E68001E46FA /* WSRColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C3978118855E68001E46FA /* WSRColor.m */; };
 		92C3978518856167001E46FA /* WSRadioMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C3978418856167001E46FA /* WSRadioMapper.m */; };
+		92D068AA1886B84000AA75B9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D068A91886B84000AA75B9 /* AVFoundation.framework */; };
 		93F1036CDDBE462AAFED3F7B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF42631AAC344D08DA23F4C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,8 @@
 		92C3978118855E68001E46FA /* WSRColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRColor.m; sourceTree = "<group>"; };
 		92C3978318856167001E46FA /* WSRadioMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRadioMapper.h; sourceTree = "<group>"; };
 		92C3978418856167001E46FA /* WSRadioMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRadioMapper.m; sourceTree = "<group>"; };
+		92D068A71886ABD500AA75B9 /* WSPlayButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPlayButtonDelegate.h; sourceTree = "<group>"; };
+		92D068A91886B84000AA75B9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B178CA820DAF4716A1063D6A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FFF42631AAC344D08DA23F4C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -117,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D068AA1886B84000AA75B9 /* AVFoundation.framework in Frameworks */,
 				922A0B8018645B3500802757 /* CoreGraphics.framework in Frameworks */,
 				922A0B8218645B3500802757 /* UIKit.framework in Frameworks */,
 				922A0B7E18645B3500802757 /* Foundation.framework in Frameworks */,
@@ -161,6 +165,7 @@
 		922A0B7C18645B3500802757 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92D068A91886B84000AA75B9 /* AVFoundation.framework */,
 				922A0B7D18645B3500802757 /* Foundation.framework */,
 				922A0B7F18645B3500802757 /* CoreGraphics.framework */,
 				922A0B8118645B3500802757 /* UIKit.framework */,
@@ -256,6 +261,7 @@
 		92C3977518855DA3001E46FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				92D068A71886ABD500AA75B9 /* WSPlayButtonDelegate.h */,
 				92B1BF1418800F1E0027EAEC /* WSPlayButton.h */,
 				92B1BF1518800F1E0027EAEC /* WSPlayButton.m */,
 				92B1BF1718800F360027EAEC /* WSVolumeSlider.h */,

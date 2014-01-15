@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioPlayer.h>
+#import "WSPlayButtonDelegate.h"
 
 @class WSRadioModel;
 @class WSRadioData;
@@ -19,13 +21,15 @@
 
 #define WSRadioViewControllerInitialAccentColor ([[UIColor alloc] initWithRed:240.0f/255.0f green:92.0f/255.0f blue:77.0f/255.0f alpha:1.0f])
 
-@interface WSRadioViewController : UIViewController
+@interface WSRadioViewController : UIViewController <WSPlayButtonDelegate>
 {
     WSRadioModel *_radioModel;
     UIColor *_accentColor;
     NSMutableArray *_stations;
 }
-@property (strong, nonatomic) IBOutlet UIColor *accentColor;
+@property (readwrite, retain) AudioPlayer* audioPlayer;
+
+@property (strong, nonatomic) UIColor *accentColor;
 @property (strong, nonatomic) IBOutlet WSPlayButton *playButton;
 @property (strong, nonatomic) IBOutlet WSVolumeSlider *volumeSlider;
 @property (strong, nonatomic) IBOutlet WSRadiostationSelectorScrollView *selector;

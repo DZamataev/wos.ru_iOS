@@ -66,18 +66,17 @@
         contentWidth = MAX(contentWidth, buttonFrame.size.width);
         
         /* setup callbacks */
-        typeof(selectionCallback) __weak weakSelectionCallback = selectionCallback;
         typeof(_buttons) __weak weakButtonsArray = _buttons;
         typeof(_backgroundPatternView.layer.mask) __weak weakPatternViewMask = _backgroundPatternView.layer.mask;
         
         [button setTouchUpInsideCallback:^(WSRadiostationButton *sender) {
-            if (weakSelectionCallback && weakButtonsArray) {
+            if (selectionCallback && weakButtonsArray) {
                 if (weakPatternViewMask) {
                     [UIView animateWithDuration:0.2f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
                         weakPatternViewMask.frame = sender.frame;
                     } completion:nil];
                 }
-                weakSelectionCallback(sender, [weakButtonsArray indexOfObject:sender]);
+                selectionCallback(sender, [weakButtonsArray indexOfObject:sender]);
             }
         }];
         
