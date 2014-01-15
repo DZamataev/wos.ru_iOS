@@ -32,18 +32,35 @@
     // background image
     UIImage* sliderBarImage = [UIImage imageNamed:@"ws_volume_slider_bg"];
     sliderBarImage= [sliderBarImage stretchableImageWithLeftCapWidth:4.0 topCapHeight:0.0];
-    [self setMaximumTrackImage:sliderBarImage forState:UIControlStateNormal];
+    [[UISlider appearanceWhenContainedIn:[MPVolumeView class], nil]
+     setMaximumTrackImage:[[UIImage imageNamed:@"ws_volume_slider_bg"] stretchableImageWithLeftCapWidth:4.0 topCapHeight:0.0]
+     forState:UIControlStateNormal];
     
     // thumb image
     UIImage* thumbImage = [WSVolumeSlider imageWithColor:[UIColor clearColor] ofSize:CGSizeMake(10, self.frame.size.height)];
-    [self setThumbImage:thumbImage forState:UIControlStateNormal];
+    [self setVolumeThumbImage:thumbImage forState:UIControlStateNormal];
+    [[UISlider appearanceWhenContainedIn:[MPVolumeView class], nil]
+     setThumbImage:[WSVolumeSlider imageWithColor:[UIColor clearColor] ofSize:CGSizeMake(10, self.frame.size.height)]
+     forState:UIControlStateNormal];
+    
+    // min track image
+    UIImage *minTrackImg = [WSVolumeSlider imageWithColor:self.accentColor ofSize:CGSizeMake(10, self.frame.size.height)];
+    [[UISlider appearanceWhenContainedIn:[MPVolumeView class], nil]
+     setMinimumTrackImage:[minTrackImg stretchableImageWithLeftCapWidth:4.0 topCapHeight:0.0]
+     forState:UIControlStateNormal];
 }
 
 - (void)setMinTrackImageFromColor:(UIColor*)color
 {
     UIImage *img = [WSVolumeSlider imageWithColor:color ofSize:CGSizeMake(10, self.frame.size.height)];
-    img = [img stretchableImageWithLeftCapWidth:4.0f topCapHeight:0.0f];
-    [self setMinimumTrackImage:img forState:UIControlStateNormal];
+    // hacky way of finding desired UISlider and set its property
+    // WARNING: may break in later iOS versions
+    for (id view in self.subviews){
+        if ([view isKindOfClass:[UISlider class]]){
+            UISlider *slider = (UISlider *) view;
+            [slider setMinimumTrackImage:img forState:UIControlStateNormal];
+        }
+    }
 }
 
 + (UIImage *)imageWithColor:(UIColor *)color ofSize:(CGSize)size
@@ -56,6 +73,15 @@
     CGContextFillRect(c, rect);
     UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
     return result;
+}
+
+- (void)volumeUp:(id)sender
+{
+}
+
+- (void)volumeDown:(id)sender
+{
+    
 }
 
 #pragma mark - Properties

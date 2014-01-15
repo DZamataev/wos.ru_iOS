@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <AudioPlayer.h>
+#import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 #import "WSPlayButtonDelegate.h"
 
 @class WSRadioModel;
@@ -34,4 +36,8 @@
 @property (strong, nonatomic) IBOutlet WSVolumeSlider *volumeSlider;
 @property (strong, nonatomic) IBOutlet WSRadiostationSelectorScrollView *selector;
 @property (strong, nonatomic, readonly) NSMutableArray *stations;
+
+- (void)pauseAudioPlayback;
+- (void)resumeAudioPlayback;
+- (void)updateControls;
 @end

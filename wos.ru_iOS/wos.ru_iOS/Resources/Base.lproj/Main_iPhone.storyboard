@@ -46,10 +46,30 @@
                                     <outlet property="delegate" destination="21c-LD-ere" id="ZTu-Hl-VEX"/>
                                 </connections>
                             </view>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" minimumValueImage="ws_volume_slider_lower_icon.png" maximumValueImage="ws_volume_slider_higher_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="K6W-JS-oe0" customClass="WSVolumeSlider">
-                                <rect key="frame" x="50" y="267" width="220" height="34"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1h-Vc-UGs" customClass="WSVolumeSlider">
+                                <rect key="frame" x="52" y="267" width="216" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="dCo-jd-vrf"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ws_volume_slider_higher_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kab-T3-EUd">
+                                <rect key="frame" x="271" y="267" width="17" height="17"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="dss-yc-qjj"/>
+                                    <constraint firstAttribute="width" constant="17" id="fLf-o1-Ac6"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ws_volume_slider_lower_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="T24-Py-dcl">
+                                <rect key="frame" x="32" y="267" width="17" height="17"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="17" id="6Ke-Ou-ALL"/>
+                                    <constraint firstAttribute="height" constant="17" id="chp-th-nwh"/>
+                                </constraints>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYa-9H-SHM" customClass="WSRadiostationSelectorScrollView">
                                 <rect key="frame" x="0.0" y="321" width="320" height="247"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -58,14 +78,18 @@
                         <color key="backgroundColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tYa-9H-SHM" secondAttribute="trailing" id="0Qu-yR-pAi"/>
+                            <constraint firstItem="g1h-Vc-UGs" firstAttribute="leading" secondItem="T24-Py-dcl" secondAttribute="trailing" constant="3" id="2x3-e0-0xn"/>
+                            <constraint firstItem="g1h-Vc-UGs" firstAttribute="top" secondItem="gpe-nV-SkX" secondAttribute="bottom" constant="26" id="7KZ-4P-Wdc"/>
+                            <constraint firstItem="g1h-Vc-UGs" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" constant="52" id="DmY-6N-qJl"/>
                             <constraint firstAttribute="trailing" secondItem="gpe-nV-SkX" secondAttribute="trailing" constant="80" id="Em4-HI-Vuc"/>
+                            <constraint firstItem="Kab-T3-EUd" firstAttribute="top" secondItem="g1h-Vc-UGs" secondAttribute="bottom" constant="-20" id="GlF-2x-9hO"/>
+                            <constraint firstItem="Kab-T3-EUd" firstAttribute="leading" secondItem="g1h-Vc-UGs" secondAttribute="trailing" constant="3" id="IwV-SY-6V0"/>
                             <constraint firstItem="gpe-nV-SkX" firstAttribute="top" secondItem="pCV-N0-kdX" secondAttribute="bottom" constant="61" id="Iy8-mj-kA7"/>
+                            <constraint firstAttribute="trailing" secondItem="g1h-Vc-UGs" secondAttribute="trailing" constant="52" id="NDf-tw-6Ca"/>
                             <constraint firstItem="l0a-am-UgR" firstAttribute="top" secondItem="tYa-9H-SHM" secondAttribute="bottom" id="NIf-k4-AVs"/>
-                            <constraint firstAttribute="trailing" secondItem="K6W-JS-oe0" secondAttribute="trailing" constant="52" id="dQi-Lu-IFK"/>
-                            <constraint firstItem="tYa-9H-SHM" firstAttribute="top" secondItem="K6W-JS-oe0" secondAttribute="bottom" constant="21" id="mAZ-oQ-jzR"/>
-                            <constraint firstItem="K6W-JS-oe0" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" constant="52" id="mC3-xm-uKM"/>
+                            <constraint firstItem="tYa-9H-SHM" firstAttribute="top" secondItem="g1h-Vc-UGs" secondAttribute="bottom" constant="34" id="kYQ-yO-2JW"/>
                             <constraint firstItem="gpe-nV-SkX" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" constant="80" id="ome-Sr-83D"/>
-                            <constraint firstItem="K6W-JS-oe0" firstAttribute="top" secondItem="gpe-nV-SkX" secondAttribute="bottom" constant="26" id="r9J-7A-WK2"/>
+                            <constraint firstItem="T24-Py-dcl" firstAttribute="top" secondItem="g1h-Vc-UGs" secondAttribute="bottom" constant="-20" id="rhl-6n-teG"/>
                             <constraint firstItem="tYa-9H-SHM" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" id="x8J-73-tOh"/>
                         </constraints>
                     </view>
@@ -73,7 +97,7 @@
                     <connections>
                         <outlet property="playButton" destination="gpe-nV-SkX" id="GlZ-oK-mTj"/>
                         <outlet property="selector" destination="tYa-9H-SHM" id="mec-86-S4q"/>
-                        <outlet property="volumeSlider" destination="K6W-JS-oe0" id="dj7-Gu-iUQ"/>
+                        <outlet property="volumeSlider" destination="g1h-Vc-UGs" id="OP3-rq-pEL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOM-rH-ap2" userLabel="First Responder" sceneMemberID="firstResponder"/>

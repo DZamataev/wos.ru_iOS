@@ -11,7 +11,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XuS-8a-goI">
-                    <rect key="frame" x="20" y="9" width="280" height="21"/>
+                    <rect key="frame" x="54" y="9" width="250" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -20,8 +20,8 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="XuS-8a-goI" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="32d-EQ-UQc"/>
-                <constraint firstAttribute="trailing" secondItem="XuS-8a-goI" secondAttribute="trailing" constant="20" symbolic="YES" id="5EA-pz-I7O"/>
+                <constraint firstItem="XuS-8a-goI" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="54" id="32d-EQ-UQc"/>
+                <constraint firstAttribute="trailing" secondItem="XuS-8a-goI" secondAttribute="trailing" constant="16" id="5EA-pz-I7O"/>
                 <constraint firstItem="XuS-8a-goI" firstAttribute="top" secondItem="1" secondAttribute="top" constant="9" id="On4-Pw-lim"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
