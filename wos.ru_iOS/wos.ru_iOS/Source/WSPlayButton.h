@@ -13,6 +13,7 @@
 @interface WSPlayButton : UIControl
 {
     BOOL _isAnimatingBiggerNormal;
+    BOOL _isAnimatingNormalSmaller;
     
     CAShapeLayer *_bgLayer;
     CAShapeLayer *_playLayer;

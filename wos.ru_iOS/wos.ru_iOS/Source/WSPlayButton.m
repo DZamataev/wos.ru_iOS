@@ -27,7 +27,7 @@
 
 - (void)setup
 {
-    self.isPaused = NO;
+    self.isPaused = YES;
     self.accentColor = WSPlayButtonInitialAccentColor;
     [self addTarget:self action:@selector(touchUpInside:) forControlEvents:UIControlEventTouchUpInside];
     [self addTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown];
@@ -82,10 +82,34 @@
     [_pauseLayer addSublayer:pauseRightLayer];
     
     [self.layer addSublayer:_pauseLayer];
+    
+    [self hidePauseShowPlay];
+}
+
+- (void)hidePauseShowPlay
+{
+    [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
+        _pauseLayer.opacity = 0.0f;
+    } completion:nil];
+    [UIView animateWithDuration:0.5f delay:0.5f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
+        _playLayer.opacity = 1.0f;
+    } completion:nil];
+}
+
+- (void)hidePlayShowPause
+{
+    [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
+        _playLayer.opacity = 0.0f;
+    } completion:nil];
+    [UIView animateWithDuration:0.5f delay:0.5f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
+        _pauseLayer.opacity = 1.0f;
+    } completion:nil];
 }
 
 - (void)touchDown:(id)sender
 {
+    _isAnimatingNormalSmaller = YES;
+    
     CGRect bgRect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     UIBezierPath *normalPath = [UIBezierPath bezierPathWithOvalInRect:bgRect];
     UIBezierPath *smallerPath = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(bgRect, bgRect.size.width * 0.025f, bgRect.size.height * 0.025f)];
@@ -101,6 +125,7 @@
         if (!_isAnimatingBiggerNormal) {
             _bgLayer.path = smallerPath.CGPath;
         }
+        _isAnimatingNormalSmaller = NO;
     }];
     [_bgLayer addAnimation:smallerPathAnimation forKey:@"smallerPathAnimation"];
     [CATransaction commit];
@@ -113,21 +138,11 @@
 {
     self.isPaused = !self.isPaused;
     if (self.isPaused) {
-        [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
-            _pauseLayer.opacity = 0.0f;
-        } completion:nil];
-        [UIView animateWithDuration:0.5f delay:0.5f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
-            _playLayer.opacity = 1.0f;
-        } completion:nil];
+        [self hidePauseShowPlay];
        
     }
     else {
-        [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
-            _playLayer.opacity = 0.0f;
-        } completion:nil];
-        [UIView animateWithDuration:0.5f delay:0.5f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
-            _pauseLayer.opacity = 1.0f;
-        } completion:nil];
+        [self hidePlayShowPause];
     }
     
     _isAnimatingBiggerNormal = YES;
@@ -155,7 +170,9 @@
     normalPathAnimation.duration = 0.2f;
     normalPathAnimation.beginTime = biggerPathAnimation.beginTime + biggerPathAnimation.duration;
     [CATransaction setCompletionBlock:^{
-        _bgLayer.path = normalPath.CGPath;
+        if (!_isAnimatingNormalSmaller) {
+            _bgLayer.path = normalPath.CGPath;
+        }
         _isAnimatingBiggerNormal = NO;
     }];
     [_bgLayer addAnimation:normalPathAnimation forKey:@"normalPathAnimation"];

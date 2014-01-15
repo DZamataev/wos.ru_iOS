@@ -10,6 +10,6 @@
 
 @implementation WSRColor
 - (UIColor *)UIColorFromComponents {
-    return [UIColor colorWithRed:self.red.floatValue green:self.green.floatValue blue:self.blue.floatValue alpha:self.alpha.floatValue];
+    return [UIColor colorWithRed:self.red.floatValue/255 green:self.green.floatValue/255 blue:self.blue.floatValue/255 alpha:self.alpha.floatValue];
 }
 @end

@@ -1,10 +1,14 @@
 PODS:
   - AFNetworking (1.3.3)
+  - ARChromeActivity (1.0.1)
+  - ARSafariActivity (0.0.1)
   - Audjustable (0.0.11)
   - AutoScrollLabel (0.2.1)
   - Chivy (0.1.0):
     - Chivy/Core
   - Chivy/Core (0.1.0):
+    - ARChromeActivity
+    - ARSafariActivity
     - AutoScrollLabel
     - Chivy/Core-no-arc
     - DKNavbarBackButton
@@ -17,6 +21,9 @@ PODS:
   - CocoaLumberjack/Core (1.7.0)
   - CocoaLumberjack/Extensions (1.7.0):
     - CocoaLumberjack/Core
+  - CPAnimationChain (1.0.0):
+    - CPAnimationChain/core
+  - CPAnimationChain/core (1.0.0)
   - DKNavbarBackButton (0.1.1):
     - DKNavbarBackButton/core
   - DKNavbarBackButton/core (0.1.1)
@@ -42,9 +49,9 @@ PODS:
   - RestKit/Support (0.21.0):
     - TransitionKit (= 1.1.1)
   - RKValueTransformers (1.0.1)
-  - SDWebImage (3.5.1):
+  - SDWebImage (3.5.2):
     - SDWebImage/Core
-  - SDWebImage/Core (3.5.1)
+  - SDWebImage/Core (3.5.2)
   - SOCKit (1.1)
   - SuProgress (0.8.1)
   - TransitionKit (1.1.1)
@@ -53,6 +60,7 @@ DEPENDENCIES:
   - Audjustable
   - Chivy (from `https://github.com/DZamataev/Chivy.git`, branch `master`)
   - CocoaLumberjack
+  - CPAnimationChain (from `https://github.com/DZamataev/CPAnimationChain.git`, branch `master`)
   - OHAttributedLabel
   - RestKit (= 0.21.0)
   - SDWebImage
@@ -62,22 +70,28 @@ EXTERNAL SOURCES:
   Chivy:
     :branch: master
     :git: https://github.com/DZamataev/Chivy.git
+  CPAnimationChain:
+    :branch: master
+    :git: https://github.com/DZamataev/CPAnimationChain.git
   SuProgress:
     :branch: master
     :git: https://github.com/DZamataev/SuProgress.git
 
 SPEC CHECKSUMS:
   AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
+  ARChromeActivity: eb9770a933cfe2b914b8e4e22b684eb7f43f24df
+  ARSafariActivity: 5a99ddb49c748d32682fab566452f002d9177bbb
   Audjustable: 4121dfb05e20321995a8aba32396652fddbf65ff
   AutoScrollLabel: 4978b57536512a3ebf4705b1b5618354bcf4ac84
-  Chivy: b628bcc0302fa120eb14ee4e3815ec4990967fea
+  Chivy: d2ec724f8a84f113b44f3a500725f28fa3d49e28
   CocoaLumberjack: be87113f649942f020a37c061c58009b6ee5ff68
+  CPAnimationChain: 80e4d61496a04d91f94d52cd78d29e194e6e5df2
   DKNavbarBackButton: b188b3c0b2508bfb786518177f097f4ca5fa4bc1
   ISO8601DateFormatterValueTransformer: d0af1f50a9df42db72d7418db31938b8473e0af8
   OHAttributedLabel: 985e4b57eec0dc6add79179ac47ec888b8a914e7
   RestKit: c11a30e7bc73513d9d2c2695672aba7697d24181
   RKValueTransformers: 1562d458b9c9d59ce777bfc5982f2e1aef2e9182
-  SDWebImage: a408b548a634b792372e07e753fc1079aff5032a
+  SDWebImage: fe7ce01ae4e0a884d168f59c9dd82d35baf8429e
   SOCKit: 2f3bc4d07910de12dcc202815e07db68a3802581
   SuProgress: 0c0052ba21c5cb9917064ed323838e8bf2fb90b5
   TransitionKit: d0e3344aac92991395d4c2e72d9c5a8ceeb12910

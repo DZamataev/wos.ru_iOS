@@ -36,7 +36,8 @@
     }
     
     _backgroundPatternView = [[UIView alloc] init];
-    _backgroundPatternView.clipsToBounds = YES;
+    _backgroundPatternView.layer.mask = [CALayer layer];
+    _backgroundPatternView.layer.mask.backgroundColor = [UIColor blackColor].CGColor;
     
     float contentHeight = 0.0f;
     float contentWidth = 0.0f;
@@ -67,9 +68,15 @@
         /* setup callbacks */
         typeof(selectionCallback) __weak weakSelectionCallback = selectionCallback;
         typeof(_buttons) __weak weakButtonsArray = _buttons;
+        typeof(_backgroundPatternView.layer.mask) __weak weakPatternViewMask = _backgroundPatternView.layer.mask;
         
         [button setTouchUpInsideCallback:^(WSRadiostationButton *sender) {
             if (weakSelectionCallback && weakButtonsArray) {
+                if (weakPatternViewMask) {
+                    [UIView animateWithDuration:0.2f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                        weakPatternViewMask.frame = sender.frame;
+                    } completion:nil];
+                }
                 weakSelectionCallback(sender, [weakButtonsArray indexOfObject:sender]);
             }
         }];
@@ -79,6 +86,8 @@
     self.contentSize = CGSizeMake(contentWidth, contentHeight);
     
     _backgroundPatternView.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
+    WSRadiostationButton *firstButton = _buttons.count ? _buttons[0] : nil;
+    _backgroundPatternView.layer.mask.frame = CGRectMake(0, 0, self.contentSize.width, firstButton ? firstButton.frame.size.height : 0);
     
     [self addSubview:_backgroundPatternView];
     [self sendSubviewToBack:_backgroundPatternView];
