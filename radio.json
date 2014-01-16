@@ -1,7 +1,7 @@
 {
   "radiostations": [
     {
-      "name": "red",
+      "name": "red pill",
       "streams": [
         {
           "bitrate": 192,
@@ -24,7 +24,7 @@
       }
     },
     {
-      "name": "blue",
+      "name": "blue pill",
       "streams": [
         {
           "bitrate": 192,
@@ -47,7 +47,7 @@
       }
     },
     {
-      "name": "jazz",
+      "name": "jazz pill",
       "streams": [
         {
           "bitrate": 192,
@@ -70,7 +70,7 @@
       }
     },
     {
-      "name": "classic",
+      "name": "classic pill",
       "streams": [
         {
           "bitrate": 192,
@@ -93,7 +93,7 @@
       }
     },
     {
-      "name": "chanson",
+      "name": "chanson pill",
       "streams": [
         {
           "bitrate": 192,
@@ -116,7 +116,7 @@
       }
     },
     {
-      "name": "sleeping",
+      "name": "sleeping pill",
       "streams": [
         {
           "bitrate": 192,

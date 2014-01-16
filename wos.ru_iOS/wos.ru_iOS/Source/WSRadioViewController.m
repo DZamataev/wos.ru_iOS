@@ -48,9 +48,13 @@
         if (!error && weakController) {
             [weakController insertStations:data.stations];
             [weakController selectedRadiostationAtIndex:0 andPlayIt:NO];
+            [weakController updateNowPlayingInfoWithStation:self.currentStation andStream:self.currentStream];
         }
     }];
     self.accentColor = WSRadioViewControllerInitialAccentColor;
+    
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [self becomeFirstResponder];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -68,6 +72,9 @@
                                              selector: @selector(handleMediaServicesWereReset:)
                                                  name: AVAudioSessionMediaServicesWereResetNotification
                                                object: session];
+    
+
+    
     [super viewWillAppear:animated];
 }
 
@@ -89,6 +96,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"AVAudioSessionRouteChangeNotification" object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"AVAudioSessionInterruptionNotification" object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"AVAudioSessionMediaServicesWereResetNotification" object:nil];
+    [self resignFirstResponder];
+    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
 }
 
 #pragma mark - Notification handlers
@@ -191,6 +200,11 @@
 
 #pragma mark - Properties
 
+//Make sure we can recieve remote control events
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
@@ -208,6 +222,66 @@
 
 #pragma mark - Actions
 
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event
+{
+    NSString *log = @"Remote Control Received With Event: ";
+    NSString *eventName = nil;
+    //if it is a remote control event handle it correctly
+    if (event.type == UIEventTypeRemoteControl) {
+        switch (event.subtype) {
+            case UIEventSubtypeRemoteControlPlay:
+                eventName = @"UIEventSubtypeRemoteControlPlay";
+                [self resumeAudioPlayback];
+                break;
+                
+            case UIEventSubtypeRemoteControlPause:
+                eventName = @"UIEventSubtypeRemoteControlPause";
+                [self pauseAudioPlayback];
+                break;
+                
+            case UIEventSubtypeRemoteControlTogglePlayPause:
+                eventName = @"UIEventSubtypeRemoteControlTogglePlayPause";
+                break;
+                
+            case UIEventSubtypeRemoteControlNextTrack:
+                eventName = @"UIEventSubtypeRemoteControlNextTrack";
+                break;
+                
+            case UIEventSubtypeRemoteControlPreviousTrack:
+                eventName = @"UIEventSubtypeRemoteControlPreviousTrack";
+                break;
+                
+            case UIEventSubtypeRemoteControlStop:
+                eventName = @"UIEventSubtypeRemoteControlStop";
+                break;
+                
+            case UIEventSubtypeRemoteControlBeginSeekingBackward:
+                eventName = @"UIEventSubtypeRemoteControlBeginSeekingBackward";
+                break;
+                
+            case UIEventSubtypeRemoteControlBeginSeekingForward:
+                eventName = @"UIEventSubtypeRemoteControlBeginSeekingForward";
+                break;
+                
+            case UIEventSubtypeRemoteControlEndSeekingBackward:
+                eventName = @"UIEventSubtypeRemoteControlEndSeekingBackward";
+                break;
+                
+            case UIEventSubtypeRemoteControlEndSeekingForward:
+                eventName = @"UIEventSubtypeRemoteControlEndSeekingForward";
+                break;
+                
+            case UIEventSubtypeNone:
+                eventName = @"UIEventSubtypeNone";
+                break;
+                
+            default:
+                break;
+        }
+    }
+    NSLog(@"%@%@", log, eventName);
+}
+
 - (void)insertStations:(NSArray*)stations
 {
     NSMutableArray *titles = [NSMutableArray new];
@@ -224,6 +298,7 @@
     [self.selector addButtonsWithTitles:titles andColors:colors andSelectionCallback:^(WSRadiostationButton *button, NSInteger index) {
         if (weakController) {
             [weakController selectedRadiostationAtIndex:index andPlayIt:YES];
+            [weakController updateNowPlayingInfoWithStation:weakController.currentStation andStream:weakController.currentStream];
         }
     }];
 }
@@ -232,11 +307,11 @@
 - (void)selectedRadiostationAtIndex:(NSInteger)index andPlayIt:(BOOL)shouldPlay
 {
     if (index != NSNotFound && _stations.count > index) {
-        WSRStation *station = _stations[index];
+        self.currentStation = _stations[index];
         
-        self.accentColor = station.color.UIColorFromComponents;
+        self.accentColor = self.currentStation.color.UIColorFromComponents;
         
-        [self findStreamForRadiostation:station andPlayIt:shouldPlay];
+        [self findStreamForRadiostation:self.currentStation andPlayIt:shouldPlay];
     }
 }
 
@@ -246,8 +321,16 @@
     for (WSRStream *stream in station.streams) {
         // ok 192 is the best for now
         if (stream.bitrate.integerValue == 192) {
-            NSURL* url = stream.url;
-            [self.audioPlayer play:url];
+            
+            self.currentStream = stream;
+            
+            [self.audioPlayer stop];
+            
+            NSURL* url = self.currentStream.url;
+            
+            AutoRecoveringHttpDataSource *dataSource = [[AutoRecoveringHttpDataSource alloc] initWithHttpDataSource:[[HttpDataSource alloc] initWithURL:url]];
+            [self.audioPlayer setDataSource:dataSource  withQueueItemId:url];
+            
             if (shouldPlay) {
                 self.playButton.isPaused = NO; // force change the button state
             }
@@ -280,6 +363,17 @@
     }
 }
 
+- (void)updateNowPlayingInfoWithStation:(WSRStation*)station andStream:(WSRStream*)stream {
+    NSDictionary *nowPlaying = @{MPMediaItemPropertyArtist: [WSRadioViewController applicationBundleDisplayName],
+                                 MPMediaItemPropertyAlbumTitle: station.name,
+                                 // MPMediaItemPropertyPlaybackDuration: [NSNumber numberWithDouble:320.0],
+                                 // MPNowPlayingInfoPropertyPlaybackRate:@1.0f
+                                 //, MPMediaItemPropertyArtwork:[songMedia valueForProperty:MPMediaItemPropertyArtwork]
+                                 };
+    
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:nowPlaying];
+}
+
 #pragma mark - WSPlayButtonDelegate protocol implementation
 
 - (BOOL)playButtonShouldPlay:(WSPlayButton*)playButton {
@@ -290,6 +384,13 @@
 - (BOOL)playButtonShouldPause:(WSPlayButton*)playButton {
     [self.audioPlayer pause];
     return YES;
+}
+
+#pragma mark - Helpers
+
++ (NSString*)applicationBundleDisplayName
+{
+    return [[[NSBundle mainBundle] localizedInfoDictionary] objectForKey:(NSString*)kCFBundleNameKey];
 }
 
 @end
