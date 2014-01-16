@@ -215,10 +215,12 @@
 #pragma mark - Actions
 
 - (void)loadRadiostations {
+    [self.activityIndicator startAnimating];
     typeof(self) __weak weakController = self;
     [_radioModel loadRadioData:^(WSRadioData *data, NSError *error) {
         NSLog(@"Successfully loaded stations: %@ %@", data, data.stations);
         if (!error && weakController) {
+            [weakController.activityIndicator stopAnimating];
             [weakController insertStations:data.stations];
             [weakController selectedRadiostationAtIndex:0 andPlayIt:NO];
             [weakController updateNowPlayingInfoWithStation:self.currentStation andStream:self.currentStream];
@@ -250,6 +252,12 @@
                 
             case UIEventSubtypeRemoteControlTogglePlayPause:
                 eventName = @"UIEventSubtypeRemoteControlTogglePlayPause";
+                if (self.audioPlayer.state == AudioPlayerStatePlaying) {
+                    [self pauseAudioPlayback];
+                }
+                else if (self.audioPlayer.state == AudioPlayerStatePaused) {
+                    [self resumeAudioPlayback];
+                }
                 break;
                 
             case UIEventSubtypeRemoteControlNextTrack:

@@ -70,6 +70,10 @@
                                     <constraint firstAttribute="height" constant="17" id="chp-th-nwh"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Dy7-gE-o2y">
+                                <rect key="frame" x="142" y="426" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYa-9H-SHM" customClass="WSRadiostationSelectorScrollView">
                                 <rect key="frame" x="0.0" y="321" width="320" height="247"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -85,16 +89,19 @@
                             <constraint firstItem="Kab-T3-EUd" firstAttribute="top" secondItem="g1h-Vc-UGs" secondAttribute="bottom" constant="-20" id="GlF-2x-9hO"/>
                             <constraint firstItem="Kab-T3-EUd" firstAttribute="leading" secondItem="g1h-Vc-UGs" secondAttribute="trailing" constant="3" id="IwV-SY-6V0"/>
                             <constraint firstItem="gpe-nV-SkX" firstAttribute="top" secondItem="pCV-N0-kdX" secondAttribute="bottom" constant="61" id="Iy8-mj-kA7"/>
+                            <constraint firstItem="Dy7-gE-o2y" firstAttribute="centerX" secondItem="tYa-9H-SHM" secondAttribute="centerX" id="KGz-hp-LZz"/>
                             <constraint firstAttribute="trailing" secondItem="g1h-Vc-UGs" secondAttribute="trailing" constant="52" id="NDf-tw-6Ca"/>
                             <constraint firstItem="l0a-am-UgR" firstAttribute="top" secondItem="tYa-9H-SHM" secondAttribute="bottom" id="NIf-k4-AVs"/>
                             <constraint firstItem="tYa-9H-SHM" firstAttribute="top" secondItem="g1h-Vc-UGs" secondAttribute="bottom" constant="34" id="kYQ-yO-2JW"/>
                             <constraint firstItem="gpe-nV-SkX" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" constant="80" id="ome-Sr-83D"/>
                             <constraint firstItem="T24-Py-dcl" firstAttribute="top" secondItem="g1h-Vc-UGs" secondAttribute="bottom" constant="-20" id="rhl-6n-teG"/>
+                            <constraint firstItem="Dy7-gE-o2y" firstAttribute="centerY" secondItem="tYa-9H-SHM" secondAttribute="centerY" id="vzv-XN-ff5"/>
                             <constraint firstItem="tYa-9H-SHM" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" id="x8J-73-tOh"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Dy7-gE-o2y" id="R31-3n-0yN"/>
                         <outlet property="playButton" destination="gpe-nV-SkX" id="GlZ-oK-mTj"/>
                         <outlet property="selector" destination="tYa-9H-SHM" id="mec-86-S4q"/>
                         <outlet property="volumeSlider" destination="g1h-Vc-UGs" id="OP3-rq-pEL"/>

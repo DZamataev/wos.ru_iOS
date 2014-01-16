@@ -23,6 +23,7 @@
 		922A0BCC18645B7A00802757 /* WSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BC318645B7A00802757 /* WSAppDelegate.m */; };
 		922A0BCD18645B7A00802757 /* WSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BC518645B7A00802757 /* WSViewController.m */; };
 		922A0BD018645E5400802757 /* AudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BCF18645E5400802757 /* AudioPlayerView.m */; };
+		92AF39B51887E73C00F74E8B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 92AF39B41887E73C00F74E8B /* Settings.bundle */; };
 		92B1BF09187EC4C20027EAEC /* WSRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B1BF08187EC4C20027EAEC /* WSRadioViewController.m */; };
 		92B1BF0B1880090F0027EAEC /* ws_volume_slider_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF0A1880090F0027EAEC /* ws_volume_slider_bg@2x.png */; };
 		92B1BF1218800E770027EAEC /* ws_volume_slider_higher_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF1018800E770027EAEC /* ws_volume_slider_higher_icon@2x.png */; };
@@ -79,6 +80,7 @@
 		922A0BC518645B7A00802757 /* WSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSViewController.m; sourceTree = "<group>"; };
 		922A0BCE18645E5400802757 /* AudioPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayerView.h; sourceTree = "<group>"; };
 		922A0BCF18645E5400802757 /* AudioPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerView.m; sourceTree = "<group>"; };
+		92AF39B41887E73C00F74E8B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		92B1BF07187EC4C20027EAEC /* WSRadioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRadioViewController.h; sourceTree = "<group>"; };
 		92B1BF08187EC4C20027EAEC /* WSRadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRadioViewController.m; sourceTree = "<group>"; };
 		92B1BF0A1880090F0027EAEC /* ws_volume_slider_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ws_volume_slider_bg@2x.png"; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				922A0BBB18645B7A00802757 /* InfoPlist.strings */,
 				922A0BBD18645B7A00802757 /* Images.xcassets */,
 				92C3976B18853CC0001E46FA /* WSRadiostationButton.xib */,
+				92AF39B41887E73C00F74E8B /* Settings.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 			files = (
 				922A0BC718645B7A00802757 /* Main_iPhone.storyboard in Resources */,
 				92C3976C18853CC0001E46FA /* WSRadiostationButton.xib in Resources */,
+				92AF39B51887E73C00F74E8B /* Settings.bundle in Resources */,
 				92B1BF1218800E770027EAEC /* ws_volume_slider_higher_icon@2x.png in Resources */,
 				92B1BF1F1880409F0027EAEC /* iPhoneIcon_Big.png in Resources */,
 				92B1BF0B1880090F0027EAEC /* ws_volume_slider_bg@2x.png in Resources */,

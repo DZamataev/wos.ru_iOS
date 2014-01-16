@@ -72,6 +72,7 @@
         [button setTouchUpInsideCallback:^(WSRadiostationButton *sender) {
             if (weakView) {
                 [weakView visuallySelectButton:sender];
+                weakView.buttonSelectedCallback(sender, [_buttons indexOfObject:sender]);
             }
         }];
         
@@ -90,14 +91,41 @@
 - (void)visuallySelectButton:(WSRadiostationButton*)button
 {
     if (self.buttonSelectedCallback && _buttons && _buttons.count && [_buttons indexOfObject:button] != NSNotFound) {
+        NSInteger prevSelectedButtonIndex = _selectedButtonIndex;
+        _selectedButtonIndex = [_buttons indexOfObject:button];
+        
         if (_backgroundPatternView.layer.mask) {
+            NSInteger wayToGo = abs(prevSelectedButtonIndex - _selectedButtonIndex);
+            float duration = wayToGo * 0.2f;
             
-            [UIView animateWithDuration:0.2f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-                _backgroundPatternView.layer.mask.frame = button.frame;
-            } completion:nil];
+            NSLog(@"duration : %f", duration);
+            
+            CGRect targetFrame = button.frame;
+            CGPoint targetPosition = CGPointMake(targetFrame.origin.x+targetFrame.size.width/2.0f, targetFrame.origin.y+targetFrame.size.height/2.0f);
+            
+            [UIView beginAnimations:@"maskAnimation" context:nil];
+            [UIView setAnimationDuration:duration];
+            [UIView commitAnimations];
+            
+            [CATransaction begin];
+            [CATransaction setAnimationDuration:duration];
+            
+            _backgroundPatternView.layer.mask.position = targetPosition;
+            [CATransaction commit];
+            
+            
+//            CABasicAnimation* maskFrameAnimation = [CABasicAnimation animationWithKeyPath: @"position"];
+//            maskFrameAnimation.fromValue = (id)[NSValue valueWithCGPoint:CGPointMake(maskFrame.origin.x+maskFrame.size.width/2.0f, maskFrame.origin.y+maskFrame.size.height/2.0f)];
+//            maskFrameAnimation.toValue = (id)[NSValue valueWithCGPoint:CGPointMake(targetFrame.origin.x+targetFrame.size.width/2.0f, targetFrame.origin.y+targetFrame.size.height/2.0f)];
+//            maskFrameAnimation.duration = duration;
+//            [UIView setAnimationDidStopSelector:@selector(endAnimating)];
+//            [_backgroundPatternView.layer.mask addAnimation:maskFrameAnimation forKey:@"maskFrameAnimation"];
         }
-        self.buttonSelectedCallback(button, [_buttons indexOfObject:button]);
     }
+}
+
+- (void)endAnimating
+{
 }
 
 - (void)visuallySelectButtonAtIndex:(NSInteger)index

@@ -34,6 +34,8 @@
 }
 @property (readwrite, retain) AudioPlayer* audioPlayer;
 
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @property (strong, nonatomic) UIColor *accentColor;
 @property (strong, nonatomic) IBOutlet WSPlayButton *playButton;
 @property (strong, nonatomic) IBOutlet WSVolumeSlider *volumeSlider;
