@@ -31,6 +31,8 @@
     self.accentColor = WSPlayButtonInitialAccentColor;
     [self addTarget:self action:@selector(touchUpInside:) forControlEvents:UIControlEventTouchUpInside];
     [self addTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown];
+    [self addTarget:self action:@selector(touchCancel:) forControlEvents:UIControlEventTouchUpOutside];
+    [self addTarget:self action:@selector(touchCancel:) forControlEvents:UIControlEventTouchCancel];
     
     CGRect rect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     
@@ -110,7 +112,7 @@
     
 }
 
-- (void)touchDown:(id)sender
+- (void)animateBgSmaller
 {
     CGRect bgRect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     UIBezierPath *normalPath = [UIBezierPath bezierPathWithOvalInRect:bgRect];
@@ -123,9 +125,58 @@
     smallerPathAnimation.toValue = (id)smallerPath.CGPath;
     smallerPathAnimation.duration  = 0.15f;
     [_bgLayer addAnimation:smallerPathAnimation forKey:@"smallerPathAnimation"];
+}
+
+- (void)animateBgNormal
+{
+    CGRect bgRect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    UIBezierPath *normalPath = [UIBezierPath bezierPathWithOvalInRect:bgRect];
+    UIBezierPath *smallerPath = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(bgRect, bgRect.size.width * 0.025f, bgRect.size.height * 0.025f)];
     
+    _bgLayer.path = normalPath.CGPath; // set the final (destination) value
     
+    CABasicAnimation* normalPathAnimation = [CABasicAnimation animationWithKeyPath: @"path"];
+    normalPathAnimation.fromValue = (id)smallerPath.CGPath;
+    normalPathAnimation.toValue = (id)normalPath.CGPath;
+    normalPathAnimation.duration  = 0.25f;
+    [_bgLayer addAnimation:normalPathAnimation forKey:@"normalPathAnimation"];
+}
+
+- (void)animateBgBigger
+{
+    [_bgLayer removeAnimationForKey:@"smallerPathAnimation"];
     
+    /* pulse bg animation */
+    CGRect bgRect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    UIBezierPath *normalPath = [UIBezierPath bezierPathWithOvalInRect:bgRect];
+    UIBezierPath *biggerPath = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(bgRect, bgRect.size.width * -0.05f, bgRect.size.height * -0.05f)];
+    
+    _bgLayer.path = normalPath.CGPath; // set the final (destination) value
+    
+    CFTimeInterval beginTime = CACurrentMediaTime();
+    
+    CABasicAnimation* biggerPathAnimation = [CABasicAnimation animationWithKeyPath: @"path"];
+    biggerPathAnimation.toValue = (id)biggerPath.CGPath;
+    biggerPathAnimation.duration = 0.1f;
+    biggerPathAnimation.beginTime = beginTime;
+    [_bgLayer addAnimation:biggerPathAnimation forKey:@"biggerPathAnimation"];
+    
+    CABasicAnimation* normalPathAnimation = [CABasicAnimation animationWithKeyPath: @"path"];
+    normalPathAnimation.fromValue = (id)biggerPath.CGPath;
+    normalPathAnimation.toValue = (id)normalPath.CGPath;
+    normalPathAnimation.duration = 0.2f;
+    normalPathAnimation.beginTime = biggerPathAnimation.beginTime + biggerPathAnimation.duration;
+    [_bgLayer addAnimation:normalPathAnimation forKey:@"normalPathAnimation"];
+}
+
+- (void)touchDown:(id)sender
+{
+    [self animateBgSmaller];
+}
+
+- (void)touchCancel:(id)sender
+{
+    [self animateBgNormal];
 }
 
 - (void)touchUpInside:(id)sender
@@ -145,29 +196,7 @@
         self.isPaused = !self.isPaused;
         self.isPaused ? [self hidePauseShowPlay] : [self hidePlayShowPause];
         
-        [_bgLayer removeAnimationForKey:@"smallerPathAnimation"];
-        
-        /* pulse bg animation */
-        CGRect bgRect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-        UIBezierPath *normalPath = [UIBezierPath bezierPathWithOvalInRect:bgRect];
-        UIBezierPath *biggerPath = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(bgRect, bgRect.size.width * -0.05f, bgRect.size.height * -0.05f)];
-        
-        _bgLayer.path = normalPath.CGPath; // set the final (destination) value
-        
-        CFTimeInterval beginTime = CACurrentMediaTime();
-        
-        CABasicAnimation* biggerPathAnimation = [CABasicAnimation animationWithKeyPath: @"path"];
-        biggerPathAnimation.toValue = (id)biggerPath.CGPath;
-        biggerPathAnimation.duration = 0.1f;
-        biggerPathAnimation.beginTime = beginTime;
-        [_bgLayer addAnimation:biggerPathAnimation forKey:@"biggerPathAnimation"];
-        
-        CABasicAnimation* normalPathAnimation = [CABasicAnimation animationWithKeyPath: @"path"];
-        normalPathAnimation.fromValue = (id)biggerPath.CGPath;
-        normalPathAnimation.toValue = (id)normalPath.CGPath;
-        normalPathAnimation.duration = 0.2f;
-        normalPathAnimation.beginTime = biggerPathAnimation.beginTime + biggerPathAnimation.duration;
-        [_bgLayer addAnimation:normalPathAnimation forKey:@"normalPathAnimation"];
+        [self animateBgBigger];
     }
 }
 

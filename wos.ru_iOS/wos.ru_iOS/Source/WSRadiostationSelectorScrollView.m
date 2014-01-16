@@ -31,6 +31,8 @@
 
 - (void)addButtonsWithTitles:(NSArray*)titles andColors:(NSArray*)colors andSelectionCallback:(void (^)(WSRadiostationButton *button, NSInteger index))selectionCallback
 {
+    _buttonSelectedCallback = selectionCallback;
+    
     if (_backgroundPatternView) {
         [_backgroundPatternView removeFromSuperview];
     }
@@ -66,17 +68,10 @@
         contentWidth = MAX(contentWidth, buttonFrame.size.width);
         
         /* setup callbacks */
-        typeof(_buttons) __weak weakButtonsArray = _buttons;
-        typeof(_backgroundPatternView.layer.mask) __weak weakPatternViewMask = _backgroundPatternView.layer.mask;
-        
+        typeof(self) __weak weakView = self;
         [button setTouchUpInsideCallback:^(WSRadiostationButton *sender) {
-            if (selectionCallback && weakButtonsArray) {
-                if (weakPatternViewMask) {
-                    [UIView animateWithDuration:0.2f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-                        weakPatternViewMask.frame = sender.frame;
-                    } completion:nil];
-                }
-                selectionCallback(sender, [weakButtonsArray indexOfObject:sender]);
+            if (weakView) {
+                [weakView visuallySelectButton:sender];
             }
         }];
         
@@ -90,8 +85,26 @@
     
     [self addSubview:_backgroundPatternView];
     [self sendSubviewToBack:_backgroundPatternView];
-    
-    NSLog(@"pattern view frame %@", NSStringFromCGRect(_backgroundPatternView.frame));
+}
+
+- (void)visuallySelectButton:(WSRadiostationButton*)button
+{
+    if (self.buttonSelectedCallback && _buttons && _buttons.count && [_buttons indexOfObject:button] != NSNotFound) {
+        if (_backgroundPatternView.layer.mask) {
+            
+            [UIView animateWithDuration:0.2f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+                _backgroundPatternView.layer.mask.frame = button.frame;
+            } completion:nil];
+        }
+        self.buttonSelectedCallback(button, [_buttons indexOfObject:button]);
+    }
+}
+
+- (void)visuallySelectButtonAtIndex:(NSInteger)index
+{
+    if (_buttons.count > index) {
+        [self visuallySelectButton:_buttons[index]];
+    }
 }
 
 /*

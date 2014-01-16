@@ -15,7 +15,8 @@
     UIView *_backgroundPatternView;
     NSMutableArray *_buttons;
 }
-
+@property (nonatomic, copy, readonly) void (^buttonSelectedCallback)(WSRadiostationButton *button, NSInteger index);
 - (void)addButtonsWithTitles:(NSArray*)titles andColors:(NSArray*)colors andSelectionCallback:(void (^)(WSRadiostationButton *button, NSInteger index))selectionCallback;
 
+- (void)visuallySelectButtonAtIndex:(NSInteger)index;
 @end

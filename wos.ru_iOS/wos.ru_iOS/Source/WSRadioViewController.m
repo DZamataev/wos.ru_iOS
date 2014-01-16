@@ -41,16 +41,8 @@
     _radioModel = [[WSRadioModel alloc] init];
     self.audioPlayer = [[AudioPlayer alloc] init];
     
-    typeof(self) __weak weakController = self;
-    
-    [_radioModel loadRadioData:^(WSRadioData *data, NSError *error) {
-        NSLog(@"%@ %@", data, data.stations);
-        if (!error && weakController) {
-            [weakController insertStations:data.stations];
-            [weakController selectedRadiostationAtIndex:0 andPlayIt:NO];
-            [weakController updateNowPlayingInfoWithStation:self.currentStation andStream:self.currentStream];
-        }
-    }];
+    [self loadRadiostations];
+
     self.accentColor = WSRadioViewControllerInitialAccentColor;
     
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
@@ -222,9 +214,26 @@
 
 #pragma mark - Actions
 
+- (void)loadRadiostations {
+    typeof(self) __weak weakController = self;
+    [_radioModel loadRadioData:^(WSRadioData *data, NSError *error) {
+        NSLog(@"Successfully loaded stations: %@ %@", data, data.stations);
+        if (!error && weakController) {
+            [weakController insertStations:data.stations];
+            [weakController selectedRadiostationAtIndex:0 andPlayIt:NO];
+            [weakController updateNowPlayingInfoWithStation:self.currentStation andStream:self.currentStream];
+        }
+        else {
+            CGFloat timeTillRetry = 5.0f;
+            NSLog(@"Error loading radiostations list. Retry in %f.", timeTillRetry);
+            [self performSelector:@selector(loadRadiostations) withObject:nil afterDelay:timeTillRetry];
+        }
+    }];
+}
+
 - (void)remoteControlReceivedWithEvent:(UIEvent *)event
 {
-    NSString *log = @"Remote Control Received With Event: ";
+    NSString *log = @"Remote Control received with event: ";
     NSString *eventName = nil;
     //if it is a remote control event handle it correctly
     if (event.type == UIEventTypeRemoteControl) {
@@ -245,10 +254,12 @@
                 
             case UIEventSubtypeRemoteControlNextTrack:
                 eventName = @"UIEventSubtypeRemoteControlNextTrack";
+                [self playNextStation];
                 break;
                 
             case UIEventSubtypeRemoteControlPreviousTrack:
                 eventName = @"UIEventSubtypeRemoteControlPreviousTrack";
+                [self playPreviousStation];
                 break;
                 
             case UIEventSubtypeRemoteControlStop:
@@ -351,8 +362,37 @@
     [self updateControls];
 }
 
+- (void)playNextStation {
+    if (self.currentStation && _stations.count) {
+        NSInteger index = [_stations indexOfObject:self.currentStation];
+        if (index != NSNotFound) {
+            index += 1;
+            index = index % _stations.count;
+            [self.selector visuallySelectButtonAtIndex:index];
+            [self selectedRadiostationAtIndex:index andPlayIt:YES];
+            [self updateNowPlayingInfoWithStation:self.currentStation andStream:self.currentStream];
+        }
+    }
+}
+
+- (void)playPreviousStation {
+    if (self.currentStation && _stations.count) {
+        NSInteger index = [_stations indexOfObject:self.currentStation];
+        if (index != NSNotFound) {
+            index -= 1;
+            if (index < 0)
+                index = _stations.count - 1;
+            else
+                index = index % _stations.count;
+            [self.selector visuallySelectButtonAtIndex:index];
+            [self selectedRadiostationAtIndex:index andPlayIt:YES];
+            [self updateNowPlayingInfoWithStation:self.currentStation andStream:self.currentStream];
+        }
+    }
+}
+
 - (void)updateControls {
-    switch (self.audioPlayer.state) {
+    switch (self.audioPlayer.state ) {
         case AudioPlayerStatePlaying:
             self.playButton.isPaused = NO;
             break;
