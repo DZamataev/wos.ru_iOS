@@ -159,6 +159,7 @@
     biggerPathAnimation.toValue = (id)biggerPath.CGPath;
     biggerPathAnimation.duration = 0.1f;
     biggerPathAnimation.beginTime = beginTime;
+    biggerPathAnimation.timingFunction = [CAMediaTimingFunction functionWithName:@"easeOut"];
     [_bgLayer addAnimation:biggerPathAnimation forKey:@"biggerPathAnimation"];
     
     CABasicAnimation* normalPathAnimation = [CABasicAnimation animationWithKeyPath: @"path"];
@@ -166,6 +167,7 @@
     normalPathAnimation.toValue = (id)normalPath.CGPath;
     normalPathAnimation.duration = 0.2f;
     normalPathAnimation.beginTime = biggerPathAnimation.beginTime + biggerPathAnimation.duration;
+    biggerPathAnimation.timingFunction = [CAMediaTimingFunction functionWithName:@"easeIn"];
     [_bgLayer addAnimation:normalPathAnimation forKey:@"normalPathAnimation"];
 }
 
@@ -204,7 +206,14 @@
 
 - (void)setAccentColor:(UIColor *)accentColor {
     _accentColor = accentColor;
+    UIColor *oldColor = [UIColor colorWithCGColor:_bgLayer.fillColor];
     _bgLayer.fillColor = accentColor.CGColor;
+    //Animate colorFill
+    CABasicAnimation *fillColorAnimation = [CABasicAnimation animationWithKeyPath:@"fillColor"];
+    fillColorAnimation.duration = 0.15f;
+    fillColorAnimation.fromValue = (id)[oldColor CGColor];
+    fillColorAnimation.toValue = (id)[accentColor CGColor];
+    [_bgLayer addAnimation:fillColorAnimation forKey:@"fillColor"];
 }
 
 - (UIColor*)accentColor {

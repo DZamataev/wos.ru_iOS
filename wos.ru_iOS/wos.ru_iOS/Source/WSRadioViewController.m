@@ -18,6 +18,10 @@
 #import "WSPlayButton.h"
 #import "WSRadiostationSelectorScrollView.h"
 
+#import "WSSleepTimerPickerViewController.h"
+
+NSString * const WSPreferredBitrate_UserDefaultsKey = @"PreferredBitrate";
+NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPickedInterval";
 
 @interface WSRadioViewController ()
 
@@ -40,6 +44,7 @@
     _stations = [NSMutableArray new];
     _radioModel = [[WSRadioModel alloc] init];
     self.audioPlayer = [[AudioPlayer alloc] init];
+    self.audioPlayer.delegate = self;
     
     [self loadRadiostations];
 
@@ -47,10 +52,15 @@
     
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [self becomeFirstResponder];
+    
+    for (WSSleepTimerPickerViewController* sleepTimerPickerVC in self.childViewControllers) {
+        sleepTimerPickerVC.delegate = self;
+    }
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    AVAudioSession *session = [ AVAudioSession sharedInstance ];
+    AVAudioSession *session = [AVAudioSession sharedInstance];
     // Register for Route Change notifications
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(handleRouteChange:)
@@ -65,15 +75,13 @@
                                                  name: AVAudioSessionMediaServicesWereResetNotification
                                                object: session];
     
-
-    
     [super viewWillAppear:animated];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"AVAudioSessionRouteChangeNotification" object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"AVAudioSessionInterruptionNotification" object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"AVAudioSessionMediaServicesWereResetNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionRouteChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionInterruptionNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionMediaServicesWereResetNotification object:nil];
     [super viewDidDisappear:animated];
 }
 
@@ -85,9 +93,9 @@
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"AVAudioSessionRouteChangeNotification" object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"AVAudioSessionInterruptionNotification" object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"AVAudioSessionMediaServicesWereResetNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionRouteChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionInterruptionNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionMediaServicesWereResetNotification object:nil];
     [self resignFirstResponder];
     [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
 }
@@ -106,7 +114,7 @@
 -(void)handleInterruption:(NSNotification*)notification{
     NSInteger reason = 0;
     NSString* reasonStr=@"";
-    if ([notification.name isEqualToString:@"AVAudioSessionInterruptionNotification"]) {
+    if ([notification.name isEqualToString:AVAudioSessionInterruptionNotification]) {
         //Posted when an audio interruption occurs.
         reason = [[[notification userInfo] objectForKey:@" AVAudioSessionInterruptionTypeKey"] integerValue];
         if (reason == AVAudioSessionInterruptionTypeBegan) {
@@ -206,6 +214,7 @@
     _accentColor = accentColor;
     self.playButton.accentColor = _accentColor;
     self.volumeSlider.accentColor = _accentColor;
+    [[[UIApplication sharedApplication] keyWindow] setTintColor:_accentColor];
 }
 
 - (UIColor*)accentColor {
@@ -336,18 +345,25 @@
 
 - (void)findStreamForRadiostation:(WSRStation*)station andPlayIt:(BOOL)shouldPlay
 {
+    // get preffered bitrate from user defaults. It can be changed via Settings.app
+    NSString *preferredBitrateString = [[NSUserDefaults standardUserDefaults] objectForKey:WSPreferredBitrate_UserDefaultsKey];
+    if (preferredBitrateString == nil) preferredBitrateString = @"192";
+    NSInteger preferredBitrateInteger = [preferredBitrateString integerValue];
+    
     // lets pick bitrate from available streams for this radiostation
+    // we test for equality with bitrate saved in settings
     for (WSRStream *stream in station.streams) {
-        // ok 192 is the best for now
-        if (stream.bitrate.integerValue == 192) {
+        
+        if (stream.bitrate.integerValue == preferredBitrateInteger) {
             
             self.currentStream = stream;
             
             [self.audioPlayer stop];
             
             NSURL* url = self.currentStream.url;
-            
+            NSLog(@"Attempt to set url as data source: %@", url);
             AutoRecoveringHttpDataSource *dataSource = [[AutoRecoveringHttpDataSource alloc] initWithHttpDataSource:[[HttpDataSource alloc] initWithURL:url]];
+            dataSource.delegate = self;
             [self.audioPlayer setDataSource:dataSource  withQueueItemId:url];
             
             if (shouldPlay) {
@@ -422,6 +438,59 @@
     [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:nowPlaying];
 }
 
+- (IBAction)toggleSleepTimerOverlayVisibility:(id)sender
+{
+    if (self.sleepTimerViewContainerTopOffsetConstraint.constant != 0) {
+        [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            self.sleepTimerViewContainerTopOffsetConstraint.constant = 0;
+            [self.view layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            
+        }];
+        
+        for (WSSleepTimerPickerViewController* sleepTimerPickerVC in self.childViewControllers) {
+            [sleepTimerPickerVC selectActualItem:self];
+        }
+    }
+    else if (self.sleepTimerViewContainerTopOffsetConstraint.constant == 0) {
+        [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            self.sleepTimerViewContainerTopOffsetConstraint.constant = self.view.bounds.size.height;
+            [self.view layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
+}
+
+- (void)setupSleepTimerWithInterval:(int)minutes {
+    if (self.sleepTimer) [self.sleepTimer invalidate];
+    int fireTime = minutes;
+    self.sleepTimer = [NSTimer scheduledTimerWithTimeInterval:fireTime
+                                                       target:self
+                                                     selector:@selector(sleepTimerTick:)
+                                                     userInfo:nil
+                                                      repeats:NO];
+    [[NSUserDefaults standardUserDefaults] setObject:@(fireTime) forKey:WSSleepTimerPickedInterval_UserDefaultsKey];
+    WSDebugLog(@"Sleep timer setup done. Will fire in %i seconds", fireTime);
+}
+
+- (void)sleepTimerTick:(NSTimer *)timer
+{
+    WSDebugLog(@"Sleep timer fired");
+    [self pauseAudioPlayback];
+    [WSRadioViewController clearSleepTimerPickedIntervalKey];
+}
+
+- (void)disableSleepTimer {
+    if (self.sleepTimer) [self.sleepTimer invalidate];
+    [WSRadioViewController clearSleepTimerPickedIntervalKey];
+}
+
++ (void)clearSleepTimerPickedIntervalKey {
+    
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:WSSleepTimerPickedInterval_UserDefaultsKey];
+}
+
 #pragma mark - WSPlayButtonDelegate protocol implementation
 
 - (BOOL)playButtonShouldPlay:(WSPlayButton*)playButton {
@@ -432,6 +501,65 @@
 - (BOOL)playButtonShouldPause:(WSPlayButton*)playButton {
     [self.audioPlayer pause];
     return YES;
+}
+
+#pragma mark - AudioPlayerDelegate protocol implementation
+
+-(void) audioPlayer:(AudioPlayer*)audioPlayer stateChanged:(AudioPlayerState)state{
+    WSDebugLog();
+}
+
+-(void) audioPlayer:(AudioPlayer*)audioPlayer didEncounterError:(AudioPlayerErrorCode)errorCode{
+    WSDebugLog();
+}
+
+-(void) audioPlayer:(AudioPlayer*)audioPlayer didStartPlayingQueueItemId:(NSObject*)queueItemId{
+    WSDebugLog();
+}
+
+-(void) audioPlayer:(AudioPlayer*)audioPlayer didFinishBufferingSourceWithQueueItemId:(NSObject*)queueItemId{
+    WSDebugLog();
+}
+
+-(void) audioPlayer:(AudioPlayer*)audioPlayer didFinishPlayingQueueItemId:(NSObject*)queueItemId withReason:(AudioPlayerStopReason)stopReason andProgress:(double)progress andDuration:(double)duration{
+    WSDebugLog();
+}
+
+-(void) audioPlayer:(AudioPlayer*)audioPlayer logInfo:(NSString*)line{
+    WSDebugLog();
+}
+
+-(void) audioPlayer:(AudioPlayer*)audioPlayer internalStateChanged:(AudioPlayerInternalState)state{
+    WSDebugLog();
+}
+
+-(void) audioPlayer:(AudioPlayer*)audioPlayer didCancelQueuedItems:(NSArray*)queuedItems{
+    WSDebugLog();
+}
+
+#pragma mark - DataSourceDelegate protocol implementation
+-(void) dataSourceDataAvailable:(DataSource*)dataSource {
+    WSDebugLog();
+}
+
+-(void) dataSourceErrorOccured:(DataSource*)dataSource {
+    WSDebugLog();
+}
+
+-(void) dataSourceEof:(DataSource*)dataSource {
+    WSDebugLog();
+}
+
+#pragma mark - WSSleepTimerPickerDelegate protocol implementation
+- (void)sleepTimerPickerViewController:(WSSleepTimerPickerViewController *)pickerController pickedTimeInterval:(NSNumber *)timeInterval
+{
+    if (timeInterval.intValue > 0) {
+        [self setupSleepTimerWithInterval:timeInterval.intValue];
+    }
+    else {
+        [self disableSleepTimer];
+    }
+    [self performSelector:@selector(toggleSleepTimerOverlayVisibility:) withObject:self afterDelay:0.5f];
 }
 
 #pragma mark - Helpers

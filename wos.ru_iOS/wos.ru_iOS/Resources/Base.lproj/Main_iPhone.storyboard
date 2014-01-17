@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpe-nV-SkX" customClass="WSPlayButton">
-                                <rect key="frame" x="80" y="81" width="160" height="160"/>
+                                <rect key="frame" x="80" y="76" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -78,20 +78,96 @@
                                 <rect key="frame" x="0.0" y="321" width="320" height="247"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hof-LE-i3o">
+                                <rect key="frame" x="260" y="5" width="66" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ws_sleeping_timer_icon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleSleepTimerOverlayVisibility:" destination="21c-LD-ere" eventType="touchUpInside" id="ePP-Dj-Uz4"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vr0-2E-vOs" customClass="ILTranslucentView">
+                                <rect key="frame" x="0.0" y="568" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7F1-w3-rjS">
+                                        <rect key="frame" x="0.0" y="66" width="320" height="502"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="uWE-QD-RFF" kind="embed" id="mFw-DH-vCN"/>
+                                        </connections>
+                                    </containerView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fw5-kg-ufK" userLabel="Header View">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1c-7z-L30">
+                                                <rect key="frame" x="254" y="33" width="66" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="66" id="Ovv-Jd-fsh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Done">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="toggleSleepTimerOverlayVisibility:" destination="21c-LD-ere" eventType="touchUpInside" id="PTx-jp-ijR"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleep Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nM1-79-Uq1">
+                                                <rect key="frame" x="20" y="37" width="280" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="8c3-ja-a3p"/>
+                                            <constraint firstItem="nM1-79-Uq1" firstAttribute="leading" secondItem="Fw5-kg-ufK" secondAttribute="leading" constant="20" symbolic="YES" id="B2x-Ll-7o2"/>
+                                            <constraint firstAttribute="trailing" secondItem="nM1-79-Uq1" secondAttribute="trailing" constant="20" symbolic="YES" id="ILb-Le-6x0"/>
+                                            <constraint firstItem="nM1-79-Uq1" firstAttribute="baseline" secondItem="l1c-7z-L30" secondAttribute="baseline" id="PBR-dE-WrX"/>
+                                            <constraint firstItem="l1c-7z-L30" firstAttribute="top" secondItem="Fw5-kg-ufK" secondAttribute="top" constant="33" id="Ss5-5F-Xha"/>
+                                            <constraint firstItem="nM1-79-Uq1" firstAttribute="top" secondItem="Fw5-kg-ufK" secondAttribute="top" constant="37" id="ogr-ME-lhX"/>
+                                            <constraint firstAttribute="bottom" secondItem="l1c-7z-L30" secondAttribute="bottom" constant="3" id="pLU-yR-hJa"/>
+                                            <constraint firstAttribute="trailing" secondItem="l1c-7z-L30" secondAttribute="trailing" id="tpv-14-z4o"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Fw5-kg-ufK" firstAttribute="top" secondItem="vr0-2E-vOs" secondAttribute="top" id="AhD-MI-EZH"/>
+                                    <constraint firstItem="Fw5-kg-ufK" firstAttribute="leading" secondItem="vr0-2E-vOs" secondAttribute="leading" id="Edg-78-aHG"/>
+                                    <constraint firstAttribute="trailing" secondItem="7F1-w3-rjS" secondAttribute="trailing" id="HJQ-Gb-3NF"/>
+                                    <constraint firstItem="7F1-w3-rjS" firstAttribute="leading" secondItem="vr0-2E-vOs" secondAttribute="leading" id="Owh-lA-5cN"/>
+                                    <constraint firstItem="7F1-w3-rjS" firstAttribute="top" secondItem="Fw5-kg-ufK" secondAttribute="bottom" id="QeA-0l-XG9"/>
+                                    <constraint firstAttribute="bottom" secondItem="7F1-w3-rjS" secondAttribute="bottom" id="SNN-fb-jy4"/>
+                                    <constraint firstAttribute="height" constant="568" id="gv7-Wr-Ef7"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fw5-kg-ufK" secondAttribute="trailing" id="oXB-yx-jJt"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tYa-9H-SHM" secondAttribute="trailing" id="0Qu-yR-pAi"/>
                             <constraint firstItem="g1h-Vc-UGs" firstAttribute="leading" secondItem="T24-Py-dcl" secondAttribute="trailing" constant="3" id="2x3-e0-0xn"/>
-                            <constraint firstItem="g1h-Vc-UGs" firstAttribute="top" secondItem="gpe-nV-SkX" secondAttribute="bottom" constant="26" id="7KZ-4P-Wdc"/>
+                            <constraint firstItem="g1h-Vc-UGs" firstAttribute="top" secondItem="gpe-nV-SkX" secondAttribute="bottom" constant="31" id="7KZ-4P-Wdc"/>
                             <constraint firstItem="g1h-Vc-UGs" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" constant="52" id="DmY-6N-qJl"/>
                             <constraint firstAttribute="trailing" secondItem="gpe-nV-SkX" secondAttribute="trailing" constant="80" id="Em4-HI-Vuc"/>
                             <constraint firstItem="Kab-T3-EUd" firstAttribute="top" secondItem="g1h-Vc-UGs" secondAttribute="bottom" constant="-20" id="GlF-2x-9hO"/>
                             <constraint firstItem="Kab-T3-EUd" firstAttribute="leading" secondItem="g1h-Vc-UGs" secondAttribute="trailing" constant="3" id="IwV-SY-6V0"/>
-                            <constraint firstItem="gpe-nV-SkX" firstAttribute="top" secondItem="pCV-N0-kdX" secondAttribute="bottom" constant="61" id="Iy8-mj-kA7"/>
+                            <constraint firstItem="gpe-nV-SkX" firstAttribute="top" secondItem="pCV-N0-kdX" secondAttribute="bottom" constant="56" id="Iy8-mj-kA7"/>
                             <constraint firstItem="Dy7-gE-o2y" firstAttribute="centerX" secondItem="tYa-9H-SHM" secondAttribute="centerX" id="KGz-hp-LZz"/>
                             <constraint firstAttribute="trailing" secondItem="g1h-Vc-UGs" secondAttribute="trailing" constant="52" id="NDf-tw-6Ca"/>
                             <constraint firstItem="l0a-am-UgR" firstAttribute="top" secondItem="tYa-9H-SHM" secondAttribute="bottom" id="NIf-k4-AVs"/>
+                            <constraint firstItem="vr0-2E-vOs" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" id="e9v-Vf-9nm"/>
+                            <constraint firstAttribute="trailing" secondItem="vr0-2E-vOs" secondAttribute="trailing" id="glo-2d-J40"/>
+                            <constraint firstItem="vr0-2E-vOs" firstAttribute="top" secondItem="qQH-e4-89A" secondAttribute="top" constant="568" id="ihc-7Q-keZ"/>
                             <constraint firstItem="tYa-9H-SHM" firstAttribute="top" secondItem="g1h-Vc-UGs" secondAttribute="bottom" constant="34" id="kYQ-yO-2JW"/>
                             <constraint firstItem="gpe-nV-SkX" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" constant="80" id="ome-Sr-83D"/>
                             <constraint firstItem="T24-Py-dcl" firstAttribute="top" secondItem="g1h-Vc-UGs" secondAttribute="bottom" constant="-20" id="rhl-6n-teG"/>
@@ -104,6 +180,8 @@
                         <outlet property="activityIndicator" destination="Dy7-gE-o2y" id="R31-3n-0yN"/>
                         <outlet property="playButton" destination="gpe-nV-SkX" id="GlZ-oK-mTj"/>
                         <outlet property="selector" destination="tYa-9H-SHM" id="mec-86-S4q"/>
+                        <outlet property="sleepTimerViewContainer" destination="vr0-2E-vOs" id="TvC-4e-n2t"/>
+                        <outlet property="sleepTimerViewContainerTopOffsetConstraint" destination="ihc-7Q-keZ" id="yXx-oh-M6b"/>
                         <outlet property="volumeSlider" destination="g1h-Vc-UGs" id="OP3-rq-pEL"/>
                     </connections>
                 </viewController>
@@ -111,8 +189,169 @@
             </objects>
             <point key="canvasLocation" x="396" y="310"/>
         </scene>
+        <!--Sleep Timer Picker View Controller-->
+        <scene sceneID="Rja-bU-7qt">
+            <objects>
+                <tableViewController id="uWE-QD-RFF" customClass="WSSleepTimerPickerViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wLG-J8-h7g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="502"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="daB-3A-PIx">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="R4z-p5-gbt" style="IBUITableViewCellStyleDefault" id="CEf-H4-19h" customClass="WSSleepTimerSelectionCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CEf-H4-19h" id="47A-DX-Kfi">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Off" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R4z-p5-gbt">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="7kA-bC-SYv" style="IBUITableViewCellStyleDefault" id="LKc-QP-bJr" customClass="WSSleepTimerSelectionCell">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LKc-QP-bJr" id="E17-ef-AcW">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="In 5 Minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7kA-bC-SYv">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="uUe-Do-jjB" style="IBUITableViewCellStyleDefault" id="BKo-2w-yRh" customClass="WSSleepTimerSelectionCell">
+                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BKo-2w-yRh" id="ah3-UI-ZHV">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="In 10 Minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uUe-Do-jjB">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="87Z-os-Nga" style="IBUITableViewCellStyleDefault" id="swZ-A3-dks" customClass="WSSleepTimerSelectionCell">
+                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="swZ-A3-dks" id="CQl-sz-lXw">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="In 15 Minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="87Z-os-Nga">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="GVd-rV-iXL" style="IBUITableViewCellStyleDefault" id="W4K-PH-eXL" customClass="WSSleepTimerSelectionCell">
+                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W4K-PH-eXL" id="ZsA-nB-78e">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="In 30 Minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GVd-rV-iXL">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="sV3-zX-Gsb" style="IBUITableViewCellStyleDefault" id="hHG-6l-gb2" customClass="WSSleepTimerSelectionCell">
+                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hHG-6l-gb2" id="kj1-79-iSj">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="In 45 Minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sV3-zX-Gsb">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="kOM-dH-swp" style="IBUITableViewCellStyleDefault" id="y77-du-frf" customClass="WSSleepTimerSelectionCell">
+                                        <rect key="frame" x="0.0" y="264" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y77-du-frf" id="Yhl-O1-qWD">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="In One Hour" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kOM-dH-swp">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="uWE-QD-RFF" id="Gkz-uU-HED"/>
+                            <outlet property="delegate" destination="uWE-QD-RFF" id="2xi-LJ-trg"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nfb-6a-rjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="805" y="376"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="ws_sleeping_timer_icon.png" width="26" height="22"/>
         <image name="ws_volume_slider_higher_icon.png" width="10" height="8"/>
         <image name="ws_volume_slider_lower_icon.png" width="8" height="7"/>
     </resources>

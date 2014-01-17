@@ -12,7 +12,9 @@
 #import <AutoRecoveringHttpDataSource.h>
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import <ILTranslucentView.h>
 #import "WSPlayButtonDelegate.h"
+#import "WSSleepTimerPickerDelegate.h"
 
 @class WSRadioModel;
 @class WSRadioData;
@@ -24,9 +26,20 @@
 @class WSPlayButton;
 @class WSRadiostationSelectorScrollView;
 
+@class WSSleepTimerViewController;
+
 #define WSRadioViewControllerInitialAccentColor ([[UIColor alloc] initWithRed:240.0f/255.0f green:92.0f/255.0f blue:77.0f/255.0f alpha:1.0f])
 
-@interface WSRadioViewController : UIViewController <WSPlayButtonDelegate>
+extern NSString * const WSPreferredBitrate_UserDefaultsKey;
+extern NSString * const WSSleepTimerPickedInterval_UserDefaultsKey;
+
+#ifdef DEBUG
+#	define WSDebugLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#	define WSDebugLog(...)
+#endif
+
+@interface WSRadioViewController : UIViewController <WSPlayButtonDelegate, AudioPlayerDelegate, DataSourceDelegate, WSSleepTimerPickerDelegate>
 {
     WSRadioModel *_radioModel;
     UIColor *_accentColor;
@@ -43,8 +56,14 @@
 @property (strong, nonatomic, readonly) NSMutableArray *stations;
 @property (strong, nonatomic) WSRStation *currentStation;
 @property (strong, nonatomic) WSRStream *currentStream;
+@property (strong, nonatomic) IBOutlet ILTranslucentView *sleepTimerViewContainer;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *sleepTimerViewContainerTopOffsetConstraint;
+@property (strong, nonatomic) NSTimer *sleepTimer;
 
+- (IBAction)toggleSleepTimerOverlayVisibility:(id)sender;
 - (void)pauseAudioPlayback;
 - (void)resumeAudioPlayback;
 - (void)updateControls;
+
++ (void)clearSleepTimerPickedIntervalKey;
 @end

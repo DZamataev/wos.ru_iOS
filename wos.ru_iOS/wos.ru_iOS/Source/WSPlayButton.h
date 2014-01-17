@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CPAnimationChain.h>
-#import <CPAnimationLink.h>
 
 #import "WSPlayButtonDelegate.h"
 

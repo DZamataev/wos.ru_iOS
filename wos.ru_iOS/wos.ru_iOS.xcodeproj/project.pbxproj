@@ -23,6 +23,9 @@
 		922A0BCC18645B7A00802757 /* WSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BC318645B7A00802757 /* WSAppDelegate.m */; };
 		922A0BCD18645B7A00802757 /* WSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BC518645B7A00802757 /* WSViewController.m */; };
 		922A0BD018645E5400802757 /* AudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BCF18645E5400802757 /* AudioPlayerView.m */; };
+		92AE499818891C13003D5572 /* ws_sleeping_timer_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92AE499718891C13003D5572 /* ws_sleeping_timer_icon@2x.png */; };
+		92AE499E188953F5003D5572 /* WSSleepTimerSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AE499D188953F5003D5572 /* WSSleepTimerSelectionCell.m */; };
+		92AE49A118895440003D5572 /* WSSleepTimerPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AE49A018895440003D5572 /* WSSleepTimerPickerViewController.m */; };
 		92AF39B51887E73C00F74E8B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 92AF39B41887E73C00F74E8B /* Settings.bundle */; };
 		92B1BF09187EC4C20027EAEC /* WSRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B1BF08187EC4C20027EAEC /* WSRadioViewController.m */; };
 		92B1BF0B1880090F0027EAEC /* ws_volume_slider_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF0A1880090F0027EAEC /* ws_volume_slider_bg@2x.png */; };
@@ -80,6 +83,12 @@
 		922A0BC518645B7A00802757 /* WSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSViewController.m; sourceTree = "<group>"; };
 		922A0BCE18645E5400802757 /* AudioPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayerView.h; sourceTree = "<group>"; };
 		922A0BCF18645E5400802757 /* AudioPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerView.m; sourceTree = "<group>"; };
+		92AE499718891C13003D5572 /* ws_sleeping_timer_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ws_sleeping_timer_icon@2x.png"; sourceTree = "<group>"; };
+		92AE499C188953F5003D5572 /* WSSleepTimerSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSSleepTimerSelectionCell.h; sourceTree = "<group>"; };
+		92AE499D188953F5003D5572 /* WSSleepTimerSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSSleepTimerSelectionCell.m; sourceTree = "<group>"; };
+		92AE499F18895440003D5572 /* WSSleepTimerPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSSleepTimerPickerViewController.h; sourceTree = "<group>"; };
+		92AE49A018895440003D5572 /* WSSleepTimerPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSSleepTimerPickerViewController.m; sourceTree = "<group>"; };
+		92AE49A618897562003D5572 /* WSSleepTimerPickerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSSleepTimerPickerDelegate.h; sourceTree = "<group>"; };
 		92AF39B41887E73C00F74E8B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		92B1BF07187EC4C20027EAEC /* WSRadioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRadioViewController.h; sourceTree = "<group>"; };
 		92B1BF08187EC4C20027EAEC /* WSRadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRadioViewController.m; sourceTree = "<group>"; };
@@ -210,6 +219,7 @@
 				92B1BF1C1880409F0027EAEC /* iPhoneIcon_Big.png */,
 				92B1BF1D1880409F0027EAEC /* iPhoneIcon_Medium.png */,
 				92B1BF1E1880409F0027EAEC /* iPhoneIcon_Small.png */,
+				92AE499718891C13003D5572 /* ws_sleeping_timer_icon@2x.png */,
 				92B1BF0A1880090F0027EAEC /* ws_volume_slider_bg@2x.png */,
 				92B1BF1018800E770027EAEC /* ws_volume_slider_higher_icon@2x.png */,
 				92B1BF1118800E770027EAEC /* ws_volume_slider_lower_icon@2x.png */,
@@ -226,6 +236,8 @@
 		922A0BBE18645B7A00802757 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				92AE49A21889545D003D5572 /* Radio */,
+				92AE49A318895464003D5572 /* SleepTimerPicker */,
 				922A0BBF18645B7A00802757 /* main.m */,
 				922A0BC018645B7A00802757 /* wos.ru_iOS-Info.plist */,
 				922A0BC118645B7A00802757 /* wos.ru_iOS-Prefix.pch */,
@@ -235,11 +247,30 @@
 				922A0BC518645B7A00802757 /* WSViewController.m */,
 				922A0BCE18645E5400802757 /* AudioPlayerView.h */,
 				922A0BCF18645E5400802757 /* AudioPlayerView.m */,
-				92C3977618855DAC001E46FA /* Controller */,
-				92C3977518855DA3001E46FA /* View */,
-				92C3977418855D91001E46FA /* Model */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		92AE49A21889545D003D5572 /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+				92C3977418855D91001E46FA /* Model */,
+				92C3977518855DA3001E46FA /* View */,
+				92C3977618855DAC001E46FA /* Controller */,
+			);
+			name = Radio;
+			sourceTree = "<group>";
+		};
+		92AE49A318895464003D5572 /* SleepTimerPicker */ = {
+			isa = PBXGroup;
+			children = (
+				92AE49A618897562003D5572 /* WSSleepTimerPickerDelegate.h */,
+				92AE499F18895440003D5572 /* WSSleepTimerPickerViewController.h */,
+				92AE49A018895440003D5572 /* WSSleepTimerPickerViewController.m */,
+				92AE499C188953F5003D5572 /* WSSleepTimerSelectionCell.h */,
+				92AE499D188953F5003D5572 /* WSSleepTimerSelectionCell.m */,
+			);
+			name = SleepTimerPicker;
 			sourceTree = "<group>";
 		};
 		92C3977418855D91001E46FA /* Model */ = {
@@ -376,6 +407,7 @@
 				92B1BF0B1880090F0027EAEC /* ws_volume_slider_bg@2x.png in Resources */,
 				922A0BC918645B7A00802757 /* Images.xcassets in Resources */,
 				922A0BC818645B7A00802757 /* InfoPlist.strings in Resources */,
+				92AE499818891C13003D5572 /* ws_sleeping_timer_icon@2x.png in Resources */,
 				922A0BC618645B7A00802757 /* Main_iPad.storyboard in Resources */,
 				92B1BF211880409F0027EAEC /* iPhoneIcon_Small.png in Resources */,
 				92C3977318854582001E46FA /* radio.json in Resources */,
@@ -435,8 +467,10 @@
 				92C3978218855E68001E46FA /* WSRColor.m in Sources */,
 				92C3976718853948001E46FA /* WSRadiostationButton.m in Sources */,
 				922A0BCC18645B7A00802757 /* WSAppDelegate.m in Sources */,
+				92AE499E188953F5003D5572 /* WSSleepTimerSelectionCell.m in Sources */,
 				92B1BF09187EC4C20027EAEC /* WSRadioViewController.m in Sources */,
 				922A0BCA18645B7A00802757 /* main.m in Sources */,
+				92AE49A118895440003D5572 /* WSSleepTimerPickerViewController.m in Sources */,
 				92B1BF1918800F360027EAEC /* WSVolumeSlider.m in Sources */,
 				92C3978518856167001E46FA /* WSRadioMapper.m in Sources */,
 				92C3977C18855DD8001E46FA /* WSRStation.m in Sources */,

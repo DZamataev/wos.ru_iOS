@@ -16,7 +16,7 @@
 			<key>Title</key>
 			<string>Bit rate</string>
 			<key>Key</key>
-			<string>PlaybackBitrate</string>
+			<string>PreferredBitrate</string>
 			<key>DefaultValue</key>
 			<string>192</string>
 			<key>Titles</key>
