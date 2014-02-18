@@ -21,8 +21,6 @@
 		922A0BC918645B7A00802757 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 922A0BBD18645B7A00802757 /* Images.xcassets */; };
 		922A0BCA18645B7A00802757 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BBF18645B7A00802757 /* main.m */; };
 		922A0BCC18645B7A00802757 /* WSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BC318645B7A00802757 /* WSAppDelegate.m */; };
-		922A0BCD18645B7A00802757 /* WSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BC518645B7A00802757 /* WSViewController.m */; };
-		922A0BD018645E5400802757 /* AudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BCF18645E5400802757 /* AudioPlayerView.m */; };
 		92AE499818891C13003D5572 /* ws_sleeping_timer_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92AE499718891C13003D5572 /* ws_sleeping_timer_icon@2x.png */; };
 		92AE499E188953F5003D5572 /* WSSleepTimerSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AE499D188953F5003D5572 /* WSSleepTimerSelectionCell.m */; };
 		92AE49A118895440003D5572 /* WSSleepTimerPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AE49A018895440003D5572 /* WSSleepTimerPickerViewController.m */; };
@@ -36,6 +34,9 @@
 		92B1BF1F1880409F0027EAEC /* iPhoneIcon_Big.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF1C1880409F0027EAEC /* iPhoneIcon_Big.png */; };
 		92B1BF201880409F0027EAEC /* iPhoneIcon_Medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF1D1880409F0027EAEC /* iPhoneIcon_Medium.png */; };
 		92B1BF211880409F0027EAEC /* iPhoneIcon_Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF1E1880409F0027EAEC /* iPhoneIcon_Small.png */; };
+		92BAE11618B3A77A00E45DEF /* Packet.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BAE11118B3A77A00E45DEF /* Packet.m */; };
+		92BAE11718B3A77A00E45DEF /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BAE11318B3A77A00E45DEF /* Queue.m */; };
+		92BAE11818B3A77A00E45DEF /* Radio.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BAE11518B3A77A00E45DEF /* Radio.m */; };
 		92C3976718853948001E46FA /* WSRadiostationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C3976618853948001E46FA /* WSRadiostationButton.m */; };
 		92C3976A1885396A001E46FA /* WSRadiostationSelectorScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C397691885396A001E46FA /* WSRadiostationSelectorScrollView.m */; };
 		92C3976C18853CC0001E46FA /* WSRadiostationButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92C3976B18853CC0001E46FA /* WSRadiostationButton.xib */; };
@@ -79,10 +80,6 @@
 		922A0BC118645B7A00802757 /* wos.ru_iOS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "wos.ru_iOS-Prefix.pch"; sourceTree = "<group>"; };
 		922A0BC218645B7A00802757 /* WSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAppDelegate.h; sourceTree = "<group>"; };
 		922A0BC318645B7A00802757 /* WSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAppDelegate.m; sourceTree = "<group>"; };
-		922A0BC418645B7A00802757 /* WSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSViewController.h; sourceTree = "<group>"; };
-		922A0BC518645B7A00802757 /* WSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSViewController.m; sourceTree = "<group>"; };
-		922A0BCE18645E5400802757 /* AudioPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayerView.h; sourceTree = "<group>"; };
-		922A0BCF18645E5400802757 /* AudioPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerView.m; sourceTree = "<group>"; };
 		92AE499718891C13003D5572 /* ws_sleeping_timer_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ws_sleeping_timer_icon@2x.png"; sourceTree = "<group>"; };
 		92AE499C188953F5003D5572 /* WSSleepTimerSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSSleepTimerSelectionCell.h; sourceTree = "<group>"; };
 		92AE499D188953F5003D5572 /* WSSleepTimerSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSSleepTimerSelectionCell.m; sourceTree = "<group>"; };
@@ -102,6 +99,12 @@
 		92B1BF1C1880409F0027EAEC /* iPhoneIcon_Big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneIcon_Big.png; sourceTree = "<group>"; };
 		92B1BF1D1880409F0027EAEC /* iPhoneIcon_Medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneIcon_Medium.png; sourceTree = "<group>"; };
 		92B1BF1E1880409F0027EAEC /* iPhoneIcon_Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneIcon_Small.png; sourceTree = "<group>"; };
+		92BAE11018B3A77A00E45DEF /* Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Packet.h; sourceTree = "<group>"; };
+		92BAE11118B3A77A00E45DEF /* Packet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Packet.m; sourceTree = "<group>"; };
+		92BAE11218B3A77A00E45DEF /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		92BAE11318B3A77A00E45DEF /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Queue.m; sourceTree = "<group>"; };
+		92BAE11418B3A77A00E45DEF /* Radio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Radio.h; sourceTree = "<group>"; };
+		92BAE11518B3A77A00E45DEF /* Radio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Radio.m; sourceTree = "<group>"; };
 		92C3976518853948001E46FA /* WSRadiostationButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRadiostationButton.h; sourceTree = "<group>"; };
 		92C3976618853948001E46FA /* WSRadiostationButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRadiostationButton.m; sourceTree = "<group>"; };
 		92C397681885396A001E46FA /* WSRadiostationSelectorScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRadiostationSelectorScrollView.h; sourceTree = "<group>"; };
@@ -236,32 +239,18 @@
 		922A0BBE18645B7A00802757 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				92AE49A21889545D003D5572 /* Radio */,
-				92AE49A318895464003D5572 /* SleepTimerPicker */,
+				92BAE11918B3A79100E45DEF /* Radio Scene */,
+				92AE49A318895464003D5572 /* SleepTimerPicker Scene */,
 				922A0BBF18645B7A00802757 /* main.m */,
 				922A0BC018645B7A00802757 /* wos.ru_iOS-Info.plist */,
 				922A0BC118645B7A00802757 /* wos.ru_iOS-Prefix.pch */,
 				922A0BC218645B7A00802757 /* WSAppDelegate.h */,
 				922A0BC318645B7A00802757 /* WSAppDelegate.m */,
-				922A0BC418645B7A00802757 /* WSViewController.h */,
-				922A0BC518645B7A00802757 /* WSViewController.m */,
-				922A0BCE18645E5400802757 /* AudioPlayerView.h */,
-				922A0BCF18645E5400802757 /* AudioPlayerView.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
 		};
-		92AE49A21889545D003D5572 /* Radio */ = {
-			isa = PBXGroup;
-			children = (
-				92C3977418855D91001E46FA /* Model */,
-				92C3977518855DA3001E46FA /* View */,
-				92C3977618855DAC001E46FA /* Controller */,
-			);
-			name = Radio;
-			sourceTree = "<group>";
-		};
-		92AE49A318895464003D5572 /* SleepTimerPicker */ = {
+		92AE49A318895464003D5572 /* SleepTimerPicker Scene */ = {
 			isa = PBXGroup;
 			children = (
 				92AE49A618897562003D5572 /* WSSleepTimerPickerDelegate.h */,
@@ -270,7 +259,32 @@
 				92AE499C188953F5003D5572 /* WSSleepTimerSelectionCell.h */,
 				92AE499D188953F5003D5572 /* WSSleepTimerSelectionCell.m */,
 			);
-			name = SleepTimerPicker;
+			name = "SleepTimerPicker Scene";
+			sourceTree = "<group>";
+		};
+		92BAE10F18B3A77A00E45DEF /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+				92BAE11018B3A77A00E45DEF /* Packet.h */,
+				92BAE11118B3A77A00E45DEF /* Packet.m */,
+				92BAE11218B3A77A00E45DEF /* Queue.h */,
+				92BAE11318B3A77A00E45DEF /* Queue.m */,
+				92BAE11418B3A77A00E45DEF /* Radio.h */,
+				92BAE11518B3A77A00E45DEF /* Radio.m */,
+			);
+			name = Radio;
+			path = wos.ru_iOS/Radio;
+			sourceTree = SOURCE_ROOT;
+		};
+		92BAE11918B3A79100E45DEF /* Radio Scene */ = {
+			isa = PBXGroup;
+			children = (
+				92BAE10F18B3A77A00E45DEF /* Radio */,
+				92C3977518855DA3001E46FA /* View */,
+				92C3977618855DAC001E46FA /* Controller */,
+				92C3977418855D91001E46FA /* Model */,
+			);
+			name = "Radio Scene";
 			sourceTree = "<group>";
 		};
 		92C3977418855D91001E46FA /* Model */ = {
@@ -467,19 +481,20 @@
 				92C3978218855E68001E46FA /* WSRColor.m in Sources */,
 				92C3976718853948001E46FA /* WSRadiostationButton.m in Sources */,
 				922A0BCC18645B7A00802757 /* WSAppDelegate.m in Sources */,
+				92BAE11718B3A77A00E45DEF /* Queue.m in Sources */,
 				92AE499E188953F5003D5572 /* WSSleepTimerSelectionCell.m in Sources */,
 				92B1BF09187EC4C20027EAEC /* WSRadioViewController.m in Sources */,
 				922A0BCA18645B7A00802757 /* main.m in Sources */,
+				92BAE11618B3A77A00E45DEF /* Packet.m in Sources */,
 				92AE49A118895440003D5572 /* WSSleepTimerPickerViewController.m in Sources */,
 				92B1BF1918800F360027EAEC /* WSVolumeSlider.m in Sources */,
 				92C3978518856167001E46FA /* WSRadioMapper.m in Sources */,
 				92C3977C18855DD8001E46FA /* WSRStation.m in Sources */,
+				92BAE11818B3A77A00E45DEF /* Radio.m in Sources */,
 				92C3976A1885396A001E46FA /* WSRadiostationSelectorScrollView.m in Sources */,
 				92C3977918855DC8001E46FA /* WSRStream.m in Sources */,
 				92C3977F18855E01001E46FA /* WSRadioData.m in Sources */,
 				92B1BF1618800F1E0027EAEC /* WSPlayButton.m in Sources */,
-				922A0BD018645E5400802757 /* AudioPlayerView.m in Sources */,
-				922A0BCD18645B7A00802757 /* WSViewController.m in Sources */,
 				92C39771188544F6001E46FA /* WSRadioModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
