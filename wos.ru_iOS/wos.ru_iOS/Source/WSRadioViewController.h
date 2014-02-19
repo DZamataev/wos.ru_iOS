@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Radio.h"
+#import <AudioPlayer.h>
+#import <HttpDataSource.h>
+#import <AutoRecoveringHttpDataSource.h>
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <ILTranslucentView.h>
@@ -37,14 +39,13 @@ extern NSString * const WSSleepTimerPickedInterval_UserDefaultsKey;
 #	define WSDebugLog(...)
 #endif
 
-@interface WSRadioViewController : UIViewController <WSPlayButtonDelegate, WSSleepTimerPickerDelegate, RadioDelegate>
+@interface WSRadioViewController : UIViewController <WSPlayButtonDelegate, AudioPlayerDelegate, DataSourceDelegate, WSSleepTimerPickerDelegate>
 {
     WSRadioModel *_radioModel;
     UIColor *_accentColor;
     NSMutableArray *_stations;
 }
-@property (strong, nonatomic) Radio* audioPlayer;
-@property (assign, nonatomic) BOOL isPlaying;
+@property (readwrite, retain) AudioPlayer* audioPlayer;
 
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
@@ -55,7 +56,6 @@ extern NSString * const WSSleepTimerPickedInterval_UserDefaultsKey;
 @property (strong, nonatomic, readonly) NSMutableArray *stations;
 @property (strong, nonatomic) WSRStation *currentStation;
 @property (strong, nonatomic) WSRStream *currentStream;
-@property (strong, nonatomic) NSString *currentSongName;
 @property (strong, nonatomic) IBOutlet ILTranslucentView *sleepTimerViewContainer;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *sleepTimerViewContainerTopOffsetConstraint;
 @property (strong, nonatomic) NSTimer *sleepTimer;

@@ -43,6 +43,8 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     [super viewDidLoad];
     _stations = [NSMutableArray new];
     _radioModel = [[WSRadioModel alloc] init];
+    self.audioPlayer = [[AudioPlayer alloc] init];
+    self.audioPlayer.delegate = self;
     
     [self loadRadiostations];
 
@@ -259,10 +261,10 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
                 
             case UIEventSubtypeRemoteControlTogglePlayPause:
                 eventName = @"UIEventSubtypeRemoteControlTogglePlayPause";
-                if (self.isPlaying) {
+                if (self.audioPlayer.state == AudioPlayerStatePlaying) {
                     [self pauseAudioPlayback];
                 }
-                else {
+                else if (self.audioPlayer.state == AudioPlayerStatePaused) {
                     [self resumeAudioPlayback];
                 }
                 break;
@@ -354,39 +356,33 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
         
         if (stream.bitrate.integerValue == preferredBitrateInteger) {
             
-            [self.audioPlayer updatePlay:NO];
-            [self.audioPlayer stopRadio];
-            self.audioPlayer = nil;
-            
             self.currentStream = stream;
             
+            [self.audioPlayer stop];
+            
+            NSURL* url = self.currentStream.url;
+            NSLog(@"Attempt to set url as data source: %@", url);
+            AutoRecoveringHttpDataSource *dataSource = [[AutoRecoveringHttpDataSource alloc] initWithHttpDataSource:[[HttpDataSource alloc] initWithURL:url]];
+            dataSource.delegate = self;
+            [self.audioPlayer setDataSource:dataSource  withQueueItemId:url];
             
             if (shouldPlay) {
-                [self resumeAudioPlayback];
+                self.playButton.isPaused = NO; // force change the button state
             }
-            
+            else {
+                [self performSelector:@selector(pauseAudioPlayback) withObject:Nil afterDelay:0.1f];
+            }
         }
     }
 }
 
 - (void)pauseAudioPlayback {
-    
-    [self.audioPlayer updatePlay:NO];
-    [self.audioPlayer stopRadio];
-    self.audioPlayer = nil;
-    
-    self.isPlaying = NO;
+    [self.audioPlayer pause];
     [self updateControls];
 }
 
 - (void)resumeAudioPlayback {
-    
-    NSURL* url = self.currentStream.url;
-    NSLog(@"Attempt to set url as data source: %@", url);
-    self.audioPlayer = [[Radio alloc] init:[WSRadioViewController applicationBundleDisplayName]];
-    [self.audioPlayer connect:url.absoluteString withDelegate:self withGain:1.0f];
-    
-    self.isPlaying = YES;
+    [self.audioPlayer resume];
     [self updateControls];
 }
 
@@ -420,34 +416,20 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 }
 
 - (void)updateControls {
-    self.playButton.isPaused = !self.isPlaying;
+    switch (self.audioPlayer.state ) {
+        case AudioPlayerStatePlaying:
+            self.playButton.isPaused = NO;
+            break;
+            
+        default:
+            self.playButton.isPaused = YES;
+            break;
+    }
 }
 
 - (void)updateNowPlayingInfoWithStation:(WSRStation*)station andStream:(WSRStream*)stream {
-    NSString *artist = nil;
-    NSString *title = nil;
-    
-    if (self.currentSongName) {
-        NSArray *components = [self.currentSongName componentsSeparatedByString:@" - "];
-        if (components.count > 1) {
-            artist = components[0];
-            NSMutableString *titleMS = @"".mutableCopy;
-            for (int i = 1; i < components.count; i++) {
-                [titleMS appendString:components[i]];
-            }
-            title = [NSString stringWithString:titleMS];
-        }
-    }
-    else if (self.currentStation.name) {
-        artist = [WSRadioViewController applicationBundleDisplayName];
-        title = self.currentStation.name;
-    }
-    
-    if (!artist) artist = @"";
-    if (!title) title = @"";
-    
-    NSDictionary *nowPlaying = @{MPMediaItemPropertyArtist: artist,
-                                 MPMediaItemPropertyAlbumTitle: title,
+    NSDictionary *nowPlaying = @{MPMediaItemPropertyArtist: [WSRadioViewController applicationBundleDisplayName],
+                                 MPMediaItemPropertyAlbumTitle: station.name,
                                  // MPMediaItemPropertyPlaybackDuration: [NSNumber numberWithDouble:320.0],
                                  // MPNowPlayingInfoPropertyPlaybackRate:@1.0f
                                  //, MPMediaItemPropertyArtwork:[songMedia valueForProperty:MPMediaItemPropertyArtwork]
@@ -482,7 +464,7 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 
 - (void)setupSleepTimerWithInterval:(int)minutes {
     if (self.sleepTimer) [self.sleepTimer invalidate];
-    int fireTime = minutes*60;
+    int fireTime = minutes;
     self.sleepTimer = [NSTimer scheduledTimerWithTimeInterval:fireTime
                                                        target:self
                                                      selector:@selector(sleepTimerTick:)
@@ -509,55 +491,63 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:WSSleepTimerPickedInterval_UserDefaultsKey];
 }
 
-#pragma mark - RadioDelegate protocol implementation
-
-- (void)updateBuffering:(BOOL)value {
-    NSLog(@"delegate update buffering %d", value);
-}
-
-- (void)interruptRadio {
-    NSLog(@"delegate radio interrupted");
-}
-
-- (void)resumeInterruptedRadio {
-    NSLog(@"delegate resume interrupted radio");
-}
-
-- (void)networkChanged {
-    NSLog(@"delegate network changed");
-}
-
-- (void)connectProblem {
-    NSLog(@"delegate connection problem");
-}
-
-- (void)audioUnplugged {
-    NSLog(@"delegate audio unplugged");
-}
-
-- (void)metaTitleUpdated:(NSString *)title {
-    NSLog(@"delegate title updated to %@", title);
-    
-    NSArray *chunks = [title componentsSeparatedByString:@";"];
-    if ([chunks count]) {
-        NSArray *streamTitle = [[chunks objectAtIndex:0] componentsSeparatedByString:@"="];
-        if ([streamTitle count] > 1) {
-            self.currentSongName = [streamTitle objectAtIndex:1];
-            [self updateNowPlayingInfoWithStation:self.currentStation andStream:self.currentStream];
-        }
-    }
-}
-
 #pragma mark - WSPlayButtonDelegate protocol implementation
 
 - (BOOL)playButtonShouldPlay:(WSPlayButton*)playButton {
-    [self resumeAudioPlayback];
-    return NO;
+    [self.audioPlayer resume];
+    return YES;
 }
 
 - (BOOL)playButtonShouldPause:(WSPlayButton*)playButton {
-    [self pauseAudioPlayback];
-    return NO;
+    [self.audioPlayer pause];
+    return YES;
+}
+
+#pragma mark - AudioPlayerDelegate protocol implementation
+
+-(void) audioPlayer:(AudioPlayer*)audioPlayer stateChanged:(AudioPlayerState)state{
+    WSDebugLog();
+}
+
+-(void) audioPlayer:(AudioPlayer*)audioPlayer didEncounterError:(AudioPlayerErrorCode)errorCode{
+    WSDebugLog();
+}
+
+-(void) audioPlayer:(AudioPlayer*)audioPlayer didStartPlayingQueueItemId:(NSObject*)queueItemId{
+    WSDebugLog();
+}
+
+-(void) audioPlayer:(AudioPlayer*)audioPlayer didFinishBufferingSourceWithQueueItemId:(NSObject*)queueItemId{
+    WSDebugLog();
+}
+
+-(void) audioPlayer:(AudioPlayer*)audioPlayer didFinishPlayingQueueItemId:(NSObject*)queueItemId withReason:(AudioPlayerStopReason)stopReason andProgress:(double)progress andDuration:(double)duration{
+    WSDebugLog();
+}
+
+-(void) audioPlayer:(AudioPlayer*)audioPlayer logInfo:(NSString*)line{
+    WSDebugLog();
+}
+
+-(void) audioPlayer:(AudioPlayer*)audioPlayer internalStateChanged:(AudioPlayerInternalState)state{
+    WSDebugLog();
+}
+
+-(void) audioPlayer:(AudioPlayer*)audioPlayer didCancelQueuedItems:(NSArray*)queuedItems{
+    WSDebugLog();
+}
+
+#pragma mark - DataSourceDelegate protocol implementation
+-(void) dataSourceDataAvailable:(DataSource*)dataSource {
+    WSDebugLog();
+}
+
+-(void) dataSourceErrorOccured:(DataSource*)dataSource {
+    WSDebugLog();
+}
+
+-(void) dataSourceEof:(DataSource*)dataSource {
+    WSDebugLog();
 }
 
 #pragma mark - WSSleepTimerPickerDelegate protocol implementation
