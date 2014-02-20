@@ -24,6 +24,13 @@
 		922A0BCD18645B7A00802757 /* WSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BC518645B7A00802757 /* WSViewController.m */; };
 		922A0BD018645E5400802757 /* AudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BCF18645E5400802757 /* AudioPlayerView.m */; };
 		9255271F18B5FB5C006D1191 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9255271E18B5FB5C006D1191 /* CoreData.framework */; };
+		9255272218B60D0E006D1191 /* WSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255272118B60D0E006D1191 /* WSRootViewController.m */; };
+		9255272818B63616006D1191 /* WSFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255272718B63616006D1191 /* WSFeedViewController.m */; };
+		9255272B18B63644006D1191 /* WSFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255272A18B63644006D1191 /* WSFeedTableViewController.m */; };
+		9255274118B643AF006D1191 /* WSFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255274018B643AF006D1191 /* WSFeedCell.m */; };
+		9255274418B643BE006D1191 /* WSFeedHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255274318B643BE006D1191 /* WSFeedHeaderCell.m */; };
+		9255274718B64724006D1191 /* WSFeedLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255274618B64724006D1191 /* WSFeedLoader.m */; };
+		9255274A18B64786006D1191 /* WSFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255274918B64786006D1191 /* WSFeedItem.m */; };
 		92AE499818891C13003D5572 /* ws_sleeping_timer_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92AE499718891C13003D5572 /* ws_sleeping_timer_icon@2x.png */; };
 		92AE499E188953F5003D5572 /* WSSleepTimerSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AE499D188953F5003D5572 /* WSSleepTimerSelectionCell.m */; };
 		92AE49A118895440003D5572 /* WSSleepTimerPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AE49A018895440003D5572 /* WSSleepTimerPickerViewController.m */; };
@@ -85,6 +92,20 @@
 		922A0BCE18645E5400802757 /* AudioPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayerView.h; sourceTree = "<group>"; };
 		922A0BCF18645E5400802757 /* AudioPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerView.m; sourceTree = "<group>"; };
 		9255271E18B5FB5C006D1191 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9255272018B60D0E006D1191 /* WSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRootViewController.h; sourceTree = "<group>"; };
+		9255272118B60D0E006D1191 /* WSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRootViewController.m; sourceTree = "<group>"; };
+		9255272618B63616006D1191 /* WSFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedViewController.h; sourceTree = "<group>"; };
+		9255272718B63616006D1191 /* WSFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedViewController.m; sourceTree = "<group>"; };
+		9255272918B63644006D1191 /* WSFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedTableViewController.h; sourceTree = "<group>"; };
+		9255272A18B63644006D1191 /* WSFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedTableViewController.m; sourceTree = "<group>"; };
+		9255273F18B643AF006D1191 /* WSFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedCell.h; sourceTree = "<group>"; };
+		9255274018B643AF006D1191 /* WSFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedCell.m; sourceTree = "<group>"; };
+		9255274218B643BE006D1191 /* WSFeedHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedHeaderCell.h; sourceTree = "<group>"; };
+		9255274318B643BE006D1191 /* WSFeedHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedHeaderCell.m; sourceTree = "<group>"; };
+		9255274518B64724006D1191 /* WSFeedLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedLoader.h; sourceTree = "<group>"; };
+		9255274618B64724006D1191 /* WSFeedLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedLoader.m; sourceTree = "<group>"; };
+		9255274818B64786006D1191 /* WSFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedItem.h; sourceTree = "<group>"; };
+		9255274918B64786006D1191 /* WSFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedItem.m; sourceTree = "<group>"; };
 		92AE499718891C13003D5572 /* ws_sleeping_timer_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ws_sleeping_timer_icon@2x.png"; sourceTree = "<group>"; };
 		92AE499C188953F5003D5572 /* WSSleepTimerSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSSleepTimerSelectionCell.h; sourceTree = "<group>"; };
 		92AE499D188953F5003D5572 /* WSSleepTimerSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSSleepTimerSelectionCell.m; sourceTree = "<group>"; };
@@ -240,7 +261,10 @@
 		922A0BBE18645B7A00802757 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				92AE49A21889545D003D5572 /* Radio */,
+				9255272018B60D0E006D1191 /* WSRootViewController.h */,
+				9255272118B60D0E006D1191 /* WSRootViewController.m */,
+				9255272C18B6364B006D1191 /* Feed Scene */,
+				92AE49A21889545D003D5572 /* Radio Scene */,
 				92AE49A318895464003D5572 /* SleepTimerPicker */,
 				922A0BBF18645B7A00802757 /* main.m */,
 				922A0BC018645B7A00802757 /* wos.ru_iOS-Info.plist */,
@@ -255,14 +279,57 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
-		92AE49A21889545D003D5572 /* Radio */ = {
+		9255272C18B6364B006D1191 /* Feed Scene */ = {
+			isa = PBXGroup;
+			children = (
+				9255273E18B64390006D1191 /* View */,
+				9255273018B63B66006D1191 /* Model */,
+				9255273118B63B6C006D1191 /* Controller */,
+			);
+			name = "Feed Scene";
+			sourceTree = "<group>";
+		};
+		9255273018B63B66006D1191 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9255274518B64724006D1191 /* WSFeedLoader.h */,
+				9255274618B64724006D1191 /* WSFeedLoader.m */,
+				9255274818B64786006D1191 /* WSFeedItem.h */,
+				9255274918B64786006D1191 /* WSFeedItem.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9255273118B63B6C006D1191 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9255272618B63616006D1191 /* WSFeedViewController.h */,
+				9255272718B63616006D1191 /* WSFeedViewController.m */,
+				9255272918B63644006D1191 /* WSFeedTableViewController.h */,
+				9255272A18B63644006D1191 /* WSFeedTableViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9255273E18B64390006D1191 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9255273F18B643AF006D1191 /* WSFeedCell.h */,
+				9255274018B643AF006D1191 /* WSFeedCell.m */,
+				9255274218B643BE006D1191 /* WSFeedHeaderCell.h */,
+				9255274318B643BE006D1191 /* WSFeedHeaderCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		92AE49A21889545D003D5572 /* Radio Scene */ = {
 			isa = PBXGroup;
 			children = (
 				92C3977418855D91001E46FA /* Model */,
 				92C3977518855DA3001E46FA /* View */,
 				92C3977618855DAC001E46FA /* Controller */,
 			);
-			name = Radio;
+			name = "Radio Scene";
 			sourceTree = "<group>";
 		};
 		92AE49A318895464003D5572 /* SleepTimerPicker */ = {
@@ -472,19 +539,26 @@
 				92C3976718853948001E46FA /* WSRadiostationButton.m in Sources */,
 				922A0BCC18645B7A00802757 /* WSAppDelegate.m in Sources */,
 				92AE499E188953F5003D5572 /* WSSleepTimerSelectionCell.m in Sources */,
+				9255272818B63616006D1191 /* WSFeedViewController.m in Sources */,
 				92B1BF09187EC4C20027EAEC /* WSRadioViewController.m in Sources */,
+				9255274718B64724006D1191 /* WSFeedLoader.m in Sources */,
 				922A0BCA18645B7A00802757 /* main.m in Sources */,
 				92AE49A118895440003D5572 /* WSSleepTimerPickerViewController.m in Sources */,
 				92B1BF1918800F360027EAEC /* WSVolumeSlider.m in Sources */,
 				92C3978518856167001E46FA /* WSRadioMapper.m in Sources */,
 				92C3977C18855DD8001E46FA /* WSRStation.m in Sources */,
+				9255274A18B64786006D1191 /* WSFeedItem.m in Sources */,
 				92C3976A1885396A001E46FA /* WSRadiostationSelectorScrollView.m in Sources */,
 				92C3977918855DC8001E46FA /* WSRStream.m in Sources */,
 				92C3977F18855E01001E46FA /* WSRadioData.m in Sources */,
 				92B1BF1618800F1E0027EAEC /* WSPlayButton.m in Sources */,
 				922A0BD018645E5400802757 /* AudioPlayerView.m in Sources */,
 				922A0BCD18645B7A00802757 /* WSViewController.m in Sources */,
+				9255274118B643AF006D1191 /* WSFeedCell.m in Sources */,
+				9255272218B60D0E006D1191 /* WSRootViewController.m in Sources */,
 				92C39771188544F6001E46FA /* WSRadioModel.m in Sources */,
+				9255274418B643BE006D1191 /* WSFeedHeaderCell.m in Sources */,
+				9255272B18B63644006D1191 /* WSFeedTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
