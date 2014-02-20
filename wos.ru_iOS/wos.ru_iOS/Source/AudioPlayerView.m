@@ -131,7 +131,7 @@
 		return;
 	}
 	
-	if (audioPlayer.state == AudioPlayerStatePaused)
+	if (audioPlayer.state == STKAudioPlayerStatePaused)
 	{
 		[audioPlayer resume];
 	}
@@ -147,11 +147,11 @@
 	{
 		[playButton setTitle:@"Play" forState:UIControlStateNormal];
 	}
-	else if (audioPlayer.state == AudioPlayerStatePaused)
+	else if (audioPlayer.state == STKAudioPlayerStatePaused)
 	{
 		[playButton setTitle:@"Resume" forState:UIControlStateNormal];
 	}
-	else if (audioPlayer.state == AudioPlayerStatePlaying)
+	else if (audioPlayer.state == STKAudioPlayerStatePlaying)
 	{
 		[playButton setTitle:@"Pause" forState:UIControlStateNormal];
 	}
@@ -161,7 +161,7 @@
 	}
 }
 
--(void) setAudioPlayer:(AudioPlayer*)value
+-(void) setAudioPlayer:(STKAudioPlayer*)value
 {
 	if (audioPlayer)
 	{
@@ -174,34 +174,42 @@
 	[self updateControls];
 }
 
--(AudioPlayer*) audioPlayer
+-(STKAudioPlayer*) audioPlayer
 {
 	return audioPlayer;
 }
 
--(void) audioPlayer:(AudioPlayer*)audioPlayer stateChanged:(AudioPlayerState)state
-{
-	[self updateControls];
+#pragma mark - AudioPlayerDelegate protocol implementation
+
+
+/// Raised when an item has started playing
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer didStartPlayingQueueItemId:(NSObject*)queueItemId{
+    [self updateControls];
+}
+/// Raised when an item has finished buffering (may or may not be the currently playing item)
+/// This event may be raised multiple times for the same item if seek is invoked on the player
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer didFinishBufferingSourceWithQueueItemId:(NSObject*)queueItemId{
+    [self updateControls];
+}
+/// Raised when the state of the player has changed
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer stateChanged:(STKAudioPlayerState)state previousState:(STKAudioPlayerState)previousState{
+    [self updateControls];
+}
+/// Raised when an item has finished playing
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer didFinishPlayingQueueItemId:(NSObject*)queueItemId withReason:(STKAudioPlayerStopReason)stopReason andProgress:(double)progress andDuration:(double)duration{
+    [self updateControls];
+}
+/// Raised when an unexpected and possibly unrecoverable error has occured (usually best to recreate the STKAudioPlauyer)
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer unexpectedError:(STKAudioPlayerErrorCode)errorCode{
+    [self updateControls];
 }
 
--(void) audioPlayer:(AudioPlayer*)audioPlayer didEncounterError:(AudioPlayerErrorCode)errorCode
-{
-	[self updateControls];
+/// Optionally implemented to get logging information from the STKAudioPlayer (used internally for debugging)
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer logInfo:(NSString*)line{
+    [self updateControls];
 }
-
--(void) audioPlayer:(AudioPlayer*)audioPlayer didStartPlayingQueueItemId:(NSObject*)queueItemId
-{
-	[self updateControls];
+/// Raised when items queued items are cleared (usually because of a call to play, setDataSource or stop)
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer didCancelQueuedItems:(NSArray*)queuedItems{
+    [self updateControls];
 }
-
--(void) audioPlayer:(AudioPlayer*)audioPlayer didFinishBufferingSourceWithQueueItemId:(NSObject*)queueItemId
-{
-	[self updateControls];
-}
-
--(void) audioPlayer:(AudioPlayer*)audioPlayer didFinishPlayingQueueItemId:(NSObject*)queueItemId withReason:(AudioPlayerStopReason)stopReason andProgress:(double)progress andDuration:(double)duration
-{
-	[self updateControls];
-}
-
 @end

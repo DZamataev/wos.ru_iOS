@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AudioPlayer.h>
-#import <HttpDataSource.h>
-#import <AutoRecoveringHttpDataSource.h>
+#import <STKAudioPlayer.h>
+#import <STKAutoRecoveringHTTPDataSource.h>
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <ILTranslucentView.h>
@@ -39,13 +38,13 @@ extern NSString * const WSSleepTimerPickedInterval_UserDefaultsKey;
 #	define WSDebugLog(...)
 #endif
 
-@interface WSRadioViewController : UIViewController <WSPlayButtonDelegate, AudioPlayerDelegate, DataSourceDelegate, WSSleepTimerPickerDelegate>
+@interface WSRadioViewController : UIViewController <WSPlayButtonDelegate, STKAudioPlayerDelegate, STKDataSourceDelegate, WSSleepTimerPickerDelegate>
 {
     WSRadioModel *_radioModel;
     UIColor *_accentColor;
     NSMutableArray *_stations;
 }
-@property (readwrite, retain) AudioPlayer* audioPlayer;
+@property (readwrite, retain) STKAudioPlayer* audioPlayer;
 
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 

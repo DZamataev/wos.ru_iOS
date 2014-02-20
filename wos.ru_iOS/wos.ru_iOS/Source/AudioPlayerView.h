@@ -33,7 +33,7 @@
  **********************************************************************************/
 
 #import <UIKit/UIKit.h>
-#import "AudioPlayer.h"
+#import <STKAudioPlayer.h>
 
 @class AudioPlayerView;
 
@@ -42,7 +42,7 @@
 -(void) audioPlayerViewPlayFromLocalFileSelected:(AudioPlayerView*)audioPlayerView;
 @end
 
-@interface AudioPlayerView : UIView<AudioPlayerDelegate>
+@interface AudioPlayerView : UIView<STKAudioPlayerDelegate>
 {
 @private
 	NSTimer* timer;
@@ -52,7 +52,7 @@
 	UIButton* playFromLocalFileButton;
 }
 
-@property (readwrite, retain) AudioPlayer* audioPlayer;
+@property (readwrite, retain) STKAudioPlayer* audioPlayer;
 @property (readwrite, unsafe_unretained) id<AudioPlayerViewDelegate> delegate;
 
 @end

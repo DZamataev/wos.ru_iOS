@@ -17,7 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    audioPlayer = [[AudioPlayer alloc] init];
+    audioPlayer = [[STKAudioPlayer alloc] init];
 	AudioPlayerView* audioPlayerView = [[AudioPlayerView alloc] initWithFrame:self.view.frame];
     
 	audioPlayerView.delegate = self;
@@ -39,7 +39,7 @@
 {
 	NSURL* url = [NSURL URLWithString:@"http://archstreet.cc:8000/blue-live192"];
     
-	[audioPlayer setDataSource:[audioPlayer dataSourceFromURL:url] withQueueItemId:url];
+	[audioPlayer setDataSource:[STKAudioPlayer dataSourceFromURL:url] withQueueItemId:url];
 }
 
 -(void) audioPlayerViewPlayFromLocalFileSelected:(AudioPlayerView*)audioPlayerView
@@ -47,7 +47,7 @@
 	NSString * path = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"m4a"];
 	NSURL* url = [NSURL fileURLWithPath:path];
 	
-	[audioPlayer setDataSource:[audioPlayer dataSourceFromURL:url] withQueueItemId:url];
+	[audioPlayer setDataSource:[STKAudioPlayer dataSourceFromURL:url] withQueueItemId:url];
 }
 
 

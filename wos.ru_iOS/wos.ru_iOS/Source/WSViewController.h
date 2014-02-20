@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "AudioPlayerView.h"
-#import <AudioPlayer.h>
+#import <STKAudioPlayer.h>
 
 @interface WSViewController : UIViewController <AudioPlayerViewDelegate>
 {
 @private
-	AudioPlayer* audioPlayer;
+	STKAudioPlayer* audioPlayer;
 }
 @end

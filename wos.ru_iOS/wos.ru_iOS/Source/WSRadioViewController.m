@@ -43,7 +43,7 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     [super viewDidLoad];
     _stations = [NSMutableArray new];
     _radioModel = [[WSRadioModel alloc] init];
-    self.audioPlayer = [[AudioPlayer alloc] init];
+    self.audioPlayer = [[STKAudioPlayer alloc] init];
     self.audioPlayer.delegate = self;
     
     [self loadRadiostations];
@@ -261,10 +261,10 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
                 
             case UIEventSubtypeRemoteControlTogglePlayPause:
                 eventName = @"UIEventSubtypeRemoteControlTogglePlayPause";
-                if (self.audioPlayer.state == AudioPlayerStatePlaying) {
+                if (self.audioPlayer.state == STKAudioPlayerStatePlaying) {
                     [self pauseAudioPlayback];
                 }
-                else if (self.audioPlayer.state == AudioPlayerStatePaused) {
+                else if (self.audioPlayer.state == STKAudioPlayerStatePaused) {
                     [self resumeAudioPlayback];
                 }
                 break;
@@ -362,7 +362,7 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
             
             NSURL* url = self.currentStream.url;
             NSLog(@"Attempt to set url as data source: %@", url);
-            AutoRecoveringHttpDataSource *dataSource = [[AutoRecoveringHttpDataSource alloc] initWithHttpDataSource:[[HttpDataSource alloc] initWithURL:url]];
+            STKAutoRecoveringHTTPDataSource *dataSource = [[STKAutoRecoveringHTTPDataSource alloc] initWithHTTPDataSource:[[STKHTTPDataSource alloc] initWithURL:url]];
             dataSource.delegate = self;
             [self.audioPlayer setDataSource:dataSource  withQueueItemId:url];
             
@@ -417,7 +417,7 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 
 - (void)updateControls {
     switch (self.audioPlayer.state ) {
-        case AudioPlayerStatePlaying:
+        case STKAudioPlayerStatePlaying:
             self.playButton.isPaused = NO;
             break;
             
@@ -505,48 +505,49 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 
 #pragma mark - AudioPlayerDelegate protocol implementation
 
--(void) audioPlayer:(AudioPlayer*)audioPlayer stateChanged:(AudioPlayerState)state{
+
+/// Raised when an item has started playing
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer didStartPlayingQueueItemId:(NSObject*)queueItemId{
+    WSDebugLog();
+}
+/// Raised when an item has finished buffering (may or may not be the currently playing item)
+/// This event may be raised multiple times for the same item if seek is invoked on the player
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer didFinishBufferingSourceWithQueueItemId:(NSObject*)queueItemId{
+    WSDebugLog();
+}
+/// Raised when the state of the player has changed
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer stateChanged:(STKAudioPlayerState)state previousState:(STKAudioPlayerState)previousState{
+    WSDebugLog();
+}
+/// Raised when an item has finished playing
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer didFinishPlayingQueueItemId:(NSObject*)queueItemId withReason:(STKAudioPlayerStopReason)stopReason andProgress:(double)progress andDuration:(double)duration{
+    WSDebugLog();
+}
+/// Raised when an unexpected and possibly unrecoverable error has occured (usually best to recreate the STKAudioPlauyer)
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer unexpectedError:(STKAudioPlayerErrorCode)errorCode{
     WSDebugLog();
 }
 
--(void) audioPlayer:(AudioPlayer*)audioPlayer didEncounterError:(AudioPlayerErrorCode)errorCode{
+/// Optionally implemented to get logging information from the STKAudioPlayer (used internally for debugging)
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer logInfo:(NSString*)line{
+    WSDebugLog();
+}
+/// Raised when items queued items are cleared (usually because of a call to play, setDataSource or stop)
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer didCancelQueuedItems:(NSArray*)queuedItems{
     WSDebugLog();
 }
 
--(void) audioPlayer:(AudioPlayer*)audioPlayer didStartPlayingQueueItemId:(NSObject*)queueItemId{
-    WSDebugLog();
-}
-
--(void) audioPlayer:(AudioPlayer*)audioPlayer didFinishBufferingSourceWithQueueItemId:(NSObject*)queueItemId{
-    WSDebugLog();
-}
-
--(void) audioPlayer:(AudioPlayer*)audioPlayer didFinishPlayingQueueItemId:(NSObject*)queueItemId withReason:(AudioPlayerStopReason)stopReason andProgress:(double)progress andDuration:(double)duration{
-    WSDebugLog();
-}
-
--(void) audioPlayer:(AudioPlayer*)audioPlayer logInfo:(NSString*)line{
-    WSDebugLog();
-}
-
--(void) audioPlayer:(AudioPlayer*)audioPlayer internalStateChanged:(AudioPlayerInternalState)state{
-    WSDebugLog();
-}
-
--(void) audioPlayer:(AudioPlayer*)audioPlayer didCancelQueuedItems:(NSArray*)queuedItems{
-    WSDebugLog();
-}
 
 #pragma mark - DataSourceDelegate protocol implementation
--(void) dataSourceDataAvailable:(DataSource*)dataSource {
+-(void) dataSourceDataAvailable:(STKDataSource*)dataSource {
     WSDebugLog();
 }
 
--(void) dataSourceErrorOccured:(DataSource*)dataSource {
+-(void) dataSourceErrorOccured:(STKDataSource*)dataSource {
     WSDebugLog();
 }
 
--(void) dataSourceEof:(DataSource*)dataSource {
+-(void) dataSourceEof:(STKDataSource*)dataSource {
     WSDebugLog();
 }
 
