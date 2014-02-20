@@ -6,3 +6,6 @@ pod 'Chivy', :git => 'https://github.com/DZamataev/Chivy.git', :branch => 'maste
 pod 'OHAttributedLabel'
 pod 'StreamingKit'
 pod 'ILTranslucentView', :git => 'https://github.com/ivoleko/ILTranslucentView.git', :branch => 'master'
+pod 'RestKit-Syndicate', :git => 'https://github.com/DZamataev/RestKit-Syndicate.git', :branch => 'master'
+pod 'XMLDictionary', :git => 'https://github.com/DZamataev/XMLDictionary.git', :branch => 'master'
+pod 'RKXMLDictionarySerialization', :git => 'https://github.com/DZamataev/RKXMLDictionarySerialization.git', :branch => 'master'

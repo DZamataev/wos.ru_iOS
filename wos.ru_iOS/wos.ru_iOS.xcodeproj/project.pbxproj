@@ -23,6 +23,7 @@
 		922A0BCC18645B7A00802757 /* WSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BC318645B7A00802757 /* WSAppDelegate.m */; };
 		922A0BCD18645B7A00802757 /* WSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BC518645B7A00802757 /* WSViewController.m */; };
 		922A0BD018645E5400802757 /* AudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BCF18645E5400802757 /* AudioPlayerView.m */; };
+		9255271F18B5FB5C006D1191 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9255271E18B5FB5C006D1191 /* CoreData.framework */; };
 		92AE499818891C13003D5572 /* ws_sleeping_timer_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92AE499718891C13003D5572 /* ws_sleeping_timer_icon@2x.png */; };
 		92AE499E188953F5003D5572 /* WSSleepTimerSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AE499D188953F5003D5572 /* WSSleepTimerSelectionCell.m */; };
 		92AE49A118895440003D5572 /* WSSleepTimerPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AE49A018895440003D5572 /* WSSleepTimerPickerViewController.m */; };
@@ -83,6 +84,7 @@
 		922A0BC518645B7A00802757 /* WSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSViewController.m; sourceTree = "<group>"; };
 		922A0BCE18645E5400802757 /* AudioPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayerView.h; sourceTree = "<group>"; };
 		922A0BCF18645E5400802757 /* AudioPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerView.m; sourceTree = "<group>"; };
+		9255271E18B5FB5C006D1191 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		92AE499718891C13003D5572 /* ws_sleeping_timer_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ws_sleeping_timer_icon@2x.png"; sourceTree = "<group>"; };
 		92AE499C188953F5003D5572 /* WSSleepTimerSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSSleepTimerSelectionCell.h; sourceTree = "<group>"; };
 		92AE499D188953F5003D5572 /* WSSleepTimerSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSSleepTimerSelectionCell.m; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9255271F18B5FB5C006D1191 /* CoreData.framework in Frameworks */,
 				92D068AA1886B84000AA75B9 /* AVFoundation.framework in Frameworks */,
 				922A0B8018645B3500802757 /* CoreGraphics.framework in Frameworks */,
 				922A0B8218645B3500802757 /* UIKit.framework in Frameworks */,
@@ -176,6 +179,7 @@
 		922A0B7C18645B3500802757 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9255271E18B5FB5C006D1191 /* CoreData.framework */,
 				92D068A91886B84000AA75B9 /* AVFoundation.framework */,
 				922A0B7D18645B3500802757 /* Foundation.framework */,
 				922A0B7F18645B3500802757 /* CoreGraphics.framework */,

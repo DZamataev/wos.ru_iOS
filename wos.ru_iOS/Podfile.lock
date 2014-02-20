@@ -33,6 +33,10 @@ PODS:
   - OHAttributedLabel (3.5.3)
   - RestKit (0.21.0):
     - RestKit/Core
+  - RestKit-Syndicate (0.1.0):
+    - RestKit-Syndicate/Core
+  - RestKit-Syndicate/Core (0.1.0):
+    - RestKit
   - RestKit/Core (0.21.0):
     - RestKit/CoreData
     - RestKit/Network
@@ -50,12 +54,15 @@ PODS:
   - RestKit/Support (0.21.0):
     - TransitionKit (= 1.1.1)
   - RKValueTransformers (1.0.1)
+  - RKXMLDictionarySerialization (1.0.0):
+    - RestKit
   - SDWebImage (3.5.2):
     - SDWebImage/Core
   - SDWebImage/Core (3.5.2)
   - SOCKit (1.1)
   - StreamingKit (0.1.20)
   - TransitionKit (1.1.1)
+  - XMLDictionary (1.3)
 
 DEPENDENCIES:
   - Chivy (from `https://github.com/DZamataev/Chivy.git`, branch `master`)
@@ -63,8 +70,11 @@ DEPENDENCIES:
   - ILTranslucentView (from `https://github.com/ivoleko/ILTranslucentView.git`, branch `master`)
   - OHAttributedLabel
   - RestKit (= 0.21.0)
+  - RestKit-Syndicate (from `https://github.com/DZamataev/RestKit-Syndicate.git`, branch `master`)
+  - RKXMLDictionarySerialization (from `https://github.com/DZamataev/RKXMLDictionarySerialization.git`, branch `master`)
   - SDWebImage
   - StreamingKit
+  - XMLDictionary (from `https://github.com/DZamataev/XMLDictionary.git`, branch `master`)
 
 EXTERNAL SOURCES:
   Chivy:
@@ -73,6 +83,15 @@ EXTERNAL SOURCES:
   ILTranslucentView:
     :branch: master
     :git: https://github.com/ivoleko/ILTranslucentView.git
+  RestKit-Syndicate:
+    :branch: master
+    :git: https://github.com/DZamataev/RestKit-Syndicate.git
+  RKXMLDictionarySerialization:
+    :branch: master
+    :git: https://github.com/DZamataev/RKXMLDictionarySerialization.git
+  XMLDictionary:
+    :branch: master
+    :git: https://github.com/DZamataev/XMLDictionary.git
 
 SPEC CHECKSUMS:
   AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
@@ -87,10 +106,13 @@ SPEC CHECKSUMS:
   NJKWebViewProgress: 6bb154a993f552a133f2e8aaf2fa7620c438a038
   OHAttributedLabel: 985e4b57eec0dc6add79179ac47ec888b8a914e7
   RestKit: c11a30e7bc73513d9d2c2695672aba7697d24181
+  RestKit-Syndicate: ad35b07f04ae88fb2c3849e851c0f34360104b2a
   RKValueTransformers: 1562d458b9c9d59ce777bfc5982f2e1aef2e9182
+  RKXMLDictionarySerialization: cc1e599a60bee9a92e3f08ce0f883923629d090b
   SDWebImage: fe7ce01ae4e0a884d168f59c9dd82d35baf8429e
   SOCKit: 2f3bc4d07910de12dcc202815e07db68a3802581
   StreamingKit: badbeff663eddc1e23584e7450e06cd31d28c05b
   TransitionKit: d0e3344aac92991395d4c2e72d9c5a8ceeb12910
+  XMLDictionary: 27390d3517062694ccb307a7750250e1b687571d
 
 COCOAPODS: 0.27.1
