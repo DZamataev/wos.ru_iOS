@@ -7,13 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UIImageView+WebCache.h>
+#import <Chivy.h>
 
-@class WSFeedCell, WSFeedHeaderCell;
-@class WSFeedItem, WSFeedLoader;
+@class WSFeedItemView, WSFeedHeaderView;
+@class WSFeedItem, WSFeedGroup, WSFeedLoader;
 
 @interface WSFeedTableViewController : UITableViewController
 {
-    NSMutableArray *_objects; // arrays with objects of class WSFeedItem
+    NSMutableArray *_objects; // arrays with objects of class WSFeedGroup
+    UIImage *_placeholderImage;
+    
+    IBOutlet UIView *_dummiesContainer;
+    WSFeedItemView *_dummyFeedItemView;
 }
 @property (strong, nonatomic) WSFeedLoader *feedLoader;
 @end

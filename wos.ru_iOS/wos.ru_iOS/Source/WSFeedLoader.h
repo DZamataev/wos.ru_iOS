@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <RestKitSyndicate.h>
+#import <RegexKitLite.h>
 
-@class WSFeedItem;
+@class WSFeedItem, WSFeedGroup;
 
 @interface WSFeedLoader : NSObject
 @property (strong, nonatomic) RKSFeedManager *feedManager;

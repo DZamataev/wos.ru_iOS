@@ -8,6 +8,7 @@
 
 #import "WSFeedLoader.h"
 #import "WSFeedItem.h"
+#import "WSFeedGroup.h"
 
 @implementation WSFeedLoader
 - (id)init {
@@ -23,18 +24,17 @@
                      withRootKeyPath:@"rss" andParameters:nil
                   andCompletionBlock:^(RKSFeed *feed, NSError *error, BOOL isOld) {
                       NSMutableArray *groups = [NSMutableArray new];
-                      NSMutableArray *group = [NSMutableArray new];
-                      NSDate *dateCoursor = nil;
+                      WSFeedGroup *group = [WSFeedGroup new];
+                      [groups addObject:group];
+                      NSDate *dayCoursor = nil;
+                      NSCalendar *cal = [NSCalendar currentCalendar];
                       
                       NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-                      [dateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss ZZ"];
+                      [dateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss ZZZ"];
                       [dateFormatter setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
                       
                       NSDateFormatter *userVisibleDateFormatter = [[NSDateFormatter alloc] init];
-                      
-                      [userVisibleDateFormatter setDateStyle:NSDateFormatterShortStyle];
-                      [userVisibleDateFormatter setTimeStyle:NSDateFormatterShortStyle];
-                      
+                      [userVisibleDateFormatter setDateFormat:@"eeee dd MMMM"];
                       
                       if (feed.channels.count > 0) {
                           RKSChannel *channel = feed.channels.firstObject;
@@ -42,9 +42,54 @@
                               
                               NSDate *date = [dateFormatter dateFromString:modelItem.pubDate];
                               NSString *userVisibleDateTimeString = [userVisibleDateFormatter stringFromDate:date];
-                              WSFeedItem *viewItem = [WSFeedItem new];
                               
-                              NSLog(@"parsed date string %@ to date %@ redable date %@", modelItem.pubDate, date, userVisibleDateTimeString);
+                              WSFeedItem *viewItem = [WSFeedItem new];
+                              UIView *view = [UIView new];
+                              [view setExclusiveTouch:YES];
+                              // place item into group. Groups are made by days.
+                              if (date) {
+                                  if (!dayCoursor) dayCoursor = date;
+                                  if (!group.date) group.date = date;
+                                  if (!group.userVisibleDate) group.userVisibleDate = userVisibleDateTimeString;
+                                  
+                                  NSDateComponents *comps1 = [cal components:(NSMonthCalendarUnit| NSYearCalendarUnit | NSDayCalendarUnit)
+                                                                    fromDate:date];
+                                  NSDateComponents *comps2 = [cal components:(NSMonthCalendarUnit| NSYearCalendarUnit | NSDayCalendarUnit)
+                                                                    fromDate:dayCoursor];
+                                  BOOL sameDay = ([comps1 day] == [comps2 day]
+                                                  && [comps1 month] == [comps2 month]
+                                                  && [comps1 year] == [comps2 year]);
+                                  if (sameDay) {
+                                  }
+                                  else {
+                                      dayCoursor = date;
+                                      
+                                      group = [WSFeedGroup new];
+                                      [groups addObject:group];
+                                  }
+                              }
+                              viewItem.title = modelItem.title;
+                              
+                              NSString *snippetStr = modelItem.descriptionAttribute;
+                              
+                              // detect image url inside description
+                              NSDataDetector* detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeLink error:nil];
+                              [detector enumerateMatchesInString:snippetStr
+                                                         options:kNilOptions
+                                                           range:NSMakeRange(0, [snippetStr length])
+                                                      usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+                                                          viewItem.imageUrl = result.URL;
+                                                      }];
+                              // strip image tag from description
+                              NSString *HTMLTagsRegex = @"<[^>]*>"; //regex to remove any html tag
+                              NSString *snippetWithoutHTML = [snippetStr stringByReplacingOccurrencesOfRegex:HTMLTagsRegex withString:@""];
+                              viewItem.snippet = snippetWithoutHTML;
+                              
+                              viewItem.visibleDate = userVisibleDateTimeString;
+                              viewItem.linkUrl = [NSURL URLWithString:modelItem.link];
+                              
+                              [group.items addObject:viewItem];
+//                              NSLog(@"parsed date string %@ to date %@ readable date %@", modelItem.pubDate, date, userVisibleDateTimeString);
                           }
                       }
                       

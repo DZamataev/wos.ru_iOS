@@ -1,5 +1,5 @@
 //
-//  WSFeedCell.h
+//  WSFeedHeaderCell.h
 //  wos.ru_iOS
 //
 //  Created by Denis Zamataev on 2/20/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WSFeedCell : UITableViewCell
-
+@interface WSFeedHeaderView : UIView
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @end

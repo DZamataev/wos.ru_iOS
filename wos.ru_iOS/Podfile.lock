@@ -31,6 +31,7 @@ PODS:
   - NJKWebViewProgress/Core (0.2.1)
   - NJKWebViewProgress/ProgressView (0.2.1)
   - OHAttributedLabel (3.5.3)
+  - RegexKitLite (4.0)
   - RestKit (0.21.0):
     - RestKit/Core
   - RestKit-Syndicate (0.1.0):
@@ -69,6 +70,7 @@ DEPENDENCIES:
   - CocoaLumberjack
   - ILTranslucentView (from `https://github.com/ivoleko/ILTranslucentView.git`, branch `master`)
   - OHAttributedLabel
+  - RegexKitLite
   - RestKit (= 0.21.0)
   - RestKit-Syndicate (from `https://github.com/DZamataev/RestKit-Syndicate.git`, branch `master`)
   - RKXMLDictionarySerialization (from `https://github.com/DZamataev/RKXMLDictionarySerialization.git`, branch `master`)
@@ -105,6 +107,7 @@ SPEC CHECKSUMS:
   ISO8601DateFormatterValueTransformer: d0af1f50a9df42db72d7418db31938b8473e0af8
   NJKWebViewProgress: 6bb154a993f552a133f2e8aaf2fa7620c438a038
   OHAttributedLabel: 985e4b57eec0dc6add79179ac47ec888b8a914e7
+  RegexKitLite: f7af7b4d2b675cd2ec9a4abab6aad6ae1f6499c0
   RestKit: c11a30e7bc73513d9d2c2695672aba7697d24181
   RestKit-Syndicate: ad35b07f04ae88fb2c3849e851c0f34360104b2a
   RKValueTransformers: 1562d458b9c9d59ce777bfc5982f2e1aef2e9182

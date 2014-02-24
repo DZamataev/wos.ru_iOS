@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface WSFeedItem : NSObject
-
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *snippet;
+@property (strong, nonatomic) NSURL *imageUrl;
+@property (strong, nonatomic) NSString *visibleDate;
+@property (strong, nonatomic) NSURL *linkUrl;
 @end
