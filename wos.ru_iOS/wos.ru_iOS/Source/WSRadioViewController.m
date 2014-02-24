@@ -120,6 +120,13 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 }
 
 #pragma mark - Notification handlers
+
+- (void)handleRemoteControlReceivedWithEventNotification:(NSNotification *)notification
+{
+    UIEvent *event = notification.userInfo[@"event"];
+    [self remoteControlReceivedWithEvent:event];
+}
+
 -(void)handleMediaServicesWereReset:(NSNotification*)notification{
     //  If the media server resets for any reason, handle this notification to reconfigure audio or do any housekeeping, if necessary
     //    • No userInfo dictionary for this notification
@@ -128,7 +135,6 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     NSLog(@"handleMediaServicesWereReset: %@ ",[notification name]);
     [self pauseAudioPlayback];
 }
-
 
 -(void)handleInterruption:(NSNotification*)notification{
     NSInteger reason = 0;
@@ -397,12 +403,12 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 
 - (void)pauseAudioPlayback {
     [self.audioPlayer pause];
-    [self updateControls];
+    [self performSelector:@selector(updateControls) withObject:nil afterDelay:0.1f];
 }
 
 - (void)resumeAudioPlayback {
     [self.audioPlayer resume];
-    [self updateControls];
+    [self performSelector:@selector(updateControls) withObject:nil afterDelay:0.1f];
 }
 
 - (void)playNextStation {
@@ -508,13 +514,6 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 + (void)clearSleepTimerPickedIntervalKey {
     
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:WSSleepTimerPickedInterval_UserDefaultsKey];
-}
-
-#pragma mark - Handling notifications
-- (void)handleRemoteControlReceivedWithEventNotification:(NSNotification *)notification
-{
-    UIEvent *event = notification.userInfo[@"event"];
-    [self remoteControlReceivedWithEvent:event];
 }
 
 #pragma mark - WSPlayButtonDelegate protocol implementation
