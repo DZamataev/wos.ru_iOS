@@ -11,4 +11,6 @@
 @interface WSRootViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *scrollableContentWidthConstraint;
+
++ (UIColor*)wosGrayColor;
 @end

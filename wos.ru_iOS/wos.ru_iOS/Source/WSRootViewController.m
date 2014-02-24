@@ -43,4 +43,8 @@
 {
     return UIStatusBarStyleLightContent;
 }
+
++ (UIColor *)wosGrayColor {
+    return [UIColor colorWithRed:(60.0/255.0) green:(60.0/255.0) blue:(60.0/255.0) alpha:(60.0/255.0)];
+}
 @end

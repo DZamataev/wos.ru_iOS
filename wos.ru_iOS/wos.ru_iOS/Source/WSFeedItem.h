@@ -14,4 +14,5 @@
 @property (strong, nonatomic) NSURL *imageUrl;
 @property (strong, nonatomic) NSString *visibleDate;
 @property (strong, nonatomic) NSURL *linkUrl;
+@property (assign, nonatomic) BOOL isSeen;
 @end

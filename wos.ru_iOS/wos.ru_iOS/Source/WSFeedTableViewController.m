@@ -45,8 +45,7 @@
     
     _placeholderImage = [WSFeedTableViewController imageWithColor:[UIColor darkGrayColor] andSize:_dummyFeedItemView.imageView.frame.size];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.clearsSelectionOnViewWillAppear = YES;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -103,6 +102,7 @@
     view.titleLabel.text = item.title;
     view.descriptionLabel.text = item.snippet;
     view.dateLabel.text = item.visibleDate;
+    [view setLightGradientHidden:!item.isSeen animated:NO];
     [view.imageView setImageWithURL:item.imageUrl placeholderImage:_placeholderImage];
 }
 
@@ -139,9 +139,12 @@
     WSFeedGroup *group = _objects[indexPath.section];
     WSFeedItem *item = group.items[indexPath.row];
     
+    item.isSeen = YES;
+    
     if (item.linkUrl) {
         [CHWebBrowserViewController openWebBrowserControllerModallyWithHomeUrl:item.linkUrl animated:YES];
     }
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 /*
