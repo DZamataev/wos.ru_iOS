@@ -9,6 +9,7 @@
 #import "WSAppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
 #import "WSRadioViewController.h"
+#import "WSWindow.h"
 
 @implementation WSAppDelegate
 
@@ -18,6 +19,19 @@
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     [[AVAudioSession sharedInstance] setActive: YES error: nil];
     return YES;
+}
+
+- (WSWindow *)window
+{
+    static WSWindow *customWindow = nil;
+    if (!customWindow) customWindow = [[WSWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    return customWindow;
+}
+
+- (void)logtick
+{
+    NSLog(@"log: window is f.r. %i", (int)[UIApplication sharedApplication].keyWindow.isFirstResponder);
+    [self performSelector:@selector(logtick) withObject:nil afterDelay:1.0f];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

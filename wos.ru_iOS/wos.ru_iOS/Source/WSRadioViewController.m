@@ -51,7 +51,6 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     self.accentColor = WSRadioViewControllerInitialAccentColor;
     
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-    [self becomeFirstResponder];
     
     for (WSSleepTimerPickerViewController* sleepTimerPickerVC in self.childViewControllers) {
         sleepTimerPickerVC.delegate = self;
@@ -59,7 +58,40 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     
 }
 
+- (void)logtick
+{
+    NSLog(@"log: radio is f.r. %i", (int)self.isFirstResponder);
+//    if (!self.isFirstResponder) {
+//        [self becomeFirstResponder];
+//    }
+    [self performSelector:@selector(logtick) withObject:nil afterDelay:1.0f];
+}
+
 -(void)viewWillAppear:(BOOL)animated{
+    [self resignListeningNotifications];
+    [super viewWillAppear:animated];
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [self unsignListeningNotifications];
+    [super viewDidDisappear:animated];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    [self unsignListeningNotifications];
+    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+    [self resignFirstResponder];
+}
+
+- (void)resignListeningNotifications
+{
     AVAudioSession *session = [AVAudioSession sharedInstance];
     // Register for Route Change notifications
     [[NSNotificationCenter defaultCenter] addObserver: self
@@ -75,29 +107,16 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
                                                  name: AVAudioSessionMediaServicesWereResetNotification
                                                object: session];
     
-    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleRemoteControlReceivedWithEventNotification:)
+                                                 name:@"WSRemoteControlRecevedWithEventNotification" object:nil];
 }
 
--(void)viewDidDisappear:(BOOL)animated{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionRouteChangeNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionInterruptionNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionMediaServicesWereResetNotification object:nil];
-    [super viewDidDisappear:animated];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)dealloc
+- (void)unsignListeningNotifications
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionRouteChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionInterruptionNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionMediaServicesWereResetNotification object:nil];
-    [self resignFirstResponder];
-    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"WSRemoteControlRecevedWithEventNotification" object:nil];
 }
 
 #pragma mark - Notification handlers
@@ -489,6 +508,13 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 + (void)clearSleepTimerPickedIntervalKey {
     
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:WSSleepTimerPickedInterval_UserDefaultsKey];
+}
+
+#pragma mark - Handling notifications
+- (void)handleRemoteControlReceivedWithEventNotification:(NSNotification *)notification
+{
+    UIEvent *event = notification.userInfo[@"event"];
+    [self remoteControlReceivedWithEvent:event];
 }
 
 #pragma mark - WSPlayButtonDelegate protocol implementation

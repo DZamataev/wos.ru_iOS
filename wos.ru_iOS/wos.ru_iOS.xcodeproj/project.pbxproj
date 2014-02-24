@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		920B717C18BB58CA00D57321 /* WSBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B717B18BB58CA00D57321 /* WSBaseTableViewCell.m */; };
+		920B717F18BB739200D57321 /* WSWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B717E18BB739200D57321 /* WSWindow.m */; };
 		922A0B7E18645B3500802757 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922A0B7D18645B3500802757 /* Foundation.framework */; };
 		922A0B8018645B3500802757 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922A0B7F18645B3500802757 /* CoreGraphics.framework */; };
 		922A0B8218645B3500802757 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922A0B8118645B3500802757 /* UIKit.framework */; };
@@ -73,6 +74,8 @@
 /* Begin PBXFileReference section */
 		920B717A18BB58CA00D57321 /* WSBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBaseTableViewCell.h; sourceTree = "<group>"; };
 		920B717B18BB58CA00D57321 /* WSBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBaseTableViewCell.m; sourceTree = "<group>"; };
+		920B717D18BB739200D57321 /* WSWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSWindow.h; sourceTree = "<group>"; };
+		920B717E18BB739200D57321 /* WSWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWindow.m; sourceTree = "<group>"; };
 		922A0B7A18645B3500802757 /* wos.ru_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wos.ru_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		922A0B7D18645B3500802757 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		922A0B7F18645B3500802757 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -281,6 +284,8 @@
 				922A0BC518645B7A00802757 /* WSViewController.m */,
 				922A0BCE18645E5400802757 /* AudioPlayerView.h */,
 				922A0BCF18645E5400802757 /* AudioPlayerView.m */,
+				920B717D18BB739200D57321 /* WSWindow.h */,
+				920B717E18BB739200D57321 /* WSWindow.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -550,6 +555,7 @@
 				92C3976718853948001E46FA /* WSRadiostationButton.m in Sources */,
 				922A0BCC18645B7A00802757 /* WSAppDelegate.m in Sources */,
 				92AE499E188953F5003D5572 /* WSSleepTimerSelectionCell.m in Sources */,
+				920B717F18BB739200D57321 /* WSWindow.m in Sources */,
 				9255272818B63616006D1191 /* WSFeedViewController.m in Sources */,
 				92B1BF09187EC4C20027EAEC /* WSRadioViewController.m in Sources */,
 				9255274718B64724006D1191 /* WSFeedLoader.m in Sources */,
