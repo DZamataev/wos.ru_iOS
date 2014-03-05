@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dfK-uK-O56" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="580" height="568"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="640" height="568"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ki-LZ-dIB">
@@ -37,7 +37,7 @@
                                                 </connections>
                                             </containerView>
                                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaN-Il-CzK">
-                                                <rect key="frame" x="260" y="0.0" width="320" height="568"/>
+                                                <rect key="frame" x="320" y="0.0" width="320" height="568"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -54,7 +54,7 @@
                                             <constraint firstItem="eaN-Il-CzK" firstAttribute="top" secondItem="dfK-uK-O56" secondAttribute="top" id="9f4-Oa-iBZ"/>
                                             <constraint firstAttribute="bottom" secondItem="eaN-Il-CzK" secondAttribute="bottom" id="Mjs-7l-49M"/>
                                             <constraint firstItem="3ki-LZ-dIB" firstAttribute="leading" secondItem="dfK-uK-O56" secondAttribute="leading" id="TwW-hz-VnH"/>
-                                            <constraint firstAttribute="width" constant="580" id="bsY-eW-qab"/>
+                                            <constraint firstAttribute="width" constant="640" id="bsY-eW-qab"/>
                                             <constraint firstItem="3ki-LZ-dIB" firstAttribute="top" secondItem="dfK-uK-O56" secondAttribute="top" id="g7Q-IJ-hBl"/>
                                             <constraint firstAttribute="trailing" secondItem="eaN-Il-CzK" secondAttribute="trailing" id="kZe-Ub-nEk"/>
                                             <constraint firstAttribute="bottom" secondItem="3ki-LZ-dIB" secondAttribute="bottom" id="zTM-DY-nvd"/>

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <UIImageView+WebCache.h>
-#import <Chivy.h>
 
 @class WSFeedItemView, WSFeedHeaderView;
 @class WSFeedItem, WSFeedGroup, WSFeedLoader;

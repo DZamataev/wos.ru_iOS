@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Chivy.h>
+
+@class WSRadioViewController;
 
 @interface WSRootViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;

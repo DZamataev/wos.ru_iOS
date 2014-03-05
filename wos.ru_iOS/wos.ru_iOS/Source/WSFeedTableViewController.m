@@ -142,7 +142,7 @@
     item.isSeen = YES;
     
     if (item.linkUrl) {
-        [CHWebBrowserViewController openWebBrowserControllerModallyWithHomeUrl:item.linkUrl animated:YES];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"WSOpenUrlNotification" object:Nil userInfo:@{@"url":item.linkUrl}];
     }
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }

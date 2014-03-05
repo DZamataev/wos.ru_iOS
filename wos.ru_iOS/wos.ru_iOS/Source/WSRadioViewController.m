@@ -56,6 +56,9 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
         sleepTimerPickerVC.delegate = self;
     }
     
+    [self becomeFirstResponder];
+    
+    [self performSelector:@selector(logtick) withObject:nil afterDelay:1.0f];
 }
 
 - (void)logtick
