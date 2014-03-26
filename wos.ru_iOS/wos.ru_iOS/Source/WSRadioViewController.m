@@ -520,7 +520,7 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:WSSleepTimerPickedInterval_UserDefaultsKey];
 }
 
-- (void)slideToFeed
+- (IBAction)slideToFeed:(id)sender
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WSSlideToFeed" object:nil userInfo:nil];
 }

@@ -159,6 +159,9 @@
                                 <state key="normal" image="ws-slideout-button.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="slideToFeed:" destination="21c-LD-ere" eventType="touchUpInside" id="fDx-DL-hIr"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vr0-2E-vOs" customClass="ILTranslucentView">
                                 <rect key="frame" x="0.0" y="568" width="320" height="568"/>
