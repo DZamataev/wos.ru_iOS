@@ -23,7 +23,7 @@ NSString * const WSRawGithubRadioJSONPath = @"/DZamataev/wos.ru_iOS/master/radio
 }
 
 - (void)setup {
-    self.rawGithubObjectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"https://raw2.github.com"]];
+    self.rawGithubObjectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"https://raw.github.com"]];
     [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"text/plain"];
 
     
