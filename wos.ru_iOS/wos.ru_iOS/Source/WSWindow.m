@@ -34,7 +34,9 @@
 
 - (void)remoteControlReceivedWithEvent:(UIEvent *)event
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"WSRemoteControlRecevedWithEventNotification" object:nil userInfo:@{ @"event" : event }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"WSRemoteControlRecevedWithEventNotification"
+                                                        object:nil
+                                                      userInfo:@{ @"event" : event }];
 }
 
 @end

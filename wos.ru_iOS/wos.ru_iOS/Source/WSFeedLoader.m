@@ -70,10 +70,11 @@
                               }
                               viewItem.title = modelItem.title;
                               
-                              NSString *snippetStr = modelItem.descriptionAttribute;
+                              NSString *snippetStr = modelItem.descriptionAttribute ? modelItem.descriptionAttribute : @"";
                               
                               // detect image url inside description
                               NSDataDetector* detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeLink error:nil];
+                              
                               [detector enumerateMatchesInString:snippetStr
                                                          options:kNilOptions
                                                            range:NSMakeRange(0, [snippetStr length])

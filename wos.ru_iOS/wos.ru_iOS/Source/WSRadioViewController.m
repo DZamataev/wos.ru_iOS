@@ -19,6 +19,7 @@
 #import "WSRadiostationSelectorScrollView.h"
 
 #import "WSSleepTimerPickerViewController.h"
+#import "WSRootViewController.h"
 
 NSString * const WSPreferredBitrate_UserDefaultsKey = @"PreferredBitrate";
 NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPickedInterval";
@@ -41,6 +42,8 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self resignListeningNotifications];
+    
     _stations = [NSMutableArray new];
     _radioModel = [[WSRadioModel alloc] init];
     self.audioPlayer = [[STKAudioPlayer alloc] init];
@@ -48,7 +51,7 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     
     [self loadRadiostations];
 
-    self.accentColor = WSRadioViewControllerInitialAccentColor;
+    self.accentColor = [WSRootViewController defaultAccentColor];
     
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     
@@ -58,7 +61,7 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     
     [self becomeFirstResponder];
     
-    [self performSelector:@selector(logtick) withObject:nil afterDelay:1.0f];
+//    [self performSelector:@selector(logtick) withObject:nil afterDelay:1.0f];
 }
 
 - (void)logtick
@@ -71,12 +74,10 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self resignListeningNotifications];
     [super viewWillAppear:animated];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
-    [self unsignListeningNotifications];
     [super viewDidDisappear:animated];
 }
 
@@ -517,6 +518,11 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 + (void)clearSleepTimerPickedIntervalKey {
     
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:WSSleepTimerPickedInterval_UserDefaultsKey];
+}
+
+- (void)slideToFeed
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"WSSlideToFeed" object:nil userInfo:nil];
 }
 
 #pragma mark - WSPlayButtonDelegate protocol implementation

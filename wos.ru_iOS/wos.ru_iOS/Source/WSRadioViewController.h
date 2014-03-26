@@ -26,8 +26,7 @@
 @class WSRadiostationSelectorScrollView;
 
 @class WSSleepTimerViewController;
-
-#define WSRadioViewControllerInitialAccentColor ([[UIColor alloc] initWithRed:240.0f/255.0f green:92.0f/255.0f blue:77.0f/255.0f alpha:1.0f])
+@class WSRootViewController;
 
 extern NSString * const WSPreferredBitrate_UserDefaultsKey;
 extern NSString * const WSSleepTimerPickedInterval_UserDefaultsKey;

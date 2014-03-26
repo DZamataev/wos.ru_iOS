@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Chivy.h>
 
 @class WSRadioViewController;
+@class WSWebBrowserViewController;
 
 @interface WSRootViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *scrollableContentWidthConstraint;
 
 + (UIColor*)wosGrayColor;
++ (UIColor*)defaultAccentColor;
 @end

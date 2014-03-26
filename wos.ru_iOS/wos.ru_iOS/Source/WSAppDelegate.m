@@ -9,6 +9,7 @@
 #import "WSAppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
 #import "WSRadioViewController.h"
+#import "WSRootViewController.h"
 #import "WSWindow.h"
 
 @implementation WSAppDelegate
@@ -24,7 +25,11 @@
 - (WSWindow *)window
 {
     static WSWindow *customWindow = nil;
-    if (!customWindow) customWindow = [[WSWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    if (!customWindow) {
+        customWindow = [[WSWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        customWindow.tintColor = [WSRootViewController defaultAccentColor];
+    }
+    
     return customWindow;
 }
 
