@@ -10,5 +10,3 @@ pod 'RestKit-Syndicate', :git => 'https://github.com/DZamataev/RestKit-Syndicate
 pod 'XMLDictionary', :git => 'https://github.com/DZamataev/XMLDictionary.git', :branch => 'master'
 pod 'RKXMLDictionarySerialization', :git => 'https://github.com/DZamataev/RKXMLDictionarySerialization.git', :branch => 'master'
 pod 'RegexKitLite'
-pod 'TestFlightSDK'
-pod 'TestFlightFeedback'
