@@ -1,0 +1,51 @@
+
+/* Class = "IBUILabel"; text = "Snippet"; ObjectID = "1yk-MT-dkN"; */
+"1yk-MT-dkN.text" = "Snippet";
+
+/* Class = "IBUILabel"; text = "In 5 Minutes"; ObjectID = "7kA-bC-SYv"; */
+"7kA-bC-SYv.text" = "Через 5 минут";
+
+/* Class = "IBUILabel"; text = "In 15 Minutes"; ObjectID = "87Z-os-Nga"; */
+"87Z-os-Nga.text" = "Через 15 минут";
+
+/* Class = "IBUILabel"; text = "In 30 Minutes"; ObjectID = "GVd-rV-iXL"; */
+"GVd-rV-iXL.text" = "Через 30 минут";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "QUN-JO-gZD"; */
+"QUN-JO-gZD.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Off"; ObjectID = "R4z-p5-gbt"; */
+"R4z-p5-gbt.text" = "Выкл.";
+
+/* Class = "IBUILabel"; text = "Header title"; ObjectID = "RsN-Vh-nfy"; */
+"RsN-Vh-nfy.text" = "Header title";
+
+/* Class = "IBUISegmentedControl"; T0z-4i-lKX.segmentTitles[0] = "News"; ObjectID = "T0z-4i-lKX"; */
+"T0z-4i-lKX.segmentTitles[0]" = "Новости";
+
+/* Class = "IBUISegmentedControl"; T0z-4i-lKX.segmentTitles[1] = "Mixes"; ObjectID = "T0z-4i-lKX"; */
+"T0z-4i-lKX.segmentTitles[1]" = "События";
+
+/* Class = "IBUISegmentedControl"; T0z-4i-lKX.segmentTitles[2] = "Articles"; ObjectID = "T0z-4i-lKX"; */
+"T0z-4i-lKX.segmentTitles[2]" = "Статьи";
+
+/* Class = "IBUILabel"; text = "Snippet"; ObjectID = "b0a-Tc-xj0"; */
+"b0a-Tc-xj0.text" = "Snippet";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "g24-Py-QZ1"; */
+"g24-Py-QZ1.text" = "Title";
+
+/* Class = "IBUILabel"; text = "In One Hour"; ObjectID = "kOM-dH-swp"; */
+"kOM-dH-swp.text" = "Через час";
+
+/* Class = "IBUIButton"; normalTitle = "Done"; ObjectID = "l1c-7z-L30"; */
+"l1c-7z-L30.normalTitle" = "Готово";
+
+/* Class = "IBUILabel"; text = "Sleep Timer"; ObjectID = "nM1-79-Uq1"; */
+"nM1-79-Uq1.text" = "Таймер сна";
+
+/* Class = "IBUILabel"; text = "In 45 Minutes"; ObjectID = "sV3-zX-Gsb"; */
+"sV3-zX-Gsb.text" = "Через 45 минут";
+
+/* Class = "IBUILabel"; text = "In 10 Minutes"; ObjectID = "uUe-Do-jjB"; */
+"uUe-Do-jjB.text" = "Через 10 минут";

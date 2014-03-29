@@ -8,6 +8,8 @@
 
 #import "WSAppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
+#import <TestFlight.h>
+#import <TestFlight+OpenFeedback.h>
 #import "WSRadioViewController.h"
 #import "WSRootViewController.h"
 #import "WSWindow.h"
@@ -19,6 +21,8 @@
     // Override point for customization after application launch.
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     [[AVAudioSession sharedInstance] setActive: YES error: nil];
+    [TestFlight takeOff:@"18cc4e77-9421-403e-9996-be607d5488d1"];
+    [TestFlight of_enableOpenFeedbackOnShake];
     return YES;
 }
 

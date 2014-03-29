@@ -449,7 +449,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="News"/>
-                                    <segment title="Mixes"/>
+                                    <segment title="Events"/>
                                     <segment title="Articles"/>
                                 </segments>
                             </segmentedControl>

@@ -44,9 +44,6 @@
 		92B1BF1318800E770027EAEC /* ws_volume_slider_lower_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF1118800E770027EAEC /* ws_volume_slider_lower_icon@2x.png */; };
 		92B1BF1618800F1E0027EAEC /* WSPlayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B1BF1518800F1E0027EAEC /* WSPlayButton.m */; };
 		92B1BF1918800F360027EAEC /* WSVolumeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B1BF1818800F360027EAEC /* WSVolumeSlider.m */; };
-		92B1BF1F1880409F0027EAEC /* iPhoneIcon_Big.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF1C1880409F0027EAEC /* iPhoneIcon_Big.png */; };
-		92B1BF201880409F0027EAEC /* iPhoneIcon_Medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF1D1880409F0027EAEC /* iPhoneIcon_Medium.png */; };
-		92B1BF211880409F0027EAEC /* iPhoneIcon_Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF1E1880409F0027EAEC /* iPhoneIcon_Small.png */; };
 		92C3976718853948001E46FA /* WSRadiostationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C3976618853948001E46FA /* WSRadiostationButton.m */; };
 		92C3976A1885396A001E46FA /* WSRadiostationSelectorScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C397691885396A001E46FA /* WSRadiostationSelectorScrollView.m */; };
 		92C3976C18853CC0001E46FA /* WSRadiostationButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92C3976B18853CC0001E46FA /* WSRadiostationButton.xib */; };
@@ -82,6 +79,10 @@
 		920B717B18BB58CA00D57321 /* WSBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBaseTableViewCell.m; sourceTree = "<group>"; };
 		920B717D18BB739200D57321 /* WSWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSWindow.h; sourceTree = "<group>"; };
 		920B717E18BB739200D57321 /* WSWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWindow.m; sourceTree = "<group>"; };
+		9212051618E6D6E100902A55 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPad.strings; sourceTree = "<group>"; };
+		9212051718E6D6E100902A55 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		9212051818E6D6E100902A55 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9212051918E6D6E100902A55 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		922A0B7A18645B3500802757 /* wos.ru_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wos.ru_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		922A0B7D18645B3500802757 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		922A0B7F18645B3500802757 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -137,9 +138,6 @@
 		92B1BF1518800F1E0027EAEC /* WSPlayButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPlayButton.m; sourceTree = "<group>"; };
 		92B1BF1718800F360027EAEC /* WSVolumeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSVolumeSlider.h; sourceTree = "<group>"; };
 		92B1BF1818800F360027EAEC /* WSVolumeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSVolumeSlider.m; sourceTree = "<group>"; };
-		92B1BF1C1880409F0027EAEC /* iPhoneIcon_Big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneIcon_Big.png; sourceTree = "<group>"; };
-		92B1BF1D1880409F0027EAEC /* iPhoneIcon_Medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneIcon_Medium.png; sourceTree = "<group>"; };
-		92B1BF1E1880409F0027EAEC /* iPhoneIcon_Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneIcon_Small.png; sourceTree = "<group>"; };
 		92C3976518853948001E46FA /* WSRadiostationButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRadiostationButton.h; sourceTree = "<group>"; };
 		92C3976618853948001E46FA /* WSRadiostationButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRadiostationButton.m; sourceTree = "<group>"; };
 		92C397681885396A001E46FA /* WSRadiostationSelectorScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRadiostationSelectorScrollView.h; sourceTree = "<group>"; };
@@ -269,9 +267,6 @@
 			children = (
 				92E8F45318E371D9000437A4 /* WSWebBrowserViewController_iPad.xib */,
 				92E8F45418E371D9000437A4 /* WSWebBrowserViewController_iPhone.xib */,
-				92B1BF1C1880409F0027EAEC /* iPhoneIcon_Big.png */,
-				92B1BF1D1880409F0027EAEC /* iPhoneIcon_Medium.png */,
-				92B1BF1E1880409F0027EAEC /* iPhoneIcon_Small.png */,
 				92E8F45718E37A4B000437A4 /* ws-slideout-button.png */,
 				92AE499718891C13003D5572 /* ws_sleeping_timer_icon@2x.png */,
 				92B1BF0A1880090F0027EAEC /* ws_volume_slider_bg@2x.png */,
@@ -490,6 +485,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 922A0B7118645B3500802757;
 			productRefGroup = 922A0B7B18645B3500802757 /* Products */;
@@ -513,16 +509,13 @@
 				92E8F45818E37A4B000437A4 /* ws-slideout-button.png in Resources */,
 				92E8F45618E371D9000437A4 /* WSWebBrowserViewController_iPhone.xib in Resources */,
 				92B1BF1218800E770027EAEC /* ws_volume_slider_higher_icon@2x.png in Resources */,
-				92B1BF1F1880409F0027EAEC /* iPhoneIcon_Big.png in Resources */,
 				92B1BF0B1880090F0027EAEC /* ws_volume_slider_bg@2x.png in Resources */,
 				922A0BC918645B7A00802757 /* Images.xcassets in Resources */,
 				922A0BC818645B7A00802757 /* InfoPlist.strings in Resources */,
 				92AE499818891C13003D5572 /* ws_sleeping_timer_icon@2x.png in Resources */,
 				922A0BC618645B7A00802757 /* Main_iPad.storyboard in Resources */,
-				92B1BF211880409F0027EAEC /* iPhoneIcon_Small.png in Resources */,
 				92C3977318854582001E46FA /* radio.json in Resources */,
 				92B1BF1318800E770027EAEC /* ws_volume_slider_lower_icon@2x.png in Resources */,
-				92B1BF201880409F0027EAEC /* iPhoneIcon_Medium.png in Resources */,
 				92E8F45518E371D9000437A4 /* WSWebBrowserViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,6 +622,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				922A0BA918645B3600802757 /* en */,
+				9212051918E6D6E100902A55 /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -637,6 +631,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				922A0BB818645B7A00802757 /* Base */,
+				9212051618E6D6E100902A55 /* ru */,
 			);
 			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
@@ -645,6 +640,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				922A0BBA18645B7A00802757 /* Base */,
+				9212051718E6D6E100902A55 /* ru */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -653,6 +649,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				922A0BBC18645B7A00802757 /* en */,
+				9212051818E6D6E100902A55 /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -736,6 +733,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B178CA820DAF4716A1063D6A /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -744,6 +742,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/wos.ru_iOS/Source/wos.ru_iOS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -752,6 +751,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B178CA820DAF4716A1063D6A /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -760,6 +760,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/wos.ru_iOS/Source/wos.ru_iOS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

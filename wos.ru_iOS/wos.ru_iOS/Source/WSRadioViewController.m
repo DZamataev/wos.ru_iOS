@@ -493,7 +493,7 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 
 - (void)setupSleepTimerWithInterval:(int)minutes {
     if (self.sleepTimer) [self.sleepTimer invalidate];
-    int fireTime = minutes;
+    int fireTime = minutes*60;
     self.sleepTimer = [NSTimer scheduledTimerWithTimeInterval:fireTime
                                                        target:self
                                                      selector:@selector(sleepTimerTick:)
