@@ -11,6 +11,8 @@
 #import "WSRadioMapper.h"
 
 NSString * const WSRawGithubRadioJSONPath = @"/DZamataev/wos.ru_iOS/master/radio.json";
+NSString * const WSWWWDomain = @"http://w-o-s.ru";
+NSString * const WSStreamsJSONPath = @"/api/streams";
 
 @implementation WSRadioModel
 
@@ -23,8 +25,8 @@ NSString * const WSRawGithubRadioJSONPath = @"/DZamataev/wos.ru_iOS/master/radio
 }
 
 - (void)setup {
-    self.rawGithubObjectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"https://raw.github.com"]];
-    [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"text/plain"];
+    self.rawGithubObjectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:WSWWWDomain]];
+    [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"text/html"];
 
     
     
@@ -32,7 +34,7 @@ NSString * const WSRawGithubRadioJSONPath = @"/DZamataev/wos.ru_iOS/master/radio
     
     RKResponseDescriptor *radioResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:radioMapping
                                                                                                  method:RKRequestMethodGET
-                                                                                            pathPattern:WSRawGithubRadioJSONPath
+                                                                                            pathPattern:WSStreamsJSONPath
                                                                                                 keyPath:Nil
                                                                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     
@@ -41,7 +43,7 @@ NSString * const WSRawGithubRadioJSONPath = @"/DZamataev/wos.ru_iOS/master/radio
 
 - (void)loadRadioData:(void (^)(WSRadioData* data, NSError *error))completionBlock
 {
-    [self.rawGithubObjectManager getObjectsAtPath:WSRawGithubRadioJSONPath
+    [self.rawGithubObjectManager getObjectsAtPath:WSStreamsJSONPath
                                        parameters:nil
                                           success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                               if (completionBlock) {

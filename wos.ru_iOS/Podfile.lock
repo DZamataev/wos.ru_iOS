@@ -19,9 +19,9 @@ PODS:
   - CocoaLumberjack/Core (1.8.1)
   - CocoaLumberjack/Extensions (1.8.1):
     - CocoaLumberjack/Core
-  - DKNavbarBackButton (0.1.3):
+  - DKNavbarBackButton (0.1.4):
     - DKNavbarBackButton/core
-  - DKNavbarBackButton/core (0.1.3)
+  - DKNavbarBackButton/core (0.1.4)
   - ILTranslucentView (0.0.1)
   - ISO8601DateFormatterValueTransformer (0.5.0):
     - RKValueTransformers (~> 1.0.0)
@@ -61,7 +61,7 @@ PODS:
     - SDWebImage/Core
   - SDWebImage/Core (3.6)
   - SOCKit (1.1)
-  - StreamingKit (0.1.20)
+  - StreamingKit (0.1.22)
   - TransitionKit (1.1.1)
   - XMLDictionary (1.3)
 
@@ -102,20 +102,20 @@ SPEC CHECKSUMS:
   AutoScrollLabel: 4978b57536512a3ebf4705b1b5618354bcf4ac84
   Chivy: e92938970f750d0c2ec47b745c25b2b4ffff6282
   CocoaLumberjack: 020378ec400d658923bf5887178394f65f052c90
-  DKNavbarBackButton: 84dee6ef963ca2b8eab39602eaf1320a6747be2f
+  DKNavbarBackButton: f8302431f4fd2bfbb31ab4075247524d07a889df
   ILTranslucentView: e749bfe8f9659b122c0b384a6533feb9850ce32a
   ISO8601DateFormatterValueTransformer: d0af1f50a9df42db72d7418db31938b8473e0af8
   NJKWebViewProgress: 4f905b9ab7eb91525dc899cacebd2941a6d4553b
   OHAttributedLabel: 985e4b57eec0dc6add79179ac47ec888b8a914e7
-  RegexKitLite: f7af7b4d2b675cd2ec9a4abab6aad6ae1f6499c0
+  RegexKitLite: b16f029b518614394438e17b7d1df8bfa1e5a81e
   RestKit: c11a30e7bc73513d9d2c2695672aba7697d24181
   RestKit-Syndicate: ad35b07f04ae88fb2c3849e851c0f34360104b2a
   RKValueTransformers: 1562d458b9c9d59ce777bfc5982f2e1aef2e9182
   RKXMLDictionarySerialization: cc1e599a60bee9a92e3f08ce0f883923629d090b
   SDWebImage: 7eb273e54ca8a2e506ad9bd5e80c35b2a4d7c95e
-  SOCKit: 2f3bc4d07910de12dcc202815e07db68a3802581
-  StreamingKit: badbeff663eddc1e23584e7450e06cd31d28c05b
+  SOCKit: 8871d058926a6c6cc144f0c5eee82c5d0ec274a3
+  StreamingKit: c6c52c41dfabaf132de8b54b8ddb1acfb67844ad
   TransitionKit: d0e3344aac92991395d4c2e72d9c5a8ceeb12910
   XMLDictionary: 27390d3517062694ccb307a7750250e1b687571d
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.31.1

@@ -13,6 +13,8 @@
 @class WSRadioMapper;
 
 extern NSString * const WSRawGithubRadioJSONPath;
+extern NSString * const WSWWWDomain;
+extern NSString * const WSStreamsJSONPath;
 
 @interface WSRadioModel : NSObject
 @property (strong, nonatomic) RKObjectManager *rawGithubObjectManager;
