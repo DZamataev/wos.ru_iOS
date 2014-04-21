@@ -62,7 +62,7 @@ NSString *const WSMaterialsPath = @"/api/materials";
 {
     RKObjectMapping *materialMapping = [RKObjectMapping mappingForClass:[WSMaterial class]];
     [materialMapping addAttributeMappingsFromDictionary:@{
-                                                          @"date.__text" : @"date",
+                                                          @"date.__text" : @"dateStr",
                                                           @"id.__text" : @"identifier",
                                                           @"type.__text" : @"typeStr",
                                                           @"subtype.__text" : @"subtypeStr",
@@ -74,6 +74,7 @@ NSString *const WSMaterialsPath = @"/api/materials";
                                                           @"comments_count.__text" : @"commentsCountNum",
                                                           @"best.__text" : @"bestStr"
                                                           }];
+    [materialMapping addAttributeMappingsFromDictionary:@{@"date.__text" : @"date"}];
     
     return materialMapping;
 
@@ -95,9 +96,9 @@ NSString *const WSMaterialsPath = @"/api/materials";
     [self.objectManager getObjectsAtPath:WSGithubMaterialsPath
                               parameters:nil
                                  success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                     WSMaterialsCollection *materialsCollection = mappingResult.firstObject;
-                                     [materialsCollection processMaterials];
-                                     completionBlock(materialsCollection, nil);
+                                     self.materialsCollection = mappingResult.firstObject;
+                                     [self.materialsCollection processMaterials];
+                                     completionBlock(self.materialsCollection, nil);
                                  }
                                  failure:^(RKObjectRequestOperation *operation, NSError *error) {
                                      completionBlock(nil, error);

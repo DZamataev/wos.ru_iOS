@@ -25,6 +25,7 @@
 
 @interface WSMaterial : NSObject
 @property NSDate *date;
+@property NSString *dateStr;
 @property NSNumber *identifier;
 @property NSString *typeStr;
 @property NSString *subtypeStr;

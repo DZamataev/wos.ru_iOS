@@ -25,6 +25,7 @@
 		922A0BCC18645B7A00802757 /* WSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BC318645B7A00802757 /* WSAppDelegate.m */; };
 		922A0BCD18645B7A00802757 /* WSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BC518645B7A00802757 /* WSViewController.m */; };
 		922A0BD018645E5400802757 /* AudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BCF18645E5400802757 /* AudioPlayerView.m */; };
+		9230117819059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9230117719059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.m */; };
 		9255271F18B5FB5C006D1191 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9255271E18B5FB5C006D1191 /* CoreData.framework */; };
 		9255272218B60D0E006D1191 /* WSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255272118B60D0E006D1191 /* WSRootViewController.m */; };
 		9255272818B63616006D1191 /* WSFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255272718B63616006D1191 /* WSFeedViewController.m */; };
@@ -113,6 +114,8 @@
 		922A0BC518645B7A00802757 /* WSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSViewController.m; sourceTree = "<group>"; };
 		922A0BCE18645E5400802757 /* AudioPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayerView.h; sourceTree = "<group>"; };
 		922A0BCF18645E5400802757 /* AudioPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerView.m; sourceTree = "<group>"; };
+		9230117619059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMicroMaterialsCollectionViewController.h; path = Source/WSMicroMaterialsCollectionViewController.h; sourceTree = "<group>"; };
+		9230117719059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSMicroMaterialsCollectionViewController.m; path = Source/WSMicroMaterialsCollectionViewController.m; sourceTree = "<group>"; };
 		9255271E18B5FB5C006D1191 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9255272018B60D0E006D1191 /* WSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRootViewController.h; sourceTree = "<group>"; };
 		9255272118B60D0E006D1191 /* WSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRootViewController.m; sourceTree = "<group>"; };
@@ -396,6 +399,8 @@
 				929ABF0219056BBF00F7BF5D /* WSMaterialsViewController.m */,
 				925778AB19058219002A1B3C /* WSMaterialsTableViewController.h */,
 				925778AC19058219002A1B3C /* WSMaterialsTableViewController.m */,
+				9230117619059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.h */,
+				9230117719059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -647,6 +652,7 @@
 				92B1BF1918800F360027EAEC /* WSVolumeSlider.m in Sources */,
 				92C3978518856167001E46FA /* WSRadioMapper.m in Sources */,
 				92C3977C18855DD8001E46FA /* WSRStation.m in Sources */,
+				9230117819059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.m in Sources */,
 				9255274A18B64786006D1191 /* WSFeedItem.m in Sources */,
 				92C3976A1885396A001E46FA /* WSRadiostationSelectorScrollView.m in Sources */,
 				925778AD19058219002A1B3C /* WSMaterialsTableViewController.m in Sources */,

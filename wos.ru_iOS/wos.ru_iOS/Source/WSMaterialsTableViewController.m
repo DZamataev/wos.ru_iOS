@@ -32,6 +32,13 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [_dummyViewsContainer.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[WSFeedItemView class]]) {
+            _dummyItemView = obj;
+        }
+    }];
+
     self.materialsModel = [WSMaterialsModel new];
     [self loadMaterials];
 }
@@ -48,23 +55,71 @@
     [self.materialsModel loadMaterialsWithCompletion:^(WSMaterialsCollection *materialsCollection, NSError *error) {
         NSLog(@"%@", materialsCollection.materials);
         NSLog(@"%i", materialsCollection.microMaterials.count);
+        [self.tableView reloadData];
     }];
+}
+
+- (void)setValuesInItemView:(WSFeedItemView*)view fromMaterial:(WSMaterial*)item
+{
+    view.titleLabel.text = item.title;
+    view.descriptionLabel.text = item.lead;
+    view.dateLabel.text = item.dateStr;
+    [view.imageView setImageWithURL:[NSURL URLWithString:item.pictureStr] placeholderImage:nil];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return 2 + self.materialsModel.materialsCollection.otherMaterials.count;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell;
+    if (indexPath.row == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"BestCell" forIndexPath:indexPath];
+    }
+    else if (indexPath.row == 1) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"MicroCell" forIndexPath:indexPath];
+    }
+    else {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"ItemCell" forIndexPath:indexPath];
+        int index = indexPath.row - 2;
+        WSMaterial *item = self.materialsModel.materialsCollection.otherMaterials[index];
+        WSFeedItemView *view = (WSFeedItemView*)[cell viewWithTag:1];
+        [self setValuesInItemView:view fromMaterial:item];
+    }
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat result = 44.0f;
+    if (indexPath.row == 0) {
+        result = 110.0f +
+        (int)(tableView.separatorStyle != UITableViewCellSeparatorStyleNone);
+    
+    }
+    else if (indexPath.row == 1) {
+        result = 200.0f +
+        (int)(tableView.separatorStyle != UITableViewCellSeparatorStyleNone);
+    }
+    else {
+        int index = indexPath.row - 2;
+        WSMaterial *item = self.materialsModel.materialsCollection.otherMaterials[index];
+        [self setValuesInItemView:_dummyItemView fromMaterial:item];
+        [_dummyItemView setNeedsLayout];
+        [_dummyItemView layoutIfNeeded];
+        result = _dummyItemView.bounds.size.height +
+        (int)(tableView.separatorStyle != UITableViewCellSeparatorStyleNone); // height of the cell should obey selected separator style
+    }
+    return result;
 }
 
 /*

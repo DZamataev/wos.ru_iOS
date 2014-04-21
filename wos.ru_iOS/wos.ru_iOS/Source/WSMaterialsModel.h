@@ -25,4 +25,5 @@ FOUNDATION_EXPORT NSString *const WSMaterialsPath;
 - (void)configure;
 - (void)loadMaterialsWithCompletion:(void (^)(WSMaterialsCollection *materialsCollection, NSError *error))completionBlock;
 @property WSMaterialsObjectManager *objectManager;
+@property WSMaterialsCollection *materialsCollection;
 @end
