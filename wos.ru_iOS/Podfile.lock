@@ -1,5 +1,5 @@
 PODS:
-  - AFNetworking (1.3.3)
+  - AFNetworking (1.3.4)
   - ARChromeActivity (1.0.1)
   - ARSafariActivity (0.0.1)
   - AutoScrollLabel (0.2.1)
@@ -32,28 +32,28 @@ PODS:
   - NJKWebViewProgress/ProgressView (0.2.2)
   - OHAttributedLabel (3.5.3)
   - RegexKitLite (4.0)
-  - RestKit (0.21.0):
+  - RestKit (0.22.0):
     - RestKit/Core
   - RestKit-Syndicate (0.1.0):
     - RestKit-Syndicate/Core
   - RestKit-Syndicate/Core (0.1.0):
     - RestKit
-  - RestKit/Core (0.21.0):
+  - RestKit/Core (0.22.0):
     - RestKit/CoreData
     - RestKit/Network
     - RestKit/ObjectMapping
-  - RestKit/CoreData (0.21.0)
-  - RestKit/Network (0.21.0):
+  - RestKit/CoreData (0.22.0)
+  - RestKit/Network (0.22.0):
     - AFNetworking (~> 1.3.0)
     - RestKit/ObjectMapping
     - RestKit/Support
     - SOCKit
-  - RestKit/ObjectMapping (0.21.0):
+  - RestKit/ObjectMapping (0.22.0):
     - ISO8601DateFormatterValueTransformer (~> 0.5.0)
     - RestKit/Support
-    - RKValueTransformers (~> 1.0.0)
-  - RestKit/Support (0.21.0):
-    - TransitionKit (= 1.1.1)
+    - RKValueTransformers (~> 1.0.1)
+  - RestKit/Support (0.22.0):
+    - TransitionKit (= 2.0.0)
   - RKValueTransformers (1.0.1)
   - RKXMLDictionarySerialization (1.0.0):
     - RestKit
@@ -62,7 +62,10 @@ PODS:
   - SDWebImage/Core (3.6)
   - SOCKit (1.1)
   - StreamingKit (0.1.22)
-  - TransitionKit (1.1.1)
+  - TransitionKit (2.0.0)
+  - Wabbly (1.0.0):
+    - Wabbly/Core
+  - Wabbly/Core (1.0.0)
   - XMLDictionary (1.3)
 
 DEPENDENCIES:
@@ -71,11 +74,12 @@ DEPENDENCIES:
   - ILTranslucentView (from `https://github.com/ivoleko/ILTranslucentView.git`, branch `master`)
   - OHAttributedLabel
   - RegexKitLite
-  - RestKit (= 0.21.0)
+  - RestKit (= 0.22.0)
   - RestKit-Syndicate (from `https://github.com/DZamataev/RestKit-Syndicate.git`, branch `master`)
   - RKXMLDictionarySerialization (from `https://github.com/DZamataev/RKXMLDictionarySerialization.git`, branch `master`)
   - SDWebImage
   - StreamingKit
+  - Wabbly
   - XMLDictionary (from `https://github.com/DZamataev/XMLDictionary.git`, branch `master`)
 
 EXTERNAL SOURCES:
@@ -96,7 +100,7 @@ EXTERNAL SOURCES:
     :git: https://github.com/DZamataev/XMLDictionary.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
+  AFNetworking: e403d4333a4e1956cb3fe42364c3c879f820c9a0
   ARChromeActivity: eb9770a933cfe2b914b8e4e22b684eb7f43f24df
   ARSafariActivity: 5a99ddb49c748d32682fab566452f002d9177bbb
   AutoScrollLabel: 4978b57536512a3ebf4705b1b5618354bcf4ac84
@@ -108,14 +112,15 @@ SPEC CHECKSUMS:
   NJKWebViewProgress: 4f905b9ab7eb91525dc899cacebd2941a6d4553b
   OHAttributedLabel: 985e4b57eec0dc6add79179ac47ec888b8a914e7
   RegexKitLite: b16f029b518614394438e17b7d1df8bfa1e5a81e
-  RestKit: c11a30e7bc73513d9d2c2695672aba7697d24181
+  RestKit: dc107a0aa4f962575ad0385bac5b3c5e4f591f4e
   RestKit-Syndicate: ad35b07f04ae88fb2c3849e851c0f34360104b2a
   RKValueTransformers: 1562d458b9c9d59ce777bfc5982f2e1aef2e9182
   RKXMLDictionarySerialization: cc1e599a60bee9a92e3f08ce0f883923629d090b
   SDWebImage: 7eb273e54ca8a2e506ad9bd5e80c35b2a4d7c95e
   SOCKit: 8871d058926a6c6cc144f0c5eee82c5d0ec274a3
   StreamingKit: c6c52c41dfabaf132de8b54b8ddb1acfb67844ad
-  TransitionKit: d0e3344aac92991395d4c2e72d9c5a8ceeb12910
+  TransitionKit: 433284465abacdc07852d7db6dd0cc075010059a
+  Wabbly: 2322390cac953286f7b0b0672444d6866687e706
   XMLDictionary: 27390d3517062694ccb307a7750250e1b687571d
 
-COCOAPODS: 0.31.1
+COCOAPODS: 0.32.1

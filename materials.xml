@@ -1,0 +1,5603 @@
+<materials>
+	<material>
+		<date>1398081600</date>
+		<id>8527</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Михаил Идов покинул пост главного редактора GQ</title>
+		<lead>Модный журнал остался без иконы стиля</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/21_Monday/62b18df7d6e50321f4d0340cee38c5cf.jpg</picture>
+		<url>http://w-o-s.ru/news/8527</url>
+		<show_count>122</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1398071400</date>
+		<id>8514</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Внучка помогла умирающей бабушке при помощи Oculus Rift</title>
+		<lead>Виртуальная реальность стала не только развлечением</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/21_Monday/763542a9ef49deed244dc243e14965e5.jpg</picture>
+		<url>http://w-o-s.ru/news/8514</url>
+		<show_count>853</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1398070800</date>
+		<id>8513</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Появился прототип паутины Человека-Паука</title>
+		<lead>Настоящие супергерои становятся реальностью</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/21_Monday/6f7b5ec846bf47cd88972ec6213c4f4c.jpg</picture>
+		<url>http://w-o-s.ru/news/8513</url>
+		<show_count>902</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1398024002</date>
+		<id>8507</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Проклятие экспертов: откуда они всё знают? </title>
+		<lead>Почему иллюзия знания значительно хуже незнания</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/20_Sunday/664963cafb106b5ee8db862cd49e144d.jpg</picture>
+		<url>http://w-o-s.ru/article/8507</url>
+		<show_count>3699</show_count>
+		<comments_count>6</comments_count>
+	</material>
+
+	<material>
+		<date>1398024001</date>
+		<id>8504</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Сосиска на первой базе</title>
+		<lead>Почему хот-дог — это суши, и сколько зверей в «горячей собаке»</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/20_Sunday/da061ff49acb2830c56762df1db67fea.jpg</picture>
+		<url>http://w-o-s.ru/article/8504</url>
+		<show_count>2050</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1398024000</date>
+		<id>8519</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Dominance mix</title>
+		<lead>Sanys</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/21_Monday/4dc65fe94c7c2d0d45038bd28ffb8289.png</picture>
+		<url>http://w-o-s.ru/radio/audio/8519</url>
+		<mp3_url>http://archstreet.cc/radio/sanyspp.mp3</mp3_url>
+		<show_count>38</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1398024000</date>
+		<id>8517</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Легенда диско Giorgio Moroder выпустил ремикс на Coldplay</title>
+		<lead>Слушать: Coldplay - Midnight (Giorgio Moroder Remix)</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/21_Monday/e2faf9b3e79959424ffa48997985e1cf.jpeg</picture>
+		<url>http://w-o-s.ru/radio/news/8517</url>
+		<show_count>41</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1398024000</date>
+		<id>8515</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Тарантино переписал сценарий «Отвратительной восьмерки»</title>
+		<lead>Режиссер не смог отказаться от своего детища</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/21_Monday/1d33cf6965d0c64f17d4e48498023b84.jpg</picture>
+		<url>http://w-o-s.ru/news/8515</url>
+		<show_count>273</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1398024000</date>
+		<id>8512</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Премьера: #INTERNETGHETTO #RUSSIA</title>
+		<lead>Hyperboloid Records</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/21_Monday/5058516b798b90ab78cccaae395d14f7.jpg</picture>
+		<url>http://w-o-s.ru/radio/audio/8512</url>
+		<show_count>398</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1398024000</date>
+		<id>8511</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>The Black Lips и Boy George исполнили песню группы T.Rex</title>
+		<lead>Смотреть: The Black Lips And Boy George Cover - Bang A Gong (Get It On)</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/21_Monday/aa896d1fccf0b7672da2ca17029a357d.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8511</url>
+		<show_count>20</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1398024000</date>
+		<id>8510</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Pixies выпустили ранее не издававшийся сингл</title>
+		<lead>Слушать: Pixies - Women of War</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/21_Monday/48ca6a79f0213566362fc0276c75097e.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8510</url>
+		<show_count>30</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1398024000</date>
+		<id>8509</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Four Tet опубликовал новый трек</title>
+		<lead>Слушать: Percussions - KHLHI</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/21_Monday/1763f6ea7a463a3c7205bada51db3430.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8509</url>
+		<show_count>46</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1398024000</date>
+		<id>8508</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Prince поделился новой песней</title>
+		<lead>Слушать: Prince - The Breakdown</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/21_Monday/de77a2d2bc81be854538dfefca04be6e.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8508</url>
+		<show_count>48</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1398024000</date>
+		<id>8506</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Отдел по расследованию убийств»</title>
+		<lead>Homicide</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/20_Sunday/2bb80686f023ebcb8f6a61eddaeea142.jpg</picture>
+		<url>http://w-o-s.ru/film/8506</url>
+		<show_count>479</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1398024000</date>
+		<id>8505</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Николай Гумилев</title>
+		<lead>Судан</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/20_Sunday/5da366af81665245a07f9e52c458438e.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8505</url>
+		<show_count>1477</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1398024000</date>
+		<id>8503</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Фаафафина</title>
+		<lead>Российские депутаты запретили домработницам-фаафафинам из Самоа въезд в страну</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/20_Sunday/7edee48155d0093a878cc195dd71077b.jpg</picture>
+		<url>http://w-o-s.ru/word/8503</url>
+		<show_count>676</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1398024000</date>
+		<id>8502</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: К чему приводит депривация сна?</title>
+		<lead>Страх и ненависть от бессонницы</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/20_Sunday/0d65e825832ba7cfef5716691f94c08a.jpg</picture>
+		<url>http://w-o-s.ru/blog/8502</url>
+		<show_count>1444</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1398024000</date>
+		<id>8485</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Американский футбол от первого лица</title>
+		<lead>Суровое спортивное GoPro</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/3d9c20d1e9add4693e2d245b6f62533b.jpg</picture>
+		<url>http://w-o-s.ru/video/8485</url>
+		<show_count>625</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1398024000</date>
+		<id>8479</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Состязание с Бетховеном</title>
+		<lead>Попытаться обыграть гения и облажаться</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/20_Sunday/9a98c1ed49258d46ec74e2fdf89440e0.jpg</picture>
+		<url>http://w-o-s.ru/fact/8479</url>
+		<show_count>687</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397937603</date>
+		<id>8498</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Плакат: Правила этикета в XXI веке</title>
+		<lead>Как вести себя в современной реальности</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/19_Saturday/dd77933586fb8ee6a64a44ce0188f671.jpg</picture>
+		<url>http://w-o-s.ru/article/8498</url>
+		<show_count>3877</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1397937602</date>
+		<id>8499</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Как завести служебный роман и не облажаться?</title>
+		<lead>Учимся ходить по лезвию ножа все вместе</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/19_Saturday/2602c0f3a1846bc201691615641b8d65.jpg</picture>
+		<url>http://w-o-s.ru/kak/q/271</url>
+		<show_count>0</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397937601</date>
+		<id>8489</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Воскресная библиотека: Свитер Гитлера</title>
+		<lead>Мистические свойства вещей: страх перед реликвиями</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/19_Saturday/13d38d2f5849008984f4416de79e7f88.jpg</picture>
+		<url>http://w-o-s.ru/article/8489</url>
+		<show_count>2556</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397937600</date>
+		<id>8501</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Осип Мандельштам</title>
+		<lead>У ворот Иерусалима солнце черное взошло</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/19_Saturday/edb75cdc6042e38228e548c1a8e6ae3e.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8501</url>
+		<show_count>907</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397937600</date>
+		<id>8500</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Кровавая стычка между двумя мужчинами из-за вдовы – подозреваются политические мотивы»</title>
+		<lead>Fatto di sangue fra due uomini per causa di una vedova - si sospettano moventi politici</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/19_Saturday/1ef7e539e4bc2af55f4b0ee824e1bc29.jpg</picture>
+		<url>http://w-o-s.ru/film/8500</url>
+		<show_count>931</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397937600</date>
+		<id>8488</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Баля́ба</title>
+		<lead>Неясно, как Вале удалось стать летчиком-испытателем, он же форменный баляба</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/14f1feba3aef9ecebcc40d96a00bb5d0.jpg</picture>
+		<url>http://w-o-s.ru/word/8488</url>
+		<show_count>1345</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397937600</date>
+		<id>8484</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Пьяный Oculus Rift</title>
+		<lead>Что произойдет, если напиться и надеть шлем виртуальной реальности?</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/fc299f22e0bb01d823c9aa2a12cfbf3b.jpg</picture>
+		<url>http://w-o-s.ru/video/8484</url>
+		<show_count>1043</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397937600</date>
+		<id>8482</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Карта «Игры престолов»</title>
+		<lead>Google Maps Вестероса</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/db6a73f808fb79599efaff543b1f0d30.jpg</picture>
+		<url>http://w-o-s.ru/blog/8482</url>
+		<show_count>1909</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397937600</date>
+		<id>8480</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Лазерный пистолет из СССР</title>
+		<lead>Оружие самообороны в открытом космосе</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/9d0e7825299cde0c4fadd4dd9db427ad.jpg</picture>
+		<url>http://w-o-s.ru/fact/8480</url>
+		<show_count>1801</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397851202</date>
+		<id>8471</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Субботняя классика: Как найти отца и не облажаться</title>
+		<lead>Курт Воннегут — о тяжелой доле сироты, который, к тому же, не такой, как все</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/d344625cfa6f20b5cd5396dffccabc79.jpg</picture>
+		<url>http://w-o-s.ru/article/8471</url>
+		<show_count>1259</show_count>
+		<comments_count>3</comments_count>
+	</material>
+
+	<material>
+		<date>1397851201</date>
+		<id>8486</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Разрушители мифов: что угрожает русским традиционным ценностям?</title>
+		<lead>Салаты с оливковым маслом, Ярославна у шеста и другие происки врагов России</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/404b0bb16b8aa3a88268a7a59530ea3f.jpg</picture>
+		<url>http://w-o-s.ru/article/8486</url>
+		<show_count>5571</show_count>
+		<comments_count>9</comments_count>
+	</material>
+
+	<material>
+		<date>1397851200</date>
+		<id>8497</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Илья Эренбург</title>
+		<lead>Брюгге</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/f5ff696f845fc1c34014c2b3239803ed.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8497</url>
+		<show_count>816</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397851200</date>
+		<id>8495</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Ты да я, да мы с тобой»</title>
+		<lead>Александр Велединский</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/a41ef654d06ae94fb89c8e77d834be68.jpg</picture>
+		<url>http://w-o-s.ru/film/8495</url>
+		<show_count>1633</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397851200</date>
+		<id>8487</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Амуни́ция</title>
+		<lead>Масса амуниции в полтора раза превышает массу призывника</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/02887814ebfa51957cbdc75b9b61ee37.jpg</picture>
+		<url>http://w-o-s.ru/word/8487</url>
+		<show_count>802</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397851200</date>
+		<id>8481</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Дети на обложках</title>
+		<lead>Развлечение идеального отца</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/0339a4380ceffc886be014163a0ebc3e.jpg</picture>
+		<url>http://w-o-s.ru/blog/8481</url>
+		<show_count>1732</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397851200</date>
+		<id>8474</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Поговори со мной на идише</title>
+		<lead>Люби меня по-еврейски</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/a57452348c1f5c3b3363aa036d2abe4a.jpg</picture>
+		<url>http://w-o-s.ru/video/8474</url>
+		<show_count>5616</show_count>
+		<comments_count>3</comments_count>
+	</material>
+
+	<material>
+		<date>1397851200</date>
+		<id>8472</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Музей плохого искусства</title>
+		<lead>Место для худших в мире картин</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/13157e69519d0328b0ac7ad8c8dc0a95.jpg</picture>
+		<url>http://w-o-s.ru/fact/8472</url>
+		<show_count>2810</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397836800</date>
+		<id>8493</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Фейсбук позволил следить за друзьями</title>
+		<lead>Социальная сеть будет отслеживать каждый ваш шаг</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/686e13ae89ae6c84584ebf2443768b97.jpg</picture>
+		<url>http://w-o-s.ru/news/8493</url>
+		<show_count>1566</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397819520</date>
+		<id>8478</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Выяснена причина милости детей</title>
+		<lead>Роль пухлых щечек в эволюции</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/24eefe3f1c104842616696eec212c764.jpg</picture>
+		<url>http://w-o-s.ru/news/8478</url>
+		<show_count>2203</show_count>
+		<comments_count>4</comments_count>
+	</material>
+
+	<material>
+		<date>1397818980</date>
+		<id>8477</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Юго-восточная Азия празднует Новый год обливаниями водой</title>
+		<lead>Традиции обливания в буддистский Новый год</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/21beb1fe97c2fee23474c2b2556db903.jpg</picture>
+		<url>http://w-o-s.ru/news/8477</url>
+		<show_count>388</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397818980</date>
+		<id>8476</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Секс роботов-крыс помогает изучать эволюцию</title>
+		<lead>Почему электронные животные так похожи на настоящих</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/22bd30288a4c05bda064d51932745d1b.jpg</picture>
+		<url>http://w-o-s.ru/news/8476</url>
+		<show_count>471</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397764802</date>
+		<id>8468</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>5 форм безумия: как вытащить самого себя из болота</title>
+		<lead>Личный опыт нервной анорексии, паранойи, депрессии, ОКР и агорафобии</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/17_Thursday/b4b120d41dd4fe92909a1f43b3084b67.jpg</picture>
+		<url>http://w-o-s.ru/article/8468</url>
+		<best>true</best>
+		<show_count>12940</show_count>
+		<comments_count>5</comments_count>
+	</material>
+
+	<material>
+		<date>1397764801</date>
+		<id>8457</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Как правильно одеваться</title>
+		<lead>Главный редактор W→O→S объясняет, как не выглядеть идиотом</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/17_Thursday/62f72ec8410ae6aa8c281b6b4dbb7b17.jpg</picture>
+		<url>http://w-o-s.ru/article/8457</url>
+		<best>true</best>
+		<show_count>19614</show_count>
+		<comments_count>98</comments_count>
+	</material>
+
+	<material>
+		<date>1397764800</date>
+		<id>8494</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Из песни &quot;Happy&quot; исчезла музыка</title>
+		<lead>Самая обсуждаемая песня этого года лишилась музыки и превратилась в гимн одиноких людей на грани.</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/2d3f96e72ce3cfbd981e5c26e93fedea.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8494</url>
+		<show_count>2012</show_count>
+		<comments_count>4</comments_count>
+	</material>
+
+	<material>
+		<date>1397764800</date>
+		<id>8491</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Слушать: Jamie XX - Girl</title>
+		<lead>В эфире ежемесячного шоу Джеймса Блейка на BBC Radio 1, прозвучала новая песня Jamie XX</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/fd79699618807abe3f4aa79642647602.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8491</url>
+		<show_count>153</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397764800</date>
+		<id>8490</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Известный документалист Puff Daddy снял фильм о фестивале Coachella</title>
+		<lead>Смотреть: Coachella Thru My Eyes</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/45cea5243cb87472053786ca186074b9.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8490</url>
+		<show_count>85</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397764800</date>
+		<id>8470</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Chromeo поделились новой песней</title>
+		<lead>Слушать: Chromeo - Ezra's Interlude (feat. Ezra Koenig)</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/c2c7a0e6ca12a1d78171a71999a71c9e.png</picture>
+		<url>http://w-o-s.ru/radio/news/8470</url>
+		<show_count>34</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397764800</date>
+		<id>8469</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Saturday+Sunday vol.73</title>
+		<lead>W-O-S</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/18_Friday/d49208e0a2f964631709190257083f66.png</picture>
+		<url>http://w-o-s.ru/radio/audio/8469</url>
+		<mp3_url>http://archstreet.cc/radio/wweekend73.mp3</mp3_url>
+		<show_count>932</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397764800</date>
+		<id>8467</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Процесс Жанны Д’Арк»</title>
+		<lead>Procès de Jeanne d'Arc</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/17_Thursday/61fc859be52d9f425f83103a5fc966bb.jpg</picture>
+		<url>http://w-o-s.ru/film/8467</url>
+		<show_count>1270</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397764800</date>
+		<id>8466</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Борис Пастернак</title>
+		<lead>Москва в декабре</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/17_Thursday/f797e9cf693674f1ba332da9f04265b5.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8466</url>
+		<show_count>2185</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397764800</date>
+		<id>8464</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Неделя палиндромов</title>
+		<lead>Дата, одинаковая с обеих сторон</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/17_Thursday/2ad17e6b71e9cd04c977e58f35693709.jpg</picture>
+		<url>http://w-o-s.ru/fact/8464</url>
+		<show_count>2153</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397764800</date>
+		<id>8463</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Зоопси́я</title>
+		<lead>Увлечение леопардовыми принтами на одежде вызывает зоопсию</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/17_Thursday/50ad40df8ba127903c453c862d4032c1.jpg</picture>
+		<url>http://w-o-s.ru/word/8463</url>
+		<show_count>1055</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397764800</date>
+		<id>8462</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Дикобраз-обжора</title>
+		<lead>Одно из самых милых видео на планете</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/17_Thursday/5735a12d5342f8448ceb33800035f718.jpg</picture>
+		<url>http://w-o-s.ru/video/8462</url>
+		<show_count>2927</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1397764800</date>
+		<id>8461</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Выражение лица на любой вкус</title>
+		<lead>Сериал «Офис» снова помогает обществу</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/17_Thursday/4a00214e0c8fb0f083b58c8f58d23365.jpg</picture>
+		<url>http://w-o-s.ru/blog/8461</url>
+		<show_count>3987</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397739600</date>
+		<id>8459</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>На Украину запретили въезд российским мужчинам</title>
+		<lead>Русские мужчины оказались вне закона</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/17_Thursday/9a85fa1addf86443e5843c2ae0a44c04.jpg</picture>
+		<url>http://w-o-s.ru/news/8459</url>
+		<show_count>1317</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397732400</date>
+		<id>8456</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Режиссера «Людей Икс» обвиняют в изнасиловании</title>
+		<lead>Брайану Сингеру припомнили растление малолетнего</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/17_Thursday/1f9ece5d27a19e82e7aadff87a61655b.jpg</picture>
+		<url>http://w-o-s.ru/news/8456</url>
+		<show_count>942</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397730000</date>
+		<id>8455</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Соцсети доложат Роскомнадзору об авторах популярных страниц</title>
+		<lead>Свобода слова в интернете под угрозой</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/17_Thursday/69d6b74eaee5279fdce7afe566105fae.jpg</picture>
+		<url>http://w-o-s.ru/news/8455</url>
+		<show_count>413</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397729700</date>
+		<id>8454</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Арестован первый Heartbleed-хакер</title>
+		<lead>Криминал в виртуальном мире</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/17_Thursday/a6ab4944927f4bcbef389d5497ca30ec.jpg</picture>
+		<url>http://w-o-s.ru/news/8454</url>
+		<show_count>671</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397678403</date>
+		<id>8443</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Я ненавижу блог любовника</title>
+		<lead>Стыд и страдания ради сексуального просвещения</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/49d2904bb9ca720cf2324161f5ddf1bc.jpg</picture>
+		<url>http://w-o-s.ru/article/8443</url>
+		<show_count>7734</show_count>
+		<comments_count>15</comments_count>
+	</material>
+
+	<material>
+		<date>1397678402</date>
+		<id>8444</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Пытка недели: Трудно быть бабой</title>
+		<lead>Шоу с переодеванием и скандалом</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/aee8aacd8507c9953daedcf32176bbff.jpg</picture>
+		<url>http://w-o-s.ru/article/8444</url>
+		<show_count>6989</show_count>
+		<comments_count>17</comments_count>
+	</material>
+
+	<material>
+		<date>1397678401</date>
+		<id>8437</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Исторический футбол</title>
+		<lead>Как могли бы выглядеть сборные великих империй прошлого</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/278dc68f308f3f3ecc0a28949a436546.jpg</picture>
+		<url>http://w-o-s.ru/article/8437</url>
+		<show_count>2532</show_count>
+		<comments_count>9</comments_count>
+	</material>
+
+	<material>
+		<date>1397678400</date>
+		<id>8458</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Вышел клип на совместный трек Фаррелла и Major Lazer</title>
+		<lead>Смотреть: Major Lazer featuring Pharrell – Aerosol</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/17_Thursday/fb14e007eb28b54fe395c087f3e8e3c1.png</picture>
+		<url>http://w-o-s.ru/radio/news/8458</url>
+		<show_count>127</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397678400</date>
+		<id>8450</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Юстирóвка</title>
+		<lead>Юстировка привела к экологической катастрофе</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/d52d7a7e6d93326e45d051c3c367e6e0.jpg</picture>
+		<url>http://w-o-s.ru/word/8450</url>
+		<show_count>1038</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397678400</date>
+		<id>8449</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Паспорт королевы</title>
+		<lead>Ее Величество живет без документов</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/179cbca7523a367c2c3bc739922070ff.jpg</picture>
+		<url>http://w-o-s.ru/fact/8449</url>
+		<show_count>1774</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397678400</date>
+		<id>8448</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Величайший фильм из всех когда-либо проданных»</title>
+		<lead>The Greatest Movie Ever Sold</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/e3e868b9147fd65d48a2cc114de45aa0.jpg</picture>
+		<url>http://w-o-s.ru/film/8448</url>
+		<show_count>2501</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1397678400</date>
+		<id>8447</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Владимир Маяковский</title>
+		<lead>На буржуев смотрим свысока</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/efae1664942d2670665bde26c0712901.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8447</url>
+		<show_count>1500</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1397678400</date>
+		<id>8446</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Песня «Няш-мяш»</title>
+		<lead>Свежий хит от прокурора Натальи Поклонской</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/23f2f068e884221cb4dfd1f758aecf99.jpg</picture>
+		<url>http://w-o-s.ru/video/8446</url>
+		<show_count>6830</show_count>
+		<comments_count>3</comments_count>
+	</material>
+
+	<material>
+		<date>1397678400</date>
+		<id>8445</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Сокращенная «Википедия»</title>
+		<lead>Пародия на лучший сайт в интернете</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/98106646f4dce34df192663317ea57f6.jpg</picture>
+		<url>http://w-o-s.ru/blog/8445</url>
+		<show_count>3083</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1397674800</date>
+		<id>8452</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Павел Дуров продал долю «ВКонтакте» под давлением ФСБ</title>
+		<lead>Генеральный директор отечественной соцсети пошел ва-банк</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/d9f29ab2f4c8704dbfad6167df2496b8.jpg</picture>
+		<url>http://w-o-s.ru/news/8452</url>
+		<show_count>2997</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1397658120</date>
+		<id>8441</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Селфи у железнодородных путей закончилось травмой</title>
+		<lead>Почему не стоит фотографировать самого себя на фоне проезжающего поезда</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/994e3921891a19e5d3334f07bd5f2cc6.jpg</picture>
+		<url>http://w-o-s.ru/news/8441</url>
+		<show_count>3212</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397655660</date>
+		<id>8440</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Появился сайт с онлайн-курсами Хогвартса</title>
+		<lead>Стань волшебником не отходя от компьютера</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/1f464fed44628e229f8881ce5daefe07.jpg</picture>
+		<url>http://w-o-s.ru/news/8440</url>
+		<show_count>2132</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397648700</date>
+		<id>8435</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>В Сети появилось видео игры экскаваторов</title>
+		<lead>Дженга — любимая игра студентов и строителей</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/8b5b3e285e7ff0fdd430496b2e30c83b.jpg</picture>
+		<url>http://w-o-s.ru/news/8435</url>
+		<show_count>833</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397648640</date>
+		<id>8434</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Молодежь будут пускать в музеи бесплатно</title>
+		<lead>Но только один раз в месяц</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/87bfa0adc92ec0a67dccdf8b91525bda.jpg</picture>
+		<url>http://w-o-s.ru/news/8434</url>
+		<show_count>558</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397647200</date>
+		<id>8433</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Ученые выяснили: даже крохотная доза марихуаны разрушает мозг</title>
+		<lead>Один раз дунул — мозг потерял</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/22594775d284f5ebbd623fe14f8ffae0.jpg</picture>
+		<url>http://w-o-s.ru/news/8433</url>
+		<best>true</best>
+		<show_count>10899</show_count>
+		<comments_count>12</comments_count>
+	</material>
+
+	<material>
+		<date>1397592003</date>
+		<id>8410</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Видеоблог Marusja_1984: Почему телевизор все еще нужен</title>
+		<lead>«Багажные войны» и «Ранчо карликов» как средство от всех болезней</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/2584ecdd7900e63a54093a60decb727a.jpg</picture>
+		<url>http://w-o-s.ru/article/8410</url>
+		<show_count>2196</show_count>
+		<comments_count>4</comments_count>
+	</material>
+
+	<material>
+		<date>1397592002</date>
+		<id>8411</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Фоторазоблачения: как мужчины всех обманывают</title>
+		<lead>19 мужских способов поднять свой виртуальный статус</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/4d8bc8a55a3f5daa22bfa44257333a38.jpg</picture>
+		<url>http://w-o-s.ru/article/8411</url>
+		<best>true</best>
+		<show_count>24246</show_count>
+		<comments_count>32</comments_count>
+	</material>
+
+	<material>
+		<date>1397592001</date>
+		<id>8431</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Догма-2014: грязный реализм видеоблогинга</title>
+		<lead>Когда самые скучные люди обретают дар речи</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/7cabac2492ee09e2d0293d29a68cbec8.png</picture>
+		<url>http://w-o-s.ru/article/8431</url>
+		<show_count>7353</show_count>
+		<comments_count>9</comments_count>
+	</material>
+
+	<material>
+		<date>1397592000</date>
+		<id>8451</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Robinsons Depositories Tech Mix</title>
+		<lead>SΛB</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/9424e096c4d13af7bca7e2e55cc2cf38.png</picture>
+		<url>http://w-o-s.ru/radio/audio/8451</url>
+		<mp3_url>http://archstreet.cc/radio/sabtech4.mp3</mp3_url>
+		<show_count>545</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397592000</date>
+		<id>8442</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Solange исполнила песню Kate Bush на фестивале Coachella</title>
+		<lead>Смотреть: Solange - Cloudbusting</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/deabe072b5e473730a3ab3917833ee67.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8442</url>
+		<show_count>56</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397592000</date>
+		<id>8439</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>б/у vol.1</title>
+		<lead>W-O-S</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/cbf6011702f579c18cd7ce29d2537a4b.jpg</picture>
+		<url>http://w-o-s.ru/radio/audio/8439</url>
+		<show_count>832</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397592000</date>
+		<id>8438</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Участник The Horrors выпустил ремикс на I Break horses</title>
+		<lead>Слушать: I Break Horses - Faith (Tom Furse Dub)</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/6045bef1039f0c731cc2499f393bf89e.png</picture>
+		<url>http://w-o-s.ru/radio/news/8438</url>
+		<show_count>49</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397592000</date>
+		<id>8436</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Фашисты против байкеров в новом видео OFF!</title>
+		<lead>Смотреть: OFF! - Red White and Black</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/dc78862a8f22c42c60cea194b2e41473.png</picture>
+		<url>http://w-o-s.ru/radio/news/8436</url>
+		<show_count>45</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397592000</date>
+		<id>8432</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Four Tet опубликовал новый трек</title>
+		<lead>Слушать: Four Tet (as Percussions) - Blatant Water Cannon</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/16_Wednesday/762872ac086005bd68578313012664b0.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8432</url>
+		<show_count>123</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397592000</date>
+		<id>8425</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Одиночество бегуна на длинные дистанции»</title>
+		<lead>The Loneliness of the Long Distance Runner</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/f34fb4d49807510eb0dffdfd7a6765c6.jpg</picture>
+		<url>http://w-o-s.ru/film/8425</url>
+		<show_count>2241</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397592000</date>
+		<id>8424</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Тщетность бытия</title>
+		<lead>Русский человек против металлической ограды</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/0d33d566a142d1770dc65c4a06c357db.jpg</picture>
+		<url>http://w-o-s.ru/video/8424</url>
+		<show_count>3789</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1397592000</date>
+		<id>8422</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Онлайн-Paint</title>
+		<lead>Знакомая с детства программа возвращается</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/ceb8ed495c8f3d03f9b045bdb49f6e13.jpg</picture>
+		<url>http://w-o-s.ru/blog/8422</url>
+		<show_count>2968</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397592000</date>
+		<id>8421</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Редизайн, который никто не заметил</title>
+		<lead>Из желтого в белый за несколько месяцев</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/b937ada04a1737d0ef342cad1a9e96cd.jpg</picture>
+		<url>http://w-o-s.ru/fact/8421</url>
+		<show_count>2011</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397592000</date>
+		<id>8414</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Маркитáнт</title>
+		<lead>90-е были временем ловких маркитантов и рэкетиров</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/6eb4d51e015f4d5a565bd1e28940eefa.jpg</picture>
+		<url>http://w-o-s.ru/word/8414</url>
+		<show_count>1351</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397592000</date>
+		<id>8413</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Стефан Малларме</title>
+		<lead>Выйди, вшивая Памела!</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/262236005aa32117f32b60006947665a.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8413</url>
+		<show_count>1639</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397574540</date>
+		<id>8423</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Фаррелл расплакался из-за фанатов</title>
+		<lead>Музыканта расстрогали видео со всего мира</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/08ce9e00f4e52457e1d037db71253212.jpg</picture>
+		<url>http://w-o-s.ru/news/8423</url>
+		<show_count>3069</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397568720</date>
+		<id>8420</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Найдено первое использование смайлика в истории</title>
+		<lead>Скобка из XVII века всколыхнул интернет</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/28151a2df498d2d46dc1fdccca2c77ae.jpg</picture>
+		<url>http://w-o-s.ru/news/8420</url>
+		<show_count>993</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397567940</date>
+		<id>8419</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>В Mozilla заменили директора</title>
+		<lead>Гомофобу-предшественнику указали на выход</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/0bdb1fd877c0fc0fbb1a7c25578d47ff.jpg</picture>
+		<url>http://w-o-s.ru/news/8419</url>
+		<show_count>324</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397567580</date>
+		<id>8418</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Google хочет создать «умные» контактные линзы</title>
+		<lead>Будущее уже завтра</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/cc49b9200995fbd5feedca6f05f31c8f.jpg</picture>
+		<url>http://w-o-s.ru/news/8418</url>
+		<show_count>333</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397567280</date>
+		<id>8417</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Обнаружены две новые работы Бэнкси</title>
+		<lead>Любовь к гаджетам и слежка шпионов</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/890a26ecfe5f28c8c926c21377816341.jpg</picture>
+		<url>http://w-o-s.ru/news/8417</url>
+		<show_count>485</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397566740</date>
+		<id>8415</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Авиакомпания из США ответила на жалобу клиента порнографией</title>
+		<lead>Тонкий намек, куда клиенту нужно засунуть свои претензии</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/07efde6a3e9c35b4b82b1dceec968e18.jpg</picture>
+		<url>http://w-o-s.ru/news/8415</url>
+		<show_count>3794</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1397506200</date>
+		<id>8426</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>CÓMEME playlist</title>
+		<lead>Philipp Gorbachev</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/2d0466259da7c8e894f3dfc28b9acf46.jpg</picture>
+		<url>http://w-o-s.ru/radio/audio/8426</url>
+		<show_count>712</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397505602</date>
+		<id>8405</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Маски-шоу</title>
+		<lead>История силиконовой Гермионы, которая завоевала интернет</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/40923c6c10f7260a69d23c3b6df6a2df.jpg</picture>
+		<url>http://w-o-s.ru/article/8405</url>
+		<show_count>10211</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397505601</date>
+		<id>8391</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Личный состав W→O→S: любимые вещи великих мужчин</title>
+		<lead>Бытовые слабости Пушкина, Черчилля, Колумба и других джентльменов</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/c9ca01fc0d2c8f2085099b0fa248d513.jpg</picture>
+		<url>http://w-o-s.ru/article/8391</url>
+		<best>true</best>
+		<show_count>12222</show_count>
+		<comments_count>11</comments_count>
+	</material>
+
+	<material>
+		<date>1397505600</date>
+		<id>8430</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Chad Valley записал кавер на Frankie Knuckles - Your Love</title>
+		<lead>Скачать: Chad Valley - Your Love</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/08ddd42e12ae6c487c60862a6494f329.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8430</url>
+		<show_count>92</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397505600</date>
+		<id>8429</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Появилась игра посвященная Маку Демарко</title>
+		<lead>Играть: Mac Demarco - Squish'Em</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/7f752fb648e421a0e9bb18f19d6401fc.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8429</url>
+		<show_count>101</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397505600</date>
+		<id>8427</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>war house vol.2</title>
+		<lead>LOL123</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/7010d61d07cd2301a76555471a1e92de.jpg</picture>
+		<url>http://w-o-s.ru/radio/audio/8427</url>
+		<mp3_url>http://archstreet.cc/radio/L0L123wos.mp3</mp3_url>
+		<show_count>582</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397505600</date>
+		<id>8412</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Swans выпустили новую песню</title>
+		<lead>Слушать: Swans - Oxygen (to be kind)</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/af06ffa36b3515f250077b934ccf17a8.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8412</url>
+		<show_count>74</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397505600</date>
+		<id>8409</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>10 лучших клипов недели</title>
+		<lead>W-O-S</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/55ae5a0d02cf856c69a53684ac99d942.png</picture>
+		<url>http://w-o-s.ru/radio/audio/8409</url>
+		<show_count>595</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397505600</date>
+		<id>8408</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Schegol Mixtape</title>
+		<lead>Sasha Khizhnyakov</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/11fc1c983e8615d6829b1e0d9a9084fc.jpg</picture>
+		<url>http://w-o-s.ru/radio/audio/8408</url>
+		<mp3_url>http://archstreet.cc/radio/schegolsh.mp3</mp3_url>
+		<show_count>766</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397505600</date>
+		<id>8407</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Смотреть: Sigur Rós в сериале &quot;Игра престолов&quot;</title>
+		<lead>Помимо записи саундтрека к популярному сериалу , группа приняла участие в съемках последнего эпизода.</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/94334f210a83aa5e6e0021f041f292df.png</picture>
+		<url>http://w-o-s.ru/radio/news/8407</url>
+		<show_count>108</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397505600</date>
+		<id>8406</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Смотреть: Alicia Keys Feat. Kendrick Lamar - It's On Again</title>
+		<lead>Alicia Keys и Kendrick Lamar и их видео на саундтрек к фильму &quot;Новый Человек-паук. Высокое напряжение&quot;</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/15_Tuesday/f08d48443b378c56094fe37b7072a9b4.png</picture>
+		<url>http://w-o-s.ru/radio/news/8406</url>
+		<show_count>70</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397505600</date>
+		<id>8401</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Мистер Макинтош</title>
+		<lead>Игры разума от Стива Джобса</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/359be791f62295786cb5a7cd63aab2a4.jpg</picture>
+		<url>http://w-o-s.ru/fact/8401</url>
+		<show_count>3121</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397505600</date>
+		<id>8400</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Физрук»</title>
+		<lead>Сергей Сенцов, Федор Стуков</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/2bc31299e37e7f2822f2b6aa0a267ecd.jpg</picture>
+		<url>http://w-o-s.ru/film/8400</url>
+		<show_count>5401</show_count>
+		<comments_count>7</comments_count>
+	</material>
+
+	<material>
+		<date>1397505600</date>
+		<id>8385</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Обратная сторона музыкальных альбомов</title>
+		<lead>Популярные музыканты: вид сзади</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/d6640ef2c6efb671e27fa9005c1b7fda.jpg</picture>
+		<url>http://w-o-s.ru/blog/8385</url>
+		<show_count>1789</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397505600</date>
+		<id>8384</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Альтернативное начало «Гравитации»</title>
+		<lead>Какого героя не хватало фильму Альфонсо Куарона?</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/67f3705fa7ebc3f72561513e5ff4357b.jpg</picture>
+		<url>http://w-o-s.ru/video/8384</url>
+		<show_count>3474</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1397505600</date>
+		<id>8383</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Морис Роллина</title>
+		<lead>Девица Осьминог и госпожа Вампир</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/cd4d020e2cfa4ef14361d2f2ff8a3ca8.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8383</url>
+		<show_count>1271</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397505600</date>
+		<id>8382</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Парокси́зм</title>
+		<lead>В пароксизме отчаяния Ксюша уничтожила весь свой гардероб</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/b45a15a1641cf44f30d2a4b15091f4bc.jpg</picture>
+		<url>http://w-o-s.ru/word/8382</url>
+		<show_count>1551</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397480400</date>
+		<id>8399</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>В Чите появился баннер про Героя Советского Союза с 12 ошибками</title>
+		<lead>Исторические неточности как патриотическая пропаганда</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/ed481666be34d03554c6b59332ea7aa7.jpg</picture>
+		<url>http://w-o-s.ru/news/8399</url>
+		<show_count>1643</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397480400</date>
+		<id>8397</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>В США появился первый автомат с марихуаной</title>
+		<lead>Механический продавец счастья</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/8cbec49334dcc228802a85ec1f076f8f.jpg</picture>
+		<url>http://w-o-s.ru/news/8397</url>
+		<show_count>1065</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397462400</date>
+		<id>8389</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>В фейсбуке появится электронный кошелек</title>
+		<lead>Очередные изменения Цукерберга</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/98a8a8b869b36d566407c871f5aa353a.png</picture>
+		<url>http://w-o-s.ru/news/8389</url>
+		<show_count>736</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397455200</date>
+		<id>8386</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Брайан Крэнстон помог школьнику пригласить девушку на выпускной</title>
+		<lead>Хайзенберг угрожает девушке по просьбе парня</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/fe794eb219cd349b2a0636495deae1c7.jpg</picture>
+		<url>http://w-o-s.ru/news/8386</url>
+		<show_count>2906</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397419202</date>
+		<id>8381</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Соло на авангарде</title>
+		<lead>Управляйте мирами Малевича, Кандинского и Родченко с помощью клавиатуры</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/13_Sunday/41ad3bcfe329b316daa9f8facdd8534f.jpg</picture>
+		<url>http://w-o-s.ru/article/8381</url>
+		<show_count>9874</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397419201</date>
+		<id>8377</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>До и после: блеск для глаз</title>
+		<lead>После бессонной ночи за монитором тестируем глазные капли</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/13_Sunday/0332e39fd8d9a8e5a697aa89edbf0d7d.jpg</picture>
+		<url>http://w-o-s.ru/article/8377</url>
+		<show_count>5363</show_count>
+		<comments_count>8</comments_count>
+	</material>
+
+	<material>
+		<date>1397419200</date>
+		<id>8404</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>The Black Keys опубликовали новый трек</title>
+		<lead>Слушать: The Black Keys - Turn Blue</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/0e4c051b108a97ab70ed09d9fbd3da08.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8404</url>
+		<show_count>95</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397419200</date>
+		<id>8403</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Слушать: Röyksopp &amp; Robyn - Monument</title>
+		<lead>В преддверии совместного тура Röyksopp и Robyn опубликовали превью нового совместного трека</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/31ab0a1cac50d5ea80732956a2086815.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8403</url>
+		<show_count>121</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397419200</date>
+		<id>8396</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Childish Gambino выпустил новое видео</title>
+		<lead>Смотреть: Childish Gambino - Sweatpants ft. Problem</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/7c717d546af9efccdb0c3d4015d6aa0f.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8396</url>
+		<show_count>71</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397419200</date>
+		<id>8395</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Слушать: Lana Del Rey - West Coast</title>
+		<lead>Lana Del Rey поделилась новой песней</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/d7a2fca5b2a6a4020263befab5744e82.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8395</url>
+		<show_count>175</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397419200</date>
+		<id>8394</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Italian punk mix</title>
+		<lead>Sadwave</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/a4040324021ec503ded234c2eba954ea.jpg</picture>
+		<url>http://w-o-s.ru/radio/audio/8394</url>
+		<mp3_url>http://archstreet.cc/radio/italian_punk.mp3</mp3_url>
+		<show_count>758</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397419200</date>
+		<id>8390</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Слушать: Sigur Rós - The Rains of Castamere</title>
+		<lead>Sigur Rós записали свою версию The Rains of Castamere, песни из сериала &quot;Игра престолов&quot;</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/895e7fbc206da890cb02aa5e04e86049.png</picture>
+		<url>http://w-o-s.ru/radio/news/8390</url>
+		<show_count>92</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397419200</date>
+		<id>8388</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Coachella 2014</title>
+		<lead>W-O-S</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/b5c172122ec2f2cc4e3d550ec70692a6.jpg</picture>
+		<url>http://w-o-s.ru/radio/audio/8388</url>
+		<show_count>1297</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397419200</date>
+		<id>8387</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Disclosure поделились новым треком</title>
+		<lead>Слушать: Disclosure - The Mechanism</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/14_Monday/d0818192f664e9d70a728ba757bab311.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8387</url>
+		<show_count>122</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397419200</date>
+		<id>8380</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Остановился поезд»</title>
+		<lead>Вадим Абдрашитов</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/13_Sunday/7fe20cfd4b464e6216e26c14f1d9fd6d.jpg</picture>
+		<url>http://w-o-s.ru/film/8380</url>
+		<show_count>1563</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397419200</date>
+		<id>8379</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Тристан Корбьер</title>
+		<lead>Вперед, проворный брадобрей комет!</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/13_Sunday/c9543eb5280ac6eb1d068664e8a6a7a1.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8379</url>
+		<show_count>1725</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397419200</date>
+		<id>8378</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Вещи, которые подходят друг к другу</title>
+		<lead>Идеальные соответствия несовместимых предметов</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/13_Sunday/e0cff188cb7e619058a8ca1231c74abb.jpg</picture>
+		<url>http://w-o-s.ru/blog/8378</url>
+		<show_count>4776</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397419200</date>
+		<id>8365</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Дарт Вейдер = Винни Пух</title>
+		<lead>Об особой важности голоса Энакина Скайуокера</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/f477b3bf358efb42e2cef54c4bb5769d.jpg</picture>
+		<url>http://w-o-s.ru/video/8365</url>
+		<show_count>1930</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1397419200</date>
+		<id>8361</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Бар в Баобабе</title>
+		<lead>Выпить пива внутри древнего дерева</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/eb2b50a6e604ac76d95fc7dbdcce15d8.jpg</picture>
+		<url>http://w-o-s.ru/fact/8361</url>
+		<show_count>2713</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397419200</date>
+		<id>8358</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Децимáция</title>
+		<lead>Сокращение штата газеты более всего напоминало децимацию</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/55c760b7bb4fb55ca27f656d9d5ccc50.jpg</picture>
+		<url>http://w-o-s.ru/word/8358</url>
+		<show_count>1471</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397332803</date>
+		<id>8371</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Плакат: Жить по Библии</title>
+		<lead>Цитаты из Священного Писания — свежие, смелые, актуальные</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/12_Saturday/80125eaa478b473b09f942df2bdf965d.jpg</picture>
+		<url>http://w-o-s.ru/article/8371</url>
+		<show_count>9546</show_count>
+		<comments_count>10</comments_count>
+	</material>
+
+	<material>
+		<date>1397332802</date>
+		<id>8372</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Как перестать быть хипстером и не облажаться?</title>
+		<lead>Вопрос века: ищем ответ здесь и сейчас</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/12_Saturday/e4ed022d0f50bb55b4bb577a8411d03f.jpg</picture>
+		<url>http://w-o-s.ru/kak/q/249</url>
+		<show_count>1</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397332801</date>
+		<id>8370</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Воскресная библиотека: Время убивает</title>
+		<lead>Разоблачение мифа о реальности тайм-менеджмента</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/12_Saturday/fabc7a5c28f7484550fb7cce0df86c29.jpg</picture>
+		<url>http://w-o-s.ru/article/8370</url>
+		<show_count>6361</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397332800</date>
+		<id>8376</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Артюр Рембо</title>
+		<lead>Где язва ануса чудовищно прекрасна</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/12_Saturday/02a61fad5e1b903cb3abcf30a57b69aa.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8376</url>
+		<show_count>1621</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397332800</date>
+		<id>8375</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Инопланетное рагу»</title>
+		<lead>Bad Taste</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/12_Saturday/511b22881195c6d9f0e4cb2c780a1814.jpg</picture>
+		<url>http://w-o-s.ru/film/8375</url>
+		<show_count>2541</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1397332800</date>
+		<id>8369</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Куда больнее всего кусают пчелы?</title>
+		<lead>Важная информация в преддверии лета</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/6b0a9f6b55cf34a8d3933e0a5edb8fd2.jpg</picture>
+		<url>http://w-o-s.ru/blog/8369</url>
+		<show_count>2411</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1397332800</date>
+		<id>8364</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Дети впервые пробуют лимон</title>
+		<lead>Выразительная реакция в замедленной съемке</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/98bea632f0ca5e40516149f4b0253766.jpg</picture>
+		<url>http://w-o-s.ru/video/8364</url>
+		<show_count>7035</show_count>
+		<comments_count>3</comments_count>
+	</material>
+
+	<material>
+		<date>1397332800</date>
+		<id>8360</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Худшая прическа в мире преследуется по закону</title>
+		<lead>Когда маллет стал вне закона</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/e12597b0205f1aa1fdbf93a2856de935.jpg</picture>
+		<url>http://w-o-s.ru/fact/8360</url>
+		<show_count>4872</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1397332800</date>
+		<id>8357</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Мóрия</title>
+		<lead>Первый курс пришлось провести со студентами, страдавшими морией</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/8a28c25c9d7b9fcef8dac91b77f4a6a4.jpg</picture>
+		<url>http://w-o-s.ru/word/8357</url>
+		<show_count>1865</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397246402</date>
+		<id>8367</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Субботняя классика: Все развлечения нервных людей</title>
+		<lead>Как москвичи решали квартирный вопрос в 20-е годы прошлого века</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/d6a680aa4a532289f82b50e3edad225f.jpg</picture>
+		<url>http://w-o-s.ru/article/8367</url>
+		<show_count>2772</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397246401</date>
+		<id>8356</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Рейв в России: поехали!</title>
+		<lead>Как начиналось танцевальное движение в России</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/0f3114820221c28ed717d4a6ae4ca79a.jpg</picture>
+		<url>http://w-o-s.ru/article/8356</url>
+		<show_count>3919</show_count>
+		<comments_count>6</comments_count>
+	</material>
+
+	<material>
+		<date>1397246400</date>
+		<id>8374</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Смотреть: Выступление Outkast на Coachella 2014</title>
+		<lead>Вчера на фестивале Coachella состоялось возвращение Outkast. Дуэт поддержали Janelle Monáe, Future и Sleepy Brown.</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/12_Saturday/0f76f34e3c1240a0256ea708889f7bad.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8374</url>
+		<show_count>339</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397246400</date>
+		<id>8368</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Кто с кем спал в «Игре престолов»?</title>
+		<lead>Инфографика всех порочных связей в телешоу</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/836c48185e2420c49b475164b067a76a.jpg</picture>
+		<url>http://w-o-s.ru/blog/8368</url>
+		<show_count>4178</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397246400</date>
+		<id>8366</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Элита убийц»</title>
+		<lead>The Killer Elite</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/6921bf5d56a0766106ff65455d30a221.jpg</picture>
+		<url>http://w-o-s.ru/film/8366</url>
+		<show_count>1462</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397246400</date>
+		<id>8363</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Субботнее утро глазами родителей</title>
+		<lead>Вся боль отцовства за полторы минуты</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/fe8f77f86194eeca90ffc826b0305dd4.jpg</picture>
+		<url>http://w-o-s.ru/video/8363</url>
+		<show_count>6009</show_count>
+		<comments_count>4</comments_count>
+	</material>
+
+	<material>
+		<date>1397246400</date>
+		<id>8362</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Жан Ришпен</title>
+		<lead>Поцелуи лихорадки провели на коже складки</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/5ed3de3d621da12c2011b66537c9fbdb.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8362</url>
+		<show_count>1165</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397246400</date>
+		<id>8359</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Хасидский пати-бус</title>
+		<lead>Иудеи, техно, вечеринки</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/5c69daa5f7f9b5ebcb63f16efc9ffe13.jpg</picture>
+		<url>http://w-o-s.ru/fact/8359</url>
+		<show_count>1687</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397246400</date>
+		<id>8348</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Киóт</title>
+		<lead>Киот в дальнем углу комнаты порос паутиной и рассохся</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/e40441b7f35113107374ab5cd778ba5f.jpg</picture>
+		<url>http://w-o-s.ru/word/8348</url>
+		<show_count>1525</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397214000</date>
+		<id>8355</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Мобильный оператор AT&amp;T снял рекламу в стиле «Настоящего детектива»</title>
+		<lead>Мэттью Макконахи не дает покоя рекламодателям</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/4ea7ab603662ceb142477cacecb9b73d.png</picture>
+		<url>http://w-o-s.ru/news/8355</url>
+		<show_count>2235</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397210400</date>
+		<id>8354</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Google подарит шанс купить умные очки</title>
+		<lead>Возможность года</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/4296372235b3497c2ae61a0e1dd69147.jpg</picture>
+		<url>http://w-o-s.ru/news/8354</url>
+		<show_count>1282</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397208600</date>
+		<id>8353</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Школьница пыталась продать марихуану ради выпускного платья</title>
+		<lead>Гастрономический стартап обернулся для девушки депортацией</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/134b5f7a853d1c1744e98e94b5877fad.jpg</picture>
+		<url>http://w-o-s.ru/news/8353</url>
+		<show_count>1564</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397207460</date>
+		<id>8349</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>МИД рекомендует россиянам воздержаться от поездок за рубеж</title>
+		<lead>Российские посольства не оставят своих граждан в беде</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/d330254d4ef4ea3edfc48c1c06dee543.jpg</picture>
+		<url>http://w-o-s.ru/news/8349</url>
+		<show_count>1817</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397206800</date>
+		<id>8352</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Актриса отдала свои волосы ради новой части «Звездных войн»</title>
+		<lead>Шотландские рыжие волосы ждут свой звездный час</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/866cc4eafa6556c2693a11ccaf3dcf98.jpg</picture>
+		<url>http://w-o-s.ru/news/8352</url>
+		<show_count>1181</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397160002</date>
+		<id>8344</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Танцевать — не значит учиться</title>
+		<lead>Почему костюм для танцев должен быть единой школьной формой</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/4bf6d8fd4aa804bf9ab26346e0e28c14.png</picture>
+		<url>http://w-o-s.ru/article/8344</url>
+		<show_count>6219</show_count>
+		<comments_count>3</comments_count>
+	</material>
+
+	<material>
+		<date>1397160000</date>
+		<id>8351</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Смотреть: Jacques Greene - No Excuse</title>
+		<lead>Jacques Greene поделился новым видео</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/f62ba09b257b83e86d0a57e544342b4a.png</picture>
+		<url>http://w-o-s.ru/radio/news/8351</url>
+		<show_count>94</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397160000</date>
+		<id>8350</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Saturday+Sunday vol.72</title>
+		<lead>W-O-S</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/ebbad8a5d522b6e741a1427de1ba82f7.jpg</picture>
+		<url>http://w-o-s.ru/radio/audio/8350</url>
+		<mp3_url>http://archstreet.cc/radio/wweekend72.mp3</mp3_url>
+		<show_count>1602</show_count>
+		<comments_count>3</comments_count>
+	</material>
+
+	<material>
+		<date>1397160000</date>
+		<id>8347</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Слушать: Antemasque - 4AM</title>
+		<lead>Дебютный трек от новоиспеченной супергруппы Antemasque, участниками которой являются Flea и Omar Rodriguez-Lopez</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/c306af53fdd910fe9d85fb9e2656bd03.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8347</url>
+		<show_count>107</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397160000</date>
+		<id>8346</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Сопéль</title>
+		<lead>Звуки сопели привлекли девушек к костру</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/1c1cc614553710f6da475a25e309d5bb.jpg</picture>
+		<url>http://w-o-s.ru/word/8346</url>
+		<show_count>2675</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397160000</date>
+		<id>8345</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Закат американской империи»</title>
+		<lead>Le déclin de l'empire américain</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/3d9e8d3164cdb3a0bd0d298e6ee834d0.jpg</picture>
+		<url>http://w-o-s.ru/film/8345</url>
+		<show_count>1934</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397160000</date>
+		<id>8343</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Борцы с порнографией</title>
+		<lead>Просмотр порно для всеобщего блага</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/2e17f765795c2ea38fb8764a2ef3d11d.jpg</picture>
+		<url>http://w-o-s.ru/fact/8343</url>
+		<show_count>1983</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397160000</date>
+		<id>8342</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Шарль Кро</title>
+		<lead>Лежала под ней копченая сельдь — сухая, сухая, сухая</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/cd5918fcb5238c4cf0ca7c335fcd409a.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8342</url>
+		<show_count>1426</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397160000</date>
+		<id>8341</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Воронка на привлечение мужчин</title>
+		<lead>Стопроцентный способ приворота</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/cde6ea85219de78a7287ab9504f8c53a.jpg</picture>
+		<url>http://w-o-s.ru/video/8341</url>
+		<show_count>5357</show_count>
+		<comments_count>4</comments_count>
+	</material>
+
+	<material>
+		<date>1397160000</date>
+		<id>8340</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Инфографика разводов</title>
+		<lead>Психология разрыва в картинках</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/cba2a37808a26f3d502e62921794f645.jpg</picture>
+		<url>http://w-o-s.ru/blog/8340</url>
+		<show_count>2230</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397160000</date>
+		<id>8335</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Попытка недели: Телефонные хулиганки</title>
+		<lead>Проверяем знаменитостей на стрессоустойчивость</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/11_Friday/4356b1ebda49f70894c74807802ac02e.png</picture>
+		<url>http://w-o-s.ru/article/8335</url>
+		<show_count>6898</show_count>
+		<comments_count>8</comments_count>
+	</material>
+
+	<material>
+		<date>1397140200</date>
+		<id>8336</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>В США девочек стали называть Кхалиси чаще, чем Бетси</title>
+		<lead>Фанаты «Игры престолов» дают имена в честь любимых героев</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/b1754bf146a79b0bb5c2174f0fdced15.jpg</picture>
+		<url>http://w-o-s.ru/news/8336</url>
+		<show_count>1464</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397124000</date>
+		<id>8332</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Facebook уберет возможность отправлять сообщения из приложения</title>
+		<lead>Социальная сеть становится еще невыносимее</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/71208e60d7fe741e22de47a14f05befa.jpg</picture>
+		<url>http://w-o-s.ru/news/8332</url>
+		<show_count>1062</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397120400</date>
+		<id>8327</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>На обложке Rolling Stone нашли историческую ошибку</title>
+		<lead>Надпись на спине как незнание истории своей страны</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/21d560ff26af84b2c8efd917a3370872.jpg</picture>
+		<url>http://w-o-s.ru/news/8327</url>
+		<show_count>6092</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397116800</date>
+		<id>8326</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>«Правый сектор» создал анонимное приложение для общения</title>
+		<lead>Новое приложение не для москалей</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/6938c9fedf6776c9009d65e93bd0c314.jpg</picture>
+		<url>http://w-o-s.ru/news/8326</url>
+		<show_count>1356</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397113200</date>
+		<id>8323</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>В Сети появился симулятор солнечной системы</title>
+		<lead>Как уничтожить космос за минуту?</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/ef98f13417c915a78a270509f816ebc2.png</picture>
+		<url>http://w-o-s.ru/news/8323</url>
+		<show_count>3865</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397073602</date>
+		<id>8314</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Недомашнее видео: глобальная сеть против частной жизни</title>
+		<lead>«Порноместь» как последний гвоздь в гроб любви</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/d21f24c5d7eb2d80aeafce34bc1cf727.jpg</picture>
+		<url>http://w-o-s.ru/article/8314</url>
+		<show_count>8366</show_count>
+		<comments_count>3</comments_count>
+	</material>
+
+	<material>
+		<date>1397073601</date>
+		<id>8316</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Единственная нормальная машина времени</title>
+		<lead>Уроки школы «Анналов», или Жак Ле Гофф — суперзвезда</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/7d07be01345e63af7ba1be31d0b504ca.jpg</picture>
+		<url>http://w-o-s.ru/article/8316</url>
+		<show_count>3417</show_count>
+		<comments_count>6</comments_count>
+	</material>
+
+	<material>
+		<date>1397073600</date>
+		<id>8339</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Юноша с татуировкой сарая. ©</title>
+		<lead>Кинокомпания «ПРОвзгляд»</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/2cd3c82feec4db2a44034f3dbc564c8e.jpg</picture>
+		<url>http://w-o-s.ru/radio/audio/8339</url>
+		<mp3_url>http://archstreet.cc/radio/dolan.mp3</mp3_url>
+		<show_count>1874</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397073600</date>
+		<id>8338</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Fat Necks mix</title>
+		<lead>Fat Necks</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/c7f606d5582de22240e4c128e86d794e.png</picture>
+		<url>http://w-o-s.ru/radio/audio/8338</url>
+		<mp3_url>http://archstreet.cc/radio/fnwos.mp3</mp3_url>
+		<show_count>952</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397073600</date>
+		<id>8337</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Смотреть: Lykke Li - No rest for the wicked</title>
+		<lead>Lykke Li выпустила видео на последний сингл</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/41b955da8407d114dd382a46045fbde2.png</picture>
+		<url>http://w-o-s.ru/radio/news/8337</url>
+		<show_count>154</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397073600</date>
+		<id>8333</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Смотреть: Mo Kolours - Little Brown Dog</title>
+		<lead>Британский продюсер и перкуссионист Mo Kolours выпустил новый клип посвященный его любимой собаке</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/331cc85105e3b860a39a3cc72b41ba3d.png</picture>
+		<url>http://w-o-s.ru/radio/news/8333</url>
+		<show_count>87</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397073600</date>
+		<id>8329</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>10 живых выступлений недели</title>
+		<lead>W-O-S</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/644c0dd886676b0fb3e11db5fc70c084.png</picture>
+		<url>http://w-o-s.ru/radio/audio/8329</url>
+		<show_count>1156</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397073600</date>
+		<id>8325</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Tom Rowlands из Chemical Brothers сделал ремикс на Klaxons</title>
+		<lead>Слушать: Klaxons - Love Frequency (Tom Rowlands Remix)</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/3b9a6a9dc97a185d748e5c2efc3bf579.png</picture>
+		<url>http://w-o-s.ru/radio/news/8325</url>
+		<show_count>91</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397073600</date>
+		<id>8324</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Jamie XX выпустил новое видео</title>
+		<lead>Смотреть: Jamie XX - Sleep Sound</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/10_Thursday/b5a8352b1bdb73554155924a39c1c646.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8324</url>
+		<show_count>137</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397073600</date>
+		<id>8322</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Генератор глупой походки</title>
+		<lead>Интерактивный «Монти Пайтон»</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/08469393445cecf0776b533a282c5b09.jpg</picture>
+		<url>http://w-o-s.ru/blog/8322</url>
+		<show_count>3964</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397073600</date>
+		<id>8321</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Поль Верлен</title>
+		<lead>Как цифра пять, согнутая обратно</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/4596d72572073b7c8ac8f8145e94f3ed.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8321</url>
+		<show_count>1997</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397073600</date>
+		<id>8320</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Украина и «Футурама»</title>
+		<lead>Нельзя просто так взять и забрать Крым</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/32855578ebe5f8259c6268a61ed6f343.jpg</picture>
+		<url>http://w-o-s.ru/video/8320</url>
+		<show_count>4910</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397073600</date>
+		<id>8318</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Просто жизнь»</title>
+		<lead>Марина Разбежкина</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/01613eee2b1943ef5b733ab886dc4d54.jpg</picture>
+		<url>http://w-o-s.ru/film/8318</url>
+		<show_count>1814</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1397073600</date>
+		<id>8317</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Изобретение на почве ненависти</title>
+		<lead>Безответственная телефонистка уничтожила свою профессию</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/187c7d29e1556664f7791c2f8f079639.jpg</picture>
+		<url>http://w-o-s.ru/fact/8317</url>
+		<show_count>2718</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397073600</date>
+		<id>8315</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Обскуранти́зм</title>
+		<lead>Преступный обскурантизм правит умами телезрителей</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/0795b3619499467363c2751b38948101.jpg</picture>
+		<url>http://w-o-s.ru/word/8315</url>
+		<show_count>1757</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397042400</date>
+		<id>8312</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>В Тбилиси противники России по ошибке сожгли словацкий флаг</title>
+		<lead>Русофобский курьез на день национального единства</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/21661a53770db112f41bfceaf965462a.jpg</picture>
+		<url>http://w-o-s.ru/news/8312</url>
+		<show_count>1246</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397035260</date>
+		<id>8307</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>В США появился алфавитный сэндвич</title>
+		<lead>Как сделать сэндвич из 26 ингредиентов?</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/a429f7b93ae67a26a88bf172b8c7b05b.jpg</picture>
+		<url>http://w-o-s.ru/news/8307</url>
+		<show_count>1579</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1397033940</date>
+		<id>8306</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Мама спасла сына от смерти при помощи социальных сетей</title>
+		<lead>Бдительная женщина предотвратила убийство</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/a1fb64f4600a82d9c1224b60f486cdee.jpg</picture>
+		<url>http://w-o-s.ru/news/8306</url>
+		<show_count>1507</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396987201</date>
+		<id>8292</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Какой вы извращенец?</title>
+		<lead>Узнайте, как наука называет ваши особые предпочтения</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/91d23b4a305488d894c6f05d844cc283.jpg</picture>
+		<url>http://w-o-s.ru/article/8292</url>
+		<show_count>70946</show_count>
+		<comments_count>33</comments_count>
+	</material>
+
+	<material>
+		<date>1396987201</date>
+		<id>8291</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Блог зла: Смерть богатым!</title>
+		<lead>Вся эта омерзительная роскошь</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/6fce8e51c70b6c8b181c7e5aa13744bd.jpg</picture>
+		<url>http://w-o-s.ru/article/8291</url>
+		<show_count>4848</show_count>
+		<comments_count>12</comments_count>
+	</material>
+
+	<material>
+		<date>1396987200</date>
+		<id>8305</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Смотреть: Джимми Фэллон и Энн Хэтуэй поют рэп</title>
+		<lead>Джимми Фэллон и Энн Хэтуэй исполнили бродвейские версии песен Кендрика Ламара и Снуп Догга</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/b8699cbad4ba06b950a7b362a6896154.png</picture>
+		<url>http://w-o-s.ru/radio/news/8305</url>
+		<show_count>1226</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396987200</date>
+		<id>8304</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Pharmakon записала кавер на песню Нэнси Синатры</title>
+		<lead>Слушать: Pharmakon – “Bang Bang (My Baby Shot Me Down)” (Nancy Sinatra Cover)</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/a8bc850fcc1e1c5221a818a1c696f14f.png</picture>
+		<url>http://w-o-s.ru/radio/news/8304</url>
+		<show_count>130</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396987200</date>
+		<id>8303</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>R-r</title>
+		<lead>Премьера: xscartx</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/c566db75f1d02c64847884a37ee9738e.png</picture>
+		<url>http://w-o-s.ru/radio/audio/8303</url>
+		<show_count>266</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396987200</date>
+		<id>8302</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Появилась первая песня с нового альбома Майкла Джексона</title>
+		<lead>Слушать: Michael Jackson - Xscape</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/489724bfeedb04fe160cc0415aef4d9b.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8302</url>
+		<show_count>413</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396987200</date>
+		<id>8301</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Обложки знаменитых музыкальных альбомов: вид сзади</title>
+		<lead>Как могут выглядеть обложки знаменитых альбомов под другим углом? Пользователь Flickr по имени Harvezt ответил на этот вопрос в серии работ под названием The Dark Side Of The Cover.</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/1508cb4fe4427b707b97e3dafd7f584c.png</picture>
+		<url>http://w-o-s.ru/radio/news/8301</url>
+		<show_count>3365</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396987200</date>
+		<id>8300</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Queens Of The Stone Age выпустили новый клип</title>
+		<lead>Смотреть: Queens Of The Stone Age - Smooth Sailing</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/dd521b13ea705902f87c4e6a2b122314.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8300</url>
+		<show_count>67</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396987200</date>
+		<id>8299</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Слушать: Little Dragon - Paris</title>
+		<lead>Вчера в эфире радио BBC 1 состоялась премьера новой песни Little Dragon.</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/09_Wednesday/b64de5cb492955c8f4301dd390b3e557.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8299</url>
+		<show_count>107</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396987200</date>
+		<id>8298</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Пищáль</title>
+		<lead>Среди конфискованных у чиновника предметов обнаружены старинные пищали</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/ae5a6c1e86db626bf81a79cfe8bc07a3.jpg</picture>
+		<url>http://w-o-s.ru/word/8298</url>
+		<show_count>1469</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396987200</date>
+		<id>8297</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Юные сердцем»</title>
+		<lead>Young@Heart</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/6c020cb3f854d307a9a4086e4e1ca532.jpg</picture>
+		<url>http://w-o-s.ru/film/8297</url>
+		<show_count>1946</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396987200</date>
+		<id>8296</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Музыкальные обложки в Google Street View</title>
+		<lead>Модные группы в естественной городской среде</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/072c65d3096939f80b32d7bf50ee24ca.jpg</picture>
+		<url>http://w-o-s.ru/blog/8296</url>
+		<show_count>2938</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396987200</date>
+		<id>8295</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Ненастоящий детектив</title>
+		<lead>Русский сериал без Макконахи, зато с Макарским</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/9a829211c29a9266e5d909623f378967.jpg</picture>
+		<url>http://w-o-s.ru/video/8295</url>
+		<show_count>4850</show_count>
+		<comments_count>4</comments_count>
+	</material>
+
+	<material>
+		<date>1396987200</date>
+		<id>8294</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Космическое радио</title>
+		<lead>НАСА исследует рок-музыку</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/88509a3f708b33b23d7c39a1eda717b6.jpg</picture>
+		<url>http://w-o-s.ru/fact/8294</url>
+		<show_count>2003</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396987200</date>
+		<id>8293</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Жермен Нуво</title>
+		<lead>Бледный облик малолетки: плод, томящийся на ветке</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/204bb8664dfb122d8a651324da35622d.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8293</url>
+		<show_count>1312</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396968480</date>
+		<id>8290</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Обама и Гай Фокс ограбили магазин в Краснодаре</title>
+		<lead>Злоумышленники в колоритных масках терроризируют город</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/fbdd4c9d9a147a84b8ef8c4851ba75ae.jpg</picture>
+		<url>http://w-o-s.ru/news/8290</url>
+		<show_count>1175</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396967580</date>
+		<id>8289</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Норвежские журналисты вступились за Дмитрия Киселева</title>
+		<lead>Европейцы осудили запрет на свободу слова</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/95411bea8c808ce14d7dca0e6dbd3ee9.jpg</picture>
+		<url>http://w-o-s.ru/news/8289</url>
+		<show_count>1626</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396960440</date>
+		<id>8287</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Опубликовано первое инстаграм-фото из космоса</title>
+		<lead>Орбитальное селфи покоряет планету</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/1d03147a9ead463fd6fd5ec51a9ab414.jpg</picture>
+		<url>http://w-o-s.ru/news/8287</url>
+		<show_count>492</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396960020</date>
+		<id>8286</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Интро «Симпсонов» сняли в стиле Minecraft</title>
+		<lead>Гомер стал персонажем игры</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/92914058355b6f627cf63a3fd2786b69.jpg</picture>
+		<url>http://w-o-s.ru/news/8286</url>
+		<show_count>476</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396959420</date>
+		<id>8285</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Microsoft прекращает поддержку Windows XP</title>
+		<lead>Большинство компьютеров мира окажется под угрозой</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/90472e86b5411cee8f24e1a05c1c8c4a.jpg</picture>
+		<url>http://w-o-s.ru/news/8285</url>
+		<show_count>1083</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1396900802</date>
+		<id>8258</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Скотобаза: долой балетки и поло</title>
+		<lead>9 базовых вещей, которые не нужны в гардеробе</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/6445470b49a3109902faff42b149a342.jpg</picture>
+		<url>http://w-o-s.ru/article/8258</url>
+		<show_count>23055</show_count>
+		<comments_count>28</comments_count>
+	</material>
+
+	<material>
+		<date>1396900801</date>
+		<id>8272</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Тяготы английского языка: как стать своим среди чужих?</title>
+		<lead>9 приемов, которые помогут приблизиться к идеалу</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/391c28f447032b62e43d337fdcf5580e.jpg</picture>
+		<url>http://w-o-s.ru/article/8272</url>
+		<show_count>21148</show_count>
+		<comments_count>17</comments_count>
+	</material>
+
+	<material>
+		<date>1396900800</date>
+		<id>8288</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Слушать: Klaxons - Atom to Atom</title>
+		<lead>Klaxons представили обложку будущего альбома и опубликовали новый трек</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/29404ea0e702eac51c9cf21ef6d33b6e.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8288</url>
+		<show_count>115</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396900800</date>
+		<id>8284</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Смотреть: Wild Beasts - A Simple Beautiful Truth</title>
+		<lead>Wild Beasts опубликовали новое видео</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/ba8ce932ce7d1a89085d9c3a38fd6df2.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8284</url>
+		<show_count>58</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396900800</date>
+		<id>8280</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>10 лучших клипов недели</title>
+		<lead>W-O-S</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/d9a10b6ebcaa24625afd6309498da3a8.png</picture>
+		<url>http://w-o-s.ru/radio/audio/8280</url>
+		<show_count>1152</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396900800</date>
+		<id>8278</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Появился проект «Диснейленда» в Нагатино</title>
+		<lead>Парк развлечений приходит в Россию</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/7d467559eea40931244bf5d46eb0b321.jpg</picture>
+		<url>http://w-o-s.ru/news/8278</url>
+		<show_count>1630</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396900800</date>
+		<id>8277</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Слушать: Ben Watt - Hendra</title>
+		<lead>Участник Everything But The Girl, диджей и продюсер, Ben Watt выпустил новый альбом. В записи диска приняли участие Bernard Butler, Ewan Pearson и David Gilmour</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/a5efe7a4c31064ecb7ab09b10e20c7cf.png</picture>
+		<url>http://w-o-s.ru/radio/news/8277</url>
+		<show_count>70</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396900800</date>
+		<id>8276</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>The Roots анонсировали новый альбом и поделились песней</title>
+		<lead>Cлушать: The Roots – When The People Cheer</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/08_Tuesday/5c05fde0b94cb8f789116fcaf454c027.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8276</url>
+		<show_count>76</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396900800</date>
+		<id>8269</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Проклятый сценарий</title>
+		<lead>Неснятый фильм, убивающий пухлых актеров</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/1afa53df3e4739bcc13c6bcfa33de238.jpg</picture>
+		<url>http://w-o-s.ru/fact/8269</url>
+		<show_count>2810</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396900800</date>
+		<id>8268</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Божидар</title>
+		<lead>Скучная куколка смуглится</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/9b2a915ebbf811e108ab4f9f69c433ec.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8268</url>
+		<show_count>1668</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396900800</date>
+		<id>8267</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Дон Дрейпер из «Безумцев» в молодости</title>
+		<lead>Провал на свидании по телевизору</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/6960c6872fe500536bcc6608cc22c910.jpg</picture>
+		<url>http://w-o-s.ru/video/8267</url>
+		<show_count>2671</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396900800</date>
+		<id>8264</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Признания опасного человека»</title>
+		<lead>Confessions of a Dangerous Mind</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/135fa443f7d695731c886f2d15d7eed9.jpg</picture>
+		<url>http://w-o-s.ru/film/8264</url>
+		<show_count>1829</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396900800</date>
+		<id>8263</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Фили́стер</title>
+		<lead>Еще вчера Гена был филистером, а сегодня уже выставляется в галерее</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/cbcfea7102b5bd108e121e45c1bdfcb6.jpg</picture>
+		<url>http://w-o-s.ru/word/8263</url>
+		<show_count>1630</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396900800</date>
+		<id>8262</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Бургер-порно</title>
+		<lead>Мясные котлеты меж двух булок</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/f27dbf1f2441d11956ff203b67e0d4b9.jpg</picture>
+		<url>http://w-o-s.ru/blog/8262</url>
+		<show_count>4360</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396879200</date>
+		<id>8265</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Рэпер сделал на своем лице татуировку-хэштег</title>
+		<lead>Тату вышли на новый уровень</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/25b963a10c54f16edee4c3a42c10c064.jpg</picture>
+		<url>http://w-o-s.ru/news/8265</url>
+		<show_count>946</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396876560</date>
+		<id>8260</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>4chan запустил кампанию против чемпионата мира по футболу</title>
+		<lead>Попытка спровоцировать бойкот из-за новостей о проститутках</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/40521bf26c488766c34f2a6970de36c9.jpg</picture>
+		<url>http://w-o-s.ru/news/8260</url>
+		<show_count>992</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396861200</date>
+		<id>8255</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Пользователи устроили самую большую игру в тетрис на небоскребе</title>
+		<lead>Легендарная игра приняла монструозный масштаб</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/dcfaa8701ac35f1093415f799032174a.jpg</picture>
+		<url>http://w-o-s.ru/news/8255</url>
+		<show_count>695</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396857600</date>
+		<id>8253</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>По жизни мэра Торонто появилась компьютерная игра</title>
+		<lead>Роб Форд вновь выигрывает</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/1f9bc25f731e51704cb8193fba3dcd33.jpg</picture>
+		<url>http://w-o-s.ru/news/8253</url>
+		<show_count>1595</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396814402</date>
+		<id>8245</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Ешь, плати, рули</title>
+		<lead>Саша Цой о том, что автомобиль — это роскошь, а не средство передвижения</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/06_Sunday/fd01241197f279acb2971290669bcbe4.png</picture>
+		<url>http://w-o-s.ru/article/8245</url>
+		<show_count>3412</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1396814401</date>
+		<id>8244</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Как он не встретил их маму</title>
+		<lead>Оправдал ли финал сериала ожидания фанатов?</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/06_Sunday/08e361c45fbb756aaa86f4e627eb4ea3.png</picture>
+		<url>http://w-o-s.ru/article/8244</url>
+		<show_count>9906</show_count>
+		<comments_count>4</comments_count>
+	</material>
+
+	<material>
+		<date>1396814400</date>
+		<id>8273</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Gopstep Duo</title>
+		<lead>Георгий Мхеидзе</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/aa3812729753f05dcc013b6d5298c15a.jpg</picture>
+		<url>http://w-o-s.ru/radio/audio/8273</url>
+		<mp3_url>http://archstreet.cc/radio/gopstepduo.mp3</mp3_url>
+		<show_count>551</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396814400</date>
+		<id>8271</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Смотреть: Röyksopp &amp; Robyn Do It Again Tour 2014 trailer</title>
+		<lead>Robyn и Röyksopp объявили о совместном туре и поделились отличным трейлером к предстоящим концертам</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/165a9a3ce6d2d3f2d4de666da49ad0ee.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8271</url>
+		<show_count>84</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396814400</date>
+		<id>8266</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Warpaint сняли клип сразу на две песни</title>
+		<lead>Смотреть: Warpaint - Disco//Very - Keep It Healthy</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/22a30a9f6711057984ce16a99c88f12b.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8266</url>
+		<show_count>68</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396814400</date>
+		<id>8261</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Bryan Eno и Karl Hyde из Underworld поделились новым треком</title>
+		<lead>Слушать: Bryan Eno &amp; Karl Hyde – “Daddy’s Car”</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/a7e652893ef0f6367a45d831f6e3d091.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8261</url>
+		<show_count>236</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396814400</date>
+		<id>8257</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Temples сделали ремикс на Jagwar Ma</title>
+		<lead>Слушать: Jagwar Ma - Man I Need( Temples Remix )</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/0d2609485a8c775af3bdb10d58601680.png</picture>
+		<url>http://w-o-s.ru/radio/news/8257</url>
+		<show_count>246</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396814400</date>
+		<id>8254</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Drake, Kanye West и Rick Ross как герои мультфильмов.</title>
+		<lead>Немецкий дизайнер Zhi-Yun Zhang представил известных исполнителей в качестве мультипликационных героев.</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/6b182d99c23fa57bee01b1147fa9db32.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8254</url>
+		<show_count>147</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396814400</date>
+		<id>8252</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Музыкальные видео Спайка Ли</title>
+		<lead>W-O-S</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/be131ef8721ea1d86c564877a2551f70.png</picture>
+		<url>http://w-o-s.ru/radio/audio/8252</url>
+		<show_count>931</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396814400</date>
+		<id>8250</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Опубликован трейлер нового альбома Майкла Джексона</title>
+		<lead>Смотреть: Michael Jackson - Xscape</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/174b3e8967c2a618193def5db1831115.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8250</url>
+		<show_count>85</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396814400</date>
+		<id>8249</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Magadan Admiralcore Mix 2002</title>
+		<lead>IURII</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/c04e9c8d8be3720bdbeb4decb96d3731.jpg</picture>
+		<url>http://w-o-s.ru/radio/audio/8249</url>
+		<mp3_url>http://archstreet.cc/radio/iurii2002.mp3</mp3_url>
+		<show_count>669</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396814400</date>
+		<id>8248</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Боксер против медведя</title>
+		<lead>Косолапый уложил человека на лопатки</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/07_Monday/bfe0c447cc030e534bf12916be65fbd4.jpg</picture>
+		<url>http://w-o-s.ru/fact/8248</url>
+		<show_count>2070</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396814400</date>
+		<id>8246</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Давид Самойлов</title>
+		<lead>Любовь завершается браком, и свет торжествует над мраком…</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/06_Sunday/39473e3350a04e674cfd53d4e6d8846c.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8246</url>
+		<show_count>1272</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396814400</date>
+		<id>8243</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Patatap</title>
+		<lead>Суперсинтезатор на клавиатуре</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/06_Sunday/1a1d3612a847665113b79a2684eac6e7.jpg</picture>
+		<url>http://w-o-s.ru/blog/8243</url>
+		<show_count>3549</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396814400</date>
+		<id>8242</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Время отдыха с субботы до понедельника»</title>
+		<lead>Игорь Таланкин</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/06_Sunday/e8410928565abbfdbb2935153ac08a29.jpg</picture>
+		<url>http://w-o-s.ru/film/8242</url>
+		<show_count>1634</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396814400</date>
+		<id>8241</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Аргó</title>
+		<lead>Врачебное арго леденит душу похлеще языка медицинских энциклопедий</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/06_Sunday/8351f181f518efd37a0e57d01b44bc41.jpg</picture>
+		<url>http://w-o-s.ru/word/8241</url>
+		<show_count>2204</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396814400</date>
+		<id>8239</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Переносной дом амишей</title>
+		<lead>Вся сила меннонитской общины в одном клипе</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/06_Sunday/32ebc9a1a4ea080fdc792cda49b101f5.jpg</picture>
+		<url>http://w-o-s.ru/video/8239</url>
+		<show_count>2235</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396728003</date>
+		<id>8235</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Плакат: Всемирная энциклопедия жестов</title>
+		<lead>Как заламывать пальцы без вреда для здоровья</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/05_Saturday/909f38319ee654ed2222fe3f83566377.jpg</picture>
+		<url>http://w-o-s.ru/article/8235</url>
+		<show_count>7950</show_count>
+		<comments_count>11</comments_count>
+	</material>
+
+	<material>
+		<date>1396728002</date>
+		<id>8237</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Как бросить все к чертовой матери, уехать на Гоа и не облажаться?</title>
+		<lead>Первый шаг к решению всех проблем</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/05_Saturday/303932509dcad73fa63ad3b70f80e806.jpg</picture>
+		<url>http://w-o-s.ru/kak/q/270</url>
+		<show_count>0</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396728001</date>
+		<id>8233</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Воскресная библиотека: Супермаркет пустоты</title>
+		<lead>Почему в мегаполисах трудно купить еду?</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/05_Saturday/5382e1c593d933e57b712dca7f50cf83.jpg</picture>
+		<url>http://w-o-s.ru/article/8233</url>
+		<show_count>3294</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396728000</date>
+		<id>8238</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Циприан Норвид</title>
+		<lead>То ль камень межевой, то ль череп великаний</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/05_Saturday/a17536160e1e7cb4b0410f8a6e524de8.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8238</url>
+		<show_count>1420</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396728000</date>
+		<id>8232</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Человек на Луне»</title>
+		<lead>Man on the Moon</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/05_Saturday/62d1ef35e4d27d5e2b0a43c0e69f7a68.jpg</picture>
+		<url>http://w-o-s.ru/film/8232</url>
+		<show_count>2049</show_count>
+		<comments_count>3</comments_count>
+	</material>
+
+	<material>
+		<date>1396728000</date>
+		<id>8231</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Белки в шляпах</title>
+		<lead>Девушка со странным фетишем</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/05_Saturday/5ec4e5d29cada3b0d82848d777753879.jpg</picture>
+		<url>http://w-o-s.ru/fact/8231</url>
+		<show_count>1805</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396728000</date>
+		<id>8229</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Лыжный триллер</title>
+		<lead>Инцидент в горах от первого лица</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/05_Saturday/5314fdccb822bad89f0b6c71aa6b6ee6.jpg</picture>
+		<url>http://w-o-s.ru/video/8229</url>
+		<show_count>3126</show_count>
+		<comments_count>4</comments_count>
+	</material>
+
+	<material>
+		<date>1396728000</date>
+		<id>8228</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Инфографика «Настоящего детектива»</title>
+		<lead>Что вы могли упустить при просмотре любимого сериала</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/05_Saturday/6c6bfffa05fa2ae63c404b3e97ed7874.jpg</picture>
+		<url>http://w-o-s.ru/blog/8228</url>
+		<show_count>4105</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396728000</date>
+		<id>8219</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Мóббинг</title>
+		<lead>Коля даже не заметил моббинга со стороны коллег</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/05_Saturday/d16e6c16b584fb8e9ca54ef95cd1a81f.jpg</picture>
+		<url>http://w-o-s.ru/word/8219</url>
+		<show_count>2233</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396688400</date>
+		<id>8236</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Настольная игра «Монополия» вводит новые правила</title>
+		<lead>Канонические правила оказались не такими уж непоколебимыми</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/05_Saturday/ce1141b8bbb6e471ca4b0a0a031b5461.png</picture>
+		<url>http://w-o-s.ru/news/8236</url>
+		<show_count>2286</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396641602</date>
+		<id>8224</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Субботняя классика: Артур Конан Дойл о любви и старости</title>
+		<lead>Кто будет любить нас, когда мы состаримся?</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/04_Friday/d1b97f0ef643a512ded39a8cf0a13060.jpg</picture>
+		<url>http://w-o-s.ru/article/8224</url>
+		<show_count>2966</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1396641601</date>
+		<id>8227</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Каким видом спорта вам заняться?</title>
+		<lead>Способ провести весенние дни с пользой</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/04_Friday/bc61ae470b9bc6633f5cefc751d35686.jpg</picture>
+		<url>http://w-o-s.ru/article/8227</url>
+		<show_count>21098</show_count>
+		<comments_count>19</comments_count>
+	</material>
+
+	<material>
+		<date>1396641600</date>
+		<id>8234</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>PW41 mix</title>
+		<lead>W-O-S</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/05_Saturday/37448b7fb09d9abfc464331fd3cd6a81.png</picture>
+		<url>http://w-o-s.ru/radio/audio/8234</url>
+		<mp3_url>http://archstreet.cc/radio/ph41.mp3</mp3_url>
+		<show_count>1100</show_count>
+		<comments_count>3</comments_count>
+	</material>
+
+	<material>
+		<date>1396641600</date>
+		<id>8226</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Мини-татуировки</title>
+		<lead>Идеи для рисунков на запястье</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/04_Friday/ee286649bdad4f5441007e190dd418dd.jpg</picture>
+		<url>http://w-o-s.ru/blog/8226</url>
+		<show_count>9190</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396641600</date>
+		<id>8225</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Кипение и замерзание</title>
+		<lead>Почему химия — это весело</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/04_Friday/b095800df0280771d4899bae7f54649f.jpg</picture>
+		<url>http://w-o-s.ru/video/8225</url>
+		<show_count>3816</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396641600</date>
+		<id>8223</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Ахмед Недим</title>
+		<lead>О ты, чьи брови — полумесяц, приди, затеем пир</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/04_Friday/5e665523bc6f460a1f3a27f456df86bf.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8223</url>
+		<show_count>1209</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396641600</date>
+		<id>8221</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Сигары для Кеннеди</title>
+		<lead>Как ввести эмбарго, не пострадав от этого самому</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/04_Friday/332e1d21df5ffe64ca9fa5cacf35783e.jpg</picture>
+		<url>http://w-o-s.ru/fact/8221</url>
+		<show_count>2100</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396641600</date>
+		<id>8220</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Легенда о Сурамской крепости»</title>
+		<lead>Сергей Параджанов, Додо Абашидзе</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/04_Friday/84fb3d1ac13c44e9873eb65725869d60.jpg</picture>
+		<url>http://w-o-s.ru/film/8220</url>
+		<show_count>1744</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396641600</date>
+		<id>8218</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Нувори́ш</title>
+		<lead>Лазурный берег по-прежнему ассоциируется с русскими нуворишами</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/04_Friday/3138a4c744dac48c6629ee9e8f1500fd.jpg</picture>
+		<url>http://w-o-s.ru/word/8218</url>
+		<show_count>1644</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396616400</date>
+		<id>8217</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Джордж Буш-младший показал потреты Путина и других мировых лидеров</title>
+		<lead>Недюжинный талант экс-президента США</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/04_Friday/7cbbc773b9c87d0d34adfdf372df7000.png</picture>
+		<url>http://w-o-s.ru/news/8217</url>
+		<show_count>3579</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396605600</date>
+		<id>8214</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>В Сети появилось новое видео «Монти Пайтона»</title>
+		<lead>Министерство глупых походок возвращается</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/04_Friday/b3c4aa9c98754a9ab4c1059fd5bab457.jpg</picture>
+		<url>http://w-o-s.ru/news/8214</url>
+		<show_count>1344</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396603440</date>
+		<id>8213</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Белый дом раскритиковал селфи Обамы на Samsung</title>
+		<lead>Правительство недовольно пиаром компании с помощью президента</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/04_Friday/7321bd6bbdc6d1a2238307585b51acc5.jpg</picture>
+		<url>http://w-o-s.ru/news/8213</url>
+		<show_count>1672</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396598400</date>
+		<id>8212</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Жириновский хочет закрыть в России все рестораны «Макдональдс»</title>
+		<lead>Безумный политик объявил войну фастфуду</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/04_Friday/b09194a791532f948f765d2cffd60117.jpg</picture>
+		<url>http://w-o-s.ru/news/8212</url>
+		<show_count>1415</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396591200</date>
+		<id>8211</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>В Vine появились сообщения</title>
+		<lead>Сервис становится более социальным</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/04_Friday/636ada5a045a7417056077a8a8fdac13.jpg</picture>
+		<url>http://w-o-s.ru/news/8211</url>
+		<show_count>2279</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396555202</date>
+		<id>8200</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Образование и смерть в сноуборд-лагере</title>
+		<lead>Чехол-интроверт, колени-дезертиры и бриллиант-гипнотизер в New Star Camp</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/03_Thursday/0d3a635346f07e1822296f4385ba0895.jpg</picture>
+		<url>http://w-o-s.ru/article/8200</url>
+		<show_count>3573</show_count>
+		<comments_count>13</comments_count>
+	</material>
+
+	<material>
+		<date>1396555201</date>
+		<id>8210</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Давай обойдемся без истерик</title>
+		<lead>Правила выживания при столкновении с бездной</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/04_Friday/5f92d99a109b7d983a7d21551539d515.jpg</picture>
+		<url>http://w-o-s.ru/article/8210</url>
+		<show_count>21097</show_count>
+		<comments_count>20</comments_count>
+	</material>
+
+	<material>
+		<date>1396555200</date>
+		<id>8222</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Saturday+Sunday vol.71</title>
+		<lead>W-O-S</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/04_Friday/55a8ad139df01e31cc4af315ed4005a8.png</picture>
+		<url>http://w-o-s.ru/radio/audio/8222</url>
+		<mp3_url>http://archstreet.cc/radio/wweekend71.mp3</mp3_url>
+		<show_count>2162</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396555200</date>
+		<id>8216</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Glass Animals исполнили песню Канье Веста</title>
+		<lead>Смотреть: Glass Animals - Love Lockdown</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/04_Friday/cd91f975814292039cf62212d7d70810.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8216</url>
+		<show_count>93</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396555200</date>
+		<id>8208</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Отель»</title>
+		<lead>Hotel</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/03_Thursday/bccf74008bbaf6daef45535994119cdf.jpg</picture>
+		<url>http://w-o-s.ru/film/8208</url>
+		<show_count>2482</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1396555200</date>
+		<id>8207</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Фридрих Гёльдерлин</title>
+		<lead>Ибо правит в нас некий бог</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/03_Thursday/c3e3de6b68f4b3d7c8b275f25fe98d86.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8207</url>
+		<show_count>2271</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1396555200</date>
+		<id>8205</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Кот-Бэйн</title>
+		<lead>Что бы случилось, если бы главным антагонистом Бэтмена был кот?</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/03_Thursday/cb4cd45627ce10c0ec6692cde159cc5d.jpg</picture>
+		<url>http://w-o-s.ru/video/8205</url>
+		<show_count>3217</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396555200</date>
+		<id>8204</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Исторические тесты</title>
+		<lead>Проверьте свои знания</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/03_Thursday/4c43544e9200e2cb3ee75a4f19f88c2c.jpg</picture>
+		<url>http://w-o-s.ru/blog/8204</url>
+		<show_count>2586</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396555200</date>
+		<id>8202</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Мелодия Windows</title>
+		<lead>Короткое, но емкое произведение знаменитого композитора</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/03_Thursday/70ad1206d95ae3fc6a4ac450dce971db.jpg</picture>
+		<url>http://w-o-s.ru/fact/8202</url>
+		<show_count>4363</show_count>
+		<comments_count>3</comments_count>
+	</material>
+
+	<material>
+		<date>1396555200</date>
+		<id>8184</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Эустрéсс</title>
+		<lead>От свадебного эустресса Лера прямо светится изнутри</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/03_Thursday/6a36e0a66f3d91cead3999fcec6d7b7f.jpg</picture>
+		<url>http://w-o-s.ru/word/8184</url>
+		<show_count>1580</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396542780</date>
+		<id>8206</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Джеймс Франко пытался снять несовершеннолетнюю девушку в инстаграме</title>
+		<lead>Голливудская звезда тестирует подкаты в фотосервисе</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/03_Thursday/c9a6dd95440a7e0457f741d8895ca346.jpg</picture>
+		<url>http://w-o-s.ru/news/8206</url>
+		<show_count>4816</show_count>
+		<comments_count>3</comments_count>
+	</material>
+
+	<material>
+		<date>1396537200</date>
+		<id>8203</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Концерт Тимберлейка и Сайрус отменят из-за санкций США против России</title>
+		<lead>Ротенберги и Тимченко наносят ответный удар</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/03_Thursday/844dacc85b419c229cbb3adcbb0b15d1.jpg</picture>
+		<url>http://w-o-s.ru/news/8203</url>
+		<show_count>582</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396528200</date>
+		<id>8190</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>В США стенографист писал «я ненавижу свою работу»</title>
+		<lead>Работник суда повторяет фильм «Сияние»</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/03_Thursday/0927e3c12411dffaa00fa48b171605a2.jpg</picture>
+		<url>http://w-o-s.ru/news/8190</url>
+		<show_count>2360</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396526820</date>
+		<id>8189</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Баг в инстаграме скрывает фото</title>
+		<lead>Исчезновение селфи и кадров с едой привело к панике</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/03_Thursday/1e15ab590950a73e83183facc37d28ba.jpg</picture>
+		<url>http://w-o-s.ru/news/8189</url>
+		<show_count>620</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396515600</date>
+		<id>8188</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Японская мафия открыла официальный сайт</title>
+		<lead>Попытка якудзы очистить свою репутацию</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/03_Thursday/6be5221a9ea2e985f758dc25e046320e.png</picture>
+		<url>http://w-o-s.ru/news/8188</url>
+		<show_count>2746</show_count>
+		<comments_count>6</comments_count>
+	</material>
+
+	<material>
+		<date>1396468802</date>
+		<id>8183</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Пытка недели: Вареные ножки</title>
+		<lead>Как правильно приготовить человеческие ступни с горчичным соусом?</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/02_Wednesday/ad968579ff695d00f72246c7bfcb6409.jpg</picture>
+		<url>http://w-o-s.ru/article/8183</url>
+		<show_count>7003</show_count>
+		<comments_count>11</comments_count>
+	</material>
+
+	<material>
+		<date>1396468801</date>
+		<id>8175</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>И где теперь читать новости?</title>
+		<lead>Илья Клишин рассказывает, что теперь читать вместо «Ленты.ру»</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/02_Wednesday/84078d5b80f1e89034c0be0631b24672.jpg</picture>
+		<url>http://w-o-s.ru/article/8175</url>
+		<show_count>16674</show_count>
+		<comments_count>13</comments_count>
+	</material>
+
+	<material>
+		<date>1396468800</date>
+		<id>8182</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Литóта</title>
+		<lead>В случае недомерка-Федора «Мужичок с ноготок» — это не литота, а комплимент</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/02_Wednesday/419433e12c9eb47f6301dbda332c21ff.jpg</picture>
+		<url>http://w-o-s.ru/word/8182</url>
+		<show_count>2809</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396468800</date>
+		<id>8181</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Упасть без парашюта и остаться в живых</title>
+		<lead>Русская зима как стратегическое преимущество</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/02_Wednesday/8038655bfe524d9b82262e961847a7ff.gif</picture>
+		<url>http://w-o-s.ru/fact/8181</url>
+		<show_count>2832</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396468800</date>
+		<id>8180</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Крутое пике»</title>
+		<lead>Юрий Стыцковский</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/02_Wednesday/e6993544faec58b9ecbc3607d11aa1cb.jpg</picture>
+		<url>http://w-o-s.ru/film/8180</url>
+		<show_count>3604</show_count>
+		<comments_count>13</comments_count>
+	</material>
+
+	<material>
+		<date>1396468800</date>
+		<id>8179</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Морис Метерлинк</title>
+		<lead>Травою сорной у дороги и солнцем, стынущим над мертвой</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/02_Wednesday/bc4574e983c60d8e09be495798963c29.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8179</url>
+		<show_count>1526</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396468800</date>
+		<id>8178</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Джоанна впервые услышала звук</title>
+		<lead>Технологии наконец-то лечат глухих</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/02_Wednesday/75b262882c3dde21839217db95a88c7e.jpg</picture>
+		<url>http://w-o-s.ru/video/8178</url>
+		<show_count>4006</show_count>
+		<comments_count>5</comments_count>
+	</material>
+
+	<material>
+		<date>1396468800</date>
+		<id>8177</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Сколько времени убили сериалы?</title>
+		<lead>Куда уходит ваша жизнь?</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/02_Wednesday/c14422279944b4244f99645d54535419.jpg</picture>
+		<url>http://w-o-s.ru/blog/8177</url>
+		<show_count>4171</show_count>
+		<comments_count>8</comments_count>
+	</material>
+
+	<material>
+		<date>1396454400</date>
+		<id>8176</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Сериал «Игра престолов» обзавелся гидом</title>
+		<lead>Помощь фанатам, которые ничего не запомнили</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/02_Wednesday/a107ea9e3f8c301febe4887e27ba45c9.jpg</picture>
+		<url>http://w-o-s.ru/news/8176</url>
+		<show_count>2099</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396443600</date>
+		<id>8169</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Третий сезон «Твин Пикса» появился в твиттере</title>
+		<lead>Внезапное продолжение сериала в необычном формате</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/02_Wednesday/846c1613fad4dcd6d23b07ade646e292.jpg</picture>
+		<url>http://w-o-s.ru/news/8169</url>
+		<show_count>2697</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1396435980</date>
+		<id>8168</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Starbucks заставили извиниться за «сатанинские» рисунки на кофе</title>
+		<lead>Зачем? Во славу Сатане, конечно!</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/02_Wednesday/7381324bc10242b356349efcc213e899.jpg</picture>
+		<url>http://w-o-s.ru/news/8168</url>
+		<show_count>1804</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396425600</date>
+		<id>8165</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>В Юте за «порноместь» будут судить</title>
+		<lead>Американцы не смогут шантажировать своих бывших</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/02_Wednesday/c7adb180aa10437482652107c9f877e5.jpg</picture>
+		<url>http://w-o-s.ru/news/8165</url>
+		<show_count>3507</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396382402</date>
+		<id>8156</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Павел Дуров, до свидания!</title>
+		<lead>За что мы любили основателя главной русской соцсети</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/2e6390cdf0dadbab953b9aea283806e6.jpg</picture>
+		<url>http://w-o-s.ru/article/8156</url>
+		<show_count>8726</show_count>
+		<comments_count>7</comments_count>
+	</material>
+
+	<material>
+		<date>1396382401</date>
+		<id>8164</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Как познакомиться с девушкой и не облажаться?</title>
+		<lead>Развиваем самый важный навык в жизни</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/752bd140ac1bcc2dcd5108cdc329b3a3.jpg</picture>
+		<url>http://w-o-s.ru/kak/q/214</url>
+		<show_count>0</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396382400</date>
+		<id>8173</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Слушать: Alexis Taylor - Elvis Has Left The Building</title>
+		<lead>Вокалист Hot Chip анонсировал сольный альбом и поделился новой песней</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/02_Wednesday/8d7e210d077415b1a855944d40858de5.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8173</url>
+		<show_count>316</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396382400</date>
+		<id>8172</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Thee Oh Sees опубликовали новый трек</title>
+		<lead>Слушать: Thee Oh Sees - Drop</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/02_Wednesday/5760a751650a9e930d073b9154739a9c.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8172</url>
+		<show_count>291</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396382400</date>
+		<id>8167</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Julian Casablancas выступил вместе с Arcade Fire</title>
+		<lead>Смотреть: Julian Casablancas &amp; Arcade Fire - Normal Person</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/02_Wednesday/43ff85434115cde9676ec3e75514c740.png</picture>
+		<url>http://w-o-s.ru/radio/news/8167</url>
+		<show_count>103</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396382400</date>
+		<id>8166</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Beatbrother Dj</title>
+		<lead>Boogie Beat</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/02_Wednesday/8acf1500187c719955ef4fc86af9ff75.jpg</picture>
+		<url>http://w-o-s.ru/radio/audio/8166</url>
+		<mp3_url>http://archstreet.cc/radio/Beatbrother14.mp3</mp3_url>
+		<show_count>843</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396382400</date>
+		<id>8163</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Самые красивые титры</title>
+		<lead>Энциклопедия заставок к фильмам</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/d882aafedf7687b09c53464b5a705221.jpg</picture>
+		<url>http://w-o-s.ru/blog/8163</url>
+		<show_count>4264</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1396382400</date>
+		<id>8162</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Лучшая рабочая смена в истории</title>
+		<lead>1 апреля как возможность поверить</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/a837e99f2dddaef534d70ad18f958061.jpg</picture>
+		<url>http://w-o-s.ru/video/8162</url>
+		<show_count>3865</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396382400</date>
+		<id>8160</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Жорж Рибемон-Дессень</title>
+		<lead>Птенец который пел у меня в глазу</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/63bd31acc2b470792bc50901b8f8433b.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8160</url>
+		<show_count>1711</show_count>
+		<comments_count>3</comments_count>
+	</material>
+
+	<material>
+		<date>1396382400</date>
+		<id>8159</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Девушка, которая слишком много знала»</title>
+		<lead>La ragazza che sapeva troppo</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/8da71fa4332e703964be05f5054a328b.jpg</picture>
+		<url>http://w-o-s.ru/film/8159</url>
+		<show_count>2375</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396382400</date>
+		<id>8158</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Бездомный и $100 000</title>
+		<lead>Почему деньги не решают все проблемы</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/f59357b4adfa0d73bb75dc15e94b0f38.jpg</picture>
+		<url>http://w-o-s.ru/fact/8158</url>
+		<show_count>4498</show_count>
+		<comments_count>4</comments_count>
+	</material>
+
+	<material>
+		<date>1396382400</date>
+		<id>8157</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Квасцы́</title>
+		<lead>Дезодоранты с квасцами снова объявлены вредными</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/e92580653032cb431cf97c1da6bc4bc5.jpg</picture>
+		<url>http://w-o-s.ru/word/8157</url>
+		<show_count>1828</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396364400</date>
+		<id>8153</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Warner Bros. снимет трилогию по миру Гарри Поттера</title>
+		<lead>Квиддич, волшебники и Хогвартс возвращаются</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/428b3260222a475a61e614dbb8208ad4.jpg</picture>
+		<url>http://w-o-s.ru/news/8153</url>
+		<show_count>676</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396363500</date>
+		<id>8152</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>На Google Maps можно ловить покемонов</title>
+		<lead>Карта мира как поле для игры</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/82535bf62c3a040ef30ec7af6a5cb66f.jpg</picture>
+		<url>http://w-o-s.ru/news/8152</url>
+		<show_count>1759</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396349340</date>
+		<id>8149</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Google позволила делиться селфи в Gmail</title>
+		<lead>Теперь вашим портретом в почте сможет любоваться кто угодно</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/70d5f4474a6b8cfb10c829e1831b6998.jpg</picture>
+		<url>http://w-o-s.ru/news/8149</url>
+		<show_count>2862</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396296002</date>
+		<id>8132</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Кто вы из мировых политиков?</title>
+		<lead>Узнайте, какой лидер подходит вашей натуре</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/31_Monday/d62dd691f71b0645fb3ce87bd89f1b53.jpg</picture>
+		<url>http://w-o-s.ru/article/8132</url>
+		<show_count>45461</show_count>
+		<comments_count>15</comments_count>
+	</material>
+
+	<material>
+		<date>1396296001</date>
+		<id>8134</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Чат вдвоем: как разнообразить отношения онлайн</title>
+		<lead>Прелести ICQ, бородатый видеозвонок и интернет-вуайеризм на страже вашей любви</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/31_Monday/5f071d51bf7d0a327827a89042ef1e30.jpg</picture>
+		<url>http://w-o-s.ru/article/8134</url>
+		<show_count>9430</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1396296000</date>
+		<id>8155</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Норвежский продюсер Kygo сделал ремикс на M83</title>
+		<lead>Скачать: M83 – Wait (Kygo Remix)</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/ce228a94df08fd9b57e7ef02ed956dd3.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8155</url>
+		<show_count>314</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396296000</date>
+		<id>8154</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Jack White опубликовал новую песню</title>
+		<lead>Слушать: Jack White - High Ball Stepper</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/96e4eae2da023569c8232d5e1f7d7ac5.png</picture>
+		<url>http://w-o-s.ru/radio/news/8154</url>
+		<show_count>205</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396296000</date>
+		<id>8151</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Histibe запускает конкурс ремксов</title>
+		<lead>Украинский продюсер Histibe запускает конкурс ремксов с призами более чем 500 евро</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/5606ce4239dcbbfd4926adfa9109f195.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8151</url>
+		<show_count>162</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396296000</date>
+		<id>8148</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Слушать: Icona Pop - It’s My Party (featuring Ty Dolla $ign)</title>
+		<lead>Шведский поп дуэт поделился новой песней</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/bed2108a22f3af69de6647dcc80b4937.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8148</url>
+		<show_count>110</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396296000</date>
+		<id>8147</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>10 лучших клипов недели</title>
+		<lead>W-O-S</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/1fd4f9834dbd17cd18b81d8cb669b6a7.png</picture>
+		<url>http://w-o-s.ru/radio/audio/8147</url>
+		<show_count>980</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396296000</date>
+		<id>8146</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Frankie Knuckles mix</title>
+		<lead>W-O-S</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/f97e4fe9bd4b5a6e4a4bf0fa92c5e910.png</picture>
+		<url>http://w-o-s.ru/radio/audio/8146</url>
+		<mp3_url>http://archstreet.cc/radio/fknuckles.mp3</mp3_url>
+		<show_count>839</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396296000</date>
+		<id>8145</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Слушать: Conor Oberst - Governor’s Ball</title>
+		<lead>Участник Bright Eyes, автор и исполнитель Conor Oberst, поделился новой песней</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/b01fa3380eecfa2bed4b0b2f4e784f2a.png</picture>
+		<url>http://w-o-s.ru/radio/news/8145</url>
+		<show_count>297</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396296000</date>
+		<id>8142</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Самому старому торренту исполнилось 10 лет</title>
+		<lead>Поваренная книга как часть истории интернета</lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/e7256c87fc41432e95c61c6dc738be9a.jpg</picture>
+		<url>http://w-o-s.ru/news/8142</url>
+		<show_count>1953</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396296000</date>
+		<id>8141</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Смотреть: Liars - Mess On A Mission</title>
+		<lead></lead>
+		<picture>http://w-o-s.ru/upload/2014/April/01_Tuesday/111270b9cb5c5a2c8c6eecd7fc5c8df0.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8141</url>
+		<show_count>141</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396296000</date>
+		<id>8140</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Авгýр</title>
+		<lead>Авгур московских кабаков Григорий превратился в бича</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/31_Monday/3c0ee76d033b4b31ff3c6143283755e9.jpg</picture>
+		<url>http://w-o-s.ru/word/8140</url>
+		<show_count>1681</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396296000</date>
+		<id>8139</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Самый длинный и бессмысленный фильм в мире</title>
+		<lead>Невыносимое зрелище для ценителей</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/31_Monday/882cd4b954520bbbb30819b046113a8c.jpg</picture>
+		<url>http://w-o-s.ru/fact/8139</url>
+		<show_count>4086</show_count>
+		<comments_count>4</comments_count>
+	</material>
+
+	<material>
+		<date>1396296000</date>
+		<id>8137</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Начало неведомого века»</title>
+		<lead>Андрей Смирнов, Лариса Шепитько</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/31_Monday/de84f4638fc0ac9bcd1ac547a8a62286.jpg</picture>
+		<url>http://w-o-s.ru/film/8137</url>
+		<show_count>2035</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396296000</date>
+		<id>8136</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Сергей Городецкий</title>
+		<lead>И вывески кричат о том, что этот мир — публичный дом</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/31_Monday/8aab445e0bf2eaf2cd44ff953a1cd6ed.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8136</url>
+		<show_count>1718</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396296000</date>
+		<id>8135</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Малолетняя металлистка</title>
+		<lead>Японка шпарит по ладам круче гитариста «Металлики»</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/31_Monday/2b83c431136053c13dc0c6f33b47e95e.jpg</picture>
+		<url>http://w-o-s.ru/video/8135</url>
+		<show_count>5689</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396296000</date>
+		<id>8133</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Все шутки на 1 апреля</title>
+		<lead>Гид по тому, как не повестись на приколы в интернете</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/31_Monday/bbbadf3b4c15a5311517b496a2945ef5.jpg</picture>
+		<url>http://w-o-s.ru/blog/8133</url>
+		<show_count>7071</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396263480</date>
+		<id>8129</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Британская галерея Tate устроила гиф-вечеринку</title>
+		<lead>Пользователям разрешили издеваться над искусством</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/31_Monday/1ec34f95f8f7c8f9d4ef67c4fa4a88c8.jpg</picture>
+		<url>http://w-o-s.ru/news/8129</url>
+		<show_count>1512</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396261500</date>
+		<id>8127</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Пользователь «Твиттера» убедил жителей, что является мэром города</title>
+		<lead>Сделать карьеру с социальной сети</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/31_Monday/aecf990368f2d4c06e61a1cc9e89d386.jpg</picture>
+		<url>http://w-o-s.ru/news/8127</url>
+		<show_count>604</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396252800</date>
+		<id>8124</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>В Украине завели собственную социальную сеть «Друзi»</title>
+		<lead>Сайт не для москалей</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/31_Monday/e4dcb07a216b8b85748184ee7b8e42ac.png</picture>
+		<url>http://w-o-s.ru/news/8124</url>
+		<show_count>2994</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396209602</date>
+		<id>8122</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Молочные реки, сычужные берега</title>
+		<lead>Как молоко спасло целый народ и почему мамина грудь — это детский героин</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/30_Sunday/71c8afd69e8306220f0d967340327629.jpg</picture>
+		<url>http://w-o-s.ru/article/8122</url>
+		<show_count>4439</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1396209601</date>
+		<id>8123</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>3 круга безнадежности</title>
+		<lead>Жизнь как вечное вращение</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/31_Monday/75f89897af83b9052cafe9d9fc10261a.jpg</picture>
+		<url>http://w-o-s.ru/article/8123</url>
+		<show_count>15415</show_count>
+		<comments_count>10</comments_count>
+	</material>
+
+	<material>
+		<date>1396209600</date>
+		<id>8131</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Слушать: Blooms - Lust</title>
+		<lead>Очередной трек с дебютного EP певицы, релиз которого намечен на конец апреля</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/31_Monday/3c69261a9f0d2d4259102cbee6e733c9.png</picture>
+		<url>http://w-o-s.ru/radio/news/8131</url>
+		<show_count>102</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396209600</date>
+		<id>8126</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Slow Club выпустили новый клип</title>
+		<lead>Смотреть: Slow Club - Complete Surrender</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/31_Monday/0fa98676ac4c3a6ab6fc8e5d73a7dcf8.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8126</url>
+		<show_count>71</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396209600</date>
+		<id>8125</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Friendly Fires опубликовали новый трек</title>
+		<lead>Слушать: Friendly Fires &amp; The Asphodells - Velo</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/31_Monday/b5ba7e8b60acc1246fc7e9e955508d93.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8125</url>
+		<show_count>88</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396209600</date>
+		<id>8121</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Прощай, друг»</title>
+		<lead>Adieu l'ami</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/30_Sunday/e6e8f330b40a87575f4b3af0a3225668.jpg</picture>
+		<url>http://w-o-s.ru/film/8121</url>
+		<show_count>1763</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396209600</date>
+		<id>8120</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: королева Елизавета I</title>
+		<lead>Мой глупый мопс, что приуныл, чудак?</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/30_Sunday/067a747e193ab3685abf080dc1ad6406.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8120</url>
+		<show_count>2453</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396209600</date>
+		<id>8111</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Библиотеки из людей</title>
+		<lead>Истории от первого лица вместо книг</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/29_Saturday/38b930375145232ca4678a0d5b6ca73e.jpg</picture>
+		<url>http://w-o-s.ru/fact/8111</url>
+		<show_count>1936</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396209600</date>
+		<id>8104</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Дом Дрейка</title>
+		<lead>Пародия на «Карточный домик» от канадского рэпера</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/7331b7db90c2a7bb2a658215d1126dc0.jpg</picture>
+		<url>http://w-o-s.ru/blog/8104</url>
+		<show_count>2604</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396209600</date>
+		<id>8101</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Том Хэнкс — король рэпа</title>
+		<lead>Лучший актер планеты наконец-то получил признание масс</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/5fc214b8cdbda6f2b5fd9a80eb3bc44d.jpg</picture>
+		<url>http://w-o-s.ru/video/8101</url>
+		<show_count>4070</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396209600</date>
+		<id>8094</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Тавóт</title>
+		<lead>Дедушка пришел из гаража весь в тавоте и слегка подшофе</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/3bfb50b041af85ddc551a4c56ffaca4a.jpg</picture>
+		<url>http://w-o-s.ru/word/8094</url>
+		<show_count>1864</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396123203</date>
+		<id>8116</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Плакат: Как пройти собеседование</title>
+		<lead>Хитрые приемы по овладению сердцем работодателя</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/29_Saturday/aa5c87f234a4b0edf76ab510944be451.jpg</picture>
+		<url>http://w-o-s.ru/article/8116</url>
+		<show_count>13030</show_count>
+		<comments_count>9</comments_count>
+	</material>
+
+	<material>
+		<date>1396123202</date>
+		<id>8118</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Как путешествовать и не облажаться?</title>
+		<lead>Туристический гид своими руками</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/29_Saturday/64b27d1a5204da24a317ec6eec3742b2.jpg</picture>
+		<url>http://w-o-s.ru/kak/q/8</url>
+		<show_count>1</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396123201</date>
+		<id>8112</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Воскресная библиотека: Жаловаться и хамить, хамить и жаловаться</title>
+		<lead>Маяковский как стратегия поведения</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/29_Saturday/bf56c7d513571fcfe89383276dc8f820.jpg</picture>
+		<url>http://w-o-s.ru/article/8112</url>
+		<show_count>2585</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396123200</date>
+		<id>8119</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>April mix for W-O-S</title>
+		<lead>Максим Семеляк</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/30_Sunday/77a7812f13ab90c7e5f6eb248a0caf3b.jpg</picture>
+		<url>http://w-o-s.ru/radio/audio/8119</url>
+		<mp3_url>http://archstreet.cc/radio/mapril.mp3</mp3_url>
+		<show_count>1655</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396123200</date>
+		<id>8115</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Рейд-2»</title>
+		<lead>The Raid 2: Berandal</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/29_Saturday/31f299e1d220c985aba7ec0910e2f4ae.jpg</picture>
+		<url>http://w-o-s.ru/film/8115</url>
+		<show_count>1569</show_count>
+		<comments_count>6</comments_count>
+	</material>
+
+	<material>
+		<date>1396123200</date>
+		<id>8114</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Николай Рубцов</title>
+		<lead>Просто мы у поленницы дров целовались от странного чувства</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/29_Saturday/71e77eed875c59d8ba27d80011447469.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8114</url>
+		<show_count>2282</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396123200</date>
+		<id>8110</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Доноры голоса</title>
+		<lead>Как пожертвовать свой голос нуждающимся</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/fa448199cfd8e1cbc574c150f14225ab.jpg</picture>
+		<url>http://w-o-s.ru/fact/8110</url>
+		<show_count>1734</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396123200</date>
+		<id>8103</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Жест Бернса</title>
+		<lead>Откуда взялась жестикуляция злодеев?</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/3a0e478607c865fa2830f4f0a7124b55.jpg</picture>
+		<url>http://w-o-s.ru/blog/8103</url>
+		<show_count>3790</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396123200</date>
+		<id>8100</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Ремикс на «Игру престолов»</title>
+		<lead>Подогрев интереса к новому сезону</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/cd18bc191c8fcc0b32ed43991c8782da.jpg</picture>
+		<url>http://w-o-s.ru/video/8100</url>
+		<show_count>4503</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396123200</date>
+		<id>8093</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Атрибýция</title>
+		<lead>Лев Аароныч потратил весь день на атрибуцию бесполезного куска холста</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/6b0ab68d5cbab443523a9a43fae7466f.jpg</picture>
+		<url>http://w-o-s.ru/word/8093</url>
+		<show_count>2118</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396036802</date>
+		<id>8095</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Субботняя классика: Привет из прошлого</title>
+		<lead>Способ Кира Булычева сказать «все будет хорошо»</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/855b74fbfcfa4837414f58a42bba625c.jpg</picture>
+		<url>http://w-o-s.ru/article/8095</url>
+		<show_count>1955</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1396036801</date>
+		<id>8106</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Еда, которой нет</title>
+		<lead>Медитируем на продукты, которых не хватает в России</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/ae55e9b626fc3e7939f24b84b18a1247.jpg</picture>
+		<url>http://w-o-s.ru/article/8106</url>
+		<show_count>13558</show_count>
+		<comments_count>49</comments_count>
+	</material>
+
+	<material>
+		<date>1396036800</date>
+		<id>8117</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Black Lips выпустили новое видео</title>
+		<lead>Смотреть: Black Lips – Nightmare Field</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/29_Saturday/e4e49f46bd45be8cf5e1959a3f091f98.png</picture>
+		<url>http://w-o-s.ru/radio/news/8117</url>
+		<show_count>117</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396036800</date>
+		<id>8113</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Смотреть: Brandon Flowers, Father John Misty и Local Natives исполнили песни Джонни Кэша</title>
+		<lead>Мини-документальный фильм где музыканты рассказывают о влиянии Джонни Кэша на их творчество, едут по бескрайним просторам Америки и исполняют песни великого музыканта.</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/29_Saturday/57e0136607ebb16a886c3d64cfd834da.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8113</url>
+		<show_count>117</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396036800</date>
+		<id>8109</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Порно в защиту леса</title>
+		<lead>Спасай лес, смотри порнографию</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/0708ad67ac4914622e9905912fa05d9f.jpg</picture>
+		<url>http://w-o-s.ru/fact/8109</url>
+		<show_count>3886</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396036800</date>
+		<id>8108</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Пять препятствий»</title>
+		<lead>De fem benspænd</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/d4401616f519c1b76810893c4b9d1d87.jpg</picture>
+		<url>http://w-o-s.ru/film/8108</url>
+		<show_count>1674</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1396036800</date>
+		<id>8107</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Геннадий Гор</title>
+		<lead>И теща показала свои груди</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/6e84f91698a77b2b1cedc27df8cf81e3.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8107</url>
+		<show_count>1294</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396036800</date>
+		<id>8102</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Лондон «до» и «после»</title>
+		<lead>Google-карты против старых полотен</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/5603a2c0b2fc95b24505231fc39c4e5b.jpg</picture>
+		<url>http://w-o-s.ru/blog/8102</url>
+		<show_count>2229</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396036800</date>
+		<id>8099</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Шварценеггер в кулинарном шоу</title>
+		<lead>Непереводимая игра слов австрийского силача</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/fd5d23eba613fd09804dde64849bcda2.jpg</picture>
+		<url>http://w-o-s.ru/video/8099</url>
+		<show_count>3416</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1396036800</date>
+		<id>8091</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Серенди́пность</title>
+		<lead>Неповортливые хедхантеры до сих пор не придумали тест на серендипность</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/ce7af54b2284a560fb060124031b9bfa.jpg</picture>
+		<url>http://w-o-s.ru/word/8091</url>
+		<show_count>2383</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1396020120</date>
+		<id>8105</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Патриарх раскритиковал возможность выбрать 50 вариантов пола в «Фейсбуке»</title>
+		<lead>Религиозный деятель дорвался до интернета</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/6673efa681fecff90eb03e6274b6f317.jpg</picture>
+		<url>http://w-o-s.ru/news/8105</url>
+		<show_count>2968</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1396008060</date>
+		<id>8097</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>В американском колледже появился курс по Майли Сайрус</title>
+		<lead>21-летнюю певицу будут изучать другие 21-летние</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/a125cb60742146cfd4cf6a753d367fd1.jpg</picture>
+		<url>http://w-o-s.ru/news/8097</url>
+		<show_count>1875</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395997200</date>
+		<id>8092</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Фанат биткоина на спор съел свою шляпу</title>
+		<lead>Пацан сказал — пацан cъел</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/76fc2fe35c0a6c59e4ebb19e54ca6cd8.jpg</picture>
+		<url>http://w-o-s.ru/news/8092</url>
+		<show_count>975</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395990000</date>
+		<id>8088</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Вышел первый трейлер фильма «Черепашки-ниндзя»</title>
+		<lead>Легендарная четверка возвращается</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/136425c9cbbd90721a8d725c1ba77edd.jpg</picture>
+		<url>http://w-o-s.ru/news/8088</url>
+		<show_count>2610</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1395950403</date>
+		<id>8082</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Легенда о русском футболе</title>
+		<lead>Средневековый эпос о самой популярной командной игре</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/27_Thursday/b9bc7144a81a110527e9aa640efc73bd.jpg</picture>
+		<url>http://w-o-s.ru/article/8082</url>
+		<show_count>2839</show_count>
+		<comments_count>7</comments_count>
+	</material>
+
+	<material>
+		<date>1395950402</date>
+		<id>8081</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Вышивка как искусство</title>
+		<lead>Гид по актуальному рукоделию</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/27_Thursday/3f4786a3af475f3f967f981708fe8355.jpg</picture>
+		<url>http://w-o-s.ru/article/8081</url>
+		<show_count>4617</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395950401</date>
+		<id>8083</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Попытка недели: Cтендап-комедиантки</title>
+		<lead>Проверка на вшивость у свободного микрофона</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/c12bcb4452a4885c42cc78fa6d046c00.png</picture>
+		<url>http://w-o-s.ru/article/8083</url>
+		<show_count>5645</show_count>
+		<comments_count>15</comments_count>
+	</material>
+
+	<material>
+		<date>1395950400</date>
+		<id>8098</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Слушать: Woman's Hour - Her Ghost (FaltyDL Remix)</title>
+		<lead></lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/4717794d490397de81461301f85080ba.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8098</url>
+		<show_count>97</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395950400</date>
+		<id>8096</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Saturday+Sunday vol.70</title>
+		<lead>W-O-S</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/f382de02a5bd7be97597bbf5dc65db7a.jpg</picture>
+		<url>http://w-o-s.ru/radio/audio/8096</url>
+		<mp3_url>http://archstreet.cc/radio/wweekend70.mp3</mp3_url>
+		<show_count>2034</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395950400</date>
+		<id>8090</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Слушать: WOODKID - Someone Like You</title>
+		<lead>После отличного ремикса на Фаррелла, Вудкид взялся за творчество Адель.</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/28_Friday/a8658154dc85bf148e00394e4324b4c1.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8090</url>
+		<show_count>223</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395950400</date>
+		<id>8087</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Ля́рва</title>
+		<lead>После операции из зеркала на Гришу смотрела зловещая лярва со впалыми щеками</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/27_Thursday/cf1b2dfc2941da4978eca7c064705105.jpg</picture>
+		<url>http://w-o-s.ru/word/8087</url>
+		<show_count>1915</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395950400</date>
+		<id>8086</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Брэдли Купер против Луи Си Кея</title>
+		<lead>Cовпадения голливудского масштаба</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/27_Thursday/a6125e5b0674c734e88ed4b30564bb4d.jpg</picture>
+		<url>http://w-o-s.ru/fact/8086</url>
+		<show_count>3977</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395950400</date>
+		<id>8085</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Маменькин сыночек»</title>
+		<lead>Waterboy</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/27_Thursday/ecd0e7590251e298a0cc04bbd74830a6.jpg</picture>
+		<url>http://w-o-s.ru/film/8085</url>
+		<show_count>1942</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395950400</date>
+		<id>8084</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Сибуя Юриэ</title>
+		<lead>Легкую белую как леденец лизни языком</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/27_Thursday/156f736750937ae7a1129a463f08edb6.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8084</url>
+		<show_count>2179</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1395950400</date>
+		<id>8068</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Кот по имени Майкл</title>
+		<lead>Жизнь пушистого питомца в лучшем мире</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/27_Thursday/dc81dcd0ebfb4a59d5eed62e7105dcb5.jpg</picture>
+		<url>http://w-o-s.ru/video/8068</url>
+		<show_count>4017</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1395950400</date>
+		<id>8067</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Как правильно танцевать</title>
+		<lead>Лучшие движения на танцполе</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/27_Thursday/23e4c04eeb0cc98bb229b78da79621ae.jpg</picture>
+		<url>http://w-o-s.ru/blog/8067</url>
+		<show_count>3290</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395929280</date>
+		<id>8080</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Студентов в Северной Корее обязывают стричься под Ким Чен Ына</title>
+		<lead>Одинаковые прически как залог успешной диктатуры</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/27_Thursday/1dc8041402584b09291c13864f8043c2.jpg</picture>
+		<url>http://w-o-s.ru/news/8080</url>
+		<show_count>1356</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395920100</date>
+		<id>8075</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Фейсбук тестирует функцию, которая поможет не опозориться</title>
+		<lead>Как избежать неловких ситуаций в соцсети?</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/27_Thursday/a9b783c3c7b8c2dddd697fb377444d02.jpg</picture>
+		<url>http://w-o-s.ru/news/8075</url>
+		<show_count>1606</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395920040</date>
+		<id>8074</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>В Нью-Йорке появился автомат с кексами</title>
+		<lead>Фаст-фуд будущего уже реальность</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/27_Thursday/6239fdea0eb42a45a9a4069532617d09.jpg</picture>
+		<url>http://w-o-s.ru/news/8074</url>
+		<show_count>585</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395910800</date>
+		<id>8071</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Ким Дотком создал собственную партию</title>
+		<lead>Интернет-предприниматель уходит в политику</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/27_Thursday/05c05d7d6d10b707374de47c11d271c6.jpg</picture>
+		<url>http://w-o-s.ru/news/8071</url>
+		<show_count>1622</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395864030</date>
+		<id>8057</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Не помогай сайту: первый отечественный «Антикикстартер»</title>
+		<lead>Собери клики на уничтожение мерзких проектов</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/27_Thursday/0ec01d590eb0620730041fa84e7d972b.jpg</picture>
+		<url>http://w-o-s.ru/article/8057</url>
+		<show_count>5944</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395864002</date>
+		<id>8065</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Новые деловые: Голосование</title>
+		<lead>Голосуйте сердцем за маленьких бизнесменов</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/991ce823e2e2986d31482a1a00de1a4c.jpg</picture>
+		<url>http://samsung.w-o-s.ru/#voting</url>
+		<show_count>0</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395864001</date>
+		<id>8054</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>История — одна упоительнее другой</title>
+		<lead>Еврейские пираты, плантаторы-феминистки, воинственная Покахонтас и другие герои своего времени</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/3bb220a67c2134f8880860eb28189de1.jpg</picture>
+		<url>http://w-o-s.ru/article/8054</url>
+		<show_count>5000</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1395864000</date>
+		<id>8079</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Слушать: Natural Sequence - Weather (Aanbreken Remix)</title>
+		<lead></lead>
+		<picture>http://w-o-s.ru/upload/2014/March/27_Thursday/5183f893d69d351e98d7a6106ffa01ea.png</picture>
+		<url>http://w-o-s.ru/radio/news/8079</url>
+		<show_count>201</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395864000</date>
+		<id>8076</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>10 живых выступлений недели</title>
+		<lead>W-O-S</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/27_Thursday/6a63ca12384bfd8afc9de407173a2820.png</picture>
+		<url>http://w-o-s.ru/radio/audio/8076</url>
+		<show_count>955</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395864000</date>
+		<id>8073</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Бывшая участница коллектива Keep Shelly In Athens представила новый проект</title>
+		<lead>Слушать: Fina Fisken - Save The Day</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/27_Thursday/c256903736ff07d6bbf2c2dd946e6318.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8073</url>
+		<show_count>347</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395864000</date>
+		<id>8070</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>East India Youth сделали ремикс на Wild Beasts</title>
+		<lead>Слушать: Wild Beasts - A Simple Beautiful Truth (East India Youth Remix)</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/27_Thursday/05102a2015145c7fd4f8508a7ef74c10.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8070</url>
+		<show_count>109</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395864000</date>
+		<id>8066</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Тать</title>
+		<lead>Кеша еще в школе решил, что его профессия — тать</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/96cb3d9d27a2d1863d189ee634178c98.jpg</picture>
+		<url>http://w-o-s.ru/word/8066</url>
+		<show_count>1932</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1395864000</date>
+		<id>8064</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Пропажа президента</title>
+		<lead>Детский розыгрыш, зашедший слишком далеко</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/a27b4a082033b285686f2cc7de8493f2.jpg</picture>
+		<url>http://w-o-s.ru/fact/8064</url>
+		<show_count>1955</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395864000</date>
+		<id>8063</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Первороссияне»</title>
+		<lead>Евгений Шифферс, Александр Иванов</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/9d0e361fa28214a31eaee2fd6aa84cdf.jpg</picture>
+		<url>http://w-o-s.ru/film/8063</url>
+		<show_count>2060</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1395864000</date>
+		<id>8062</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Георгий Иванов</title>
+		<lead>Палочка-стукалочка, полушка-четвертак</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/be3ef5cbb3bee874c10352902bc7af60.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8062</url>
+		<show_count>1614</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395864000</date>
+		<id>8060</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Прыжок с Башни Свободы</title>
+		<lead>Очередное захватывающее видео от первого лица</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/3cf1277bbf8ababb8aa986489909898c.jpg</picture>
+		<url>http://w-o-s.ru/video/8060</url>
+		<show_count>3757</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395864000</date>
+		<id>8059</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Фотонное рисование</title>
+		<lead>Расслабляющее искусство</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/b3e3eec7de94c92687253f14dc10026c.jpg</picture>
+		<url>http://w-o-s.ru/blog/8059</url>
+		<show_count>2339</show_count>
+		<comments_count>3</comments_count>
+	</material>
+
+	<material>
+		<date>1395848820</date>
+		<id>8056</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>В Омске работники сырной фабрики купались в молоке</title>
+		<lead>Красиво жить не запретишь</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/2adc4d446f2bc7ffdf2f7b6a7d4fdf83.jpg</picture>
+		<url>http://w-o-s.ru/news/8056</url>
+		<show_count>5800</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395848400</date>
+		<id>8055</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>США закупит у Украины коноплю в качестве финансовой помощи</title>
+		<lead>Прогнивший Запад отбирает у украинцев наркотики</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/a5e2fdf2d30a2aa353507ca001294a00.jpg</picture>
+		<url>http://w-o-s.ru/news/8055</url>
+		<show_count>673</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395820800</date>
+		<id>8048</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>НАСА создала версию Google Street View для космоса</title>
+		<lead>Прогулка по Млечному Пути теперь доступна для всех</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/15dcd2d42d5d7c211de58ca94168ff28.jpg</picture>
+		<url>http://w-o-s.ru/news/8048</url>
+		<show_count>1854</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1395813600</date>
+		<id>8043</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Facebook купил разработчика очков виртуальной реальности</title>
+		<lead>Два миллиарда на супершлем</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/bb7cfe59ac0d19094643a4b19e850738.jpg</picture>
+		<url>http://w-o-s.ru/news/8043</url>
+		<show_count>1636</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395777603</date>
+		<id>8032</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Несмешно: кризис российских комедий</title>
+		<lead>Почему отечественный киноюмор настолько плох?</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/3774ddc3d23d6f19a0cd87995409d1be.jpg</picture>
+		<url>http://w-o-s.ru/article/8032</url>
+		<show_count>7032</show_count>
+		<comments_count>9</comments_count>
+	</material>
+
+	<material>
+		<date>1395777602</date>
+		<id>8030</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Это просто хаос:еще 7 героинь анимеу власти</title>
+		<lead>Возможные последовательницы крымской секси-прокурорши</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/b9171795ce62212f8e7ea05a986a32fb.jpg</picture>
+		<url>http://w-o-s.ru/article/8030</url>
+		<show_count>14815</show_count>
+		<comments_count>3</comments_count>
+	</material>
+
+	<material>
+		<date>1395777601</date>
+		<id>8042</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Блог зла: Бей бюджетника!</title>
+		<lead>Беспомощные должны умереть</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/a6ef1fff18dcd148610ef70b7e5350ec.jpg</picture>
+		<url>http://w-o-s.ru/article/8042</url>
+		<show_count>7117</show_count>
+		<comments_count>28</comments_count>
+	</material>
+
+	<material>
+		<date>1395777600</date>
+		<id>8058</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Вудкид записал грустный ремикс на песню Фаррелла</title>
+		<lead>Слушать: Pharrell - Happy (Woodkid Sad Remix)</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/8da4329db2ff1fe372e0682fabe16ae2.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8058</url>
+		<show_count>2451</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395777600</date>
+		<id>8052</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Slow Club записали кавер на Future Islands</title>
+		<lead>Слушать: Future Island - Seasons (Slow Club Cover Version)</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/b72c6e8fb05340d4623707e1dd4e4662.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8052</url>
+		<show_count>118</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395777600</date>
+		<id>8051</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>Электронная музыка из Югославии</title>
+		<lead>Святозар Черноусов</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/e506a1fb3c14df37a95107ea7d4d3895.jpg</picture>
+		<url>http://w-o-s.ru/radio/audio/8051</url>
+		<mp3_url>http://archstreet.cc/radio/svyatozar.mp3</mp3_url>
+		<show_count>1295</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395777600</date>
+		<id>8049</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Слушать: Yumi Zouma – It Feels Good To Be Around You (ft. Air France)</title>
+		<lead>Участники распавшегося два года назад дуэта Air France появились на новом треке группы Yumi Zouma</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/ffd4628ef57b53245adb297d277e76d6.png</picture>
+		<url>http://w-o-s.ru/radio/news/8049</url>
+		<show_count>105</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395777600</date>
+		<id>8047</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Смотреть: Diplo &amp; GTA – Boy Oh Boy</title>
+		<lead></lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/dc334249473fbb2250a7680eb8fc0852.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8047</url>
+		<show_count>111</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395777600</date>
+		<id>8045</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Yann Tiersen опубликовал новую песню</title>
+		<lead>Слушать: Yann Tiersen - A Midsummer Evening</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/26_Wednesday/ce3266093a3f38db7b7f3ee771a10a79.png</picture>
+		<url>http://w-o-s.ru/radio/news/8045</url>
+		<show_count>174</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395777600</date>
+		<id>8037</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: История по сериалу «Офис»</title>
+		<lead>Отсортированные по годам культурные отсылки</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/574aaa9d3efb57c512f08013f41bf25d.jpg</picture>
+		<url>http://w-o-s.ru/blog/8037</url>
+		<show_count>3864</show_count>
+		<comments_count>4</comments_count>
+	</material>
+
+	<material>
+		<date>1395777600</date>
+		<id>8036</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Русский арт-хаус</title>
+		<lead>Русь-матушка, что же мы с тобой наделали</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/bf37db505bcb391548f61bf1be4124c5.jpg</picture>
+		<url>http://w-o-s.ru/video/8036</url>
+		<show_count>6119</show_count>
+		<comments_count>11</comments_count>
+	</material>
+
+	<material>
+		<date>1395777600</date>
+		<id>8035</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Омар Хайям</title>
+		<lead>Когда-то коврик я стянул отсюда</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/cb1612de55605005a30955ee88d6625b.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8035</url>
+		<show_count>2520</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1395777600</date>
+		<id>8034</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Месть нерожденному»</title>
+		<lead>À l'intérieur</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/1c2b14fab46b042acb43ad595e04dea4.jpg</picture>
+		<url>http://w-o-s.ru/film/8034</url>
+		<show_count>1745</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395777600</date>
+		<id>8033</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Опоздание на Олимпиаду</title>
+		<lead>Когда врут календари</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/695b3f770db8fd1b9f1272f0d0f5efa8.jpg</picture>
+		<url>http://w-o-s.ru/fact/8033</url>
+		<show_count>1987</show_count>
+		<comments_count>4</comments_count>
+	</material>
+
+	<material>
+		<date>1395777600</date>
+		<id>8021</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Фриссóн</title>
+		<lead>От скрипа ногтей по стеклу большой оригинал Антон испытывает фриссон</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/1c1ac448151c90c72816ca64880013c0.jpg</picture>
+		<url>http://w-o-s.ru/word/8021</url>
+		<show_count>2930</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395759600</date>
+		<id>8031</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Преподаватель наказал учеников спойлерами «Игры престолов»</title>
+		<lead>Жестокий учитель придумал худшее наказание</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/f69a9be9ba754d27400035e20b92048a.png</picture>
+		<url>http://w-o-s.ru/news/8031</url>
+		<show_count>1629</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1395748800</date>
+		<id>8026</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Канье Уэст подарил Ким Кардашьян рестораны Burger King</title>
+		<lead>Известная пара подсела на фаст-фуд</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/56d429933af672512f0f151d6c98df4f.jpg</picture>
+		<url>http://w-o-s.ru/news/8026</url>
+		<show_count>3356</show_count>
+		<comments_count>2</comments_count>
+	</material>
+
+	<material>
+		<date>1395744000</date>
+		<id>8023</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Госдума хочет сократить прокат зарубежных фильмов</title>
+		<lead>Власть заставит тебя полюбить русское кино</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/9fb0594aa9419848d01fc4004620d473.jpg</picture>
+		<url>http://w-o-s.ru/news/8023</url>
+		<show_count>1818</show_count>
+		<comments_count>5</comments_count>
+	</material>
+
+	<material>
+		<date>1395743460</date>
+		<id>8022</id>
+		<type>news</type>
+		<subtype>article</subtype>
+		<title>Найдена рыба, похожая на Гитлера</title>
+		<lead>Третья Мировая начнется под водой</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/a5af3a287753c5c3480ccffd7efb633e.jpg</picture>
+		<url>http://w-o-s.ru/news/8022</url>
+		<show_count>2204</show_count>
+		<comments_count>1</comments_count>
+	</material>
+
+	<material>
+		<date>1395691203</date>
+		<id>8006</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Фоторазоблачение: как женщины всех обманывают</title>
+		<lead>Аналоговый фотошоп в эпоху селфи</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/ca1a7b63f969511b4c2a14d86c101e35.jpg</picture>
+		<url>http://w-o-s.ru/article/8006</url>
+		<show_count>43579</show_count>
+		<comments_count>30</comments_count>
+	</material>
+
+	<material>
+		<date>1395691202</date>
+		<id>8012</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Круче Урганта: 6 лучших телеведущих</title>
+		<lead>Кого нужно смотреть вместо отечественного «Вечернего шоу»?</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/24_Monday/a7b3100f0431afe79af4ba308616f185.jpg</picture>
+		<url>http://w-o-s.ru/article/8012</url>
+		<show_count>25406</show_count>
+		<comments_count>26</comments_count>
+	</material>
+
+	<material>
+		<date>1395691201</date>
+		<id>8011</id>
+		<type>article</type>
+		<subtype>article</subtype>
+		<title>Генератор сочувствия</title>
+		<lead>Тебе грустно и одиноко? Тогда тебе сюда</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/24_Monday/f45680af07dc1947110fa49756a8e2fd.jpg</picture>
+		<url>http://w-o-s.ru/article/8011</url>
+		<show_count>43997</show_count>
+		<comments_count>19</comments_count>
+	</material>
+
+	<material>
+		<date>1395691200</date>
+		<id>8029</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>iccbe240314</title>
+		<lead>Максим Назаров</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/916ecafffdc3cd0abf41bf2e726ccef4.png</picture>
+		<url>http://w-o-s.ru/radio/audio/8029</url>
+		<mp3_url>http://archstreet.cc/radio/ICCBE240314a.mp3</mp3_url>
+		<show_count>890</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395691200</date>
+		<id>8028</id>
+		<type>audio</type>
+		<subtype>radio</subtype>
+		<title>10 лучших клипов недели</title>
+		<lead>W-O-S</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/7fc3ee9d9bf82cedd27c846c41686a01.png</picture>
+		<url>http://w-o-s.ru/radio/audio/8028</url>
+		<show_count>1184</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395691200</date>
+		<id>8025</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Слушать: Every James Hetfield &quot;Yeah&quot;... ever.</title>
+		<lead>Кевин Конклин сделал монтаж всех криков «Йеее!», которые произнес фронтмен «Металлики» Джеймс Хетфилд за всю карьеру группы. Это лучший способ провести три минуты.</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/8e695421c1a3d3438c6bea920ca27e94.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8025</url>
+		<show_count>295</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395691200</date>
+		<id>8024</id>
+		<type>rnews</type>
+		<subtype>radio</subtype>
+		<title>Kelis и ее новое видео о рыбалке</title>
+		<lead>Смотреть: Kelis - Rumble</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/25_Tuesday/a3572aa292d37587e628eec7156b0578.jpg</picture>
+		<url>http://w-o-s.ru/radio/news/8024</url>
+		<show_count>103</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395691200</date>
+		<id>8019</id>
+		<type>word</type>
+		<subtype>micro</subtype>
+		<title>Слово дня: Амперсáнд</title>
+		<lead>Заказчик думает, что замена союза на амперсанд придает логотипу солидности</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/24_Monday/a2220dc2efcee521ca5cf817f8f4d896.jpg</picture>
+		<url>http://w-o-s.ru/word/8019</url>
+		<show_count>2363</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395691200</date>
+		<id>8018</id>
+		<type>fact</type>
+		<subtype>micro</subtype>
+		<title>Факт дня: Ситком про Гитлера</title>
+		<lead>Пародийный сериал о нацистах, отмененный после первого эпизода</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/24_Monday/76ab96931963b6c725d2f7f7174cbc78.jpg</picture>
+		<url>http://w-o-s.ru/fact/8018</url>
+		<show_count>3081</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395691200</date>
+		<id>8017</id>
+		<type>film</type>
+		<subtype>micro</subtype>
+		<title>Фильм дня: «Мученицы»</title>
+		<lead>Martyrs</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/24_Monday/db12e59b1679d317c4c907dcbcf0183c.jpg</picture>
+		<url>http://w-o-s.ru/film/8017</url>
+		<show_count>2525</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395691200</date>
+		<id>8016</id>
+		<type>poetry</type>
+		<subtype>micro</subtype>
+		<title>Стихи дня: Фридрих Шиллер</title>
+		<lead>Пусть предстанет краснокожим в мире духов он</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/24_Monday/aee86de010f3a6c0f5cd33c5780ec84e.jpg</picture>
+		<url>http://w-o-s.ru/poetry/8016</url>
+		<show_count>2499</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+	<material>
+		<date>1395691200</date>
+		<id>8014</id>
+		<type>video</type>
+		<subtype>article</subtype>
+		<title>Видео дня: Украинская агитка</title>
+		<lead>Почему политика на Украине круче, чем в России</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/24_Monday/c64626b2f68af8606ff38852bf723c1f.jpg</picture>
+		<url>http://w-o-s.ru/video/8014</url>
+		<show_count>3266</show_count>
+		<comments_count>3</comments_count>
+	</material>
+
+	<material>
+		<date>1395691200</date>
+		<id>8013</id>
+		<type>blog</type>
+		<subtype>micro</subtype>
+		<title>Ссылка дня: Инфракрасные фотографии</title>
+		<lead>Тепловое излучение спорта</lead>
+		<picture>http://w-o-s.ru/upload/2014/March/24_Monday/d31eef764c53adc8f27635a571e00e08.jpg</picture>
+		<url>http://w-o-s.ru/blog/8013</url>
+		<show_count>3275</show_count>
+		<comments_count>0</comments_count>
+	</material>
+
+</materials>

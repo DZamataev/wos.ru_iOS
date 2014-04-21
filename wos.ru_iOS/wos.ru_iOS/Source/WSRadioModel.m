@@ -26,6 +26,7 @@ NSString * const WSStreamsJSONPath = @"/api/streams";
 
 - (void)setup {
     self.rawGithubObjectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:WSWWWDomain]];
+    [self.rawGithubObjectManager setAcceptHeaderWithMIMEType:RKMIMETypeJSON];
     [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"text/html"];
 
     
