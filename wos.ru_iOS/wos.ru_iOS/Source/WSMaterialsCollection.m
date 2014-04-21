@@ -7,7 +7,26 @@
 //
 
 #import "WSMaterialsCollection.h"
+#import "WSMaterial.h"
 
 @implementation WSMaterialsCollection
-
+- (void)processMaterials
+{
+    self.bestMaterials = [NSMutableArray new];
+    self.microMaterials = [NSMutableArray new];
+    self.otherMaterials = [NSMutableArray new];
+    
+    for (WSMaterial *mat in self.materials) {
+        if ([mat.bestStr isEqualToString:@"true"]) {
+            [self.bestMaterials addObject:mat];
+        }
+        if ([mat.subtypeStr isEqualToString:@"micro"]) {
+            [self.microMaterials addObject:mat];
+        }
+        else {
+            [self.otherMaterials addObject:mat];
+        }
+        
+    }
+}
 @end

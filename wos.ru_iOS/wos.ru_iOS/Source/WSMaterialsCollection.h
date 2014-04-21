@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class WSMaterial;
+
 @interface WSMaterialsCollection : NSObject
 @property NSMutableArray *materials;
+@property NSMutableArray *bestMaterials;
+@property NSMutableArray *microMaterials;
+@property NSMutableArray *otherMaterials;
+- (void)processMaterials;
 @end

@@ -71,7 +71,8 @@ NSString *const WSMaterialsPath = @"/api/materials";
                                                           @"picture.__text" : @"pictureStr",
                                                           @"url.__text" : @"urlStr",
                                                           @"show_count.__text" : @"showCountNum",
-                                                          @"comments_count.__text" : @"commentsCountNum"
+                                                          @"comments_count.__text" : @"commentsCountNum",
+                                                          @"best.__text" : @"bestStr"
                                                           }];
     
     return materialMapping;
@@ -94,7 +95,9 @@ NSString *const WSMaterialsPath = @"/api/materials";
     [self.objectManager getObjectsAtPath:WSGithubMaterialsPath
                               parameters:nil
                                  success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                     completionBlock(mappingResult.firstObject, nil);
+                                     WSMaterialsCollection *materialsCollection = mappingResult.firstObject;
+                                     [materialsCollection processMaterials];
+                                     completionBlock(materialsCollection, nil);
                                  }
                                  failure:^(RKObjectRequestOperation *operation, NSError *error) {
                                      completionBlock(nil, error);

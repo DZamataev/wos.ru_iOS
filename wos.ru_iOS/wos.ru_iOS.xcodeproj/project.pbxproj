@@ -34,6 +34,9 @@
 		9255274718B64724006D1191 /* WSFeedLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255274618B64724006D1191 /* WSFeedLoader.m */; };
 		9255274A18B64786006D1191 /* WSFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255274918B64786006D1191 /* WSFeedItem.m */; };
 		925778AA19057A39002A1B3C /* WSMaterialsObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 925778A919057A39002A1B3C /* WSMaterialsObjectManager.m */; };
+		925778AD19058219002A1B3C /* WSMaterialsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 925778AC19058219002A1B3C /* WSMaterialsTableViewController.m */; };
+		925778AF1905872B002A1B3C /* ws-slideout-button-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 925778AE1905872B002A1B3C /* ws-slideout-button-white.png */; };
+		925778B1190587B4002A1B3C /* ws_sleeping_timer_icon_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 925778B0190587B4002A1B3C /* ws_sleeping_timer_icon_white@2x.png */; };
 		929ABF0319056BBF00F7BF5D /* WSMaterialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929ABF0219056BBF00F7BF5D /* WSMaterialsViewController.m */; };
 		929ABF0719056BFC00F7BF5D /* WSMaterialsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 929ABF0619056BFC00F7BF5D /* WSMaterialsModel.m */; };
 		929ABF0E19056C7400F7BF5D /* WSMaterialsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 929ABF0D19056C7400F7BF5D /* WSMaterialsCollection.m */; };
@@ -127,6 +130,10 @@
 		9255274918B64786006D1191 /* WSFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedItem.m; sourceTree = "<group>"; };
 		925778A819057A39002A1B3C /* WSMaterialsObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMaterialsObjectManager.h; path = Source/WSMaterialsObjectManager.h; sourceTree = "<group>"; };
 		925778A919057A39002A1B3C /* WSMaterialsObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSMaterialsObjectManager.m; path = Source/WSMaterialsObjectManager.m; sourceTree = "<group>"; };
+		925778AB19058219002A1B3C /* WSMaterialsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMaterialsTableViewController.h; path = Source/WSMaterialsTableViewController.h; sourceTree = "<group>"; };
+		925778AC19058219002A1B3C /* WSMaterialsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSMaterialsTableViewController.m; path = Source/WSMaterialsTableViewController.m; sourceTree = "<group>"; };
+		925778AE1905872B002A1B3C /* ws-slideout-button-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ws-slideout-button-white.png"; sourceTree = "<group>"; };
+		925778B0190587B4002A1B3C /* ws_sleeping_timer_icon_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ws_sleeping_timer_icon_white@2x.png"; sourceTree = "<group>"; };
 		929ABF0119056BBF00F7BF5D /* WSMaterialsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMaterialsViewController.h; path = Source/WSMaterialsViewController.h; sourceTree = "<group>"; };
 		929ABF0219056BBF00F7BF5D /* WSMaterialsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSMaterialsViewController.m; path = Source/WSMaterialsViewController.m; sourceTree = "<group>"; };
 		929ABF0519056BFC00F7BF5D /* WSMaterialsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMaterialsModel.h; path = Source/WSMaterialsModel.h; sourceTree = "<group>"; };
@@ -282,6 +289,8 @@
 			children = (
 				92E8F45318E371D9000437A4 /* WSWebBrowserViewController_iPad.xib */,
 				92E8F45418E371D9000437A4 /* WSWebBrowserViewController_iPhone.xib */,
+				925778B0190587B4002A1B3C /* ws_sleeping_timer_icon_white@2x.png */,
+				925778AE1905872B002A1B3C /* ws-slideout-button-white.png */,
 				92E8F45718E37A4B000437A4 /* ws-slideout-button.png */,
 				92AE499718891C13003D5572 /* ws_sleeping_timer_icon@2x.png */,
 				92B1BF0A1880090F0027EAEC /* ws_volume_slider_bg@2x.png */,
@@ -385,6 +394,8 @@
 			children = (
 				929ABF0119056BBF00F7BF5D /* WSMaterialsViewController.h */,
 				929ABF0219056BBF00F7BF5D /* WSMaterialsViewController.m */,
+				925778AB19058219002A1B3C /* WSMaterialsTableViewController.h */,
+				925778AC19058219002A1B3C /* WSMaterialsTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -561,8 +572,10 @@
 				92B1BF1218800E770027EAEC /* ws_volume_slider_higher_icon@2x.png in Resources */,
 				92B1BF0B1880090F0027EAEC /* ws_volume_slider_bg@2x.png in Resources */,
 				922A0BC918645B7A00802757 /* Images.xcassets in Resources */,
+				925778B1190587B4002A1B3C /* ws_sleeping_timer_icon_white@2x.png in Resources */,
 				922A0BC818645B7A00802757 /* InfoPlist.strings in Resources */,
 				92AE499818891C13003D5572 /* ws_sleeping_timer_icon@2x.png in Resources */,
+				925778AF1905872B002A1B3C /* ws-slideout-button-white.png in Resources */,
 				922A0BC618645B7A00802757 /* Main_iPad.storyboard in Resources */,
 				92C3977318854582001E46FA /* radio.json in Resources */,
 				92B1BF1318800E770027EAEC /* ws_volume_slider_lower_icon@2x.png in Resources */,
@@ -636,6 +649,7 @@
 				92C3977C18855DD8001E46FA /* WSRStation.m in Sources */,
 				9255274A18B64786006D1191 /* WSFeedItem.m in Sources */,
 				92C3976A1885396A001E46FA /* WSRadiostationSelectorScrollView.m in Sources */,
+				925778AD19058219002A1B3C /* WSMaterialsTableViewController.m in Sources */,
 				92C3977918855DC8001E46FA /* WSRStream.m in Sources */,
 				92C3977F18855E01001E46FA /* WSRadioData.m in Sources */,
 				929ABF0319056BBF00F7BF5D /* WSMaterialsViewController.m in Sources */,

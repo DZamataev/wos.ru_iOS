@@ -27,21 +27,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.materialsModel = [WSMaterialsModel new];
-    [self loadMaterials];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)loadMaterials
-{
-    [self.materialsModel loadMaterialsWithCompletion:^(WSMaterialsCollection *materialsCollection, NSError *error) {
-        NSLog(@"%@", materialsCollection.materials);
-    }];
 }
 
 @end

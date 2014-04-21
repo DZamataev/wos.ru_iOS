@@ -32,6 +32,7 @@
 @property NSString *lead;
 @property NSString *pictureStr;
 @property NSString *urlStr;
+@property NSString *bestStr;
 @property NSNumber *showCountNum;
 @property NSNumber *commentsCountNum;
 @end

@@ -8,8 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-#import "WSMaterialsModel.h"
-
 @interface WSMaterialsViewController : UIViewController
-@property WSMaterialsModel *materialsModel;
 @end
