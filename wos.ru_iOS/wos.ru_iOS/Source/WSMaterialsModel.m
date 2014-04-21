@@ -7,7 +7,12 @@
 //
 
 #import "WSMaterialsModel.h"
+
+NSString *const WSGithubBaseUrl = @"https://raw.githubusercontent.com";
+NSString *const WSGithubMaterialsPath = @"/DZamataev/wos.ru_iOS/master/materials.xml";
+
 NSString *const WSBaseUrl = @"http://w-o-s.ru";
+NSString *const WSMaterialsPath = @"/api/materials";
 
 @implementation WSMaterialsModel
 - (instancetype)init
@@ -33,7 +38,7 @@ NSString *const WSBaseUrl = @"http://w-o-s.ru";
 #endif
     
     // Initialize RestKit
-    self.objectManager = [WSMaterialsObjectManager managerWithBaseURL:[NSURL URLWithString:WSBaseUrl]];
+    self.objectManager = [WSMaterialsObjectManager managerWithBaseURL:[NSURL URLWithString:WSGithubBaseUrl]];
     [self.objectManager setAcceptHeaderWithMIMEType:RKMIMETypeTextXML];
     
     // accept xml mime type and make parser add prefix _ before xml attributes
@@ -46,7 +51,7 @@ NSString *const WSBaseUrl = @"http://w-o-s.ru";
     RKResponseDescriptor *materialsResponseDescriptor =
     [RKResponseDescriptor responseDescriptorWithMapping:[self objectMappingForMaterialsCollection]
                                                  method:RKRequestMethodGET
-                                            pathPattern:@"/api/materials"
+                                            pathPattern:WSGithubMaterialsPath
                                                 keyPath:@"materials"
                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     [self.objectManager addResponseDescriptor:materialsResponseDescriptor];
@@ -55,7 +60,7 @@ NSString *const WSBaseUrl = @"http://w-o-s.ru";
 
 - (RKObjectMapping*)objectMappingForMaterial
 {
-    RKObjectMapping *materialMapping = [RKObjectMapping mappingForClass:[WSMaterialsCollection class]];
+    RKObjectMapping *materialMapping = [RKObjectMapping mappingForClass:[WSMaterial class]];
     [materialMapping addAttributeMappingsFromDictionary:@{
                                                           @"date.__text" : @"date",
                                                           @"id.__text" : @"identifier",
@@ -86,7 +91,7 @@ NSString *const WSBaseUrl = @"http://w-o-s.ru";
 
 - (void)loadMaterialsWithCompletion:(void (^)(WSMaterialsCollection *materialsCollection, NSError *error))completionBlock
 {
-    [self.objectManager getObjectsAtPath:@"/api/materials"
+    [self.objectManager getObjectsAtPath:WSGithubMaterialsPath
                               parameters:nil
                                  success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                      completionBlock(mappingResult.firstObject, nil);

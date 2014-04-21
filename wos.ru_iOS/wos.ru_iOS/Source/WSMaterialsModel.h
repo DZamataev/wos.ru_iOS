@@ -14,7 +14,11 @@
 #import "WSMaterial.h"
 #import "WSMaterialsObjectManager.h"
 
+FOUNDATION_EXPORT NSString *const WSGithubBaseUrl;
+FOUNDATION_EXPORT NSString *const WSGithubMaterialsPath;
+
 FOUNDATION_EXPORT NSString *const WSBaseUrl;
+FOUNDATION_EXPORT NSString *const WSMaterialsPath;
 
 @interface WSMaterialsModel : NSObject
 
