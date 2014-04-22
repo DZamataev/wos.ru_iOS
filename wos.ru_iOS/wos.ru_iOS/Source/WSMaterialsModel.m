@@ -38,7 +38,7 @@ NSString *const WSMaterialsPath = @"/api/materials";
 #endif
     
     // Initialize RestKit
-    self.objectManager = [WSMaterialsObjectManager managerWithBaseURL:[NSURL URLWithString:WSGithubBaseUrl]];
+    self.objectManager = [WSMaterialsObjectManager managerWithBaseURL:[NSURL URLWithString:WSBaseUrl]];
     [self.objectManager setAcceptHeaderWithMIMEType:RKMIMETypeTextXML];
     
     // accept xml mime type and make parser add prefix _ before xml attributes
@@ -51,7 +51,7 @@ NSString *const WSMaterialsPath = @"/api/materials";
     RKResponseDescriptor *materialsResponseDescriptor =
     [RKResponseDescriptor responseDescriptorWithMapping:[self objectMappingForMaterialsCollection]
                                                  method:RKRequestMethodGET
-                                            pathPattern:WSGithubMaterialsPath
+                                            pathPattern:WSMaterialsPath
                                                 keyPath:@"materials"
                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     [self.objectManager addResponseDescriptor:materialsResponseDescriptor];
@@ -93,7 +93,7 @@ NSString *const WSMaterialsPath = @"/api/materials";
 
 - (void)loadMaterialsWithCompletion:(void (^)(WSMaterialsCollection *materialsCollection, NSError *error))completionBlock
 {
-    [self.objectManager getObjectsAtPath:WSGithubMaterialsPath
+    [self.objectManager getObjectsAtPath:WSMaterialsPath
                               parameters:nil
                                  success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                      self.materialsCollection = mappingResult.firstObject;

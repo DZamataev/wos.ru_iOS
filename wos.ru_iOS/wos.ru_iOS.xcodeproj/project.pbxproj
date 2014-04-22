@@ -42,6 +42,7 @@
 		929ABF0719056BFC00F7BF5D /* WSMaterialsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 929ABF0619056BFC00F7BF5D /* WSMaterialsModel.m */; };
 		929ABF0E19056C7400F7BF5D /* WSMaterialsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 929ABF0D19056C7400F7BF5D /* WSMaterialsCollection.m */; };
 		929ABF1119056C9300F7BF5D /* WSMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 929ABF1019056C9300F7BF5D /* WSMaterial.m */; };
+		92A6A7391906A44B0047E8C1 /* WSMicroMaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A6A7381906A44B0047E8C1 /* WSMicroMaterialView.m */; };
 		92AE499818891C13003D5572 /* ws_sleeping_timer_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92AE499718891C13003D5572 /* ws_sleeping_timer_icon@2x.png */; };
 		92AE499E188953F5003D5572 /* WSSleepTimerSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AE499D188953F5003D5572 /* WSSleepTimerSelectionCell.m */; };
 		92AE49A118895440003D5572 /* WSSleepTimerPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AE49A018895440003D5572 /* WSSleepTimerPickerViewController.m */; };
@@ -145,6 +146,8 @@
 		929ABF0D19056C7400F7BF5D /* WSMaterialsCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSMaterialsCollection.m; path = Source/WSMaterialsCollection.m; sourceTree = "<group>"; };
 		929ABF0F19056C9300F7BF5D /* WSMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMaterial.h; path = Source/WSMaterial.h; sourceTree = "<group>"; };
 		929ABF1019056C9300F7BF5D /* WSMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSMaterial.m; path = Source/WSMaterial.m; sourceTree = "<group>"; };
+		92A6A7371906A44B0047E8C1 /* WSMicroMaterialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMicroMaterialView.h; path = Source/WSMicroMaterialView.h; sourceTree = "<group>"; };
+		92A6A7381906A44B0047E8C1 /* WSMicroMaterialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSMicroMaterialView.m; path = Source/WSMicroMaterialView.m; sourceTree = "<group>"; };
 		92AE499718891C13003D5572 /* ws_sleeping_timer_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ws_sleeping_timer_icon@2x.png"; sourceTree = "<group>"; };
 		92AE499C188953F5003D5572 /* WSSleepTimerSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSSleepTimerSelectionCell.h; sourceTree = "<group>"; };
 		92AE499D188953F5003D5572 /* WSSleepTimerSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSSleepTimerSelectionCell.m; sourceTree = "<group>"; };
@@ -385,6 +388,7 @@
 		929ABF001905691700F7BF5D /* Materials Scene */ = {
 			isa = PBXGroup;
 			children = (
+				92A6A7361906A42F0047E8C1 /* View */,
 				929ABF0419056BE000F7BF5D /* Controller */,
 				929ABF0819056C0000F7BF5D /* Model */,
 			);
@@ -418,6 +422,15 @@
 				925778A919057A39002A1B3C /* WSMaterialsObjectManager.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		92A6A7361906A42F0047E8C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92A6A7371906A44B0047E8C1 /* WSMicroMaterialView.h */,
+				92A6A7381906A44B0047E8C1 /* WSMicroMaterialView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		92AE49A21889545D003D5572 /* Radio Scene */ = {
@@ -642,6 +655,7 @@
 				92C3976718853948001E46FA /* WSRadiostationButton.m in Sources */,
 				922A0BCC18645B7A00802757 /* WSAppDelegate.m in Sources */,
 				92AE499E188953F5003D5572 /* WSSleepTimerSelectionCell.m in Sources */,
+				92A6A7391906A44B0047E8C1 /* WSMicroMaterialView.m in Sources */,
 				920B717F18BB739200D57321 /* WSWindow.m in Sources */,
 				9255272818B63616006D1191 /* WSFeedViewController.m in Sources */,
 				92B1BF09187EC4C20027EAEC /* WSRadioViewController.m in Sources */,

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WSMaterialsModel.h"
 
 @interface WSMicroMaterialsCollectionViewController : UICollectionViewController
-
+@property WSMaterialsModel *materialsModel;
+@property CGFloat pagingPageWidth;
 @end

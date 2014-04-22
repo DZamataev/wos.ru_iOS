@@ -38,8 +38,15 @@
             _dummyItemView = obj;
         }
     }];
+    
+    
+
 
     self.materialsModel = [WSMaterialsModel new];
+    
+    _microMaterialsCollectionVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WSMicroMaterialsCollectionViewController"];
+    _microMaterialsCollectionVC.materialsModel = self.materialsModel;
+    
     [self loadMaterials];
 }
 
@@ -87,6 +94,13 @@
     }
     else if (indexPath.row == 1) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"MicroCell" forIndexPath:indexPath];
+        UIView *containerView = [cell viewWithTag:112];
+        if (containerView.subviews.count == 0) {
+            _microMaterialsCollectionVC.view.frame = containerView.bounds;
+            _microMaterialsCollectionVC.view.tag = 112;
+            [containerView addSubview:_microMaterialsCollectionVC.view];
+        }
+        [_microMaterialsCollectionVC.collectionView reloadData];
     }
     else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"ItemCell" forIndexPath:indexPath];
@@ -107,7 +121,7 @@
     
     }
     else if (indexPath.row == 1) {
-        result = 200.0f +
+        result = 240.0f +
         (int)(tableView.separatorStyle != UITableViewCellSeparatorStyleNone);
     }
     else {
