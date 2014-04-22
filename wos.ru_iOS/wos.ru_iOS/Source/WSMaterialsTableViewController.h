@@ -10,12 +10,14 @@
 #import "WSMaterialsModel.h"
 #import "WSFeedItemView.h"
 #import "WSMicroMaterialsCollectionViewController.h"
+#import "WSBestMaterialsCollectionViewController.h"
 
 @interface WSMaterialsTableViewController : UITableViewController
 {
     IBOutlet UIView * _dummyViewsContainer;
     WSFeedItemView *_dummyItemView;
     WSMicroMaterialsCollectionViewController *_microMaterialsCollectionVC;
+    WSBestMaterialsCollectionViewController *_bestMaterialsCollectionVC;
 }
 @property WSMaterialsModel *materialsModel;
 @end

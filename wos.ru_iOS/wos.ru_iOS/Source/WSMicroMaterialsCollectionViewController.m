@@ -52,7 +52,6 @@
 #pragma mark - CollectionView DataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    NSLog(@"%i", self.materialsModel.materialsCollection.microMaterials.count);
     return self.materialsModel.materialsCollection.microMaterials.count;
 }
 
@@ -67,6 +66,12 @@
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    WSMaterial *material = self.materialsModel.materialsCollection.microMaterials[indexPath.row];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"WSOpenUrlNotification" object:Nil userInfo:@{@"url":[NSURL URLWithString:material.urlStr]}];
+}
+
 #pragma mark - UIScrollView delegate
 // here is our custom paging
 
@@ -75,21 +80,16 @@
     CGFloat pageWidth = self.pagingPageWidth;
     
     _currentPage = floor((self.collectionView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    
-//    NSLog(@"Dragging - You are now on page %i", _currentPage);
 }
 
 -(void) scrollViewWillEndDragging:(UIScrollView*)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint*)targetContentOffset {
     
     CGFloat pageWidth = self.pagingPageWidth;
-    NSLog(@"dragging velocity %f", velocity.x);
     int newPage = _currentPage;
     
     if (velocity.x == 0) // slow dragging not lifting finger
     {
         newPage = floor((targetContentOffset->x - pageWidth / 2) / pageWidth) + 1;
-        
-        //    NSLog(@"Dragging - You will be on %i page (from page %i)", newPage, _currentPage);
         
         *targetContentOffset = CGPointMake(newPage * pageWidth, targetContentOffset->y);
     }
@@ -102,9 +102,6 @@
         if (newPage > self.collectionView.contentSize.width / pageWidth)
             newPage = ceil(self.collectionView.contentSize.width / pageWidth) - 1.0;
         
-        
-        //    NSLog(@"Dragging - You will be on %i page (from page %i)", newPage, _currentPage);
-        
         *targetContentOffset = CGPointMake(newPage * pageWidth, targetContentOffset->y);
     }
 }
@@ -112,9 +109,9 @@
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     CGFloat pageWidth = self.pagingPageWidth;
-    NSLog(@"end decelerating");
     int newPage = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     CGFloat targetX = newPage * pageWidth;
+    
     [scrollView scrollRectToVisible:CGRectMake(targetX, 0, scrollView.bounds.size.width, scrollView.bounds.size.height) animated:YES];
 }
 @end

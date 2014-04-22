@@ -44,6 +44,9 @@
 
     self.materialsModel = [WSMaterialsModel new];
     
+    _bestMaterialsCollectionVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WSBestMaterialsCollectionViewController"];
+    _bestMaterialsCollectionVC.materialsModel = self.materialsModel;
+    
     _microMaterialsCollectionVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WSMicroMaterialsCollectionViewController"];
     _microMaterialsCollectionVC.materialsModel = self.materialsModel;
     
@@ -91,13 +94,24 @@
     UITableViewCell *cell;
     if (indexPath.row == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"BestCell" forIndexPath:indexPath];
+        NSInteger tag = 111;
+        UIView *containerView = [cell viewWithTag:tag];
+        if (containerView.subviews.count == 0) {
+            [_bestMaterialsCollectionVC.view removeFromSuperview];
+            _bestMaterialsCollectionVC.view.frame = containerView.bounds;
+            _bestMaterialsCollectionVC.view.tag = tag;
+            [containerView addSubview:_bestMaterialsCollectionVC.view];
+        }
+        [_bestMaterialsCollectionVC.collectionView reloadData];
     }
     else if (indexPath.row == 1) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"MicroCell" forIndexPath:indexPath];
-        UIView *containerView = [cell viewWithTag:112];
+        NSInteger tag = 112;
+        UIView *containerView = [cell viewWithTag:tag];
         if (containerView.subviews.count == 0) {
+            [_microMaterialsCollectionVC.view removeFromSuperview];
             _microMaterialsCollectionVC.view.frame = containerView.bounds;
-            _microMaterialsCollectionVC.view.tag = 112;
+            _microMaterialsCollectionVC.view.tag = tag;
             [containerView addSubview:_microMaterialsCollectionVC.view];
         }
         [_microMaterialsCollectionVC.collectionView reloadData];
@@ -121,7 +135,7 @@
     
     }
     else if (indexPath.row == 1) {
-        result = 240.0f +
+        result = 230.0f +
         (int)(tableView.separatorStyle != UITableViewCellSeparatorStyleNone);
     }
     else {
@@ -134,6 +148,15 @@
         (int)(tableView.separatorStyle != UITableViewCellSeparatorStyleNone); // height of the cell should obey selected separator style
     }
     return result;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row >= 2) {
+        int index = indexPath.row - 2;
+        WSMaterial *material = self.materialsModel.materialsCollection.otherMaterials[index];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"WSOpenUrlNotification" object:Nil userInfo:@{@"url":[NSURL URLWithString:material.urlStr]}];
+    }
 }
 
 /*
