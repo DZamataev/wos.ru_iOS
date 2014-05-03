@@ -30,7 +30,7 @@ PODS:
     - NJKWebViewProgress/ProgressView
   - NJKWebViewProgress/Core (0.2.2)
   - NJKWebViewProgress/ProgressView (0.2.2)
-  - OHAttributedLabel (3.5.3)
+  - OHAttributedLabel (3.5.4)
   - RegexKitLite (4.0)
   - RestKit (0.22.0):
     - RestKit/Core
@@ -110,7 +110,7 @@ SPEC CHECKSUMS:
   ILTranslucentView: e749bfe8f9659b122c0b384a6533feb9850ce32a
   ISO8601DateFormatterValueTransformer: d0af1f50a9df42db72d7418db31938b8473e0af8
   NJKWebViewProgress: 4f905b9ab7eb91525dc899cacebd2941a6d4553b
-  OHAttributedLabel: 985e4b57eec0dc6add79179ac47ec888b8a914e7
+  OHAttributedLabel: 8fec862b9ba3e7e9a8ff624e21c9f00c56eb195a
   RegexKitLite: b16f029b518614394438e17b7d1df8bfa1e5a81e
   RestKit: dc107a0aa4f962575ad0385bac5b3c5e4f591f4e
   RestKit-Syndicate: ad35b07f04ae88fb2c3849e851c0f34360104b2a

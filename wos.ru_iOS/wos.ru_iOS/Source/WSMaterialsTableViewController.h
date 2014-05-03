@@ -15,6 +15,7 @@
 @interface WSMaterialsTableViewController : UITableViewController
 {
     IBOutlet UIView * _dummyViewsContainer;
+    UIRefreshControl *_refreshControl;
     WSFeedItemView *_dummyItemView;
     WSMicroMaterialsCollectionViewController *_microMaterialsCollectionVC;
     WSBestMaterialsCollectionViewController *_bestMaterialsCollectionVC;

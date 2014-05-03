@@ -39,8 +39,11 @@
         }
     }];
     
-    
-
+//    _refreshControl = [[UIRefreshControl alloc] init];
+//    [_refreshControl addTarget:self
+//                        action:@selector(loadMaterials)
+//              forControlEvents:UIControlEventValueChanged];
+//    [self setRefreshControl:_refreshControl];
 
     self.materialsModel = [WSMaterialsModel new];
     
@@ -51,6 +54,7 @@
     _microMaterialsCollectionVC.materialsModel = self.materialsModel;
     
     [self loadMaterials];
+    [self performSelector:@selector(loadMaterials) withObject:nil afterDelay:10.0f];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,10 +66,16 @@
 #pragma mark - actions
 - (void)loadMaterials
 {
+    [_refreshControl beginRefreshing];
     [self.materialsModel loadMaterialsWithCompletion:^(WSMaterialsCollection *materialsCollection, NSError *error) {
-        NSLog(@"%@", materialsCollection.materials);
-        NSLog(@"%i", materialsCollection.microMaterials.count);
-        [self.tableView reloadData];
+//        NSLog(@"%@", materialsCollection.materials);
+//        NSLog(@"%i", materialsCollection.microMaterials.count);
+        [_refreshControl endRefreshing];
+        NSMutableIndexSet *mSectionsIndexSet =
+        [NSMutableIndexSet indexSetWithIndexesInRange:NSMakeRange(0,
+                                                                  [self numberOfSectionsInTableView:self.tableView])];
+        [self.tableView reloadSections:mSectionsIndexSet
+                      withRowAnimation:UITableViewRowAnimationFade];
     }];
 }
 
@@ -74,7 +84,7 @@
     view.titleLabel.text = item.title;
     view.descriptionLabel.text = item.lead;
     view.dateLabel.text = item.dateStr;
-    [view.imageView setImageWithURL:[NSURL URLWithString:item.pictureStr] placeholderImage:nil];
+    [view.imageView setImageWithURL:[NSURL URLWithString:item.pictureStr] placeholderImage:[UIImage new]];
 }
 
 #pragma mark - Table view data source
@@ -146,6 +156,7 @@
         [_dummyItemView layoutIfNeeded];
         result = _dummyItemView.bounds.size.height +
         (int)(tableView.separatorStyle != UITableViewCellSeparatorStyleNone); // height of the cell should obey selected separator style
+//        NSLog(@"calculated height: %f", result);
     }
     return result;
 }
