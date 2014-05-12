@@ -515,14 +515,14 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="247" text="Title" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="211" translatesAutoresizingMaskIntoConstraints="NO" id="Zsh-Tf-5rB">
-                                                    <rect key="frame" x="104" y="0.0" width="211" height="77"/>
+                                                    <rect key="frame" x="104" y="3" width="211" height="71"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="248" text="Snippet" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="211" translatesAutoresizingMaskIntoConstraints="NO" id="RrY-fj-5nX">
-                                                    <rect key="frame" x="104" y="82" width="211" height="18"/>
+                                                    <rect key="frame" x="104" y="79" width="211" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -531,12 +531,12 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="Zsh-Tf-5rB" firstAttribute="top" secondItem="6Go-Tg-0IB" secondAttribute="top" id="0LV-qV-2Bw"/>
+                                                <constraint firstItem="Zsh-Tf-5rB" firstAttribute="top" secondItem="6Go-Tg-0IB" secondAttribute="top" constant="3" id="0LV-qV-2Bw"/>
                                                 <constraint firstItem="RrY-fj-5nX" firstAttribute="leading" secondItem="YeS-A5-MOM" secondAttribute="trailing" constant="4" id="7dD-Dj-snh"/>
                                                 <constraint firstAttribute="trailing" secondItem="9Lr-AA-T3L" secondAttribute="trailing" id="GFQ-NN-jrc"/>
                                                 <constraint firstAttribute="trailing" secondItem="Zsh-Tf-5rB" secondAttribute="trailing" constant="5" id="IjG-cx-ulH"/>
                                                 <constraint firstItem="9Lr-AA-T3L" firstAttribute="leading" secondItem="6Go-Tg-0IB" secondAttribute="leading" id="KcB-By-mgh"/>
-                                                <constraint firstAttribute="bottom" secondItem="RrY-fj-5nX" secondAttribute="bottom" constant="5" id="M89-ij-eqa"/>
+                                                <constraint firstAttribute="bottom" secondItem="RrY-fj-5nX" secondAttribute="bottom" constant="8" id="M89-ij-eqa"/>
                                                 <constraint firstAttribute="bottom" secondItem="9Lr-AA-T3L" secondAttribute="bottom" constant="5" id="X0U-on-dBN"/>
                                                 <constraint firstItem="RrY-fj-5nX" firstAttribute="top" secondItem="Zsh-Tf-5rB" secondAttribute="bottom" constant="5" id="YGj-nP-hSc"/>
                                                 <constraint firstItem="YeS-A5-MOM" firstAttribute="leading" secondItem="6Go-Tg-0IB" secondAttribute="leading" id="Z6n-wh-hd3"/>
