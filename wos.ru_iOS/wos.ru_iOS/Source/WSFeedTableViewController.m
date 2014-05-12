@@ -102,7 +102,6 @@
     view.titleLabel.text = item.title;
     view.descriptionLabel.text = item.snippet;
     view.dateLabel.text = item.visibleDate;
-    [view setLightGradientHidden:!item.isSeen animated:NO];
     [view.imageView setImageWithURL:item.imageUrl placeholderImage:_placeholderImage];
 }
 

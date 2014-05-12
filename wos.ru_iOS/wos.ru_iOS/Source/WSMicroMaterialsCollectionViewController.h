@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UIImageView+WebCache.h>
 #import "WSMaterialsModel.h"
 
 @interface WSMicroMaterialsCollectionViewController : UICollectionViewController

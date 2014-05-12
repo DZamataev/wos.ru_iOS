@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UIImageView+WebCache.h>
 #import "WSMaterialsModel.h"
 #import "WSFeedItemView.h"
 #import "WSMicroMaterialsCollectionViewController.h"
@@ -14,9 +15,7 @@
 
 @interface WSMaterialsTableViewController : UITableViewController
 {
-    IBOutlet UIView * _dummyViewsContainer;
     UIRefreshControl *_refreshControl;
-    WSFeedItemView *_dummyItemView;
     WSMicroMaterialsCollectionViewController *_microMaterialsCollectionVC;
     WSBestMaterialsCollectionViewController *_bestMaterialsCollectionVC;
 }

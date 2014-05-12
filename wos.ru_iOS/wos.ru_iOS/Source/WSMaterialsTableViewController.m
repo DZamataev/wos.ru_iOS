@@ -33,17 +33,11 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [_dummyViewsContainer.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if ([obj isKindOfClass:[WSFeedItemView class]]) {
-            _dummyItemView = obj;
-        }
-    }];
-    
-//    _refreshControl = [[UIRefreshControl alloc] init];
-//    [_refreshControl addTarget:self
-//                        action:@selector(loadMaterials)
-//              forControlEvents:UIControlEventValueChanged];
-//    [self setRefreshControl:_refreshControl];
+    _refreshControl = [[UIRefreshControl alloc] init];
+    [_refreshControl addTarget:self
+                        action:@selector(loadMaterials)
+              forControlEvents:UIControlEventValueChanged];
+    [self setRefreshControl:_refreshControl];
 
     self.materialsModel = [WSMaterialsModel new];
     
@@ -54,7 +48,6 @@
     _microMaterialsCollectionVC.materialsModel = self.materialsModel;
     
     [self loadMaterials];
-    [self performSelector:@selector(loadMaterials) withObject:nil afterDelay:10.0f];
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,12 +72,29 @@
     }];
 }
 
-- (void)setValuesInItemView:(WSFeedItemView*)view fromMaterial:(WSMaterial*)item
+- (void)setValuesInItemView:(WSFeedItemView*)view fromMaterial:(WSMaterial*)item onCalculateHeightFlag:(BOOL)calculateHeightFlag
 {
+    if (calculateHeightFlag) {
+        view.imageView.image = nil;
+    }
+    else {
+        UIImageView __weak *imageViewToAnimate = view.imageView;
+        [view.imageView setImageWithURL:[NSURL URLWithString:item.pictureStr]
+                              completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+                                  if (imageViewToAnimate && cacheType == SDImageCacheTypeNone) {
+                                      imageViewToAnimate.alpha = 0.0f;
+                                      [UIView animateWithDuration:0.3f delay:0.0f options:0 animations:^{
+                                          imageViewToAnimate.alpha = 1.0f;
+                                      } completion:nil];
+                                  }
+                              }];
+        
+    }
     view.titleLabel.text = item.title;
     view.descriptionLabel.text = item.lead;
     view.dateLabel.text = item.dateStr;
-    [view.imageView setImageWithURL:[NSURL URLWithString:item.pictureStr] placeholderImage:[UIImage new]];
+    [view setNeedsLayout];
+    [view layoutIfNeeded];
 }
 
 #pragma mark - Table view data source
@@ -131,7 +141,7 @@
         int index = indexPath.row - 2;
         WSMaterial *item = self.materialsModel.materialsCollection.otherMaterials[index];
         WSFeedItemView *view = (WSFeedItemView*)[cell viewWithTag:1];
-        [self setValuesInItemView:view fromMaterial:item];
+        [self setValuesInItemView:view fromMaterial:item onCalculateHeightFlag:NO];
     }
     return cell;
 }
@@ -151,10 +161,14 @@
     else {
         int index = indexPath.row - 2;
         WSMaterial *item = self.materialsModel.materialsCollection.otherMaterials[index];
-        [self setValuesInItemView:_dummyItemView fromMaterial:item];
-        [_dummyItemView setNeedsLayout];
-        [_dummyItemView layoutIfNeeded];
-        result = _dummyItemView.bounds.size.height +
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ItemCell"];
+        WSFeedItemView *view = (WSFeedItemView*)[cell viewWithTag:1];
+        
+        [self setValuesInItemView:view fromMaterial:item onCalculateHeightFlag:YES];
+        
+        CGSize rect = [view systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+        result = rect.height +
         (int)(tableView.separatorStyle != UITableViewCellSeparatorStyleNone); // height of the cell should obey selected separator style
 //        NSLog(@"calculated height: %f", result);
     }

@@ -42,9 +42,6 @@
 
 - (void)commonInit
 {
-    _gradientBgViewLayer = [WSFeedItemView lightHorizontalGradientLayer];
-    _gradientBgViewLayer.frame = _gradientBgView.bounds;
-    [_gradientBgView.layer insertSublayer:_gradientBgViewLayer atIndex:0];
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
@@ -68,29 +65,7 @@
     }
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    _gradientBgViewLayer.frame = _gradientBgView.bounds;
-}
 
-- (void)setLightGradientHidden:(BOOL)hidden animated:(BOOL)animated
-{
-    if (animated) {
-        [UIView animateWithDuration:0.2f animations:^{
-            if (hidden) {
-                _gradientBgViewLayer.opacity = 0.0f;
-            }
-            else {
-                _gradientBgViewLayer.opacity = 1.0f;
-            }
-        } completion:^(BOOL finished) {
-            _gradientBgViewLayer.hidden = hidden;
-        }];
-    }
-    else {
-        _gradientBgViewLayer.hidden = hidden;
-    }
-}
 
 + (CAGradientLayer*) lightHorizontalGradientLayer {
     
