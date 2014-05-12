@@ -55,8 +55,11 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     
-    for (WSSleepTimerPickerViewController* sleepTimerPickerVC in self.childViewControllers) {
-        sleepTimerPickerVC.delegate = self;
+    for (id vc in self.childViewControllers) {
+        if ([vc isKindOfClass:[WSSleepTimerPickerViewController class]]) {
+            WSSleepTimerPickerViewController* sleepTimerPickerVC = vc;
+            sleepTimerPickerVC.delegate = self;
+        }
     }
     
     [self becomeFirstResponder];
@@ -360,6 +363,13 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     }];
 }
 
+- (void)takeColorFromStationAtIndex:(NSInteger)index
+{
+    if (index != NSNotFound && _stations.count > index) {
+        WSRStation *station = _stations[index];
+        self.accentColor = station.color.UIColorFromComponents;
+    }
+}
 
 - (void)selectedRadiostationAtIndex:(NSInteger)index andPlayIt:(BOOL)shouldPlay
 {
@@ -389,20 +399,25 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
             
             [self.audioPlayer stop];
             
-            NSURL* url = self.currentStream.url;
-            NSLog(@"Attempt to set url as data source: %@", url);
-            STKAutoRecoveringHTTPDataSource *dataSource = [[STKAutoRecoveringHTTPDataSource alloc] initWithHTTPDataSource:[[STKHTTPDataSource alloc] initWithURL:url]];
-            dataSource.delegate = self;
-            [self.audioPlayer setDataSource:dataSource  withQueueItemId:url];
-            
             if (shouldPlay) {
+                STKAutoRecoveringHTTPDataSource *dataSource = [self dataSourceWithStream:self.currentStream];
+                dataSource.delegate = self;
+                [self.audioPlayer setDataSource:dataSource  withQueueItemId:stream.url];
                 self.playButton.isPaused = NO; // force change the button state
             }
             else {
-                [self performSelector:@selector(pauseAudioPlayback) withObject:Nil afterDelay:0.1f];
+                self.dataSourceToSetOnResume = [self dataSourceWithStream:self.currentStream];
             }
         }
     }
+}
+
+- (STKAutoRecoveringHTTPDataSource*)dataSourceWithStream:(WSRStream*)stream
+{
+    NSURL* url = self.currentStream.url;
+    NSLog(@"Attempt to set url as data source: %@", url);
+    STKAutoRecoveringHTTPDataSource *dataSource = [[STKAutoRecoveringHTTPDataSource alloc] initWithHTTPDataSource:[[STKHTTPDataSource alloc] initWithURL:url]];
+    return dataSource;
 }
 
 - (void)pauseAudioPlayback {
@@ -411,6 +426,12 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 }
 
 - (void)resumeAudioPlayback {
+    if (self.dataSourceToSetOnResume) {
+        
+        self.dataSourceToSetOnResume.delegate = self;
+        [self.audioPlayer setDataSource:self.dataSourceToSetOnResume withQueueItemId:stream.url];
+        self.playButton.isPaused = NO; // force change the button state
+    }
     [self.audioPlayer resume];
     [self performSelector:@selector(updateControls) withObject:nil afterDelay:0.1f];
 }

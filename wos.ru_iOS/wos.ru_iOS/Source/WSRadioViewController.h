@@ -54,6 +54,7 @@ extern NSString * const WSSleepTimerPickedInterval_UserDefaultsKey;
 @property (strong, nonatomic, readonly) NSMutableArray *stations;
 @property (strong, nonatomic) WSRStation *currentStation;
 @property (strong, nonatomic) WSRStream *currentStream;
+@property (strong, nonatomic) STKAutoRecoveringHTTPDataSource *dataSourceToSetOnResume;
 @property (strong, nonatomic) IBOutlet ILTranslucentView *sleepTimerViewContainer;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *sleepTimerViewContainerTopOffsetConstraint;
 @property (strong, nonatomic) NSTimer *sleepTimer;
