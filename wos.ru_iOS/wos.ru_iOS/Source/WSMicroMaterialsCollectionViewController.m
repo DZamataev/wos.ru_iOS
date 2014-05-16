@@ -78,6 +78,8 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     WSMaterial *material = self.materialsModel.materialsCollection.microMaterials[indexPath.row];
+    [_materialsModel markMaterialAsSeenWithIdentifier:material.identifier];
+    material.isSeen = YES;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WSOpenUrlNotification" object:Nil userInfo:@{@"url":[NSURL URLWithString:material.urlStr]}];
 }
 

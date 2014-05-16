@@ -14,7 +14,15 @@ NSString *const WSGithubMaterialsPath = @"/DZamataev/wos.ru_iOS/master/materials
 NSString *const WSBaseUrl = @"http://w-o-s.ru";
 NSString *const WSMaterialsPath = @"/api/materials";
 
+NSString *const WSSeenMaterialsFileName = @"WSSeenMaterials";
+
 @implementation WSMaterialsModel
+{
+    NSMutableArray *_seenMaterials;
+    NSInteger _seenMaterialsLimit;
+}
+
+
 - (instancetype)init
 {
     self = [super init];
@@ -31,10 +39,10 @@ NSString *const WSMaterialsPath = @"/api/materials";
     RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
     
     // Log debugging info about Core Data
-    RKLogConfigureByName("RestKit/CoreData", RKLogLevelDebug);
+//    RKLogConfigureByName("RestKit/CoreData", RKLogLevelDebug);
     
     // Log only critical messages from the Object Mapping component
-    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelDebug);
+//    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelDebug);
 #endif
     
     // Initialize RestKit
@@ -44,7 +52,7 @@ NSString *const WSMaterialsPath = @"/api/materials";
     // accept xml mime type and make parser add prefix _ before xml attributes
     [RKMIMETypeSerialization registerClass:[RKXMLDictionarySerialization class] forMIMEType:RKMIMETypeTextXML];
     [RKMIMETypeSerialization registerClass:[RKXMLDictionarySerialization class] forMIMEType:RKMIMETypeXML];
-    [RKMIMETypeSerialization registerClass:[RKXMLDictionarySerialization class] forMIMEType:@"text/plain"];
+//    [RKMIMETypeSerialization registerClass:[RKXMLDictionarySerialization class] forMIMEType:@"text/plain"];
     
     // add response descriptors
     
@@ -56,6 +64,10 @@ NSString *const WSMaterialsPath = @"/api/materials";
                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     [self.objectManager addResponseDescriptor:materialsResponseDescriptor];
    
+    
+    // Load seen materials from user defaults
+    _seenMaterials = [NSMutableArray wa_loadFromDiskOrInstantiateNewWithFileName:WSSeenMaterialsFileName];
+    _seenMaterialsLimit = 3000;
 }
 
 - (RKObjectMapping*)objectMappingForMaterial
@@ -89,7 +101,19 @@ NSString *const WSMaterialsPath = @"/api/materials";
     return materialsCollectionMapping;
 }
 
-#pragma mark - Loading actions
+#pragma mark - Public
+
+-(void)markMaterialAsSeenWithIdentifier:(NSNumber *)identifier
+{
+    if (identifier)
+    {
+        [_seenMaterials addObject:identifier];
+        if (_seenMaterials.count > _seenMaterialsLimit) {
+            [_seenMaterials removeObject:_seenMaterials.firstObject];
+        }
+        [_seenMaterials wa_saveOnDiskWithFileName:WSSeenMaterialsFileName];
+    }
+}
 
 - (void)loadMaterialsWithCompletion:(void (^)(WSMaterialsCollection *materialsCollection, NSError *error))completionBlock
 {
@@ -97,7 +121,7 @@ NSString *const WSMaterialsPath = @"/api/materials";
                               parameters:nil
                                  success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                      self.materialsCollection = mappingResult.firstObject;
-                                     [self.materialsCollection processMaterials];
+                                     [self.materialsCollection processMaterialsWithSeen:_seenMaterials];
                                      completionBlock(self.materialsCollection, nil);
                                  }
                                  failure:^(RKObjectRequestOperation *operation, NSError *error) {

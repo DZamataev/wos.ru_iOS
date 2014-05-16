@@ -36,4 +36,6 @@
 @property NSString *bestStr;
 @property NSNumber *showCountNum;
 @property NSNumber *commentsCountNum;
+/* local logic properties */
+@property BOOL isSeen;
 @end

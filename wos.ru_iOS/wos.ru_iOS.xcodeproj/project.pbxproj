@@ -26,6 +26,7 @@
 		922A0BCD18645B7A00802757 /* WSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BC518645B7A00802757 /* WSViewController.m */; };
 		922A0BD018645E5400802757 /* AudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BCF18645E5400802757 /* AudioPlayerView.m */; };
 		9230117819059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9230117719059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.m */; };
+		923C3AED19264215003D76A5 /* WSCopyableAutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 923C3AEC19264215003D76A5 /* WSCopyableAutoScrollLabel.m */; };
 		9255271F18B5FB5C006D1191 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9255271E18B5FB5C006D1191 /* CoreData.framework */; };
 		9255272218B60D0E006D1191 /* WSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255272118B60D0E006D1191 /* WSRootViewController.m */; };
 		9255272818B63616006D1191 /* WSFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255272718B63616006D1191 /* WSFeedViewController.m */; };
@@ -121,6 +122,8 @@
 		922A0BCF18645E5400802757 /* AudioPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerView.m; sourceTree = "<group>"; };
 		9230117619059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMicroMaterialsCollectionViewController.h; path = Source/WSMicroMaterialsCollectionViewController.h; sourceTree = "<group>"; };
 		9230117719059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSMicroMaterialsCollectionViewController.m; path = Source/WSMicroMaterialsCollectionViewController.m; sourceTree = "<group>"; };
+		923C3AEB19264215003D76A5 /* WSCopyableAutoScrollLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCopyableAutoScrollLabel.h; sourceTree = "<group>"; };
+		923C3AEC19264215003D76A5 /* WSCopyableAutoScrollLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCopyableAutoScrollLabel.m; sourceTree = "<group>"; };
 		9255271E18B5FB5C006D1191 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9255272018B60D0E006D1191 /* WSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRootViewController.h; sourceTree = "<group>"; };
 		9255272118B60D0E006D1191 /* WSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRootViewController.m; sourceTree = "<group>"; };
@@ -331,6 +334,7 @@
 				9255272118B60D0E006D1191 /* WSRootViewController.m */,
 				92E8F45018E36E73000437A4 /* WSWebBrowserViewController.h */,
 				92E8F45118E36E73000437A4 /* WSWebBrowserViewController.m */,
+				92A9AC6F1924F7BE0072C5EC /* Player Scene */,
 				929ABF001905691700F7BF5D /* Materials Scene */,
 				9255272C18B6364B006D1191 /* Feed Scene */,
 				92AE49A21889545D003D5572 /* Radio Scene */,
@@ -449,6 +453,37 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		92A9AC6F1924F7BE0072C5EC /* Player Scene */ = {
+			isa = PBXGroup;
+			children = (
+				92A9AC701924F7D20072C5EC /* View */,
+				92A9AC711924F7D80072C5EC /* Controller */,
+				92A9AC721924F7DE0072C5EC /* Model */,
+			);
+			name = "Player Scene";
+			sourceTree = "<group>";
+		};
+		92A9AC701924F7D20072C5EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		92A9AC711924F7D80072C5EC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		92A9AC721924F7DE0072C5EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		92AE49A21889545D003D5572 /* Radio Scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,6 +537,8 @@
 				92C397691885396A001E46FA /* WSRadiostationSelectorScrollView.m */,
 				92C3976518853948001E46FA /* WSRadiostationButton.h */,
 				92C3976618853948001E46FA /* WSRadiostationButton.m */,
+				923C3AEB19264215003D76A5 /* WSCopyableAutoScrollLabel.h */,
+				923C3AEC19264215003D76A5 /* WSCopyableAutoScrollLabel.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -667,6 +704,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				923C3AED19264215003D76A5 /* WSCopyableAutoScrollLabel.m in Sources */,
 				929ABF1119056C9300F7BF5D /* WSMaterial.m in Sources */,
 				92C3978218855E68001E46FA /* WSRColor.m in Sources */,
 				92AF7D1C18B75E93003190A5 /* WSFeedGroup.m in Sources */,

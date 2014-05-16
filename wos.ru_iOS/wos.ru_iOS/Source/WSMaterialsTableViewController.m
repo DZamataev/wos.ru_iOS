@@ -180,8 +180,9 @@
     if (indexPath.row >= 2) {
         int index = indexPath.row - 2;
         WSMaterial *material = self.materialsModel.materialsCollection.otherMaterials[index];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"WSOpenUrlNotification" object:Nil userInfo:@{@"url":[NSURL URLWithString:material.urlStr]}];
-    }
+        [_materialsModel markMaterialAsSeenWithIdentifier:material.identifier];
+        material.isSeen = YES;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"WSOpenUrlNotification" object:Nil userInfo:@{@"url":[NSURL URLWithString:material.urlStr]}];    }
 }
 
 /*

@@ -22,6 +22,7 @@ PODS:
   - DKNavbarBackButton (0.1.4):
     - DKNavbarBackButton/core
   - DKNavbarBackButton/core (0.1.4)
+  - FreeStreamer (2.1.2)
   - ILTranslucentView (0.0.1)
   - ISO8601DateFormatterValueTransformer (0.5.0):
     - RKValueTransformers (~> 1.0.0)
@@ -72,8 +73,10 @@ PODS:
   - XMLDictionary (1.4)
 
 DEPENDENCIES:
+  - AutoScrollLabel
   - Chivy (from `https://github.com/DZamataev/Chivy.git`, branch `master`)
   - CocoaLumberjack
+  - FreeStreamer
   - ILTranslucentView (from `https://github.com/ivoleko/ILTranslucentView.git`, branch `master`)
   - OHAttributedLabel
   - RegexKitLite
@@ -104,6 +107,7 @@ SPEC CHECKSUMS:
   Chivy: e92938970f750d0c2ec47b745c25b2b4ffff6282
   CocoaLumberjack: 020378ec400d658923bf5887178394f65f052c90
   DKNavbarBackButton: f8302431f4fd2bfbb31ab4075247524d07a889df
+  FreeStreamer: 25b14eb140ff2baba7d32c8b02b2de756f73e82b
   ILTranslucentView: e749bfe8f9659b122c0b384a6533feb9850ce32a
   ISO8601DateFormatterValueTransformer: d0af1f50a9df42db72d7418db31938b8473e0af8
   NJKWebViewProgress: 2e7a17adf394a54b0203f544b354c2f1022eb651

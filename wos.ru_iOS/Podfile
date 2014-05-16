@@ -11,3 +11,5 @@ pod 'ILTranslucentView', :git => 'https://github.com/ivoleko/ILTranslucentView.g
 pod 'RestKit-Syndicate', :git => 'https://github.com/DZamataev/RestKit-Syndicate.git', :branch => 'master'
 pod 'XMLDictionary'
 pod 'RKXMLDictionarySerialization'
+pod 'FreeStreamer'
+pod 'AutoScrollLabel'

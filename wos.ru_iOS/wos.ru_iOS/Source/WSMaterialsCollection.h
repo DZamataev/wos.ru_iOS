@@ -15,5 +15,5 @@
 @property NSMutableArray *bestMaterials;
 @property NSMutableArray *microMaterials;
 @property NSMutableArray *otherMaterials;
-- (void)processMaterials;
+- (void)processMaterialsWithSeen:(NSArray*)seenArray;
 @end

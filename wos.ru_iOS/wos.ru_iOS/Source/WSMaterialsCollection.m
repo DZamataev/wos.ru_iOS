@@ -10,13 +10,21 @@
 #import "WSMaterial.h"
 
 @implementation WSMaterialsCollection
-- (void)processMaterials
+- (void)processMaterialsWithSeen:(NSArray *)seenArray
 {
     self.bestMaterials = [NSMutableArray new];
     self.microMaterials = [NSMutableArray new];
     self.otherMaterials = [NSMutableArray new];
     
     for (WSMaterial *mat in self.materials) {
+        [seenArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            NSNumber *seenId = obj;
+            NSNumber *matId = mat.identifier;
+            if (seenId.integerValue == matId.integerValue) {
+                mat.isSeen = YES;
+            }
+        }];
+        
         if ([mat.bestStr isEqualToString:@"true"]) {
             [self.bestMaterials addObject:mat];
         }

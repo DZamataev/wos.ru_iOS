@@ -17,6 +17,7 @@
 #import "WSVolumeSlider.h"
 #import "WSPlayButton.h"
 #import "WSRadiostationSelectorScrollView.h"
+#import "WSCopyableAutoScrollLabel.h"
 
 #import "WSSleepTimerPickerViewController.h"
 #import "WSRootViewController.h"
@@ -46,14 +47,9 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     
     _stations = [NSMutableArray new];
     _radioModel = [[WSRadioModel alloc] init];
-    self.audioPlayer = [[STKAudioPlayer alloc] init];
-    self.audioPlayer.delegate = self;
-    
-    [self loadRadiostations];
+    self.audioStream = [[FSAudioStream alloc] init];
 
     self.accentColor = [WSRootViewController defaultAccentColor];
-    
-    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     
     for (id vc in self.childViewControllers) {
         if ([vc isKindOfClass:[WSSleepTimerPickerViewController class]]) {
@@ -62,7 +58,11 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
         }
     }
     
-    [self becomeFirstResponder];
+    self.streamInfoLabel.textColor = [UIColor whiteColor];
+    self.streamInfoLabel.textAlignment = NSTextAlignmentCenter;
+    [self.streamInfoLabel observeApplicationNotifications];
+    
+    [self loadRadiostations];
     
 //    [self performSelector:@selector(logtick) withObject:nil afterDelay:1.0f];
 }
@@ -77,6 +77,10 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    
+    [self becomeFirstResponder];
+    
     [super viewWillAppear:animated];
 }
 
@@ -113,6 +117,18 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
                                              selector: @selector(handleMediaServicesWereReset:)
                                                  name: AVAudioSessionMediaServicesWereResetNotification
                                                object: session];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(audioStreamStateDidChange:)
+                                                 name:FSAudioStreamStateChangeNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(audioStreamErrorOccurred:)
+                                                 name:FSAudioStreamErrorNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(audioStreamMetaDataAvailable:)
+                                                 name:FSAudioStreamMetaDataNotification
+                                               object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleRemoteControlReceivedWithEventNotification:)
                                                  name:@"WSRemoteControlRecevedWithEventNotification" object:nil];
@@ -229,6 +245,122 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
         [self pauseAudioPlayback];
     }
 }
+- (void)audioStreamStateDidChange:(NSNotification *)notification
+{
+    NSDictionary *dict = [notification userInfo];
+    int state = [[dict valueForKey:FSAudioStreamNotificationKey_State] intValue];
+    
+    switch (state) {
+        case kFsAudioStreamRetrievingURL:
+            WSDebugLog(@"Retrieving URL...");
+            // can pause
+            break;
+            
+        case kFsAudioStreamStopped:
+            WSDebugLog(@"Audio stream playback stopped");
+            // can play
+            break;
+            
+        case kFsAudioStreamBuffering:
+            
+            WSDebugLog(@"Retrieving URL...");
+            // can pause
+            break;
+            
+        case kFsAudioStreamSeeking:
+            
+            WSDebugLog(@"Retrieving URL...");
+            // can pause
+            break;
+            
+        case kFsAudioStreamPlaying:
+            WSDebugLog(@"Playing...");
+            // can pause
+            break;
+            
+        case kFsAudioStreamFailed:
+            WSDebugLog(@"Audio stream payback failed...");
+            // can play
+            break;
+    }
+}
+
+- (void)audioStreamErrorOccurred:(NSNotification *)notification
+{
+    NSDictionary *dict = [notification userInfo];
+    int errorCode = [[dict valueForKey:FSAudioStreamNotificationKey_Error] intValue];
+    
+    NSString *errorDescription;
+    
+    switch (errorCode) {
+        case kFsAudioStreamErrorOpen:
+            errorDescription = @"Cannot open the audio stream";
+            break;
+        case kFsAudioStreamErrorStreamParse:
+            errorDescription = @"Cannot read the audio stream";
+            break;
+        case kFsAudioStreamErrorNetwork:
+            errorDescription = @"Network failed: cannot play the audio stream";
+            break;
+        case kFsAudioStreamErrorUnsupportedFormat:
+            errorDescription = @"Unsupported format";
+            break;
+        case kFsAudioStreamErrorStreamBouncing:
+            errorDescription = @"Network failed: cannot get enough data to play";
+            [self.audioStream play];
+            break;
+        default:
+            errorDescription = @"Unknown error occurred";
+            break;
+    }
+    
+    NSLog(@"%@", errorDescription);
+//    TODO: show error status
+//    [self showErrorStatus:errorDescription];
+}
+
+- (void)audioStreamMetaDataAvailable:(NSNotification *)notification
+{
+    NSDictionary *dict = [notification userInfo];
+    NSDictionary *metaData = [dict valueForKey:FSAudioStreamNotificationKey_MetaData];
+    
+    NSMutableString *streamInfo = [[NSMutableString alloc] init];
+    
+/* we can get the real station name from metadata, but we don't need it */
+//    NSString *stationName = [self determineStationNameWithMetaData:metaData];
+    
+    if (metaData[@"MPMediaItemPropertyArtist"] &&
+        metaData[@"MPMediaItemPropertyTitle"]) {
+        [streamInfo appendString:metaData[@"MPMediaItemPropertyArtist"]];
+        [streamInfo appendString:@" - "];
+        [streamInfo appendString:metaData[@"MPMediaItemPropertyTitle"]];
+    } else if (metaData[@"StreamTitle"]) {
+        [streamInfo appendString:metaData[@"StreamTitle"]];
+    }
+    
+    BOOL textIsNotEmpty = streamInfo && streamInfo.length > 0;
+    
+    if (textIsNotEmpty)
+    {
+    }
+    
+    self.streamInfoLabel.text = [NSString stringWithString:streamInfo];
+   
+    [self.streamInfoLabel.layer removeAllAnimations];
+    
+    if (textIsNotEmpty) {
+        NSLog(@"stream info: %@", self.streamInfoLabel.text);
+        self.streamInfoLabel.alpha = 0.0f;
+        [UIView animateWithDuration:0.3f delay:0.0f options:0 animations:^{
+            self.streamInfoLabel.alpha = 1.0f;
+        } completion:nil];
+    }
+    else {
+        [UIView animateWithDuration:0.3f delay:0.0f options:0 animations:^{
+            self.streamInfoLabel.alpha = 0.0f;
+        } completion:nil];
+    }
+}
 
 #pragma mark - Properties
 
@@ -293,10 +425,10 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
                 
             case UIEventSubtypeRemoteControlTogglePlayPause:
                 eventName = @"UIEventSubtypeRemoteControlTogglePlayPause";
-                if (self.audioPlayer.state == STKAudioPlayerStatePlaying) {
+                if (self.audioStream.isPlaying) {
                     [self pauseAudioPlayback];
                 }
-                else if (self.audioPlayer.state == STKAudioPlayerStatePaused) {
+                else {
                     [self resumeAudioPlayback];
                 }
                 break;
@@ -397,42 +529,26 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
             
             self.currentStream = stream;
             
-            [self.audioPlayer stop];
-            
             if (shouldPlay) {
-                STKAutoRecoveringHTTPDataSource *dataSource = [self dataSourceWithStream:self.currentStream];
-                dataSource.delegate = self;
-                [self.audioPlayer setDataSource:dataSource  withQueueItemId:stream.url];
+                [self.audioStream playFromURL:self.currentStream.url];
                 self.playButton.isPaused = NO; // force change the button state
             }
             else {
-                self.dataSourceToSetOnResume = [self dataSourceWithStream:self.currentStream];
+                [self.audioStream setUrl:self.currentStream.url];
+                [self.audioStream stop];
             }
         }
     }
 }
 
-- (STKAutoRecoveringHTTPDataSource*)dataSourceWithStream:(WSRStream*)stream
-{
-    NSURL* url = self.currentStream.url;
-    NSLog(@"Attempt to set url as data source: %@", url);
-    STKAutoRecoveringHTTPDataSource *dataSource = [[STKAutoRecoveringHTTPDataSource alloc] initWithHTTPDataSource:[[STKHTTPDataSource alloc] initWithURL:url]];
-    return dataSource;
-}
 
 - (void)pauseAudioPlayback {
-    [self.audioPlayer pause];
+    [self.audioStream stop];
     [self performSelector:@selector(updateControls) withObject:nil afterDelay:0.1f];
 }
 
 - (void)resumeAudioPlayback {
-    if (self.dataSourceToSetOnResume) {
-        
-        self.dataSourceToSetOnResume.delegate = self;
-        [self.audioPlayer setDataSource:self.dataSourceToSetOnResume withQueueItemId:stream.url];
-        self.playButton.isPaused = NO; // force change the button state
-    }
-    [self.audioPlayer resume];
+    [self.audioStream play];
     [self performSelector:@selector(updateControls) withObject:nil afterDelay:0.1f];
 }
 
@@ -466,14 +582,11 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 }
 
 - (void)updateControls {
-    switch (self.audioPlayer.state ) {
-        case STKAudioPlayerStatePlaying:
-            self.playButton.isPaused = NO;
-            break;
-            
-        default:
-            self.playButton.isPaused = YES;
-            break;
+    if (self.audioStream.isPlaying ) {
+        self.playButton.isPaused = NO;
+    }
+    else {
+        self.playButton.isPaused = YES;
     }
 }
 
@@ -536,6 +649,26 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     [WSRadioViewController clearSleepTimerPickedIntervalKey];
 }
 
+- (NSString*)determineStationNameWithMetaData:(NSDictionary *)metaData
+{
+    NSString *result = @"";
+    if (metaData[@"IcecastStationName"] && [metaData[@"IcecastStationName"] length] > 0) {
+        result = metaData[@"IcecastStationName"];
+    } else {
+        NSString *title = self.currentStation.name;
+        
+        if ([title length] > 0) {
+            result = title;
+        } else {
+            /* The last resort - use the URL as the title, if available */
+            if (metaData[@"StreamUrl"] && [metaData[@"StreamUrl"] length] > 0) {
+                result = metaData[@"StreamUrl"];
+            }
+        }
+    }
+    return result;
+}
+
 + (void)clearSleepTimerPickedIntervalKey {
     
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:WSSleepTimerPickedInterval_UserDefaultsKey];
@@ -549,62 +682,15 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 #pragma mark - WSPlayButtonDelegate protocol implementation
 
 - (BOOL)playButtonShouldPlay:(WSPlayButton*)playButton {
-    [self.audioPlayer resume];
+    [self.audioStream play];
     return YES;
 }
 
 - (BOOL)playButtonShouldPause:(WSPlayButton*)playButton {
-    [self.audioPlayer pause];
+    [self.audioStream stop];
     return YES;
 }
 
-#pragma mark - AudioPlayerDelegate protocol implementation
-
-
-/// Raised when an item has started playing
--(void) audioPlayer:(STKAudioPlayer*)audioPlayer didStartPlayingQueueItemId:(NSObject*)queueItemId{
-    WSDebugLog();
-}
-/// Raised when an item has finished buffering (may or may not be the currently playing item)
-/// This event may be raised multiple times for the same item if seek is invoked on the player
--(void) audioPlayer:(STKAudioPlayer*)audioPlayer didFinishBufferingSourceWithQueueItemId:(NSObject*)queueItemId{
-    WSDebugLog();
-}
-/// Raised when the state of the player has changed
--(void) audioPlayer:(STKAudioPlayer*)audioPlayer stateChanged:(STKAudioPlayerState)state previousState:(STKAudioPlayerState)previousState{
-    WSDebugLog();
-}
-/// Raised when an item has finished playing
--(void) audioPlayer:(STKAudioPlayer*)audioPlayer didFinishPlayingQueueItemId:(NSObject*)queueItemId withReason:(STKAudioPlayerStopReason)stopReason andProgress:(double)progress andDuration:(double)duration{
-    WSDebugLog();
-}
-/// Raised when an unexpected and possibly unrecoverable error has occured (usually best to recreate the STKAudioPlauyer)
--(void) audioPlayer:(STKAudioPlayer*)audioPlayer unexpectedError:(STKAudioPlayerErrorCode)errorCode{
-    WSDebugLog();
-}
-
-/// Optionally implemented to get logging information from the STKAudioPlayer (used internally for debugging)
--(void) audioPlayer:(STKAudioPlayer*)audioPlayer logInfo:(NSString*)line{
-    WSDebugLog();
-}
-/// Raised when items queued items are cleared (usually because of a call to play, setDataSource or stop)
--(void) audioPlayer:(STKAudioPlayer*)audioPlayer didCancelQueuedItems:(NSArray*)queuedItems{
-    WSDebugLog();
-}
-
-
-#pragma mark - DataSourceDelegate protocol implementation
--(void) dataSourceDataAvailable:(STKDataSource*)dataSource {
-    WSDebugLog();
-}
-
--(void) dataSourceErrorOccured:(STKDataSource*)dataSource {
-    WSDebugLog();
-}
-
--(void) dataSourceEof:(STKDataSource*)dataSource {
-    WSDebugLog();
-}
 
 #pragma mark - WSSleepTimerPickerDelegate protocol implementation
 - (void)sleepTimerPickerViewController:(WSSleepTimerPickerViewController *)pickerController pickedTimeInterval:(NSNumber *)timeInterval

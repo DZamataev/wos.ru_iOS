@@ -99,8 +99,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qwd-Ll-slT" customClass="WSCopyableAutoScrollLabel">
+                                <rect key="frame" x="2" y="236" width="316" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="FVL-hN-Baz"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpe-nV-SkX" customClass="WSPlayButton">
-                                <rect key="frame" x="80" y="76" width="160" height="160"/>
+                                <rect key="frame" x="80" y="61" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -231,15 +239,18 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tYa-9H-SHM" secondAttribute="trailing" id="0Qu-yR-pAi"/>
                             <constraint firstItem="g1h-Vc-UGs" firstAttribute="leading" secondItem="T24-Py-dcl" secondAttribute="trailing" constant="3" id="2x3-e0-0xn"/>
-                            <constraint firstItem="g1h-Vc-UGs" firstAttribute="top" secondItem="gpe-nV-SkX" secondAttribute="bottom" constant="31" id="7KZ-4P-Wdc"/>
+                            <constraint firstItem="g1h-Vc-UGs" firstAttribute="top" secondItem="gpe-nV-SkX" secondAttribute="bottom" constant="46" id="7KZ-4P-Wdc"/>
                             <constraint firstItem="g1h-Vc-UGs" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" constant="52" id="DmY-6N-qJl"/>
                             <constraint firstAttribute="trailing" secondItem="gpe-nV-SkX" secondAttribute="trailing" constant="80" id="Em4-HI-Vuc"/>
                             <constraint firstItem="Kab-T3-EUd" firstAttribute="top" secondItem="g1h-Vc-UGs" secondAttribute="bottom" constant="-20" id="GlF-2x-9hO"/>
                             <constraint firstItem="Kab-T3-EUd" firstAttribute="leading" secondItem="g1h-Vc-UGs" secondAttribute="trailing" constant="3" id="IwV-SY-6V0"/>
-                            <constraint firstItem="gpe-nV-SkX" firstAttribute="top" secondItem="pCV-N0-kdX" secondAttribute="bottom" constant="56" id="Iy8-mj-kA7"/>
+                            <constraint firstItem="gpe-nV-SkX" firstAttribute="top" secondItem="pCV-N0-kdX" secondAttribute="bottom" constant="41" id="Iy8-mj-kA7"/>
                             <constraint firstItem="Dy7-gE-o2y" firstAttribute="centerX" secondItem="tYa-9H-SHM" secondAttribute="centerX" id="KGz-hp-LZz"/>
                             <constraint firstAttribute="trailing" secondItem="g1h-Vc-UGs" secondAttribute="trailing" constant="52" id="NDf-tw-6Ca"/>
                             <constraint firstItem="l0a-am-UgR" firstAttribute="top" secondItem="tYa-9H-SHM" secondAttribute="bottom" id="NIf-k4-AVs"/>
+                            <constraint firstItem="qwd-Ll-slT" firstAttribute="top" secondItem="gpe-nV-SkX" secondAttribute="bottom" constant="15" id="NQu-F5-gOT"/>
+                            <constraint firstAttribute="trailing" secondItem="qwd-Ll-slT" secondAttribute="trailing" constant="2" id="VKO-5u-40a"/>
+                            <constraint firstItem="qwd-Ll-slT" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" constant="2" id="WAa-9B-0U7"/>
                             <constraint firstItem="vr0-2E-vOs" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" id="e9v-Vf-9nm"/>
                             <constraint firstAttribute="trailing" secondItem="vr0-2E-vOs" secondAttribute="trailing" id="glo-2d-J40"/>
                             <constraint firstItem="vr0-2E-vOs" firstAttribute="top" secondItem="qQH-e4-89A" secondAttribute="top" constant="568" id="ihc-7Q-keZ"/>
@@ -257,6 +268,7 @@
                         <outlet property="selector" destination="tYa-9H-SHM" id="mec-86-S4q"/>
                         <outlet property="sleepTimerViewContainer" destination="vr0-2E-vOs" id="TvC-4e-n2t"/>
                         <outlet property="sleepTimerViewContainerTopOffsetConstraint" destination="ihc-7Q-keZ" id="yXx-oh-M6b"/>
+                        <outlet property="streamInfoLabel" destination="qwd-Ll-slT" id="neV-VR-Y1L"/>
                         <outlet property="volumeSlider" destination="g1h-Vc-UGs" id="OP3-rq-pEL"/>
                     </connections>
                 </viewController>

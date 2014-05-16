@@ -20,10 +20,13 @@ FOUNDATION_EXPORT NSString *const WSGithubMaterialsPath;
 FOUNDATION_EXPORT NSString *const WSBaseUrl;
 FOUNDATION_EXPORT NSString *const WSMaterialsPath;
 
+FOUNDATION_EXPORT NSString *const WSSeenMaterialsFileName;
+
 @interface WSMaterialsModel : NSObject
 
 - (void)configure;
 - (void)loadMaterialsWithCompletion:(void (^)(WSMaterialsCollection *materialsCollection, NSError *error))completionBlock;
+- (void)markMaterialAsSeenWithIdentifier:(NSNumber*)identifier;
 @property WSMaterialsObjectManager *objectManager;
 @property WSMaterialsCollection *materialsCollection;
 @end
