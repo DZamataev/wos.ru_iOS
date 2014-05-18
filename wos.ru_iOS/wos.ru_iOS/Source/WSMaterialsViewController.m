@@ -27,12 +27,28 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)revealUnderLeft:(id)sender
+{
+    
+    if (self.slidingViewController) {
+        self.slidingViewController.anchorLeftPeekAmount = 320.0f;
+        self.slidingViewController.
+        if (self.slidingViewController.currentTopViewPosition == ECSlidingViewControllerTopViewPositionCentered) {
+            [self.slidingViewController anchorTopViewToRightAnimated:YES];
+        }
+        else {
+            [self.slidingViewController resetTopViewAnimated:YES];
+        }
+    }
 }
 
 @end
