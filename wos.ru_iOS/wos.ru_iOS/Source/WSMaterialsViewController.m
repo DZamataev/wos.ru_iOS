@@ -26,8 +26,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[WSSplitViewControllerManager sharedInstance] setSplitViewController:self.splitViewController];
     // Do any additional setup after loading the view.
+    if (self.splitViewController) {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleOpenUrlNotification:)
+                                                     name:@"WSOpenUrlNotification"
+                                                   object:nil];
+    }
+}
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"WSOpenUrlNotification" object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,16 +49,17 @@
 
 - (IBAction)revealUnderLeft:(id)sender
 {
-    
-    if (self.slidingViewController) {
-        self.slidingViewController.anchorLeftPeekAmount = 320.0f;
-        self.slidingViewController.
-        if (self.slidingViewController.currentTopViewPosition == ECSlidingViewControllerTopViewPositionCentered) {
-            [self.slidingViewController anchorTopViewToRightAnimated:YES];
-        }
-        else {
-            [self.slidingViewController resetTopViewAnimated:YES];
-        }
+    [[WSSplitViewControllerManager sharedInstance] setIsMasterHidden:![WSSplitViewControllerManager sharedInstance].isMasterHidden];
+}
+
+- (void)handleOpenUrlNotification:(NSNotification*)notification
+{
+    NSURL *url = notification.userInfo[@"url"];
+    if (url) {
+        WSWebBrowserViewController *webBrowserController = [WSWebBrowserViewController webBrowserControllerWithDefaultNibAndHomeUrl:url];
+        webBrowserController.cAttributes.isHidingBarsOnScrollingEnabled = NO;
+        webBrowserController.cAttributes.isHttpAuthenticationPromptEnabled = NO;
+        [CHWebBrowserViewController openWebBrowserController:webBrowserController modallyWithUrl:url animated:YES];
     }
 }
 

@@ -12,12 +12,16 @@
 #import "WSFeedItemView.h"
 #import "WSMicroMaterialsCollectionViewController.h"
 #import "WSBestMaterialsCollectionViewController.h"
+#import "WSSplitViewControllerManager.h"
 
 @interface WSMaterialsTableViewController : UITableViewController
 {
     UIRefreshControl *_refreshControl;
-    WSMicroMaterialsCollectionViewController *_microMaterialsCollectionVC;
     WSBestMaterialsCollectionViewController *_bestMaterialsCollectionVC;
+    WSMicroMaterialsCollectionViewController *_microMaterialsCollectionVC;
+    
+    BOOL _shouldReinitBestMaterials;
+    BOOL _shouldReinitMicroMaterials;
 }
 @property WSMaterialsModel *materialsModel;
 @end

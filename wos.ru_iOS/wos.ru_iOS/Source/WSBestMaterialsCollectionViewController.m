@@ -13,7 +13,9 @@
 
 @end
 
-@implementation WSBestMaterialsCollectionViewController
+@implementation WSBestMaterialsCollectionViewController {
+    NSInteger _currentPage;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -58,7 +60,10 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DefaultCell" forIndexPath:indexPath];
     WSMaterial *material = self.materialsModel.materialsCollection.bestMaterials[indexPath.row];
     WSBestMaterialView *view = (WSBestMaterialView*)[cell viewWithTag:1];
-//    view.title.text = material.title;
+    
+    CGRect cellRect = cell.frame;
+    cell.frame = CGRectMake(cellRect.origin.x, cellRect.origin.y, _pagingPageWidth, cellRect.size.height);
+    
     NSMutableAttributedString *mas = [[NSMutableAttributedString alloc] initWithString:material.title];
     NSRange wholeStringRange = NSMakeRange(0, mas.length);
     [mas addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:view.title.font.pointSize]
@@ -69,6 +74,8 @@
     view.subtitle.text = material.lead;
     view.viewsCount.text = [NSString stringWithFormat:@"- %@", material.showCountNum.stringValue];
     view.commentsCount.text = [NSString stringWithFormat:@"%@ -", material.commentsCountNum.stringValue];
+    view.title.textColor = material.isSeen ? [UIColor lightGrayColor] : [UIColor whiteColor];
+    view.subtitle.textColor = material.isSeen ? [UIColor darkGrayColor] : [UIColor lightGrayColor];
     
     UIImageView __weak *imageViewToAnimate = view.imageView;
     [view.imageView setImageWithURL:[NSURL URLWithString:material.pictureStr]
@@ -90,6 +97,60 @@
     [_materialsModel markMaterialAsSeenWithIdentifier:material.identifier];
     material.isSeen = YES;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WSOpenUrlNotification" object:Nil userInfo:@{@"url":[NSURL URLWithString:material.urlStr]}];
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(self.pagingPageWidth, self.view.bounds.size.height);
+}
+
+
+#pragma mark - UIScrollView delegate
+// here is our custom paging
+
+- (void) scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    
+    CGFloat pageWidth = self.pagingPageWidth;
+    
+    _currentPage = floor((self.collectionView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+}
+
+-(void) scrollViewWillEndDragging:(UIScrollView*)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint*)targetContentOffset {
+    
+    CGFloat pageWidth = self.pagingPageWidth;
+    int newPage = _currentPage;
+    
+    if (velocity.x == 0) // slow dragging not lifting finger
+    {
+        newPage = floor((targetContentOffset->x - pageWidth / 2) / pageWidth) + 1;
+        
+        *targetContentOffset = CGPointMake(newPage * pageWidth, targetContentOffset->y);
+    }
+    else if (fabsf(velocity.x) < 1.0f)
+    {
+        newPage = velocity.x > 0 ? _currentPage + 1 : _currentPage - 1;
+        
+        if (newPage < 0)
+            newPage = 0;
+        if (newPage > self.collectionView.contentSize.width / pageWidth)
+            newPage = ceil(self.collectionView.contentSize.width / pageWidth) - 1.0;
+        
+        *targetContentOffset = CGPointMake(newPage * pageWidth, targetContentOffset->y);
+    }
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self scrollToNearestPageInScrollView:scrollView];
+}
+
+-(void)scrollToNearestPageInScrollView:(UIScrollView*)scrollView
+{
+    CGFloat pageWidth = self.pagingPageWidth;
+    int newPage = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    CGFloat targetX = newPage * pageWidth;
+    
+    [scrollView scrollRectToVisible:CGRectMake(targetX, 0, scrollView.bounds.size.width, scrollView.bounds.size.height) animated:YES];
 }
 
 @end

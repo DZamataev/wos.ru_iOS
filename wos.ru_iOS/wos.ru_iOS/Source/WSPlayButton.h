@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "WSRootViewController.h"
 #import "WSPlayButtonDelegate.h"
 
-#define WSPlayButtonInitialAccentColor ([[UIColor alloc] initWithRed:240.0f/255.0f green:92.0f/255.0f blue:77.0f/255.0f alpha:1.0f])
+#define WSPlayButtonInitialAccentColor ([WSRootViewController defaultAccentColor])
 
 @interface WSPlayButton : UIControl
 {    

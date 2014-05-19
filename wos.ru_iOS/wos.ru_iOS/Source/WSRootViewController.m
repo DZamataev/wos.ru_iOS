@@ -68,7 +68,7 @@
 }
 
 + (UIColor *)defaultAccentColor {
-    return [[UIColor alloc] initWithRed:240.0f/255.0f green:92.0f/255.0f blue:77.0f/255.0f alpha:1.0f];
+    return [[UIColor alloc] initWithRed:75.0f/255.0f green:133.0f/255.0f blue:228.0f/255.0f alpha:1.0f];
 }
 
 - (void)handleOpenUrlNotification:(NSNotification*)notification

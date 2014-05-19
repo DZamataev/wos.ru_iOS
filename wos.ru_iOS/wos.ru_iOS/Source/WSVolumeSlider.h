@@ -10,7 +10,9 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 
-#define WSVolumeSliderInitialAccentColor ([[UIColor alloc] initWithRed:240.0f/255.0f green:92.0f/255.0f blue:77.0f/255.0f alpha:1.0f])
+#import "WSRootViewController.h"
+
+#define WSVolumeSliderInitialAccentColor ([WSRootViewController defaultAccentColor])
 
 @interface WSVolumeSlider : MPVolumeView
 {

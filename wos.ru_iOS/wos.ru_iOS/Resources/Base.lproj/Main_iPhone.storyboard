@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BNQ-bs-82I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BNQ-bs-82I">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -621,9 +621,6 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of titles that  title the titles of titles in titles that titles" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="315" translatesAutoresizingMaskIntoConstraints="NO" id="T7s-Ye-1Gm">
                                                     <rect key="frame" x="5" y="0.0" width="315" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="pG3-Rj-6bl"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -674,6 +671,7 @@
                                                 <constraint firstItem="7jo-d0-kqn" firstAttribute="top" secondItem="WsE-6D-SIG" secondAttribute="top" id="pCV-Rv-qFu"/>
                                                 <constraint firstItem="7jo-d0-kqn" firstAttribute="leading" secondItem="WsE-6D-SIG" secondAttribute="leading" id="qMB-Wn-5Ej"/>
                                                 <constraint firstAttribute="trailing" secondItem="yA2-Tw-FmP" secondAttribute="trailing" id="qcw-a0-uVC"/>
+                                                <constraint firstItem="T7s-Ye-1Gm" firstAttribute="leading" secondItem="WsE-6D-SIG" secondAttribute="leading" constant="5" id="qhG-aN-l3Q"/>
                                                 <constraint firstItem="T7s-Ye-1Gm" firstAttribute="top" secondItem="WsE-6D-SIG" secondAttribute="top" id="s4G-SV-d0S"/>
                                                 <constraint firstAttribute="bottom" secondItem="zlk-Mu-M7c" secondAttribute="bottom" constant="1" id="xIH-6X-Mbn"/>
                                                 <constraint firstItem="zlk-Mu-M7c" firstAttribute="leading" secondItem="WsE-6D-SIG" secondAttribute="leading" id="ywF-wF-mVA"/>

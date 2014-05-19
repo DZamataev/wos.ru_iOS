@@ -1,45 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="WIc-zo-wGY">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
-        <scene sceneID="FOP-Xw-d6x">
+        <scene sceneID="lVI-Wv-vTh">
             <objects>
-                <navigationController storyboardIdentifier="MaterialsNavigationViewController" definesPresentationContext="YES" id="W3J-eT-Ym0" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sf0-3F-gga">
+                <navigationController definesPresentationContext="YES" id="u4r-pT-cWg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="9j0-dl-l5N">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="0az-fi-oTN" kind="relationship" relationship="rootViewController" id="WRU-v0-Qvt"/>
+                        <segue destination="0az-fi-oTN" kind="relationship" relationship="rootViewController" id="oKL-j9-xQj"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eJc-h4-N8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="96O-uk-ye2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="212" y="-561"/>
-        </scene>
-        <!--Sliding View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ECSlidingViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1qI-ws-Meg"/>
-                        <viewControllerLayoutGuide type="bottom" id="cG8-FQ-4oE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="topViewControllerStoryboardId" value="MaterialsNavigationViewController"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="underLeftViewControllerStoryboardId" value="RadioViewController"/>
-                    </userDefinedRuntimeAttributes>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-729" y="-12"/>
+            <point key="canvasLocation" x="1136" y="-624"/>
         </scene>
         <!--Materials View Controller-->
         <scene sceneID="9Dc-S6-Ifr">
@@ -50,19 +29,24 @@
                         <viewControllerLayoutGuide type="bottom" id="CRZ-5H-8PV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iJk-8b-VuB">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xqo-kI-qeH">
-                                <rect key="frame" x="0.0" y="22" width="768" height="1002"/>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xqo-kI-qeH">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="Icp-ND-gXu" kind="embed" id="BtM-GK-fXx"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xqo-kI-qeH" secondAttribute="trailing" id="gT6-J7-xOu"/>
+                            <constraint firstItem="xqo-kI-qeH" firstAttribute="top" secondItem="iJk-8b-VuB" secondAttribute="top" id="hcX-IE-oK3"/>
+                            <constraint firstItem="xqo-kI-qeH" firstAttribute="leading" secondItem="iJk-8b-VuB" secondAttribute="leading" id="iJg-Pl-lwd"/>
+                            <constraint firstItem="CRZ-5H-8PV" firstAttribute="top" secondItem="xqo-kI-qeH" secondAttribute="bottom" id="pVr-ew-jLw"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iZU-5E-JpM">
                         <barButtonItem key="leftBarButtonItem" title="Radio" id="Ih4-zp-eMF">
@@ -74,26 +58,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOG-Jy-bMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1136" y="-561"/>
+            <point key="canvasLocation" x="2132" y="-635"/>
         </scene>
         <!--Materials Table View Controller-->
         <scene sceneID="5K0-4o-ucn">
             <objects>
                 <tableViewController id="Icp-ND-gXu" customClass="WSMaterialsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jeW-LK-obD">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1002"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BestCell" rowHeight="110" id="cQA-Md-315">
-                                <rect key="frame" x="0.0" y="22" width="768" height="110"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BestCell" rowHeight="300" id="cQA-Md-315">
+                                <rect key="frame" x="0.0" y="22" width="768" height="300"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cQA-Md-315" id="Tst-Em-sP2">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="110"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view tag="111" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zz4-1a-iFl">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="110"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="300"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </view>
@@ -101,22 +85,28 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MicroCell" rowHeight="230" id="mFc-iJ-4na">
-                                <rect key="frame" x="0.0" y="132" width="768" height="230"/>
+                                <rect key="frame" x="0.0" y="322" width="768" height="230"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mFc-iJ-4na" id="KPf-Wb-nm7">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="230"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view tag="112" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J1V-vk-KKq">
+                                        <view tag="112" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1V-vk-KKq">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="230"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="J1V-vk-KKq" firstAttribute="leading" secondItem="KPf-Wb-nm7" secondAttribute="leading" id="JND-Gw-drN"/>
+                                        <constraint firstAttribute="bottom" secondItem="J1V-vk-KKq" secondAttribute="bottom" id="dym-hM-kUT"/>
+                                        <constraint firstAttribute="trailing" secondItem="J1V-vk-KKq" secondAttribute="trailing" id="fsL-nq-ioE"/>
+                                        <constraint firstItem="J1V-vk-KKq" firstAttribute="top" secondItem="KPf-Wb-nm7" secondAttribute="top" id="him-8l-wSv"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="105" id="aKe-YN-cwe" customClass="WSBaseTableViewCell">
-                                <rect key="frame" x="0.0" y="362" width="768" height="105"/>
+                                <rect key="frame" x="0.0" y="552" width="768" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" verticalHuggingPriority="256" tableViewCell="aKe-YN-cwe" id="6oE-f7-s6Q">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="105"/>
@@ -153,7 +143,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="sZv-kp-bmM" firstAttribute="leading" secondItem="ym7-zo-AK0" secondAttribute="leading" id="FeB-eo-Jix"/>
                                                 <constraint firstAttribute="bottom" secondItem="Xbe-9F-1hY" secondAttribute="bottom" constant="5" id="GX9-j7-aSg"/>
@@ -197,7 +187,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vSN-Ns-jdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1996" y="-539"/>
+            <point key="canvasLocation" x="2992" y="-613"/>
         </scene>
         <!--Micro Materials Collection View Controller-->
         <scene sceneID="VGK-RP-ntG">
@@ -285,12 +275,31 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVV-eW-eqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2836" y="-313"/>
+            <point key="canvasLocation" x="3832" y="-387"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="Hiw-g4-w68">
+            <objects>
+                <splitViewController id="WIc-zo-wGY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <connections>
+                        <segue destination="YWM-Ea-GIs" kind="relationship" relationship="masterViewController" id="naV-LR-BOp"/>
+                        <segue destination="u4r-pT-cWg" kind="relationship" relationship="detailViewController" id="yly-9F-gfR"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nAW-HT-VdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="Efk-8G-z7I" customClass="WSSplitViewControllerManager">
+                    <connections>
+                        <outlet property="splitViewController" destination="WIc-zo-wGY" id="14k-4x-SWI"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="106" y="-14"/>
         </scene>
         <!--Radio View Controller-->
         <scene sceneID="cnY-9g-NL7">
             <objects>
-                <viewController storyboardIdentifier="RadioViewController" id="YWM-Ea-GIs" customClass="WSRadioViewController" sceneMemberID="viewController">
+                <viewController id="YWM-Ea-GIs" customClass="WSRadioViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1fz-xu-Iaj"/>
                         <viewControllerLayoutGuide type="bottom" id="5vh-VM-vOT"/>
@@ -359,16 +368,6 @@
                                 </state>
                                 <connections>
                                     <action selector="toggleSleepTimerOverlayVisibility:" destination="YWM-Ea-GIs" eventType="touchUpInside" id="66v-3i-ZMe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYZ-ws-4sR">
-                                <rect key="frame" x="271" y="12" width="57" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="ws-slideout-button-white.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="slideToFeed:" destination="YWM-Ea-GIs" eventType="touchUpInside" id="77M-Vr-oYS"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Szu-ge-4YB" customClass="ILTranslucentView">
@@ -475,7 +474,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oko-UY-6zr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1136" y="566"/>
+            <point key="canvasLocation" x="1136" y="570"/>
         </scene>
         <!--Sleep Timer Picker View Controller-->
         <scene sceneID="pPX-lF-JPS">
@@ -635,13 +634,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eie-uv-YId" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1631" y="632"/>
+            <point key="canvasLocation" x="1584" y="636"/>
         </scene>
         <!--Best Materials Collection View Controller-->
         <scene sceneID="BUa-xY-Pm0">
             <objects>
                 <collectionViewController storyboardIdentifier="WSBestMaterialsCollectionViewController" autoresizesArchivedViewToFullSize="NO" id="yV3-6i-NVU" customClass="WSBestMaterialsCollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="9j9-qY-wX6">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="9j9-qY-wX6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -757,13 +756,12 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tlf-2z-DLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2836" y="-521"/>
+            <point key="canvasLocation" x="3832" y="-595"/>
         </scene>
     </scenes>
     <resources>
         <image name="ico-comments.png" width="16" height="16"/>
         <image name="ico-views.png" width="16" height="16"/>
-        <image name="ws-slideout-button-white.png" width="34" height="30"/>
         <image name="ws_sleeping_timer_icon_white.png" width="26" height="22"/>
         <image name="ws_volume_slider_higher_icon.png" width="10" height="8"/>
         <image name="ws_volume_slider_lower_icon.png" width="8" height="7"/>

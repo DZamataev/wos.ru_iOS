@@ -43,6 +43,7 @@
 		929ABF0719056BFC00F7BF5D /* WSMaterialsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 929ABF0619056BFC00F7BF5D /* WSMaterialsModel.m */; };
 		929ABF0E19056C7400F7BF5D /* WSMaterialsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 929ABF0D19056C7400F7BF5D /* WSMaterialsCollection.m */; };
 		929ABF1119056C9300F7BF5D /* WSMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 929ABF1019056C9300F7BF5D /* WSMaterial.m */; };
+		92A4F273192A55AD00050E02 /* WSSplitViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A4F272192A55AD00050E02 /* WSSplitViewControllerManager.m */; };
 		92A6A7391906A44B0047E8C1 /* WSMicroMaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A6A7381906A44B0047E8C1 /* WSMicroMaterialView.m */; };
 		92A6A73C1906C18F0047E8C1 /* WSBestMaterialsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A6A73B1906C18F0047E8C1 /* WSBestMaterialsCollectionViewController.m */; };
 		92A6A73F1906C20B0047E8C1 /* WSBestMaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A6A73E1906C20B0047E8C1 /* WSBestMaterialView.m */; };
@@ -153,6 +154,8 @@
 		929ABF0D19056C7400F7BF5D /* WSMaterialsCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSMaterialsCollection.m; path = Source/WSMaterialsCollection.m; sourceTree = "<group>"; };
 		929ABF0F19056C9300F7BF5D /* WSMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMaterial.h; path = Source/WSMaterial.h; sourceTree = "<group>"; };
 		929ABF1019056C9300F7BF5D /* WSMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSMaterial.m; path = Source/WSMaterial.m; sourceTree = "<group>"; };
+		92A4F271192A55AD00050E02 /* WSSplitViewControllerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSSplitViewControllerManager.h; path = Source/WSSplitViewControllerManager.h; sourceTree = "<group>"; };
+		92A4F272192A55AD00050E02 /* WSSplitViewControllerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSSplitViewControllerManager.m; path = Source/WSSplitViewControllerManager.m; sourceTree = "<group>"; };
 		92A6A7371906A44B0047E8C1 /* WSMicroMaterialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMicroMaterialView.h; path = Source/WSMicroMaterialView.h; sourceTree = "<group>"; };
 		92A6A7381906A44B0047E8C1 /* WSMicroMaterialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSMicroMaterialView.m; path = Source/WSMicroMaterialView.m; sourceTree = "<group>"; };
 		92A6A73A1906C18F0047E8C1 /* WSBestMaterialsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSBestMaterialsCollectionViewController.h; path = Source/WSBestMaterialsCollectionViewController.h; sourceTree = "<group>"; };
@@ -404,6 +407,8 @@
 		929ABF001905691700F7BF5D /* Materials Scene */ = {
 			isa = PBXGroup;
 			children = (
+				92A4F271192A55AD00050E02 /* WSSplitViewControllerManager.h */,
+				92A4F272192A55AD00050E02 /* WSSplitViewControllerManager.m */,
 				92A6A7361906A42F0047E8C1 /* View */,
 				929ABF0419056BE000F7BF5D /* Controller */,
 				929ABF0819056C0000F7BF5D /* Model */,
@@ -419,10 +424,10 @@
 				929ABF0219056BBF00F7BF5D /* WSMaterialsViewController.m */,
 				925778AB19058219002A1B3C /* WSMaterialsTableViewController.h */,
 				925778AC19058219002A1B3C /* WSMaterialsTableViewController.m */,
-				9230117619059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.h */,
-				9230117719059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.m */,
 				92A6A73A1906C18F0047E8C1 /* WSBestMaterialsCollectionViewController.h */,
 				92A6A73B1906C18F0047E8C1 /* WSBestMaterialsCollectionViewController.m */,
+				9230117619059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.h */,
+				9230117719059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -705,6 +710,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				923C3AED19264215003D76A5 /* WSCopyableAutoScrollLabel.m in Sources */,
+				92A4F273192A55AD00050E02 /* WSSplitViewControllerManager.m in Sources */,
 				929ABF1119056C9300F7BF5D /* WSMaterial.m in Sources */,
 				92C3978218855E68001E46FA /* WSRColor.m in Sources */,
 				92AF7D1C18B75E93003190A5 /* WSFeedGroup.m in Sources */,

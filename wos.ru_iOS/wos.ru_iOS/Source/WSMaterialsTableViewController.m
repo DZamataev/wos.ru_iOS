@@ -26,7 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -47,6 +46,12 @@
     _microMaterialsCollectionVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WSMicroMaterialsCollectionViewController"];
     _microMaterialsCollectionVC.materialsModel = self.materialsModel;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleWSSplitViewControllerManagerChangedMasterVisibilityNotification:)
+                                                 name:WSSplitViewControllerManagerChangedMasterVisibilityNotification
+                                               object:nil];
+    _shouldReinitBestMaterials = _shouldReinitMicroMaterials = YES;
+    
     [self loadMaterials];
 }
 
@@ -56,6 +61,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)handleWSSplitViewControllerManagerChangedMasterVisibilityNotification:(NSNotification*)notification
+{
+    [self performSelector:@selector(delayedReload) withObject:nil afterDelay:0.1f];
+}
+
+- (void)delayedReload {
+    _shouldReinitBestMaterials = _shouldReinitMicroMaterials = YES;
+    [self.tableView reloadData];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:WSSplitViewControllerManagerChangedMasterVisibilityNotification
+                                                  object:nil];
+}
+
 #pragma mark - actions
 - (void)loadMaterials
 {
@@ -63,6 +85,7 @@
     [self.materialsModel loadMaterialsWithCompletion:^(WSMaterialsCollection *materialsCollection, NSError *error) {
 //        NSLog(@"%@", materialsCollection.materials);
 //        NSLog(@"%i", materialsCollection.microMaterials.count);
+        _shouldReinitBestMaterials = _shouldReinitMicroMaterials = YES;
         [_refreshControl endRefreshing];
         NSMutableIndexSet *mSectionsIndexSet =
         [NSMutableIndexSet indexSetWithIndexesInRange:NSMakeRange(0,
@@ -93,6 +116,8 @@
     view.titleLabel.text = item.title;
     view.descriptionLabel.text = item.lead;
     view.dateLabel.text = item.dateStr;
+    view.titleLabel.textColor = item.isSeen ? [UIColor lightGrayColor] : [UIColor whiteColor];
+    view.descriptionLabel.textColor = item.isSeen ? [UIColor darkGrayColor] : [UIColor lightGrayColor];
     [view setNeedsLayout];
     [view layoutIfNeeded];
 }
@@ -116,19 +141,43 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"BestCell" forIndexPath:indexPath];
         NSInteger tag = 111;
         UIView *containerView = [cell viewWithTag:tag];
-        if (containerView.subviews.count == 0) {
+        if (_shouldReinitBestMaterials) {
+            _shouldReinitBestMaterials = NO;
             [_bestMaterialsCollectionVC.view removeFromSuperview];
-            _bestMaterialsCollectionVC.view.frame = containerView.bounds;
+            _bestMaterialsCollectionVC.view.frame = CGRectMake(0, 0, self.tableView.bounds.size.width, containerView.bounds.size.height);
             _bestMaterialsCollectionVC.view.tag = tag;
+            _bestMaterialsCollectionVC.pagingPageWidth = self.tableView.bounds.size.width;
             [containerView addSubview:_bestMaterialsCollectionVC.view];
+            
+            // Get the views dictionary
+            NSDictionary *viewsDictionary = @{@"view": _bestMaterialsCollectionVC.view};
+            
+            //Create the constraints using the visual language format
+            NSArray *hConstraintsArray = [NSLayoutConstraint
+                                         constraintsWithVisualFormat:@"H:|-[view]-|"
+                                         options:NSLayoutFormatAlignAllBaseline metrics:nil
+                                         views:viewsDictionary];
+            
+            NSArray *vConstraintsArray = [NSLayoutConstraint
+                                         constraintsWithVisualFormat:@"V:|-[view]-|"
+                                         options:NSLayoutFormatAlignAllBaseline metrics:nil
+                                         views:viewsDictionary];
+            
+            [containerView addConstraints:hConstraintsArray];
+            [containerView addConstraints:vConstraintsArray];
         }
+//        _bestMaterialsCollectionVC.view.frame = CGRectMake(_bestMaterialsCollectionVC.view.frame.origin.x, _bestMaterialsCollectionVC.view.frame.origin.y, self.tableView.bounds.size.width, _bestMaterialsCollectionVC.view.frame.size.height);
+//        _bestMaterialsCollectionVC.pagingPageWidth = self.tableView.bounds.size.width;
+//        [_bestMaterialsCollectionVC.collectionView.collectionViewLayout invalidateLayout];
         [_bestMaterialsCollectionVC.collectionView reloadData];
+        [_bestMaterialsCollectionVC scrollToNearestPageInScrollView:_bestMaterialsCollectionVC.collectionView];
     }
     else if (indexPath.row == 1) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"MicroCell" forIndexPath:indexPath];
         NSInteger tag = 112;
         UIView *containerView = [cell viewWithTag:tag];
-        if (containerView.subviews.count == 0) {
+        if (_shouldReinitMicroMaterials) {
+            _shouldReinitMicroMaterials = NO;
             [_microMaterialsCollectionVC.view removeFromSuperview];
             _microMaterialsCollectionVC.view.frame = containerView.bounds;
             _microMaterialsCollectionVC.view.tag = tag;
@@ -142,6 +191,8 @@
         WSMaterial *item = self.materialsModel.materialsCollection.otherMaterials[index];
         WSFeedItemView *view = (WSFeedItemView*)[cell viewWithTag:1];
         [self setValuesInItemView:view fromMaterial:item onCalculateHeightFlag:NO];
+        [cell setNeedsLayout];
+        [cell layoutIfNeeded];
     }
     return cell;
 }
@@ -150,8 +201,16 @@
 {
     CGFloat result = 44.0f;
     if (indexPath.row == 0) {
-        result = 110.0f +
-        (int)(tableView.separatorStyle != UITableViewCellSeparatorStyleNone);
+        if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+        {
+            result = 300.0f +
+            (int)(tableView.separatorStyle != UITableViewCellSeparatorStyleNone);
+        }
+        else
+        {
+            result = 110.0f +
+            (int)(tableView.separatorStyle != UITableViewCellSeparatorStyleNone);
+        }
     
     }
     else if (indexPath.row == 1) {
@@ -163,6 +222,7 @@
         WSMaterial *item = self.materialsModel.materialsCollection.otherMaterials[index];
         
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ItemCell"];
+        
         WSFeedItemView *view = (WSFeedItemView*)[cell viewWithTag:1];
         
         [self setValuesInItemView:view fromMaterial:item onCalculateHeightFlag:YES];
@@ -170,7 +230,7 @@
         CGSize rect = [view systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
         result = rect.height +
         (int)(tableView.separatorStyle != UITableViewCellSeparatorStyleNone); // height of the cell should obey selected separator style
-//        NSLog(@"calculated height: %f", result);
+        NSLog(@"calculated rect: %@", NSStringFromCGSize(rect));
     }
     return result;
 }
@@ -182,7 +242,12 @@
         WSMaterial *material = self.materialsModel.materialsCollection.otherMaterials[index];
         [_materialsModel markMaterialAsSeenWithIdentifier:material.identifier];
         material.isSeen = YES;
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"WSOpenUrlNotification" object:Nil userInfo:@{@"url":[NSURL URLWithString:material.urlStr]}];    }
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"WSOpenUrlNotification" object:Nil userInfo:@{@"url":[NSURL URLWithString:material.urlStr]}];
+        
+        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    }
+    
 }
 
 /*
