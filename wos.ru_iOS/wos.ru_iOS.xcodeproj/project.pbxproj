@@ -43,6 +43,7 @@
 		929ABF0719056BFC00F7BF5D /* WSMaterialsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 929ABF0619056BFC00F7BF5D /* WSMaterialsModel.m */; };
 		929ABF0E19056C7400F7BF5D /* WSMaterialsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 929ABF0D19056C7400F7BF5D /* WSMaterialsCollection.m */; };
 		929ABF1119056C9300F7BF5D /* WSMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 929ABF1019056C9300F7BF5D /* WSMaterial.m */; };
+		92A4BD4E192B897C003B2CD3 /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92A4BD4D192B897C003B2CD3 /* more@2x.png */; };
 		92A4F273192A55AD00050E02 /* WSSplitViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A4F272192A55AD00050E02 /* WSSplitViewControllerManager.m */; };
 		92A6A7391906A44B0047E8C1 /* WSMicroMaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A6A7381906A44B0047E8C1 /* WSMicroMaterialView.m */; };
 		92A6A73C1906C18F0047E8C1 /* WSBestMaterialsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A6A73B1906C18F0047E8C1 /* WSBestMaterialsCollectionViewController.m */; };
@@ -154,6 +155,7 @@
 		929ABF0D19056C7400F7BF5D /* WSMaterialsCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSMaterialsCollection.m; path = Source/WSMaterialsCollection.m; sourceTree = "<group>"; };
 		929ABF0F19056C9300F7BF5D /* WSMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMaterial.h; path = Source/WSMaterial.h; sourceTree = "<group>"; };
 		929ABF1019056C9300F7BF5D /* WSMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSMaterial.m; path = Source/WSMaterial.m; sourceTree = "<group>"; };
+		92A4BD4D192B897C003B2CD3 /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
 		92A4F271192A55AD00050E02 /* WSSplitViewControllerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSSplitViewControllerManager.h; path = Source/WSSplitViewControllerManager.h; sourceTree = "<group>"; };
 		92A4F272192A55AD00050E02 /* WSSplitViewControllerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSSplitViewControllerManager.m; path = Source/WSSplitViewControllerManager.m; sourceTree = "<group>"; };
 		92A6A7371906A44B0047E8C1 /* WSMicroMaterialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMicroMaterialView.h; path = Source/WSMicroMaterialView.h; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 		922A0BB618645B7A00802757 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				92A4BD4D192B897C003B2CD3 /* more@2x.png */,
 				92E8F45318E371D9000437A4 /* WSWebBrowserViewController_iPad.xib */,
 				92E8F45418E371D9000437A4 /* WSWebBrowserViewController_iPhone.xib */,
 				92A88DFD1906D59E008926FB /* ico-comments.png */,
@@ -652,6 +655,7 @@
 				925778B1190587B4002A1B3C /* ws_sleeping_timer_icon_white@2x.png in Resources */,
 				922A0BC818645B7A00802757 /* InfoPlist.strings in Resources */,
 				92AE499818891C13003D5572 /* ws_sleeping_timer_icon@2x.png in Resources */,
+				92A4BD4E192B897C003B2CD3 /* more@2x.png in Resources */,
 				925778AF1905872B002A1B3C /* ws-slideout-button-white.png in Resources */,
 				922A0BC618645B7A00802757 /* Main_iPad.storyboard in Resources */,
 				92C3977318854582001E46FA /* radio.json in Resources */,

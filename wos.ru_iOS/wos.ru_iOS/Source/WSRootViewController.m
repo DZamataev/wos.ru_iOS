@@ -16,7 +16,9 @@
 
 @end
 
-@implementation WSRootViewController
+@implementation WSRootViewController {
+    CGFloat _materialsContainerLeftOffsetConstraintDefaultValue;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -85,5 +87,24 @@
 - (void)handleSlideToFeedNotification:(NSNotification*)notification
 {
     [self.scrollView scrollRectToVisible:CGRectMake(self.scrollView.contentSize.width - self.scrollView.bounds.size.width, 0, self.scrollView.bounds.size.width, self.scrollView.bounds.size.height) animated:YES];
+}
+
+- (IBAction)showRadioToggle:(id)sender
+{
+    if (self.materialsContainerLeftOffsetConstraint.constant > 0) {
+        _materialsContainerLeftOffsetConstraintDefaultValue = self.materialsContainerLeftOffsetConstraint.constant;
+        self.materialsContainerLeftOffsetConstraint.constant = 0;
+        [UIView animateWithDuration:0.5f animations:^{
+            [self.view setNeedsLayout];
+            [self.view layoutIfNeeded];
+        }];
+    }
+    else {
+        self.materialsContainerLeftOffsetConstraint.constant = _materialsContainerLeftOffsetConstraintDefaultValue;
+        [UIView animateWithDuration:0.5f animations:^{
+            [self.view setNeedsLayout];
+            [self.view layoutIfNeeded];
+        }];
+    }
 }
 @end

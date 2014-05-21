@@ -49,7 +49,9 @@
 
 - (IBAction)revealUnderLeft:(id)sender
 {
-    [[WSSplitViewControllerManager sharedInstance] setIsMasterHidden:![WSSplitViewControllerManager sharedInstance].isMasterHidden];
+    if (self.splitViewController) {
+        [[WSSplitViewControllerManager sharedInstance] setIsMasterHidden:![WSSplitViewControllerManager sharedInstance].isMasterHidden];
+    }
 }
 
 - (void)handleOpenUrlNotification:(NSNotification*)notification

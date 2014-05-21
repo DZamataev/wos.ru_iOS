@@ -164,7 +164,7 @@
                             <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZX-y4-Bed">
                                 <rect key="frame" x="271" y="12" width="57" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="ws-slideout-button-white.png">
+                                <state key="normal" image="more.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -448,7 +448,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MO0-uN-PlC">
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MO0-uN-PlC">
                                 <rect key="frame" x="0.0" y="22" width="320" height="546"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -458,6 +458,12 @@
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="MO0-uN-PlC" firstAttribute="leading" secondItem="zFC-Sl-CHG" secondAttribute="leading" id="2Wg-bC-35a"/>
+                            <constraint firstItem="MO0-uN-PlC" firstAttribute="top" secondItem="NFL-IU-gMO" secondAttribute="bottom" constant="22" id="H28-FZ-Jdo"/>
+                            <constraint firstAttribute="trailing" secondItem="MO0-uN-PlC" secondAttribute="trailing" id="XXf-eI-eDZ"/>
+                            <constraint firstItem="iJG-Hv-GZJ" firstAttribute="top" secondItem="MO0-uN-PlC" secondAttribute="bottom" id="qTM-t2-CeZ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Co-1Y-4pf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -480,12 +486,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view tag="111" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hvM-2k-Fje">
+                                        <view tag="111" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvM-2k-Fje">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="hvM-2k-Fje" secondAttribute="bottom" id="Nx2-NU-evA"/>
+                                        <constraint firstItem="hvM-2k-Fje" firstAttribute="leading" secondItem="7gi-j4-aXo" secondAttribute="leading" id="dD8-65-HAe"/>
+                                        <constraint firstAttribute="trailing" secondItem="hvM-2k-Fje" secondAttribute="trailing" id="igk-lP-R8U"/>
+                                        <constraint firstItem="hvM-2k-Fje" firstAttribute="top" secondItem="7gi-j4-aXo" secondAttribute="top" id="lHb-rU-oXh"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MicroCell" rowHeight="230" id="JoT-rf-oDp">
@@ -495,12 +507,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view tag="112" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="id5-fw-lcb">
+                                        <view tag="112" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="id5-fw-lcb">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="id5-fw-lcb" firstAttribute="leading" secondItem="lgX-tg-ddc" secondAttribute="leading" id="1a9-fh-ASz"/>
+                                        <constraint firstItem="id5-fw-lcb" firstAttribute="top" secondItem="lgX-tg-ddc" secondAttribute="top" id="UPr-EK-Kui"/>
+                                        <constraint firstAttribute="bottom" secondItem="id5-fw-lcb" secondAttribute="bottom" id="a8K-HU-z1Z"/>
+                                        <constraint firstAttribute="trailing" secondItem="id5-fw-lcb" secondAttribute="trailing" id="m1S-7g-ZUA"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="105" id="zgC-IF-6JO" customClass="WSBaseTableViewCell">
@@ -1042,7 +1060,7 @@
     <resources>
         <image name="ico-comments.png" width="16" height="16"/>
         <image name="ico-views.png" width="16" height="16"/>
-        <image name="ws-slideout-button-white.png" width="34" height="30"/>
+        <image name="more.png" width="21" height="13"/>
         <image name="ws_sleeping_timer_icon_white.png" width="26" height="22"/>
         <image name="ws_volume_slider_higher_icon.png" width="10" height="8"/>
         <image name="ws_volume_slider_lower_icon.png" width="8" height="7"/>
