@@ -116,8 +116,6 @@
     view.titleLabel.text = item.title;
     view.descriptionLabel.text = item.lead;
     view.dateLabel.text = item.dateStr;
-    view.titleLabel.textColor = item.isSeen ? [UIColor lightGrayColor] : [UIColor whiteColor];
-    view.descriptionLabel.textColor = item.isSeen ? [UIColor darkGrayColor] : [UIColor lightGrayColor];
     [view setNeedsLayout];
     [view layoutIfNeeded];
 }

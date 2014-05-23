@@ -334,7 +334,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0FE-0v-8dN" customClass="WSCopyableAutoScrollLabel">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0FE-0v-8dN" customClass="WSCopyableAutoScrollLabel">
                                 <rect key="frame" x="2" y="236" width="316" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -342,7 +342,7 @@
                                     <constraint firstAttribute="height" constant="20" id="GlK-gk-qUR"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nna-vY-W5d" customClass="WSPlayButton">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nna-vY-W5d" customClass="WSPlayButton">
                                 <rect key="frame" x="80" y="61" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -354,7 +354,7 @@
                                     <outlet property="delegate" destination="YWM-Ea-GIs" id="ydr-Jd-b31"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qme-xh-iQh" customClass="WSVolumeSlider">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qme-xh-iQh" customClass="WSVolumeSlider">
                                 <rect key="frame" x="52" y="267" width="216" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -362,7 +362,7 @@
                                     <constraint firstAttribute="height" constant="20" id="L8J-Oe-eFZ"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ws_volume_slider_higher_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="L4j-HG-E59">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ws_volume_slider_higher_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="L4j-HG-E59">
                                 <rect key="frame" x="271" y="267" width="17" height="17"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <constraints>
@@ -370,7 +370,7 @@
                                     <constraint firstAttribute="height" constant="17" id="i7N-h4-adm"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ws_volume_slider_lower_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="IZ1-KQ-WOj">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ws_volume_slider_lower_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="IZ1-KQ-WOj">
                                 <rect key="frame" x="32" y="267" width="17" height="17"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <constraints>
@@ -378,11 +378,11 @@
                                     <constraint firstAttribute="height" constant="17" id="l8c-99-NE1"/>
                                 </constraints>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gGf-Z2-uo1">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gGf-Z2-uo1">
                                 <rect key="frame" x="142" y="654" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="TTo-mY-AKT" customClass="WSRadiostationSelectorScrollView">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="TTo-mY-AKT" customClass="WSRadiostationSelectorScrollView">
                                 <rect key="frame" x="0.0" y="321" width="320" height="703"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </scrollView>

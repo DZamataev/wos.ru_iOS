@@ -82,6 +82,7 @@ NSString *const WSSeenMaterialsFileName = @"WSSeenMaterials";
                                                           @"lead.__text" : @"lead",
                                                           @"picture.__text" : @"pictureStr",
                                                           @"url.__text" : @"urlStr",
+                                                          @"mp3_url.__text" : @"mp3UrlStr",
                                                           @"show_count.__text" : @"showCountNum",
                                                           @"comments_count.__text" : @"commentsCountNum",
                                                           @"best.__text" : @"bestStr"

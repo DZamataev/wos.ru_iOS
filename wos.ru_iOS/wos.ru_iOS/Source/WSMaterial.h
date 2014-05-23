@@ -33,6 +33,7 @@
 @property NSString *lead;
 @property NSString *pictureStr;
 @property NSString *urlStr;
+@property NSString *mp3UrlStr;
 @property NSString *bestStr;
 @property NSNumber *showCountNum;
 @property NSNumber *commentsCountNum;

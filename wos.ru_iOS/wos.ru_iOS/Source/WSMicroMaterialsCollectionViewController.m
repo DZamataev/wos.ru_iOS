@@ -62,7 +62,6 @@
     WSMicroMaterialView *view = (WSMicroMaterialView*)[cell viewWithTag:1];
     view.title.text = material.title;
     view.subtitle.text = material.lead;
-    view.title.textColor = material.isSeen ? [UIColor lightGrayColor] : [UIColor whiteColor];
     UIImageView __weak *imageViewToAnimate = view.imageView;
     [view.imageView setImageWithURL:[NSURL URLWithString:material.pictureStr]
                           completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {

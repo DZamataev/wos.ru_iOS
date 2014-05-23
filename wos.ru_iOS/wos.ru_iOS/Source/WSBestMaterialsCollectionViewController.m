@@ -74,8 +74,6 @@
     view.subtitle.text = material.lead;
     view.viewsCount.text = [NSString stringWithFormat:@"- %@", material.showCountNum.stringValue];
     view.commentsCount.text = [NSString stringWithFormat:@"%@ -", material.commentsCountNum.stringValue];
-    view.title.textColor = material.isSeen ? [UIColor lightGrayColor] : [UIColor whiteColor];
-    view.subtitle.textColor = material.isSeen ? [UIColor darkGrayColor] : [UIColor lightGrayColor];
     
     UIImageView __weak *imageViewToAnimate = view.imageView;
     [view.imageView setImageWithURL:[NSURL URLWithString:material.pictureStr]
