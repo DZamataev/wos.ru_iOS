@@ -92,8 +92,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		920B717A18BB58CA00D57321 /* WSBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBaseTableViewCell.h; sourceTree = "<group>"; };
-		920B717B18BB58CA00D57321 /* WSBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBaseTableViewCell.m; sourceTree = "<group>"; };
+		920B717A18BB58CA00D57321 /* WSBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSBaseTableViewCell.h; path = Source/WSBaseTableViewCell.h; sourceTree = "<group>"; };
+		920B717B18BB58CA00D57321 /* WSBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSBaseTableViewCell.m; path = Source/WSBaseTableViewCell.m; sourceTree = "<group>"; };
 		920B717D18BB739200D57321 /* WSWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSWindow.h; sourceTree = "<group>"; };
 		920B717E18BB739200D57321 /* WSWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWindow.m; sourceTree = "<group>"; };
 		9212051618E6D6E100902A55 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPad.strings; sourceTree = "<group>"; };
@@ -133,10 +133,10 @@
 		9255272718B63616006D1191 /* WSFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedViewController.m; sourceTree = "<group>"; };
 		9255272918B63644006D1191 /* WSFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedTableViewController.h; sourceTree = "<group>"; };
 		9255272A18B63644006D1191 /* WSFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedTableViewController.m; sourceTree = "<group>"; };
-		9255273F18B643AF006D1191 /* WSFeedItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedItemView.h; sourceTree = "<group>"; };
-		9255274018B643AF006D1191 /* WSFeedItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedItemView.m; sourceTree = "<group>"; };
-		9255274218B643BE006D1191 /* WSFeedHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedHeaderView.h; sourceTree = "<group>"; };
-		9255274318B643BE006D1191 /* WSFeedHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedHeaderView.m; sourceTree = "<group>"; };
+		9255273F18B643AF006D1191 /* WSFeedItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSFeedItemView.h; path = Source/WSFeedItemView.h; sourceTree = "<group>"; };
+		9255274018B643AF006D1191 /* WSFeedItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSFeedItemView.m; path = Source/WSFeedItemView.m; sourceTree = "<group>"; };
+		9255274218B643BE006D1191 /* WSFeedHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSFeedHeaderView.h; path = Source/WSFeedHeaderView.h; sourceTree = "<group>"; };
+		9255274318B643BE006D1191 /* WSFeedHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSFeedHeaderView.m; path = Source/WSFeedHeaderView.m; sourceTree = "<group>"; };
 		9255274518B64724006D1191 /* WSFeedLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedLoader.h; sourceTree = "<group>"; };
 		9255274618B64724006D1191 /* WSFeedLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedLoader.m; sourceTree = "<group>"; };
 		9255274818B64786006D1191 /* WSFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedItem.h; sourceTree = "<group>"; };
@@ -397,12 +397,6 @@
 		9255273E18B64390006D1191 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9255273F18B643AF006D1191 /* WSFeedItemView.h */,
-				9255274018B643AF006D1191 /* WSFeedItemView.m */,
-				9255274218B643BE006D1191 /* WSFeedHeaderView.h */,
-				9255274318B643BE006D1191 /* WSFeedHeaderView.m */,
-				920B717A18BB58CA00D57321 /* WSBaseTableViewCell.h */,
-				920B717B18BB58CA00D57321 /* WSBaseTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -453,6 +447,12 @@
 		92A6A7361906A42F0047E8C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9255273F18B643AF006D1191 /* WSFeedItemView.h */,
+				9255274018B643AF006D1191 /* WSFeedItemView.m */,
+				9255274218B643BE006D1191 /* WSFeedHeaderView.h */,
+				9255274318B643BE006D1191 /* WSFeedHeaderView.m */,
+				920B717A18BB58CA00D57321 /* WSBaseTableViewCell.h */,
+				920B717B18BB58CA00D57321 /* WSBaseTableViewCell.m */,
 				92A6A7371906A44B0047E8C1 /* WSMicroMaterialView.h */,
 				92A6A7381906A44B0047E8C1 /* WSMicroMaterialView.m */,
 				92A6A73D1906C20B0047E8C1 /* WSBestMaterialView.h */,

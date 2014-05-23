@@ -532,10 +532,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Lr-AA-T3L" userLabel="Bg Layer">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Lr-AA-T3L" userLabel="Background View">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gD6-Ed-hZU" userLabel="Gradient BG View">
+                                                    <rect key="frame" x="245" y="0.0" width="75" height="105"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="75" id="b2x-si-TPl"/>
+                                                    </constraints>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="YeS-A5-MOM">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -571,12 +579,16 @@
                                                 <constraint firstItem="RrY-fj-5nX" firstAttribute="top" secondItem="Zsh-Tf-5rB" secondAttribute="bottom" constant="5" id="YGj-nP-hSc"/>
                                                 <constraint firstItem="YeS-A5-MOM" firstAttribute="leading" secondItem="6Go-Tg-0IB" secondAttribute="leading" id="Z6n-wh-hd3"/>
                                                 <constraint firstItem="9Lr-AA-T3L" firstAttribute="top" secondItem="6Go-Tg-0IB" secondAttribute="top" id="ZSv-01-GbM"/>
+                                                <constraint firstItem="gD6-Ed-hZU" firstAttribute="top" secondItem="6Go-Tg-0IB" secondAttribute="top" id="ZhA-JX-8vM"/>
                                                 <constraint firstItem="YeS-A5-MOM" firstAttribute="top" secondItem="6Go-Tg-0IB" secondAttribute="top" id="bwL-bM-hcL"/>
+                                                <constraint firstAttribute="bottom" secondItem="gD6-Ed-hZU" secondAttribute="bottom" id="c2N-fI-qgd"/>
                                                 <constraint firstItem="Zsh-Tf-5rB" firstAttribute="leading" secondItem="YeS-A5-MOM" secondAttribute="trailing" constant="4" id="gty-sH-z0B"/>
                                                 <constraint firstAttribute="bottom" secondItem="YeS-A5-MOM" secondAttribute="bottom" constant="5" id="hIm-0O-PDS"/>
+                                                <constraint firstAttribute="trailing" secondItem="gD6-Ed-hZU" secondAttribute="trailing" id="hcy-Ne-sTT"/>
                                                 <constraint firstAttribute="trailing" secondItem="RrY-fj-5nX" secondAttribute="trailing" constant="5" id="nrw-r4-d0Y"/>
                                             </constraints>
                                             <connections>
+                                                <outlet property="_gradientBgView" destination="gD6-Ed-hZU" id="9pN-Q3-KRO"/>
                                                 <outlet property="bgView" destination="9Lr-AA-T3L" id="17r-Z5-Y19"/>
                                                 <outlet property="descriptionLabel" destination="RrY-fj-5nX" id="j8P-5Q-6P3"/>
                                                 <outlet property="imageView" destination="YeS-A5-MOM" id="vus-ya-Tji"/>

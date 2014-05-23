@@ -105,6 +105,14 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftG-FO-BfN" userLabel="Gradient BG View">
+                                                    <rect key="frame" x="363" y="0.0" width="85" height="105"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="85" id="dmW-uu-hhf"/>
+                                                    </constraints>
+                                                </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Xbe-9F-1hY">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -131,6 +139,8 @@
                                             <constraints>
                                                 <constraint firstItem="sZv-kp-bmM" firstAttribute="leading" secondItem="ym7-zo-AK0" secondAttribute="leading" id="FeB-eo-Jix"/>
                                                 <constraint firstAttribute="bottom" secondItem="Xbe-9F-1hY" secondAttribute="bottom" constant="5" id="GX9-j7-aSg"/>
+                                                <constraint firstAttribute="bottom" secondItem="ftG-FO-BfN" secondAttribute="bottom" id="JGW-VM-gjv"/>
+                                                <constraint firstItem="ftG-FO-BfN" firstAttribute="top" secondItem="ym7-zo-AK0" secondAttribute="top" id="Jru-bK-6b2"/>
                                                 <constraint firstItem="Xbe-9F-1hY" firstAttribute="top" secondItem="ym7-zo-AK0" secondAttribute="top" id="PAC-uP-nx4"/>
                                                 <constraint firstItem="Z8M-p8-VuE" firstAttribute="leading" secondItem="Xbe-9F-1hY" secondAttribute="trailing" constant="4" id="SQU-uW-Mjt"/>
                                                 <constraint firstAttribute="bottom" secondItem="sZv-kp-bmM" secondAttribute="bottom" constant="5" id="Ssh-oJ-Sdq"/>
@@ -140,6 +150,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="Z8M-p8-VuE" secondAttribute="trailing" constant="5" id="bHE-6f-Ubu"/>
                                                 <constraint firstItem="hla-Zx-MY0" firstAttribute="leading" secondItem="Xbe-9F-1hY" secondAttribute="trailing" constant="4" id="e1t-Kj-vEg"/>
                                                 <constraint firstAttribute="bottom" secondItem="hla-Zx-MY0" secondAttribute="bottom" constant="8" id="gSv-5R-Sy9"/>
+                                                <constraint firstAttribute="trailing" secondItem="ftG-FO-BfN" secondAttribute="trailing" id="oIi-c3-WI1"/>
                                                 <constraint firstAttribute="trailing" secondItem="hla-Zx-MY0" secondAttribute="trailing" constant="5" id="rkH-7O-crN"/>
                                                 <constraint firstItem="Xbe-9F-1hY" firstAttribute="leading" secondItem="ym7-zo-AK0" secondAttribute="leading" id="ttD-Dg-uqf"/>
                                                 <constraint firstItem="hla-Zx-MY0" firstAttribute="top" secondItem="Z8M-p8-VuE" secondAttribute="bottom" constant="5" id="zQT-Na-sNp"/>
@@ -334,7 +345,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0FE-0v-8dN" customClass="WSCopyableAutoScrollLabel">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0FE-0v-8dN" customClass="WSCopyableAutoScrollLabel">
                                 <rect key="frame" x="2" y="236" width="316" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -342,7 +353,7 @@
                                     <constraint firstAttribute="height" constant="20" id="GlK-gk-qUR"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nna-vY-W5d" customClass="WSPlayButton">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nna-vY-W5d" customClass="WSPlayButton">
                                 <rect key="frame" x="80" y="61" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -354,7 +365,7 @@
                                     <outlet property="delegate" destination="YWM-Ea-GIs" id="ydr-Jd-b31"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qme-xh-iQh" customClass="WSVolumeSlider">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qme-xh-iQh" customClass="WSVolumeSlider">
                                 <rect key="frame" x="52" y="267" width="216" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -362,7 +373,7 @@
                                     <constraint firstAttribute="height" constant="20" id="L8J-Oe-eFZ"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ws_volume_slider_higher_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="L4j-HG-E59">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ws_volume_slider_higher_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="L4j-HG-E59">
                                 <rect key="frame" x="271" y="267" width="17" height="17"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <constraints>
@@ -370,7 +381,7 @@
                                     <constraint firstAttribute="height" constant="17" id="i7N-h4-adm"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ws_volume_slider_lower_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="IZ1-KQ-WOj">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ws_volume_slider_lower_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="IZ1-KQ-WOj">
                                 <rect key="frame" x="32" y="267" width="17" height="17"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <constraints>
@@ -378,11 +389,11 @@
                                     <constraint firstAttribute="height" constant="17" id="l8c-99-NE1"/>
                                 </constraints>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gGf-Z2-uo1">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gGf-Z2-uo1">
                                 <rect key="frame" x="142" y="654" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="TTo-mY-AKT" customClass="WSRadiostationSelectorScrollView">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="TTo-mY-AKT" customClass="WSRadiostationSelectorScrollView">
                                 <rect key="frame" x="0.0" y="321" width="320" height="703"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </scrollView>
@@ -470,7 +481,7 @@
                             <constraint firstAttribute="trailing" secondItem="Nna-vY-W5d" secondAttribute="trailing" constant="80" id="BlT-7a-SQ3"/>
                             <constraint firstAttribute="trailing" secondItem="TTo-mY-AKT" secondAttribute="trailing" id="Br3-OY-9gx"/>
                             <constraint firstItem="0FE-0v-8dN" firstAttribute="top" secondItem="Nna-vY-W5d" secondAttribute="bottom" constant="15" id="JS1-61-EkW"/>
-                            <constraint firstItem="Nna-vY-W5d" firstAttribute="top" secondItem="1fz-xu-Iaj" secondAttribute="bottom" constant="41" id="Mcg-90-2JN"/>
+                            <constraint firstItem="Nna-vY-W5d" firstAttribute="top" secondItem="1fz-xu-Iaj" secondAttribute="bottom" constant="61" id="Mcg-90-2JN"/>
                             <constraint firstItem="L4j-HG-E59" firstAttribute="top" secondItem="Qme-xh-iQh" secondAttribute="bottom" constant="-20" id="OtE-LN-DlR"/>
                             <constraint firstItem="gGf-Z2-uo1" firstAttribute="centerY" secondItem="TTo-mY-AKT" secondAttribute="centerY" id="ZPI-9o-BnR"/>
                             <constraint firstItem="Qme-xh-iQh" firstAttribute="top" secondItem="Nna-vY-W5d" secondAttribute="bottom" constant="46" id="bWy-6D-F8R"/>

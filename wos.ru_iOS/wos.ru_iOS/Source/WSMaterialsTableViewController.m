@@ -111,7 +111,7 @@
                                       } completion:nil];
                                   }
                               }];
-        
+        [view setLightGradientHidden:!item.isSeen animated:NO];
     }
     view.titleLabel.text = item.title;
     view.descriptionLabel.text = item.lead;
