@@ -228,7 +228,7 @@
         CGSize rect = [view systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
         result = rect.height +
         (int)(tableView.separatorStyle != UITableViewCellSeparatorStyleNone); // height of the cell should obey selected separator style
-        NSLog(@"calculated rect: %@", NSStringFromCGSize(rect));
+//        NSLog(@"calculated rect: %@", NSStringFromCGSize(rect));
     }
     return result;
 }

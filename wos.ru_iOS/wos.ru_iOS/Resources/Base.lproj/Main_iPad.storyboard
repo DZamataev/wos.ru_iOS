@@ -100,11 +100,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="448" height="105"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZv-kp-bmM" userLabel="Bg Layer">
-                                                    <rect key="frame" x="0.0" y="0.0" width="448" height="100"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftG-FO-BfN" userLabel="Gradient BG View">
                                                     <rect key="frame" x="363" y="0.0" width="85" height="105"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -112,6 +107,11 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="85" id="dmW-uu-hhf"/>
                                                     </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZv-kp-bmM" userLabel="Bg Layer">
+                                                    <rect key="frame" x="0.0" y="0.0" width="448" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Xbe-9F-1hY">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -156,6 +156,7 @@
                                                 <constraint firstItem="hla-Zx-MY0" firstAttribute="top" secondItem="Z8M-p8-VuE" secondAttribute="bottom" constant="5" id="zQT-Na-sNp"/>
                                             </constraints>
                                             <connections>
+                                                <outlet property="_gradientBgView" destination="ftG-FO-BfN" id="kTF-gg-Daa"/>
                                                 <outlet property="bgView" destination="sZv-kp-bmM" id="AFL-rD-hSf"/>
                                                 <outlet property="descriptionLabel" destination="hla-Zx-MY0" id="gtp-kE-6Jh"/>
                                                 <outlet property="imageView" destination="Xbe-9F-1hY" id="6Oe-YF-50g"/>

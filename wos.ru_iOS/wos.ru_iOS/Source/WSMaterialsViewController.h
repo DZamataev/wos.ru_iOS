@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <UIViewController+ECSlidingViewController.h>
 #import "WSWebBrowserViewController.h"
 #import "WSSplitViewControllerManager.h"
 

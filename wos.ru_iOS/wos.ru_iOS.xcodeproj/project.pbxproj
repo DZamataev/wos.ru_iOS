@@ -23,18 +23,12 @@
 		922A0BC918645B7A00802757 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 922A0BBD18645B7A00802757 /* Images.xcassets */; };
 		922A0BCA18645B7A00802757 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BBF18645B7A00802757 /* main.m */; };
 		922A0BCC18645B7A00802757 /* WSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BC318645B7A00802757 /* WSAppDelegate.m */; };
-		922A0BCD18645B7A00802757 /* WSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BC518645B7A00802757 /* WSViewController.m */; };
-		922A0BD018645E5400802757 /* AudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 922A0BCF18645E5400802757 /* AudioPlayerView.m */; };
 		9230117819059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9230117719059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.m */; };
 		923C3AED19264215003D76A5 /* WSCopyableAutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 923C3AEC19264215003D76A5 /* WSCopyableAutoScrollLabel.m */; };
 		9255271F18B5FB5C006D1191 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9255271E18B5FB5C006D1191 /* CoreData.framework */; };
 		9255272218B60D0E006D1191 /* WSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255272118B60D0E006D1191 /* WSRootViewController.m */; };
-		9255272818B63616006D1191 /* WSFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255272718B63616006D1191 /* WSFeedViewController.m */; };
-		9255272B18B63644006D1191 /* WSFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255272A18B63644006D1191 /* WSFeedTableViewController.m */; };
 		9255274118B643AF006D1191 /* WSFeedItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255274018B643AF006D1191 /* WSFeedItemView.m */; };
 		9255274418B643BE006D1191 /* WSFeedHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255274318B643BE006D1191 /* WSFeedHeaderView.m */; };
-		9255274718B64724006D1191 /* WSFeedLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255274618B64724006D1191 /* WSFeedLoader.m */; };
-		9255274A18B64786006D1191 /* WSFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9255274918B64786006D1191 /* WSFeedItem.m */; };
 		925778AA19057A39002A1B3C /* WSMaterialsObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 925778A919057A39002A1B3C /* WSMaterialsObjectManager.m */; };
 		925778AD19058219002A1B3C /* WSMaterialsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 925778AC19058219002A1B3C /* WSMaterialsTableViewController.m */; };
 		925778AF1905872B002A1B3C /* ws-slideout-button-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 925778AE1905872B002A1B3C /* ws-slideout-button-white.png */; };
@@ -54,7 +48,6 @@
 		92AE499E188953F5003D5572 /* WSSleepTimerSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AE499D188953F5003D5572 /* WSSleepTimerSelectionCell.m */; };
 		92AE49A118895440003D5572 /* WSSleepTimerPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AE49A018895440003D5572 /* WSSleepTimerPickerViewController.m */; };
 		92AF39B51887E73C00F74E8B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 92AF39B41887E73C00F74E8B /* Settings.bundle */; };
-		92AF7D1C18B75E93003190A5 /* WSFeedGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AF7D1B18B75E93003190A5 /* WSFeedGroup.m */; };
 		92B1BF09187EC4C20027EAEC /* WSRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B1BF08187EC4C20027EAEC /* WSRadioViewController.m */; };
 		92B1BF0B1880090F0027EAEC /* ws_volume_slider_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF0A1880090F0027EAEC /* ws_volume_slider_bg@2x.png */; };
 		92B1BF1218800E770027EAEC /* ws_volume_slider_higher_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B1BF1018800E770027EAEC /* ws_volume_slider_higher_icon@2x.png */; };
@@ -118,10 +111,6 @@
 		922A0BC118645B7A00802757 /* wos.ru_iOS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "wos.ru_iOS-Prefix.pch"; sourceTree = "<group>"; };
 		922A0BC218645B7A00802757 /* WSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAppDelegate.h; sourceTree = "<group>"; };
 		922A0BC318645B7A00802757 /* WSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAppDelegate.m; sourceTree = "<group>"; };
-		922A0BC418645B7A00802757 /* WSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSViewController.h; sourceTree = "<group>"; };
-		922A0BC518645B7A00802757 /* WSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSViewController.m; sourceTree = "<group>"; };
-		922A0BCE18645E5400802757 /* AudioPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayerView.h; sourceTree = "<group>"; };
-		922A0BCF18645E5400802757 /* AudioPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerView.m; sourceTree = "<group>"; };
 		9230117619059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMicroMaterialsCollectionViewController.h; path = Source/WSMicroMaterialsCollectionViewController.h; sourceTree = "<group>"; };
 		9230117719059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSMicroMaterialsCollectionViewController.m; path = Source/WSMicroMaterialsCollectionViewController.m; sourceTree = "<group>"; };
 		923C3AEB19264215003D76A5 /* WSCopyableAutoScrollLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCopyableAutoScrollLabel.h; sourceTree = "<group>"; };
@@ -129,18 +118,10 @@
 		9255271E18B5FB5C006D1191 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9255272018B60D0E006D1191 /* WSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRootViewController.h; sourceTree = "<group>"; };
 		9255272118B60D0E006D1191 /* WSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRootViewController.m; sourceTree = "<group>"; };
-		9255272618B63616006D1191 /* WSFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedViewController.h; sourceTree = "<group>"; };
-		9255272718B63616006D1191 /* WSFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedViewController.m; sourceTree = "<group>"; };
-		9255272918B63644006D1191 /* WSFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedTableViewController.h; sourceTree = "<group>"; };
-		9255272A18B63644006D1191 /* WSFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedTableViewController.m; sourceTree = "<group>"; };
 		9255273F18B643AF006D1191 /* WSFeedItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSFeedItemView.h; path = Source/WSFeedItemView.h; sourceTree = "<group>"; };
 		9255274018B643AF006D1191 /* WSFeedItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSFeedItemView.m; path = Source/WSFeedItemView.m; sourceTree = "<group>"; };
 		9255274218B643BE006D1191 /* WSFeedHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSFeedHeaderView.h; path = Source/WSFeedHeaderView.h; sourceTree = "<group>"; };
 		9255274318B643BE006D1191 /* WSFeedHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSFeedHeaderView.m; path = Source/WSFeedHeaderView.m; sourceTree = "<group>"; };
-		9255274518B64724006D1191 /* WSFeedLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedLoader.h; sourceTree = "<group>"; };
-		9255274618B64724006D1191 /* WSFeedLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedLoader.m; sourceTree = "<group>"; };
-		9255274818B64786006D1191 /* WSFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedItem.h; sourceTree = "<group>"; };
-		9255274918B64786006D1191 /* WSFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedItem.m; sourceTree = "<group>"; };
 		925778A819057A39002A1B3C /* WSMaterialsObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMaterialsObjectManager.h; path = Source/WSMaterialsObjectManager.h; sourceTree = "<group>"; };
 		925778A919057A39002A1B3C /* WSMaterialsObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSMaterialsObjectManager.m; path = Source/WSMaterialsObjectManager.m; sourceTree = "<group>"; };
 		925778AB19058219002A1B3C /* WSMaterialsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMaterialsTableViewController.h; path = Source/WSMaterialsTableViewController.h; sourceTree = "<group>"; };
@@ -173,8 +154,6 @@
 		92AE49A018895440003D5572 /* WSSleepTimerPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSSleepTimerPickerViewController.m; sourceTree = "<group>"; };
 		92AE49A618897562003D5572 /* WSSleepTimerPickerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSSleepTimerPickerDelegate.h; sourceTree = "<group>"; };
 		92AF39B41887E73C00F74E8B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		92AF7D1A18B75E93003190A5 /* WSFeedGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFeedGroup.h; sourceTree = "<group>"; };
-		92AF7D1B18B75E93003190A5 /* WSFeedGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFeedGroup.m; sourceTree = "<group>"; };
 		92B1BF07187EC4C20027EAEC /* WSRadioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRadioViewController.h; sourceTree = "<group>"; };
 		92B1BF08187EC4C20027EAEC /* WSRadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRadioViewController.m; sourceTree = "<group>"; };
 		92B1BF0A1880090F0027EAEC /* ws_volume_slider_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ws_volume_slider_bg@2x.png"; sourceTree = "<group>"; };
@@ -342,7 +321,6 @@
 				92E8F45118E36E73000437A4 /* WSWebBrowserViewController.m */,
 				92A9AC6F1924F7BE0072C5EC /* Player Scene */,
 				929ABF001905691700F7BF5D /* Materials Scene */,
-				9255272C18B6364B006D1191 /* Feed Scene */,
 				92AE49A21889545D003D5572 /* Radio Scene */,
 				92AE49A318895464003D5572 /* SleepTimerPicker */,
 				922A0BBF18645B7A00802757 /* main.m */,
@@ -350,55 +328,10 @@
 				922A0BC118645B7A00802757 /* wos.ru_iOS-Prefix.pch */,
 				922A0BC218645B7A00802757 /* WSAppDelegate.h */,
 				922A0BC318645B7A00802757 /* WSAppDelegate.m */,
-				922A0BC418645B7A00802757 /* WSViewController.h */,
-				922A0BC518645B7A00802757 /* WSViewController.m */,
-				922A0BCE18645E5400802757 /* AudioPlayerView.h */,
-				922A0BCF18645E5400802757 /* AudioPlayerView.m */,
 				920B717D18BB739200D57321 /* WSWindow.h */,
 				920B717E18BB739200D57321 /* WSWindow.m */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		9255272C18B6364B006D1191 /* Feed Scene */ = {
-			isa = PBXGroup;
-			children = (
-				9255273E18B64390006D1191 /* View */,
-				9255273018B63B66006D1191 /* Model */,
-				9255273118B63B6C006D1191 /* Controller */,
-			);
-			name = "Feed Scene";
-			sourceTree = "<group>";
-		};
-		9255273018B63B66006D1191 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				9255274518B64724006D1191 /* WSFeedLoader.h */,
-				9255274618B64724006D1191 /* WSFeedLoader.m */,
-				9255274818B64786006D1191 /* WSFeedItem.h */,
-				9255274918B64786006D1191 /* WSFeedItem.m */,
-				92AF7D1A18B75E93003190A5 /* WSFeedGroup.h */,
-				92AF7D1B18B75E93003190A5 /* WSFeedGroup.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		9255273118B63B6C006D1191 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				9255272618B63616006D1191 /* WSFeedViewController.h */,
-				9255272718B63616006D1191 /* WSFeedViewController.m */,
-				9255272918B63644006D1191 /* WSFeedTableViewController.h */,
-				9255272A18B63644006D1191 /* WSFeedTableViewController.m */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
-		9255273E18B64390006D1191 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		929ABF001905691700F7BF5D /* Materials Scene */ = {
@@ -717,7 +650,6 @@
 				92A4F273192A55AD00050E02 /* WSSplitViewControllerManager.m in Sources */,
 				929ABF1119056C9300F7BF5D /* WSMaterial.m in Sources */,
 				92C3978218855E68001E46FA /* WSRColor.m in Sources */,
-				92AF7D1C18B75E93003190A5 /* WSFeedGroup.m in Sources */,
 				92C3976718853948001E46FA /* WSRadiostationButton.m in Sources */,
 				922A0BCC18645B7A00802757 /* WSAppDelegate.m in Sources */,
 				92A6A73F1906C20B0047E8C1 /* WSBestMaterialView.m in Sources */,
@@ -725,9 +657,7 @@
 				92AE499E188953F5003D5572 /* WSSleepTimerSelectionCell.m in Sources */,
 				92A6A7391906A44B0047E8C1 /* WSMicroMaterialView.m in Sources */,
 				920B717F18BB739200D57321 /* WSWindow.m in Sources */,
-				9255272818B63616006D1191 /* WSFeedViewController.m in Sources */,
 				92B1BF09187EC4C20027EAEC /* WSRadioViewController.m in Sources */,
-				9255274718B64724006D1191 /* WSFeedLoader.m in Sources */,
 				922A0BCA18645B7A00802757 /* main.m in Sources */,
 				925778AA19057A39002A1B3C /* WSMaterialsObjectManager.m in Sources */,
 				92AE49A118895440003D5572 /* WSSleepTimerPickerViewController.m in Sources */,
@@ -735,7 +665,6 @@
 				92C3978518856167001E46FA /* WSRadioMapper.m in Sources */,
 				92C3977C18855DD8001E46FA /* WSRStation.m in Sources */,
 				9230117819059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.m in Sources */,
-				9255274A18B64786006D1191 /* WSFeedItem.m in Sources */,
 				92C3976A1885396A001E46FA /* WSRadiostationSelectorScrollView.m in Sources */,
 				925778AD19058219002A1B3C /* WSMaterialsTableViewController.m in Sources */,
 				92C3977918855DC8001E46FA /* WSRStream.m in Sources */,
@@ -743,8 +672,6 @@
 				929ABF0319056BBF00F7BF5D /* WSMaterialsViewController.m in Sources */,
 				929ABF0E19056C7400F7BF5D /* WSMaterialsCollection.m in Sources */,
 				92B1BF1618800F1E0027EAEC /* WSPlayButton.m in Sources */,
-				922A0BD018645E5400802757 /* AudioPlayerView.m in Sources */,
-				922A0BCD18645B7A00802757 /* WSViewController.m in Sources */,
 				9255274118B643AF006D1191 /* WSFeedItemView.m in Sources */,
 				92E8F45218E36E73000437A4 /* WSWebBrowserViewController.m in Sources */,
 				9255272218B60D0E006D1191 /* WSRootViewController.m in Sources */,
@@ -752,7 +679,6 @@
 				929ABF0719056BFC00F7BF5D /* WSMaterialsModel.m in Sources */,
 				92C39771188544F6001E46FA /* WSRadioModel.m in Sources */,
 				9255274418B643BE006D1191 /* WSFeedHeaderView.m in Sources */,
-				9255272B18B63644006D1191 /* WSFeedTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
