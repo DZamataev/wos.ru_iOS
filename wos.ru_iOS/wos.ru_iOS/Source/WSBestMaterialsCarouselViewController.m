@@ -55,6 +55,14 @@
     return self.materialsModel.materialsCollection.bestMaterials.count;
 }
 
+- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
+{
+    WSMaterial *material = self.materialsModel.materialsCollection.bestMaterials[index];
+    [_materialsModel markMaterialAsSeenWithIdentifier:material.identifier];
+    material.isSeen = YES;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"WSOpenUrlNotification" object:Nil userInfo:@{@"url":[NSURL URLWithString:material.urlStr]}];
+}
+
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)containerView
 {
     

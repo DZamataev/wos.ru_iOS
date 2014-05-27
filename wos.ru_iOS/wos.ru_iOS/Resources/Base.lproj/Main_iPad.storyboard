@@ -53,7 +53,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BestCell" rowHeight="300" id="cQA-Md-315">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BestCell" rowHeight="300" id="cQA-Md-315">
                                 <rect key="frame" x="0.0" y="22" width="448" height="300"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cQA-Md-315" id="Tst-Em-sP2">
@@ -63,9 +63,10 @@
                                         <view tag="111" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zz4-1a-iFl">
                                             <rect key="frame" x="0.0" y="0.0" width="448" height="300"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </view>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="zz4-1a-iFl" firstAttribute="top" secondItem="Tst-Em-sP2" secondAttribute="top" id="3RC-hC-7cq"/>
                                         <constraint firstAttribute="trailing" secondItem="zz4-1a-iFl" secondAttribute="trailing" id="6XO-Qc-7ky"/>
@@ -74,7 +75,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MicroCell" rowHeight="230" id="mFc-iJ-4na">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MicroCell" rowHeight="230" id="mFc-iJ-4na">
                                 <rect key="frame" x="0.0" y="322" width="448" height="230"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mFc-iJ-4na" id="KPf-Wb-nm7">
@@ -84,7 +85,7 @@
                                         <view tag="112" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1V-vk-KKq">
                                             <rect key="frame" x="0.0" y="0.0" width="448" height="230"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </view>
                                     </subviews>
                                     <constraints>
@@ -299,10 +300,10 @@
                                     <segue destination="0az-fi-oTN" kind="embed" id="dih-aA-4bd"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNN-0J-9xW">
-                                <rect key="frame" x="340" y="20" width="46" height="30"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNN-0J-9xW">
+                                <rect key="frame" x="340" y="27" width="78" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Show radio">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -320,20 +321,36 @@
                                     <segue destination="YWM-Ea-GIs" kind="embed" id="j0i-G6-xf9"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8S-Rr-e3l">
+                                <rect key="frame" x="230" y="27" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Hide radio">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showRadioToggle:" destination="xis-10-pQJ" eventType="touchUpInside" id="brZ-2A-PUr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="u8S-Rr-e3l" firstAttribute="top" secondItem="JFC-BL-PMM" secondAttribute="top" constant="27" id="2au-vi-dub"/>
                             <constraint firstItem="Ui5-1w-YQb" firstAttribute="top" secondItem="JFC-BL-PMM" secondAttribute="bottom" id="4T6-Ut-Kbo"/>
+                            <constraint firstItem="QSq-fM-X3R" firstAttribute="leading" secondItem="vNN-0J-9xW" secondAttribute="leading" constant="-20" id="Doe-f9-5w3"/>
+                            <constraint firstItem="u8S-Rr-e3l" firstAttribute="trailing" secondItem="JFC-BL-PMM" secondAttribute="trailing" constant="-19" id="Ecd-OK-v5Z"/>
                             <constraint firstItem="QSq-fM-X3R" firstAttribute="leading" secondItem="om7-mm-TMH" secondAttribute="leading" constant="320" id="Fqv-bS-R4Q"/>
                             <constraint firstItem="Ui5-1w-YQb" firstAttribute="top" secondItem="QSq-fM-X3R" secondAttribute="bottom" id="Jsi-XY-fMr"/>
                             <constraint firstItem="JFC-BL-PMM" firstAttribute="top" secondItem="wfV-zf-fRZ" secondAttribute="bottom" constant="-20" id="P1u-QK-Npl"/>
                             <constraint firstItem="QSq-fM-X3R" firstAttribute="leading" secondItem="JFC-BL-PMM" secondAttribute="trailing" id="YYs-03-ug1"/>
                             <constraint firstAttribute="trailing" secondItem="QSq-fM-X3R" secondAttribute="trailing" id="fSq-oO-ErB"/>
                             <constraint firstItem="QSq-fM-X3R" firstAttribute="top" secondItem="wfV-zf-fRZ" secondAttribute="bottom" id="jij-at-vU8"/>
+                            <constraint firstItem="QSq-fM-X3R" firstAttribute="top" secondItem="vNN-0J-9xW" secondAttribute="top" constant="-7" id="tuK-ps-Pdj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="hideRadioButton" destination="u8S-Rr-e3l" id="tc5-qN-3p2"/>
                         <outlet property="materialsContainerLeftOffsetConstraint" destination="Fqv-bS-R4Q" id="Ttz-0U-fhA"/>
+                        <outlet property="showRadioButton" destination="vNN-0J-9xW" id="fpc-PK-VH2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4BI-EQ-kK4" userLabel="First Responder" sceneMemberID="firstResponder"/>

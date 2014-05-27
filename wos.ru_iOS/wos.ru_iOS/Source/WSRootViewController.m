@@ -94,14 +94,18 @@
     if (self.materialsContainerLeftOffsetConstraint.constant > 0) {
         _materialsContainerLeftOffsetConstraintDefaultValue = self.materialsContainerLeftOffsetConstraint.constant;
         self.materialsContainerLeftOffsetConstraint.constant = 0;
-        [UIView animateWithDuration:0.5f animations:^{
+        self.showRadioButton.hidden = NO;
+        self.hideRadioButton.hidden = YES;
+        [UIView animateWithDuration:0.3f animations:^{
             [self.view setNeedsLayout];
             [self.view layoutIfNeeded];
         }];
     }
     else {
         self.materialsContainerLeftOffsetConstraint.constant = _materialsContainerLeftOffsetConstraintDefaultValue;
-        [UIView animateWithDuration:0.5f animations:^{
+        self.showRadioButton.hidden = YES;
+        self.hideRadioButton.hidden = NO;
+        [UIView animateWithDuration:0.3f animations:^{
             [self.view setNeedsLayout];
             [self.view layoutIfNeeded];
         }];

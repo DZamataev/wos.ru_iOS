@@ -160,7 +160,22 @@
                 _bestMaterialsCarouselVC.view.frame = containerView.bounds;
                 _bestMaterialsCarouselVC.view.tag = tag;
                 _bestMaterialsCarouselVC.itemSize = containerView.bounds.size;
+                [containerView setTranslatesAutoresizingMaskIntoConstraints:NO];
+                [_bestMaterialsCarouselVC.view setTranslatesAutoresizingMaskIntoConstraints:NO];
                 [containerView addSubview:_bestMaterialsCarouselVC.view];
+                
+                NSDictionary *viewsDictionary = @{@"view":_bestMaterialsCarouselVC.view};
+                //Create the constraints using the visual language format
+                NSMutableArray *constraintsArray = [NSMutableArray new];
+                [constraintsArray addObjectsFromArray:[NSLayoutConstraint
+                                                       constraintsWithVisualFormat:@"H:|-[view]-|"
+                                                       options:0 metrics:nil
+                                                       views:viewsDictionary]];
+                [constraintsArray addObjectsFromArray:[NSLayoutConstraint
+                                                       constraintsWithVisualFormat:@"V:|-[view]-|"
+                                                       options:0 metrics:nil
+                                                       views:viewsDictionary]];
+                [containerView addConstraints:constraintsArray];
             }
             [_bestMaterialsCarouselVC.carousel reloadData];
         }
@@ -171,7 +186,22 @@
                 _bestMaterialsCollectionVC.view.frame = containerView.bounds;
                 _bestMaterialsCollectionVC.view.tag = tag;
                 _bestMaterialsCollectionVC.pagingPageWidth = containerView.bounds.size.width;
+                [containerView setTranslatesAutoresizingMaskIntoConstraints:NO];
+                [_bestMaterialsCollectionVC.view setTranslatesAutoresizingMaskIntoConstraints:NO];
                 [containerView addSubview:_bestMaterialsCollectionVC.view];
+                
+                NSDictionary *viewsDictionary = @{@"view":_bestMaterialsCollectionVC.view};
+                //Create the constraints using the visual language format
+                NSMutableArray *constraintsArray = [NSMutableArray new];
+                [constraintsArray addObjectsFromArray:[NSLayoutConstraint
+                                                       constraintsWithVisualFormat:@"H:|-[view]-|"
+                                                       options:0 metrics:nil
+                                                       views:viewsDictionary]];
+                [constraintsArray addObjectsFromArray:[NSLayoutConstraint
+                                                       constraintsWithVisualFormat:@"V:|-[view]-|"
+                                                       options:0 metrics:nil
+                                                       views:viewsDictionary]];
+                [containerView addConstraints:constraintsArray];
             }
             [_bestMaterialsCollectionVC.collectionView reloadData];
             [_bestMaterialsCollectionVC scrollToNearestPageInScrollView:_bestMaterialsCollectionVC.collectionView];
