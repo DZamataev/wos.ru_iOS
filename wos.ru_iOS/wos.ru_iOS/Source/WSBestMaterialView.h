@@ -14,4 +14,5 @@
 @property IBOutlet UILabel *subtitle;
 @property IBOutlet UILabel *viewsCount;
 @property IBOutlet UILabel *commentsCount;
+@property IBOutlet NSLayoutConstraint *heightConstraint;
 @end

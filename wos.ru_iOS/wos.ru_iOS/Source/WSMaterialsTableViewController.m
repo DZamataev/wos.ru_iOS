@@ -31,6 +31,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.isNeedToDisplayBestMaterialsAsCarouselInsteadOfCollection = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
+//    self.isNeedToDisplayBestMaterialsAsCarouselInsteadOfCollection = YES;
     
     _refreshControl = [[UIRefreshControl alloc] init];
     [_refreshControl addTarget:self
@@ -40,10 +42,19 @@
 
     self.materialsModel = [WSMaterialsModel new];
     
-    _bestMaterialsCollectionVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WSBestMaterialsCollectionViewController"];
-    _bestMaterialsCollectionVC.materialsModel = self.materialsModel;
+    if (self.isNeedToDisplayBestMaterialsAsCarouselInsteadOfCollection) {
+        _bestMaterialsCarouselVC = [self.storyboard
+                                    instantiateViewControllerWithIdentifier:@"WSBestMaterialsCarouselViewController"];
+        _bestMaterialsCarouselVC.materialsModel = self.materialsModel;
+    }
+    else {
+        _bestMaterialsCollectionVC = [self.storyboard
+                                      instantiateViewControllerWithIdentifier:@"WSBestMaterialsCollectionViewController"];
+        _bestMaterialsCollectionVC.materialsModel = self.materialsModel;
+    }
     
-    _microMaterialsCollectionVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WSMicroMaterialsCollectionViewController"];
+    _microMaterialsCollectionVC = [self.storyboard
+                                   instantiateViewControllerWithIdentifier:@"WSMicroMaterialsCollectionViewController"];
     _microMaterialsCollectionVC.materialsModel = self.materialsModel;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -135,41 +146,38 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell;
+    /* Best materials controller is displayed in cell 0 */
     if (indexPath.row == 0) {
+        /* Best materials can be displayed as carousel or as collection */
         cell = [tableView dequeueReusableCellWithIdentifier:@"BestCell" forIndexPath:indexPath];
         NSInteger tag = 111;
         UIView *containerView = [cell viewWithTag:tag];
-        if (_shouldReinitBestMaterials) {
-            _shouldReinitBestMaterials = NO;
-            [_bestMaterialsCollectionVC.view removeFromSuperview];
-            _bestMaterialsCollectionVC.view.frame = CGRectMake(0, 0, self.tableView.bounds.size.width, containerView.bounds.size.height);
-            _bestMaterialsCollectionVC.view.tag = tag;
-            _bestMaterialsCollectionVC.pagingPageWidth = self.tableView.bounds.size.width;
-            [containerView addSubview:_bestMaterialsCollectionVC.view];
-            
-            // Get the views dictionary
-            NSDictionary *viewsDictionary = @{@"view": _bestMaterialsCollectionVC.view};
-            
-            //Create the constraints using the visual language format
-            NSArray *hConstraintsArray = [NSLayoutConstraint
-                                         constraintsWithVisualFormat:@"H:|-[view]-|"
-                                         options:NSLayoutFormatAlignAllBaseline metrics:nil
-                                         views:viewsDictionary];
-            
-            NSArray *vConstraintsArray = [NSLayoutConstraint
-                                         constraintsWithVisualFormat:@"V:|-[view]-|"
-                                         options:NSLayoutFormatAlignAllBaseline metrics:nil
-                                         views:viewsDictionary];
-            
-            [containerView addConstraints:hConstraintsArray];
-            [containerView addConstraints:vConstraintsArray];
+        
+        if (self.isNeedToDisplayBestMaterialsAsCarouselInsteadOfCollection) {
+            if (_shouldReinitBestMaterials) {
+                _shouldReinitBestMaterials = NO;
+                [_bestMaterialsCarouselVC.view removeFromSuperview];
+                _bestMaterialsCarouselVC.view.frame = containerView.bounds;
+                _bestMaterialsCarouselVC.view.tag = tag;
+                _bestMaterialsCarouselVC.itemSize = containerView.bounds.size;
+                [containerView addSubview:_bestMaterialsCarouselVC.view];
+            }
+            [_bestMaterialsCarouselVC.carousel reloadData];
         }
-//        _bestMaterialsCollectionVC.view.frame = CGRectMake(_bestMaterialsCollectionVC.view.frame.origin.x, _bestMaterialsCollectionVC.view.frame.origin.y, self.tableView.bounds.size.width, _bestMaterialsCollectionVC.view.frame.size.height);
-//        _bestMaterialsCollectionVC.pagingPageWidth = self.tableView.bounds.size.width;
-//        [_bestMaterialsCollectionVC.collectionView.collectionViewLayout invalidateLayout];
-        [_bestMaterialsCollectionVC.collectionView reloadData];
-        [_bestMaterialsCollectionVC scrollToNearestPageInScrollView:_bestMaterialsCollectionVC.collectionView];
+        else {
+            if (_shouldReinitBestMaterials) {
+                _shouldReinitBestMaterials = NO;
+                [_bestMaterialsCollectionVC.view removeFromSuperview];
+                _bestMaterialsCollectionVC.view.frame = containerView.bounds;
+                _bestMaterialsCollectionVC.view.tag = tag;
+                _bestMaterialsCollectionVC.pagingPageWidth = containerView.bounds.size.width;
+                [containerView addSubview:_bestMaterialsCollectionVC.view];
+            }
+            [_bestMaterialsCollectionVC.collectionView reloadData];
+            [_bestMaterialsCollectionVC scrollToNearestPageInScrollView:_bestMaterialsCollectionVC.collectionView];
+        }
     }
+    /* Micro materials controller is displayed in cell 1 */
     else if (indexPath.row == 1) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"MicroCell" forIndexPath:indexPath];
         NSInteger tag = 112;
@@ -183,6 +191,7 @@
         }
         [_microMaterialsCollectionVC.collectionView reloadData];
     }
+    /* Other materials are displayed in remaining cells starting from 2 */
     else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"ItemCell" forIndexPath:indexPath];
         int index = indexPath.row - 2;

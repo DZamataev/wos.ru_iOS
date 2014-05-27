@@ -64,6 +64,7 @@
 		92C3977F18855E01001E46FA /* WSRadioData.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C3977E18855E01001E46FA /* WSRadioData.m */; };
 		92C3978218855E68001E46FA /* WSRColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C3978118855E68001E46FA /* WSRColor.m */; };
 		92C3978518856167001E46FA /* WSRadioMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C3978418856167001E46FA /* WSRadioMapper.m */; };
+		92CC14E2192F4CCC006C99BE /* WSBestMaterialsCarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CC14E1192F4CCC006C99BE /* WSBestMaterialsCarouselViewController.m */; };
 		92D068AA1886B84000AA75B9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D068A91886B84000AA75B9 /* AVFoundation.framework */; };
 		92E6755718E3684C008869DB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E6755618E3684C008869DB /* SystemConfiguration.framework */; };
 		92E6755918E36854008869DB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E6755818E36854008869DB /* MobileCoreServices.framework */; };
@@ -181,6 +182,8 @@
 		92C3978118855E68001E46FA /* WSRColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRColor.m; sourceTree = "<group>"; };
 		92C3978318856167001E46FA /* WSRadioMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSRadioMapper.h; sourceTree = "<group>"; };
 		92C3978418856167001E46FA /* WSRadioMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSRadioMapper.m; sourceTree = "<group>"; };
+		92CC14E0192F4CCC006C99BE /* WSBestMaterialsCarouselViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSBestMaterialsCarouselViewController.h; path = Source/WSBestMaterialsCarouselViewController.h; sourceTree = "<group>"; };
+		92CC14E1192F4CCC006C99BE /* WSBestMaterialsCarouselViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSBestMaterialsCarouselViewController.m; path = Source/WSBestMaterialsCarouselViewController.m; sourceTree = "<group>"; };
 		92D068A71886ABD500AA75B9 /* WSPlayButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPlayButtonDelegate.h; sourceTree = "<group>"; };
 		92D068A91886B84000AA75B9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		92E6755618E3684C008869DB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -356,6 +359,8 @@
 				925778AC19058219002A1B3C /* WSMaterialsTableViewController.m */,
 				92A6A73A1906C18F0047E8C1 /* WSBestMaterialsCollectionViewController.h */,
 				92A6A73B1906C18F0047E8C1 /* WSBestMaterialsCollectionViewController.m */,
+				92CC14E0192F4CCC006C99BE /* WSBestMaterialsCarouselViewController.h */,
+				92CC14E1192F4CCC006C99BE /* WSBestMaterialsCarouselViewController.m */,
 				9230117619059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.h */,
 				9230117719059B8700A0AF82 /* WSMicroMaterialsCollectionViewController.m */,
 			);
@@ -675,6 +680,7 @@
 				9255274118B643AF006D1191 /* WSFeedItemView.m in Sources */,
 				92E8F45218E36E73000437A4 /* WSWebBrowserViewController.m in Sources */,
 				9255272218B60D0E006D1191 /* WSRootViewController.m in Sources */,
+				92CC14E2192F4CCC006C99BE /* WSBestMaterialsCarouselViewController.m in Sources */,
 				920B717C18BB58CA00D57321 /* WSBaseTableViewCell.m in Sources */,
 				929ABF0719056BFC00F7BF5D /* WSMaterialsModel.m in Sources */,
 				92C39771188544F6001E46FA /* WSRadioModel.m in Sources */,

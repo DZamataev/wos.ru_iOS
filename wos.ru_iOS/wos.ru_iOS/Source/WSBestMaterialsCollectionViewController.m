@@ -78,14 +78,13 @@
     UIImageView __weak *imageViewToAnimate = view.imageView;
     [view.imageView setImageWithURL:[NSURL URLWithString:material.pictureStr]
                           completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-                              if (imageViewToAnimate && cacheType == SDImageCacheTypeNone) {
+                              if (imageViewToAnimate) {
                                   imageViewToAnimate.alpha = 0.0f;
                                   [UIView animateWithDuration:0.3f delay:0.0f options:0 animations:^{
                                       imageViewToAnimate.alpha = 1.0f;
                                   } completion:nil];
                               }
                           }];
-    [view.imageView setImageWithURL: [NSURL URLWithString:material.pictureStr]];
     return cell;
 }
 

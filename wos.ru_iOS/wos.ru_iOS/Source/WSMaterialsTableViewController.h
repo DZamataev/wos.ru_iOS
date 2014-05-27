@@ -12,16 +12,19 @@
 #import "WSFeedItemView.h"
 #import "WSMicroMaterialsCollectionViewController.h"
 #import "WSBestMaterialsCollectionViewController.h"
+#import "WSBestMaterialsCarouselViewController.h"
 #import "WSSplitViewControllerManager.h"
 
 @interface WSMaterialsTableViewController : UITableViewController
 {
     UIRefreshControl *_refreshControl;
     WSBestMaterialsCollectionViewController *_bestMaterialsCollectionVC;
+    WSBestMaterialsCarouselViewController *_bestMaterialsCarouselVC;
     WSMicroMaterialsCollectionViewController *_microMaterialsCollectionVC;
     
     BOOL _shouldReinitBestMaterials;
     BOOL _shouldReinitMicroMaterials;
 }
 @property WSMaterialsModel *materialsModel;
+@property BOOL isNeedToDisplayBestMaterialsAsCarouselInsteadOfCollection;
 @end
