@@ -248,8 +248,16 @@
     
     }
     else if (indexPath.row == 1) {
-        result = 230.0f +
-        (int)(tableView.separatorStyle != UITableViewCellSeparatorStyleNone);
+        
+        if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+        {
+            result = 250.0f +
+            (int)(tableView.separatorStyle != UITableViewCellSeparatorStyleNone);
+        }
+        else {
+            result = 230.0f +
+            (int)(tableView.separatorStyle != UITableViewCellSeparatorStyleNone);
+        }
     }
     else {
         int index = indexPath.row - 2;
@@ -346,6 +354,18 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+ */
+
++ (UIImage *)imageWithColor:(UIColor *)color andSize:(CGSize)size {
+     CGRect rect = CGRectMake(0, 0, size.width, size.height);
+     UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
+     [color setFill];
+     UIRectFill(rect);
+     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+     UIGraphicsEndImageContext();
+     
+     return image;
+ }
+
 
 @end

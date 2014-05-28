@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		920B717C18BB58CA00D57321 /* WSBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B717B18BB58CA00D57321 /* WSBaseTableViewCell.m */; };
 		920B717F18BB739200D57321 /* WSWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B717E18BB739200D57321 /* WSWindow.m */; };
+		92129295193617AA00AFD2D3 /* UIImageViewAligned.m in Sources */ = {isa = PBXBuildFile; fileRef = 92129294193617AA00AFD2D3 /* UIImageViewAligned.m */; };
+		921292981936252500AFD2D3 /* WSAudioFeedItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921292971936252500AFD2D3 /* WSAudioFeedItemView.m */; };
 		922A0B7E18645B3500802757 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922A0B7D18645B3500802757 /* Foundation.framework */; };
 		922A0B8018645B3500802757 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922A0B7F18645B3500802757 /* CoreGraphics.framework */; };
 		922A0B8218645B3500802757 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922A0B8118645B3500802757 /* UIKit.framework */; };
@@ -94,6 +96,10 @@
 		9212051718E6D6E100902A55 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		9212051818E6D6E100902A55 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9212051918E6D6E100902A55 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		92129293193617AA00AFD2D3 /* UIImageViewAligned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewAligned.h; sourceTree = "<group>"; };
+		92129294193617AA00AFD2D3 /* UIImageViewAligned.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewAligned.m; sourceTree = "<group>"; };
+		921292961936252500AFD2D3 /* WSAudioFeedItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSAudioFeedItemView.h; path = Source/WSAudioFeedItemView.h; sourceTree = "<group>"; };
+		921292971936252500AFD2D3 /* WSAudioFeedItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSAudioFeedItemView.m; path = Source/WSAudioFeedItemView.m; sourceTree = "<group>"; };
 		922A0B7A18645B3500802757 /* wos.ru_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wos.ru_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		922A0B7D18645B3500802757 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		922A0B7F18645B3500802757 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -318,6 +324,8 @@
 		922A0BBE18645B7A00802757 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				92129293193617AA00AFD2D3 /* UIImageViewAligned.h */,
+				92129294193617AA00AFD2D3 /* UIImageViewAligned.m */,
 				9255272018B60D0E006D1191 /* WSRootViewController.h */,
 				9255272118B60D0E006D1191 /* WSRootViewController.m */,
 				92E8F45018E36E73000437A4 /* WSWebBrowserViewController.h */,
@@ -387,6 +395,8 @@
 			children = (
 				9255273F18B643AF006D1191 /* WSFeedItemView.h */,
 				9255274018B643AF006D1191 /* WSFeedItemView.m */,
+				921292961936252500AFD2D3 /* WSAudioFeedItemView.h */,
+				921292971936252500AFD2D3 /* WSAudioFeedItemView.m */,
 				9255274218B643BE006D1191 /* WSFeedHeaderView.h */,
 				9255274318B643BE006D1191 /* WSFeedHeaderView.m */,
 				920B717A18BB58CA00D57321 /* WSBaseTableViewCell.h */,
@@ -661,6 +671,7 @@
 				92A6A73C1906C18F0047E8C1 /* WSBestMaterialsCollectionViewController.m in Sources */,
 				92AE499E188953F5003D5572 /* WSSleepTimerSelectionCell.m in Sources */,
 				92A6A7391906A44B0047E8C1 /* WSMicroMaterialView.m in Sources */,
+				921292981936252500AFD2D3 /* WSAudioFeedItemView.m in Sources */,
 				920B717F18BB739200D57321 /* WSWindow.m in Sources */,
 				92B1BF09187EC4C20027EAEC /* WSRadioViewController.m in Sources */,
 				922A0BCA18645B7A00802757 /* main.m in Sources */,
@@ -685,6 +696,7 @@
 				929ABF0719056BFC00F7BF5D /* WSMaterialsModel.m in Sources */,
 				92C39771188544F6001E46FA /* WSRadioModel.m in Sources */,
 				9255274418B643BE006D1191 /* WSFeedHeaderView.m in Sources */,
+				92129295193617AA00AFD2D3 /* UIImageViewAligned.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

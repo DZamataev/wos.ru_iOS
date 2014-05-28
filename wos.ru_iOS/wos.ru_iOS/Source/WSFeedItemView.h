@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+@class WSAudioFeedItemView;
+
 @interface WSFeedItemView : UIView {
     CALayer *_gradientBgViewLayer;
     IBOutlet UIView *_gradientBgView;
@@ -18,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 @property (strong, nonatomic) IBOutlet UIView *bgView;
+@property (strong, nonatomic) IBOutlet WSAudioFeedItemView *audioView;
 - (void)setLightGradientHidden:(BOOL)hidden animated:(BOOL)animated;
 + (UIColor *)wosGrayColor;
 @end

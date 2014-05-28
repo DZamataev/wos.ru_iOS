@@ -24,6 +24,8 @@
     
     BOOL _shouldReinitBestMaterials;
     BOOL _shouldReinitMicroMaterials;
+    
+    UIImage *_placeholderImage;
 }
 @property WSMaterialsModel *materialsModel;
 @property BOOL isNeedToDisplayBestMaterialsAsCarouselInsteadOfCollection;
