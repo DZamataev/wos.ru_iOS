@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface WSAudioFeedItemView : UIView
-
+@property (nonatomic, strong) IBOutlet UIButton *playButton;
+@property (nonatomic, assign) BOOL isPaused;
+@property (nonatomic, copy) void (^playCallback)(void);
+@property (nonatomic, copy) void (^pauseCallback)(void);
+- (IBAction)buttonTouched:(id)sender;
 @end

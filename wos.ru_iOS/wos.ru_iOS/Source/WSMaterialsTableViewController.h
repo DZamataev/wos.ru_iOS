@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <UIImageView+WebCache.h>
+#import <FSAudioStream.h>
 #import "WSMaterialsModel.h"
 #import "WSFeedItemView.h"
 #import "WSMicroMaterialsCollectionViewController.h"
@@ -27,6 +28,7 @@
     
     UIImage *_placeholderImage;
 }
+@property FSAudioStream *audioPlayer;
 @property WSMaterialsModel *materialsModel;
 @property BOOL isNeedToDisplayBestMaterialsAsCarouselInsteadOfCollection;
 @end

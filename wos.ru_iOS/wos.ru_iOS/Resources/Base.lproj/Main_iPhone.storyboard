@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BNQ-bs-82I">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -587,10 +588,42 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EfK-fq-z1Q" customClass="WSAudioFeedItemView">
                                                     <rect key="frame" x="0.0" y="105" width="320" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.29803921570000003" green="0.82745098039999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARY-sq-6tn">
+                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qn5-4n-vzg">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <state key="normal" image="playbutton">
+                                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="buttonTouched:" destination="EfK-fq-z1Q" eventType="touchUpInside" id="xZT-6v-gGj"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <color key="backgroundColor" red="1" green="0.79607843137254897" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="Qn5-4n-vzg" secondAttribute="bottom" id="P3J-Hw-TnS"/>
+                                                                <constraint firstItem="Qn5-4n-vzg" firstAttribute="top" secondItem="ARY-sq-6tn" secondAttribute="top" id="Xwy-uH-GNr"/>
+                                                                <constraint firstAttribute="width" secondItem="ARY-sq-6tn" secondAttribute="height" multiplier="1:1" id="cwO-au-Yx3"/>
+                                                                <constraint firstItem="Qn5-4n-vzg" firstAttribute="leading" secondItem="ARY-sq-6tn" secondAttribute="leading" id="ogB-CX-Qgk"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Qn5-4n-vzg" secondAttribute="trailing" id="pbv-9s-99t"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.87058823529411766" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
+                                                        <constraint firstItem="ARY-sq-6tn" firstAttribute="top" secondItem="EfK-fq-z1Q" secondAttribute="top" id="6fT-iZ-rxh"/>
+                                                        <constraint firstItem="ARY-sq-6tn" firstAttribute="leading" secondItem="EfK-fq-z1Q" secondAttribute="leading" id="OdG-nF-qA2"/>
                                                         <constraint firstAttribute="height" constant="40" id="w8W-BI-bo8"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ARY-sq-6tn" secondAttribute="bottom" id="wyP-dr-lUL"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <outlet property="playButton" destination="Qn5-4n-vzg" id="bO3-8Z-B1B"/>
+                                                    </connections>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -959,6 +992,7 @@
         <image name="ico-comments.png" width="16" height="16"/>
         <image name="ico-views.png" width="16" height="16"/>
         <image name="more.png" width="21" height="13"/>
+        <image name="playbutton" width="17" height="20"/>
         <image name="ws_sleeping_timer_icon_white.png" width="26" height="22"/>
         <image name="ws_volume_slider_higher_icon.png" width="10" height="8"/>
         <image name="ws_volume_slider_lower_icon.png" width="8" height="7"/>

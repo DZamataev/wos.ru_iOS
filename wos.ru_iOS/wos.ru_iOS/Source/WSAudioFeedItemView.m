@@ -15,8 +15,43 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        self.isPaused = YES;
     }
     return self;
+}
+
+- (void)setIsPaused:(BOOL)isPaused
+{
+    _isPaused = isPaused;
+    if (_isPaused) {
+        [self.playButton setImage:[UIImage imageNamed:@"pausebutton"] forState:UIControlStateNormal];
+    }
+    else {
+        [self.playButton setImage:[UIImage imageNamed:@"playbutton"] forState:UIControlStateNormal];
+    }
+}
+
+
+- (IBAction)buttonTouched:(id)sender
+{
+    self.isPaused = !self.isPaused;
+    
+    if (_isPaused) {
+        [self play];
+    }
+    else {
+        [self pause];
+    }
+}
+
+- (void)play
+{
+    self.playCallback();
+}
+
+- (void)pause
+{
+    self.pauseCallback();
 }
 
 /*

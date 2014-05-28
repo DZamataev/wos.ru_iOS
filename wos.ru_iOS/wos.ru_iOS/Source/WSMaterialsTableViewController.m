@@ -34,6 +34,8 @@
     self.isNeedToDisplayBestMaterialsAsCarouselInsteadOfCollection = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
 //    self.isNeedToDisplayBestMaterialsAsCarouselInsteadOfCollection = YES;
     
+    self.audioPlayer = [[FSAudioStream alloc] init];
+    
     _refreshControl = [[UIRefreshControl alloc] init];
     [_refreshControl addTarget:self
                         action:@selector(loadMaterials)
@@ -123,12 +125,35 @@
                                   }
                               }];
         [view setLightGradientHidden:!item.isSeen animated:NO];
+        
+        if (view.audioView) {
+            WSMaterialsTableViewController __weak *weakSelf = self;
+            [view.audioView setPlayCallback:^{
+                if (weakSelf) {
+                    [weakSelf handlePlayAction:item];
+                }
+            }];
+            [view.audioView setPauseCallback:^{
+                if (weakSelf) {
+                    [weakSelf.audioPlayer stop];
+                }
+            }];
+        }
     }
     view.titleLabel.text = item.title;
     view.descriptionLabel.text = item.lead;
     view.dateLabel.text = item.dateStr;
+    
     [view setNeedsLayout];
     [view layoutIfNeeded];
+}
+
+- (void)handlePlayAction:(id)sender
+{
+    if ([sender isKindOfClass:[WSMaterial class]]) {
+        WSMaterial *item = sender;
+        [self.audioPlayer playFromURL:[NSURL URLWithString:item.mp3UrlStr]];
+    }
 }
 
 #pragma mark - Table view data source

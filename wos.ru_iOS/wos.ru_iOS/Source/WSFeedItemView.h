@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-
-@class WSAudioFeedItemView;
+#import "WSAudioFeedItemView.h"
 
 @interface WSFeedItemView : UIView {
     CALayer *_gradientBgViewLayer;
