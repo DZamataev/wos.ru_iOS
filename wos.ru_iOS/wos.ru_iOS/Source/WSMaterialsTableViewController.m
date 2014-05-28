@@ -150,15 +150,13 @@
     if (indexPath.row == 0) {
         /* Best materials can be displayed as carousel or as collection */
         cell = [tableView dequeueReusableCellWithIdentifier:@"BestCell" forIndexPath:indexPath];
-        NSInteger tag = 111;
-        UIView *containerView = [cell viewWithTag:tag];
+        UIView *containerView = [cell viewWithTag:1];
         
         if (self.isNeedToDisplayBestMaterialsAsCarouselInsteadOfCollection) {
             if (_shouldReinitBestMaterials) {
                 _shouldReinitBestMaterials = NO;
                 [_bestMaterialsCarouselVC.view removeFromSuperview];
                 _bestMaterialsCarouselVC.view.frame = containerView.bounds;
-                _bestMaterialsCarouselVC.view.tag = tag;
                 _bestMaterialsCarouselVC.itemSize = containerView.bounds.size;
                 [containerView setTranslatesAutoresizingMaskIntoConstraints:NO];
                 [_bestMaterialsCarouselVC.view setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -184,10 +182,7 @@
                 _shouldReinitBestMaterials = NO;
                 [_bestMaterialsCollectionVC.view removeFromSuperview];
                 _bestMaterialsCollectionVC.view.frame = containerView.bounds;
-                _bestMaterialsCollectionVC.view.tag = tag;
-                _bestMaterialsCollectionVC.pagingPageWidth = containerView.bounds.size.width;
-                [containerView setTranslatesAutoresizingMaskIntoConstraints:NO];
-                [_bestMaterialsCollectionVC.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+//                _bestMaterialsCollectionVC.pagingPageWidth = containerView.bounds.size.width;
                 [containerView addSubview:_bestMaterialsCollectionVC.view];
                 
                 NSDictionary *viewsDictionary = @{@"view":_bestMaterialsCollectionVC.view};
@@ -204,28 +199,30 @@
                 [containerView addConstraints:constraintsArray];
             }
             [_bestMaterialsCollectionVC.collectionView reloadData];
-            [_bestMaterialsCollectionVC scrollToNearestPageInScrollView:_bestMaterialsCollectionVC.collectionView];
+//            [_bestMaterialsCollectionVC scrollToNearestPageInScrollView:_bestMaterialsCollectionVC.collectionView];
         }
     }
     /* Micro materials controller is displayed in cell 1 */
     else if (indexPath.row == 1) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"MicroCell" forIndexPath:indexPath];
-        NSInteger tag = 112;
-        UIView *containerView = [cell viewWithTag:tag];
+        UIView *containerView = [cell viewWithTag:1];
         if (_shouldReinitMicroMaterials) {
             _shouldReinitMicroMaterials = NO;
             [_microMaterialsCollectionVC.view removeFromSuperview];
             _microMaterialsCollectionVC.view.frame = containerView.bounds;
-            _microMaterialsCollectionVC.view.tag = tag;
             [containerView addSubview:_microMaterialsCollectionVC.view];
         }
         [_microMaterialsCollectionVC.collectionView reloadData];
     }
     /* Other materials are displayed in remaining cells starting from 2 */
     else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"ItemCell" forIndexPath:indexPath];
-        int index = indexPath.row - 2;
+        long index = indexPath.row - 2;
         WSMaterial *item = self.materialsModel.materialsCollection.otherMaterials[index];
+        NSString *cellIdentifier = @"ItemCell";
+        if (item.mp3UrlStr && item.mp3UrlStr.length > 0) {
+            cellIdentifier = @"AudioItemCell";
+        }
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
         WSFeedItemView *view = (WSFeedItemView*)[cell viewWithTag:1];
         [self setValuesInItemView:view fromMaterial:item onCalculateHeightFlag:NO];
         [cell setNeedsLayout];
@@ -257,8 +254,12 @@
     else {
         int index = indexPath.row - 2;
         WSMaterial *item = self.materialsModel.materialsCollection.otherMaterials[index];
+        NSString *cellIdentifier = @"ItemCell";
+        if (item.mp3UrlStr && item.mp3UrlStr.length > 0) {
+            cellIdentifier = @"AudioItemCell";
+        }
         
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ItemCell"];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
         
         WSFeedItemView *view = (WSFeedItemView*)[cell viewWithTag:1];
         

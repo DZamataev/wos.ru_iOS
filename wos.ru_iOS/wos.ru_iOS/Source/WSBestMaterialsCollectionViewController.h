@@ -12,6 +12,5 @@
 
 @interface WSBestMaterialsCollectionViewController : UICollectionViewController
 @property WSMaterialsModel *materialsModel;
-@property CGFloat pagingPageWidth;
--(void)scrollToNearestPageInScrollView:(UIScrollView*)scrollView;
+//-(void)scrollToNearestPageInScrollView:(UIScrollView*)scrollView;
 @end

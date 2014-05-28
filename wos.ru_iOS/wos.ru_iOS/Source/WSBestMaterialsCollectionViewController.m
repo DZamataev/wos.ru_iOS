@@ -61,8 +61,8 @@
     WSMaterial *material = self.materialsModel.materialsCollection.bestMaterials[indexPath.row];
     WSBestMaterialView *view = (WSBestMaterialView*)[cell viewWithTag:1];
     
-    CGRect cellRect = cell.frame;
-    cell.frame = CGRectMake(cellRect.origin.x, cellRect.origin.y, _pagingPageWidth, cellRect.size.height);
+//    CGRect cellRect = cell.frame;
+//    cell.frame = CGRectMake(cellRect.origin.x, cellRect.origin.y, _pagingPageWidth, cellRect.size.height);
     
     NSMutableAttributedString *mas = [[NSMutableAttributedString alloc] initWithString:material.title];
     NSRange wholeStringRange = NSMakeRange(0, mas.length);
@@ -78,7 +78,7 @@
     UIImageView __weak *imageViewToAnimate = view.imageView;
     [view.imageView setImageWithURL:[NSURL URLWithString:material.pictureStr]
                           completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-                              if (imageViewToAnimate) {
+                              if (imageViewToAnimate && cacheType == SDImageCacheTypeNone) {
                                   imageViewToAnimate.alpha = 0.0f;
                                   [UIView animateWithDuration:0.3f delay:0.0f options:0 animations:^{
                                       imageViewToAnimate.alpha = 1.0f;
@@ -96,58 +96,58 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WSOpenUrlNotification" object:Nil userInfo:@{@"url":[NSURL URLWithString:material.urlStr]}];
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    return CGSizeMake(self.pagingPageWidth, self.view.bounds.size.height);
-}
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return CGSizeMake(self.pagingPageWidth, self.view.bounds.size.height);
+//}
 
 
 #pragma mark - UIScrollView delegate
 // here is our custom paging
-
-- (void) scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    
-    CGFloat pageWidth = self.pagingPageWidth;
-    
-    _currentPage = floor((self.collectionView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-}
-
--(void) scrollViewWillEndDragging:(UIScrollView*)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint*)targetContentOffset {
-    
-    CGFloat pageWidth = self.pagingPageWidth;
-    int newPage = _currentPage;
-    
-    if (velocity.x == 0) // slow dragging not lifting finger
-    {
-        newPage = floor((targetContentOffset->x - pageWidth / 2) / pageWidth) + 1;
-        
-        *targetContentOffset = CGPointMake(newPage * pageWidth, targetContentOffset->y);
-    }
-    else if (fabsf(velocity.x) < 1.0f)
-    {
-        newPage = velocity.x > 0 ? _currentPage + 1 : _currentPage - 1;
-        
-        if (newPage < 0)
-            newPage = 0;
-        if (newPage > self.collectionView.contentSize.width / pageWidth)
-            newPage = ceil(self.collectionView.contentSize.width / pageWidth) - 1.0;
-        
-        *targetContentOffset = CGPointMake(newPage * pageWidth, targetContentOffset->y);
-    }
-}
-
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    [self scrollToNearestPageInScrollView:scrollView];
-}
-
--(void)scrollToNearestPageInScrollView:(UIScrollView*)scrollView
-{
-    CGFloat pageWidth = self.pagingPageWidth;
-    int newPage = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    CGFloat targetX = newPage * pageWidth;
-    
-    [scrollView scrollRectToVisible:CGRectMake(targetX, 0, scrollView.bounds.size.width, scrollView.bounds.size.height) animated:YES];
-}
+//
+//- (void) scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+//    
+//    CGFloat pageWidth = self.pagingPageWidth;
+//    
+//    _currentPage = floor((self.collectionView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+//}
+//
+//-(void) scrollViewWillEndDragging:(UIScrollView*)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint*)targetContentOffset {
+//    
+//    CGFloat pageWidth = self.pagingPageWidth;
+//    int newPage = _currentPage;
+//    
+//    if (velocity.x == 0) // slow dragging not lifting finger
+//    {
+//        newPage = floor((targetContentOffset->x - pageWidth / 2) / pageWidth) + 1;
+//        
+//        *targetContentOffset = CGPointMake(newPage * pageWidth, targetContentOffset->y);
+//    }
+//    else if (fabsf(velocity.x) < 1.0f)
+//    {
+//        newPage = velocity.x > 0 ? _currentPage + 1 : _currentPage - 1;
+//        
+//        if (newPage < 0)
+//            newPage = 0;
+//        if (newPage > self.collectionView.contentSize.width / pageWidth)
+//            newPage = ceil(self.collectionView.contentSize.width / pageWidth) - 1.0;
+//        
+//        *targetContentOffset = CGPointMake(newPage * pageWidth, targetContentOffset->y);
+//    }
+//}
+//
+//-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+//{
+//    [self scrollToNearestPageInScrollView:scrollView];
+//}
+//
+//-(void)scrollToNearestPageInScrollView:(UIScrollView*)scrollView
+//{
+//    CGFloat pageWidth = self.pagingPageWidth;
+//    int newPage = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+//    CGFloat targetX = newPage * pageWidth;
+//    
+//    [scrollView scrollRectToVisible:CGRectMake(targetX, 0, scrollView.bounds.size.width, scrollView.bounds.size.height) animated:YES];
+//}
 
 @end
