@@ -130,8 +130,13 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
                                                  name:FSAudioStreamMetaDataNotification
                                                object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleRemoteControlReceivedWithEventNotification:)
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleRemoteControlReceivedWithEventNotification:)
                                                  name:@"WSRemoteControlRecevedWithEventNotification" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleAnotherAudioPlaybackInApplicationBecomesActiveNotification:)
+                                                 name:@"WSAnotherAudioPlaybackInApplicationBecomesActive" object:nil];
 }
 
 - (void)unsignListeningNotifications
@@ -140,6 +145,7 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionInterruptionNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionMediaServicesWereResetNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"WSRemoteControlRecevedWithEventNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"WSAnotherAudioPlaybackInApplicationBecomesActive" object:nil];
 }
 
 #pragma mark - Notification handlers
@@ -148,6 +154,14 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 {
     UIEvent *event = notification.userInfo[@"event"];
     [self remoteControlReceivedWithEvent:event];
+}
+
+- (void)handleAnotherAudioPlaybackInApplicationBecomesActiveNotification:(NSNotification *)notification
+{
+    NSString *source = notification.userInfo[@"source"];
+    if (![source isEqualToString:@"radio"]) {
+        [self pauseAudioPlayback];
+    }
 }
 
 -(void)handleMediaServicesWereReset:(NSNotification*)notification{
@@ -531,6 +545,7 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
             
             if (shouldPlay) {
                 [self.audioStream playFromURL:self.currentStream.url];
+                [self postBecomeActiveNotification];
                 self.playButton.isPaused = NO; // force change the button state
             }
             else {
@@ -549,7 +564,9 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 
 - (void)resumeAudioPlayback {
     [self.audioStream play];
+    [self postBecomeActiveNotification];
     [self performSelector:@selector(updateControls) withObject:nil afterDelay:0.1f];
+    
 }
 
 - (void)playNextStation {
@@ -679,10 +696,18 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WSSlideToFeed" object:nil userInfo:nil];
 }
 
+- (void)postBecomeActiveNotification
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"WSAnotherAudioPlaybackInApplicationBecomesActive"
+                                                        object:nil
+                                                      userInfo:@{@"source":@"radio"}];
+}
+
 #pragma mark - WSPlayButtonDelegate protocol implementation
 
 - (BOOL)playButtonShouldPlay:(WSPlayButton*)playButton {
     [self.audioStream play];
+    [self postBecomeActiveNotification];
     return YES;
 }
 

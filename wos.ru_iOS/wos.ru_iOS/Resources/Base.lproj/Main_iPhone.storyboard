@@ -644,7 +644,7 @@
                                                             </constraints>
                                                         </view>
                                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9vx-K4-MFp">
-                                                            <rect key="frame" x="88" y="-1" width="232" height="44"/>
+                                                            <rect key="frame" x="88" y="-1" width="234" height="44"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <gestureRecognizers/>
                                                             <color key="minimumTrackTintColor" red="1" green="0.79607843140000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -656,7 +656,7 @@
                                                     <constraints>
                                                         <constraint firstItem="ARY-sq-6tn" firstAttribute="top" secondItem="EfK-fq-z1Q" secondAttribute="top" id="6fT-iZ-rxh"/>
                                                         <constraint firstAttribute="bottom" secondItem="9vx-K4-MFp" secondAttribute="bottom" constant="1" id="9Xd-pv-exH"/>
-                                                        <constraint firstAttribute="trailing" secondItem="9vx-K4-MFp" secondAttribute="trailing" constant="2" id="AyC-mm-9YO"/>
+                                                        <constraint firstAttribute="trailing" secondItem="9vx-K4-MFp" secondAttribute="trailing" id="AyC-mm-9YO"/>
                                                         <constraint firstItem="nzT-Bt-6PC" firstAttribute="leading" secondItem="ARY-sq-6tn" secondAttribute="trailing" constant="2" id="BQF-t7-TRc"/>
                                                         <constraint firstItem="9vx-K4-MFp" firstAttribute="top" secondItem="EfK-fq-z1Q" secondAttribute="top" constant="-1" id="Gez-Gd-LSU"/>
                                                         <constraint firstItem="9vx-K4-MFp" firstAttribute="leading" secondItem="nzT-Bt-6PC" secondAttribute="trailing" constant="2" id="M8u-x5-5aY"/>

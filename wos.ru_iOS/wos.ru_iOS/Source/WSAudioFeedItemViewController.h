@@ -21,5 +21,6 @@
     NSURL *_currentlyPlayingURL;
 }
 @property (nonatomic, strong) AVPlayer *audioPlayer;
+@property (nonatomic, strong) id playbackTimeObserver;
 - (BOOL)isCurrentlyPlayingURL:(NSURL*)url;
 @end
