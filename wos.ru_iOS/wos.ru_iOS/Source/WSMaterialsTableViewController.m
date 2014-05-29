@@ -34,7 +34,7 @@
     self.isNeedToDisplayBestMaterialsAsCarouselInsteadOfCollection = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
 //    self.isNeedToDisplayBestMaterialsAsCarouselInsteadOfCollection = YES;
     
-    self.audioPlayer = [[FSAudioStream alloc] init];
+    _audioController = [[WSAudioFeedItemViewController alloc] init];
     
     _refreshControl = [[UIRefreshControl alloc] init];
     [_refreshControl addTarget:self
@@ -127,17 +127,10 @@
         [view setLightGradientHidden:!item.isSeen animated:NO];
         
         if (view.audioView) {
-            WSMaterialsTableViewController __weak *weakSelf = self;
-            [view.audioView setPlayCallback:^{
-                if (weakSelf) {
-                    [weakSelf handlePlayAction:item];
-                }
-            }];
-            [view.audioView setPauseCallback:^{
-                if (weakSelf) {
-                    [weakSelf.audioPlayer stop];
-                }
-            }];
+            NSURL *urlToPlay = [NSURL URLWithString:item.mp3UrlStr];
+            view.audioView.isPaused = ![_audioController isCurrentlyPlayingURL:urlToPlay];
+            view.audioView.streamUrl = urlToPlay;
+            view.audioView.delegate = _audioController;
         }
     }
     view.titleLabel.text = item.title;
@@ -146,14 +139,6 @@
     
     [view setNeedsLayout];
     [view layoutIfNeeded];
-}
-
-- (void)handlePlayAction:(id)sender
-{
-    if ([sender isKindOfClass:[WSMaterial class]]) {
-        WSMaterial *item = sender;
-        [self.audioPlayer playFromURL:[NSURL URLWithString:item.mp3UrlStr]];
-    }
 }
 
 #pragma mark - Table view data source

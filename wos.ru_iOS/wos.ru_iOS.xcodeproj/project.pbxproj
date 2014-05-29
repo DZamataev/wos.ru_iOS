@@ -46,6 +46,7 @@
 		92A6A73F1906C20B0047E8C1 /* WSBestMaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A6A73E1906C20B0047E8C1 /* WSBestMaterialView.m */; };
 		92A88DFF1906D59E008926FB /* ico-comments.png in Resources */ = {isa = PBXBuildFile; fileRef = 92A88DFD1906D59E008926FB /* ico-comments.png */; };
 		92A88E001906D59E008926FB /* ico-views.png in Resources */ = {isa = PBXBuildFile; fileRef = 92A88DFE1906D59E008926FB /* ico-views.png */; };
+		92A92C0219373886004F57C3 /* WSAudioFeedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A92C0119373886004F57C3 /* WSAudioFeedItemViewController.m */; };
 		92AE499818891C13003D5572 /* ws_sleeping_timer_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92AE499718891C13003D5572 /* ws_sleeping_timer_icon@2x.png */; };
 		92AE499E188953F5003D5572 /* WSSleepTimerSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AE499D188953F5003D5572 /* WSSleepTimerSelectionCell.m */; };
 		92AE49A118895440003D5572 /* WSSleepTimerPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AE49A018895440003D5572 /* WSSleepTimerPickerViewController.m */; };
@@ -154,6 +155,8 @@
 		92A6A73E1906C20B0047E8C1 /* WSBestMaterialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSBestMaterialView.m; path = Source/WSBestMaterialView.m; sourceTree = "<group>"; };
 		92A88DFD1906D59E008926FB /* ico-comments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-comments.png"; sourceTree = "<group>"; };
 		92A88DFE1906D59E008926FB /* ico-views.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-views.png"; sourceTree = "<group>"; };
+		92A92C0019373886004F57C3 /* WSAudioFeedItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSAudioFeedItemViewController.h; path = Source/WSAudioFeedItemViewController.h; sourceTree = "<group>"; };
+		92A92C0119373886004F57C3 /* WSAudioFeedItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSAudioFeedItemViewController.m; path = Source/WSAudioFeedItemViewController.m; sourceTree = "<group>"; };
 		92AE499718891C13003D5572 /* ws_sleeping_timer_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ws_sleeping_timer_icon@2x.png"; sourceTree = "<group>"; };
 		92AE499C188953F5003D5572 /* WSSleepTimerSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSSleepTimerSelectionCell.h; sourceTree = "<group>"; };
 		92AE499D188953F5003D5572 /* WSSleepTimerSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSSleepTimerSelectionCell.m; sourceTree = "<group>"; };
@@ -365,6 +368,8 @@
 				929ABF0219056BBF00F7BF5D /* WSMaterialsViewController.m */,
 				925778AB19058219002A1B3C /* WSMaterialsTableViewController.h */,
 				925778AC19058219002A1B3C /* WSMaterialsTableViewController.m */,
+				92A92C0019373886004F57C3 /* WSAudioFeedItemViewController.h */,
+				92A92C0119373886004F57C3 /* WSAudioFeedItemViewController.m */,
 				92A6A73A1906C18F0047E8C1 /* WSBestMaterialsCollectionViewController.h */,
 				92A6A73B1906C18F0047E8C1 /* WSBestMaterialsCollectionViewController.m */,
 				92CC14E0192F4CCC006C99BE /* WSBestMaterialsCarouselViewController.h */,
@@ -676,6 +681,7 @@
 				92B1BF09187EC4C20027EAEC /* WSRadioViewController.m in Sources */,
 				922A0BCA18645B7A00802757 /* main.m in Sources */,
 				925778AA19057A39002A1B3C /* WSMaterialsObjectManager.m in Sources */,
+				92A92C0219373886004F57C3 /* WSAudioFeedItemViewController.m in Sources */,
 				92AE49A118895440003D5572 /* WSSleepTimerPickerViewController.m in Sources */,
 				92B1BF1918800F360027EAEC /* WSVolumeSlider.m in Sources */,
 				92C3978518856167001E46FA /* WSRadioMapper.m in Sources */,

@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <UIImageView+WebCache.h>
-#import <FSAudioStream.h>
 #import "WSMaterialsModel.h"
 #import "WSFeedItemView.h"
 #import "WSMicroMaterialsCollectionViewController.h"
 #import "WSBestMaterialsCollectionViewController.h"
 #import "WSBestMaterialsCarouselViewController.h"
+#import "WSAudioFeedItemViewController.h"
 #import "WSSplitViewControllerManager.h"
 
 @interface WSMaterialsTableViewController : UITableViewController
@@ -23,12 +23,14 @@
     WSBestMaterialsCarouselViewController *_bestMaterialsCarouselVC;
     WSMicroMaterialsCollectionViewController *_microMaterialsCollectionVC;
     
+    WSAudioFeedItemViewController *_audioController;
+    
     BOOL _shouldReinitBestMaterials;
     BOOL _shouldReinitMicroMaterials;
     
     UIImage *_placeholderImage;
+    
 }
-@property FSAudioStream *audioPlayer;
 @property WSMaterialsModel *materialsModel;
 @property BOOL isNeedToDisplayBestMaterialsAsCarouselInsteadOfCollection;
 @end
