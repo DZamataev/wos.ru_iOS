@@ -65,23 +65,19 @@
 {
     if (![notification.userInfo[@"source"] isEqualToString:@"feed"] ||
         ![notification.userInfo[@"streamUrlString"] isEqualToString:_currentlyPlayingURL.absoluteString]) {
-        [self pauseInView:nil];
+        [self pauseInView:self.audioView];
     }
 }
 
 - (void)configureView:(WSAudioFeedItemView*)view withStreamUrl:(NSURL*)streamUrl
 {
+    self.audioView = view;
     view.delegate = self;
     view.streamUrl = streamUrl;
     
-    view.isPaused =  self.audioPlayer.state != STKAudioPlayerStatePlaying;
+    view.isPaused =  self.audioPlayer.state == STKAudioPlayerStatePlaying || self.audioPlayer.state == STKAudioPlayerStateBuffering ? NO : YES;
     
-    if (view.isPaused) {
-        [view endUpdatingSlider];
-    }
-    else {
-        [view startUpdatingSlider];
-    }
+    [view startUpdatingSlider];
     
     NSDictionary *storedValuesForUrl = [_storedValues objectForKey:streamUrl.absoluteString];
     if (storedValuesForUrl) {
@@ -96,11 +92,24 @@
     }
 }
 
+- (void)prepareViewForReuse:(WSAudioFeedItemView*)view
+{
+    view.delegate = nil;
+    view.streamUrl = nil;
+    view.isPaused = YES;
+    view.progressBar.value = 0;
+    view.timePosLabel.text = [self getStringFromTime:0];
+    view.durationLabel.text = [self getStringFromTime:0];
+    [view endUpdatingSlider];
+    self.audioView = nil;
+}
+
 - (void)playInView:(WSAudioFeedItemView*)view
 {
     if (!self.audioPlayer)
     {
         self.audioPlayer = [[STKAudioPlayer alloc] init];
+        self.audioPlayer.delegate = self;
     }
     
     if (!_currentlyPlayingURL) {
@@ -112,7 +121,6 @@
     }
     
     [view startUpdatingSlider];
-    view.isPaused = NO;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WSAnotherAudioPlaybackInApplicationBecomesActive"
                                                         object:nil
@@ -124,7 +132,6 @@
 {
     [_audioPlayer pause];
     [view endUpdatingSlider];
-    view.isPaused = YES;
 }
 
 -(BOOL)audioView:(WSAudioFeedItemView*)sender shouldChangeToPaused:(BOOL)isPaused progressBar:(UISlider *)slider
@@ -153,7 +160,7 @@
 -(void)audioView:(WSAudioFeedItemView *)sender progressBarUpdateTick:(UISlider *)slider
 {
     [self updateTimeInView:sender];
-    
+
     [_storedValues setObject:@{@"slider":[NSNumber numberWithFloat:slider.value],
                                       @"progress":sender.timePosLabel.text,
                                       @"duration":sender.durationLabel.text}
@@ -165,9 +172,9 @@
     if (_currentlyPlayingURL) {
         [self pauseInView:sender];
         [self.audioPlayer seekToTime:slider.value * self.audioPlayer.duration];
+        [self updateTimeInView:sender];
     }
     
-    [self updateTimeInView:sender];
     
     [_storedValues setObject:@{@"slider":[NSNumber numberWithFloat:slider.value],
                                       @"progress":sender.timePosLabel.text,
@@ -199,6 +206,73 @@
     }
     return [NSString stringWithFormat:@"%@:%02d", minutesString, secondsLeft];
 }
+
+#pragma mark - STKAudioPlayerDelegate
+/// Raised when an item has started playing
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer didStartPlayingQueueItemId:(NSObject*)queueItemId
+{
+    
+}
+
+/// Raised when an item has finished buffering (may or may not be the currently playing item)
+/// This event may be raised multiple times for the same item if seek is invoked on the player
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer didFinishBufferingSourceWithQueueItemId:(NSObject*)queueItemId
+{
+    
+}
+
+/// Raised when the state of the player has changed
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer stateChanged:(STKAudioPlayerState)state previousState:(STKAudioPlayerState)previousState
+{
+    switch (state) {
+        case STKAudioPlayerStateReady:
+        case STKAudioPlayerStatePaused:
+        case STKAudioPlayerStateStopped:
+        case STKAudioPlayerStateError:
+        case STKAudioPlayerStateDisposed:
+        {
+            self.audioView.isPaused = YES;
+        }
+            break;
+            
+        case STKAudioPlayerStatePlaying:
+        case STKAudioPlayerStateBuffering:
+        {
+            self.audioView.isPaused = NO;
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+/// Raised when an item has finished playing
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer didFinishPlayingQueueItemId:(NSObject*)queueItemId withReason:(STKAudioPlayerStopReason)stopReason andProgress:(double)progress andDuration:(double)duration
+{
+    [self.audioPlayer stop];
+    _currentlyPlayingURL = nil;
+}
+
+/// Raised when an unexpected and possibly unrecoverable error has occured (usually best to recreate the STKAudioPlauyer)
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer unexpectedError:(STKAudioPlayerErrorCode)errorCode
+{
+    
+}
+
+//@optional
+/// Optionally implemented to get logging information from the STKAudioPlayer (used internally for debugging)
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer logInfo:(NSString*)line
+{
+    
+}
+
+/// Raised when items queued items are cleared (usually because of a call to play, setDataSource or stop)
+-(void) audioPlayer:(STKAudioPlayer*)audioPlayer didCancelQueuedItems:(NSArray*)queuedItems
+{
+    
+}
+
 
 /*
 #pragma mark - Navigation

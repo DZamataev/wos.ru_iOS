@@ -11,12 +11,13 @@
 #import "WSAudioFeedItemView.h"
 #import "WSMaterial.h"
 
-@interface WSAudioFeedItemViewController : UIViewController <WSAudioFeedItemViewDelegate>
+@interface WSAudioFeedItemViewController : UIViewController <WSAudioFeedItemViewDelegate, STKAudioPlayerDelegate>
 {
     NSURL *_currentlyPlayingURL;
     NSMutableDictionary *_storedValues;
 }
 @property (nonatomic, strong) STKAudioPlayer *audioPlayer;
-- (BOOL)isCurrentlyPlayingURL:(NSURL*)url;
+@property (nonatomic, strong) WSAudioFeedItemView *audioView;
 - (void)configureView:(WSAudioFeedItemView*)view withStreamUrl:(NSURL*)streamUrl;
+- (void)prepareViewForReuse:(WSAudioFeedItemView*)view;
 @end

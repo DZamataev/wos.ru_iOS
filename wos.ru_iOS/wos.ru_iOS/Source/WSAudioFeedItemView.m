@@ -46,34 +46,23 @@
     UIImage *maxTrackImg = [[WSAudioFeedItemView imageWithColor:[UIColor clearColor] ofSize:CGSizeMake(10, self.frame.size.height)] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
     [self.progressBar setMaximumTrackImage:maxTrackImg forState:UIControlStateNormal];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(handleAnotherAudioPlaybackInApplicationBecomesActiveNotification:)
-                                                 name:@"WSAnotherAudioPlaybackInApplicationBecomesActive"
-                                               object:nil];
 }
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:@"WSAnotherAudioPlaybackInApplicationBecomesActive"
-                                                  object:nil];
 }
 
-- (void)handleAnotherAudioPlaybackInApplicationBecomesActiveNotification:(NSNotification*)notification
-{
-    if (![notification.userInfo[@"streamUrlString"] isEqualToString:self.streamUrl.absoluteString]) {
-        self.isPaused = YES;
-        [self endUpdatingSlider];
-    }
-}
 - (void)setIsPaused:(BOOL)isPaused
 {
+    BOOL changed = _isPaused != isPaused;
     _isPaused = isPaused;
-    if (_isPaused) {
-        [self.playButton setImage:[UIImage imageNamed:@"playbutton"] forState:UIControlStateNormal];
-    }
-    else {
-        [self.playButton setImage:[UIImage imageNamed:@"pausebutton"] forState:UIControlStateNormal];
+    if (changed) {
+        if (_isPaused) {
+            [self.playButton setImage:[UIImage imageNamed:@"playbutton"] forState:UIControlStateNormal];
+        }
+        else {
+            [self.playButton setImage:[UIImage imageNamed:@"pausebutton"] forState:UIControlStateNormal];
+        }
     }
 }
 

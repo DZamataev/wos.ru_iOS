@@ -246,6 +246,20 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    /* Other materials are displayed in remaining cells starting from 2 */
+    if (indexPath.row > 2) {
+        long index = indexPath.row - 2;
+        WSMaterial *item = self.materialsModel.materialsCollection.otherMaterials[index];
+        if (item.mp3UrlStr && item.mp3UrlStr.length > 0) {
+            WSFeedItemView *view = (WSFeedItemView*)[cell viewWithTag:1];
+            WSAudioFeedItemViewController *audioController = [_audioControllers objectForKey:item.identifier];
+            [audioController prepareViewForReuse:view.audioView];
+        }
+    }
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CGFloat result = 44.0f;

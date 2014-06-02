@@ -85,31 +85,29 @@
     
     [self.layer addSublayer:_pauseLayer];
     
-    [self hidePauseShowPlay];
+    _playLayer.opacity = 1.0f;
+    _pauseLayer.opacity = 0.0f;
 }
 
-- (void)hidePauseShowPlay
+- (void)hideLayer:(CALayer*)layer
 {
-    [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
-        _pauseLayer.opacity = 0.0f;
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
-            _playLayer.opacity = 1.0f;
-        } completion:nil];
-    }];
-    
+    [UIView animateWithDuration:0.5f
+                          delay:0.0f
+                        options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+                         layer.opacity = 0.0f;
+                     } completion:nil];
 }
 
-- (void)hidePlayShowPause
+- (void)showLayer:(CALayer*)layer
 {
-    [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
-        _playLayer.opacity = 0.0f;
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationOptionAllowAnimatedContent | UIViewAnimationOptionBeginFromCurrentState animations:^{
-            _pauseLayer.opacity = 1.0f;
-        } completion:nil];
-    }];
-    
+    [UIView animateWithDuration:0.5f
+                          delay:0.0f
+                        options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+                         layer.opacity = 1.0f;
+                     }
+                     completion:nil];
 }
 
 - (void)animateBgSmaller
@@ -196,10 +194,8 @@
     
     if (shouldChange) {
         self.isPaused = !self.isPaused;
-        self.isPaused ? [self hidePauseShowPlay] : [self hidePlayShowPause];
-        
-        [self animateBgBigger];
     }
+    [self animateBgBigger];
 }
 
 #pragma mark - Properties
@@ -221,8 +217,18 @@
 }
 
 - (void)setIsPaused:(BOOL)isPaused {
+    BOOL changed = _isPaused != isPaused;
     _isPaused = isPaused;
-    self.isPaused ? [self hidePauseShowPlay] : [self hidePlayShowPause];
+    if (changed) {
+        if (isPaused) {
+            [self hideLayer:_pauseLayer];
+            [self showLayer:_playLayer];
+        }
+        else {
+            [self hideLayer:_playLayer];
+            [self showLayer:_pauseLayer];
+        }
+    }
 }
 
 - (BOOL)isPaused {

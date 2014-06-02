@@ -194,32 +194,33 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
             switch ([seccondReason integerValue]) {
                 case AVAudioSessionInterruptionOptionShouldResume:
                     //          Indicates that the audio session is active and immediately ready to be used. Your app can resume the audio operation that was interrupted.
-                    [self resumeAudioPlayback];
+                    
+//                    [self resumeAudioPlayback]; // causes problems
                     break;
                 default:
                     [self pauseAudioPlayback];
                     break;
             }
         }
-        
-        if ([notification.name isEqualToString:@"AVAudioSessionDidBeginInterruptionNotification"]) {
-            //      Posted after an interruption in your audio session occurs.
-            //      This notification is posted on the main thread of your app. There is no userInfo dictionary.
-        }
-        if ([notification.name isEqualToString:@"AVAudioSessionDidEndInterruptionNotification"]) {
-            //      Posted after an interruption in your audio session ends.
-            //      This notification is posted on the main thread of your app. There is no userInfo dictionary.
-        }
-        if ([notification.name isEqualToString:@"AVAudioSessionInputDidBecomeAvailableNotification"]) {
-            //      Posted when an input to the audio session becomes available.
-            //      This notification is posted on the main thread of your app. There is no userInfo dictionary.
-        }
-        if ([notification.name isEqualToString:@"AVAudioSessionInputDidBecomeUnavailableNotification"]) {
-            //      Posted when an input to the audio session becomes unavailable.
-            //      This notification is posted on the main thread of your app. There is no userInfo dictionary.
-        }
-        
-    };
+    }
+    
+    if ([notification.name isEqualToString:@"AVAudioSessionDidBeginInterruptionNotification"]) {
+        //      Posted after an interruption in your audio session occurs.
+        //      This notification is posted on the main thread of your app. There is no userInfo dictionary.
+    }
+    if ([notification.name isEqualToString:@"AVAudioSessionDidEndInterruptionNotification"]) {
+        //      Posted after an interruption in your audio session ends.
+        //      This notification is posted on the main thread of your app. There is no userInfo dictionary.
+    }
+    if ([notification.name isEqualToString:@"AVAudioSessionInputDidBecomeAvailableNotification"]) {
+        //      Posted when an input to the audio session becomes available.
+        //      This notification is posted on the main thread of your app. There is no userInfo dictionary.
+    }
+    if ([notification.name isEqualToString:@"AVAudioSessionInputDidBecomeUnavailableNotification"]) {
+        //      Posted when an input to the audio session becomes unavailable.
+        //      This notification is posted on the main thread of your app. There is no userInfo dictionary.
+    }
+    
     NSLog(@"handleInterruption: %@ reason %@",[notification name],reasonStr);
 }
 
@@ -268,33 +269,39 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
         case kFsAudioStreamRetrievingURL:
             WSDebugLog(@"Retrieving URL...");
             // can pause
+            self.playButton.isPaused = NO;
             break;
             
         case kFsAudioStreamStopped:
             WSDebugLog(@"Audio stream playback stopped");
             // can play
+            self.playButton.isPaused = YES;
             break;
             
         case kFsAudioStreamBuffering:
             
             WSDebugLog(@"Retrieving URL...");
             // can pause
+            self.playButton.isPaused = NO;
             break;
             
         case kFsAudioStreamSeeking:
             
             WSDebugLog(@"Retrieving URL...");
             // can pause
+            self.playButton.isPaused = NO;
             break;
             
         case kFsAudioStreamPlaying:
             WSDebugLog(@"Playing...");
             // can pause
+            self.playButton.isPaused = NO;
             break;
             
         case kFsAudioStreamFailed:
             WSDebugLog(@"Audio stream payback failed...");
             // can play
+            self.playButton.isPaused = YES;
             break;
     }
 }
@@ -543,14 +550,12 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
             
             self.currentStream = stream;
             
+            [self.audioStream setUrl:self.currentStream.url];
             if (shouldPlay) {
-                [self.audioStream playFromURL:self.currentStream.url];
-                [self postBecomeActiveNotification];
-                self.playButton.isPaused = NO; // force change the button state
+                [self resumeAudioPlayback];
             }
             else {
-                [self.audioStream setUrl:self.currentStream.url];
-                [self.audioStream stop];
+                [self pauseAudioPlayback];
             }
         }
     }
@@ -559,14 +564,11 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 
 - (void)pauseAudioPlayback {
     [self.audioStream stop];
-    [self performSelector:@selector(updateControls) withObject:nil afterDelay:0.1f];
 }
 
 - (void)resumeAudioPlayback {
     [self.audioStream play];
     [self postBecomeActiveNotification];
-    [self performSelector:@selector(updateControls) withObject:nil afterDelay:0.1f];
-    
 }
 
 - (void)playNextStation {
@@ -595,15 +597,6 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
             [self selectedRadiostationAtIndex:index andPlayIt:YES];
             [self updateNowPlayingInfoWithStation:self.currentStation andStream:self.currentStream];
         }
-    }
-}
-
-- (void)updateControls {
-    if (self.audioStream.isPlaying ) {
-        self.playButton.isPaused = NO;
-    }
-    else {
-        self.playButton.isPaused = YES;
     }
 }
 
@@ -706,14 +699,13 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 #pragma mark - WSPlayButtonDelegate protocol implementation
 
 - (BOOL)playButtonShouldPlay:(WSPlayButton*)playButton {
-    [self.audioStream play];
-    [self postBecomeActiveNotification];
-    return YES;
+    [self resumeAudioPlayback];
+    return NO;
 }
 
 - (BOOL)playButtonShouldPause:(WSPlayButton*)playButton {
-    [self.audioStream stop];
-    return YES;
+    [self pauseAudioPlayback];
+    return NO;
 }
 
 
