@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <STKAudioPlayer.h>
+#import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
 #import "WSAudioFeedItemView.h"
 #import "WSMaterial.h"
 
@@ -18,6 +20,8 @@
 }
 @property (nonatomic, strong) STKAudioPlayer *audioPlayer;
 @property (nonatomic, strong) WSAudioFeedItemView *audioView;
+@property (nonatomic, strong) NSString *artistInfo;
+@property (nonatomic, assign) BOOL ignoreRemoteControlEvents;
 - (void)configureView:(WSAudioFeedItemView*)view withStreamUrl:(NSURL*)streamUrl;
 - (void)prepareViewForReuse:(WSAudioFeedItemView*)view;
 @end

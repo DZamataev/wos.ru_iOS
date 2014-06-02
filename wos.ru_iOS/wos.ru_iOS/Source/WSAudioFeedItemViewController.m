@@ -36,14 +36,39 @@
 - (void)commonInit
 {
     _storedValues = [NSMutableDictionary new];
+    self.ignoreRemoteControlEvents = YES;
+    
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(handleRouteChange:)
+                                                 name: AVAudioSessionRouteChangeNotification
+                                               object: session];
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(handleInterruption:)
+                                                 name: AVAudioSessionInterruptionNotification
+                                               object: session];
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(handleMediaServicesWereReset:)
+                                                 name: AVAudioSessionMediaServicesWereResetNotification
+                                               object: session];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleRemoteControlReceivedWithEventNotification:)
+                                                 name:@"WSRemoteControlRecevedWithEventNotification" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(handleAnotherAudioPlaybackInApplicationBecomesActiveNotification:)
                                                  name:@"WSAnotherAudioPlaybackInApplicationBecomesActive"
                                                object:nil];
+    
 }
 
 - (void)dealloc
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionRouteChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionInterruptionNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionMediaServicesWereResetNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:@"WSRemoteControlRecevedWithEventNotification"
+                                                  object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:@"WSAnotherAudioPlaybackInApplicationBecomesActive"
                                                   object:nil];
@@ -61,12 +86,189 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)handleRemoteControlReceivedWithEventNotification:(NSNotification *)notification
+{
+    UIEvent *event = notification.userInfo[@"event"];
+    [self remoteControlReceivedWithEvent:event];
+}
+
 - (void)handleAnotherAudioPlaybackInApplicationBecomesActiveNotification:(NSNotification*)notification
 {
     if (![notification.userInfo[@"source"] isEqualToString:@"feed"] ||
         ![notification.userInfo[@"streamUrlString"] isEqualToString:_currentlyPlayingURL.absoluteString]) {
         [self pauseInView:self.audioView];
+        self.ignoreRemoteControlEvents = YES;
     }
+}
+
+-(void)handleMediaServicesWereReset:(NSNotification*)notification{
+    //  If the media server resets for any reason, handle this notification to reconfigure audio or do any housekeeping, if necessary
+    //    • No userInfo dictionary for this notification
+    //      • Audio streaming objects are invalidated (zombies)
+    //      • Handle this notification by fully reconfiguring audio
+    NSLog(@"handleMediaServicesWereReset: %@ ",[notification name]);
+    [self pauseInView:self.audioView];
+}
+
+-(void)handleInterruption:(NSNotification*)notification{
+    NSInteger reason = 0;
+    NSString* reasonStr=@"";
+    if ([notification.name isEqualToString:AVAudioSessionInterruptionNotification]) {
+        //Posted when an audio interruption occurs.
+        reason = [[[notification userInfo] objectForKey:@" AVAudioSessionInterruptionTypeKey"] integerValue];
+        if (reason == AVAudioSessionInterruptionTypeBegan) {
+            //       Audio has stopped, already inactive
+            //       Change state of UI, etc., to reflect non-playing state
+            [self pauseInView:self.audioView];
+        }
+        
+        if (reason == AVAudioSessionInterruptionTypeEnded) {
+            //       Make session active
+            //       Update user interface
+            //       AVAudioSessionInterruptionOptionShouldResume option
+            reasonStr = @"AVAudioSessionInterruptionTypeEnded";
+            NSNumber* seccondReason = [[notification userInfo] objectForKey:@"AVAudioSessionInterruptionOptionKey"] ;
+            switch ([seccondReason integerValue]) {
+                case AVAudioSessionInterruptionOptionShouldResume:
+                    //          Indicates that the audio session is active and immediately ready to be used. Your app can resume the audio operation that was interrupted.
+                    
+                    //          [self resumeAudioPlayback]; // causes problems
+                    break;
+                default:
+                    [self pauseInView:self.audioView];
+                    break;
+            }
+        }
+    }
+    
+    if ([notification.name isEqualToString:@"AVAudioSessionDidBeginInterruptionNotification"]) {
+        //      Posted after an interruption in your audio session occurs.
+        //      This notification is posted on the main thread of your app. There is no userInfo dictionary.
+    }
+    if ([notification.name isEqualToString:@"AVAudioSessionDidEndInterruptionNotification"]) {
+        //      Posted after an interruption in your audio session ends.
+        //      This notification is posted on the main thread of your app. There is no userInfo dictionary.
+    }
+    if ([notification.name isEqualToString:@"AVAudioSessionInputDidBecomeAvailableNotification"]) {
+        //      Posted when an input to the audio session becomes available.
+        //      This notification is posted on the main thread of your app. There is no userInfo dictionary.
+    }
+    if ([notification.name isEqualToString:@"AVAudioSessionInputDidBecomeUnavailableNotification"]) {
+        //      Posted when an input to the audio session becomes unavailable.
+        //      This notification is posted on the main thread of your app. There is no userInfo dictionary.
+    }
+    
+    NSLog(@"handleInterruption: %@ reason %@",[notification name],reasonStr);
+}
+
+-(void)handleRouteChange:(NSNotification*)notification{
+    NSString* seccReason = @"";
+    NSInteger  reason = [[[notification userInfo] objectForKey:AVAudioSessionRouteChangeReasonKey] integerValue];
+    //  AVAudioSessionRouteDescription* prevRoute = [[notification userInfo] objectForKey:AVAudioSessionRouteChangePreviousRouteKey];
+    switch (reason) {
+        case AVAudioSessionRouteChangeReasonNoSuitableRouteForCategory:
+            seccReason = @"The route changed because no suitable route is now available for the specified category.";
+            break;
+        case AVAudioSessionRouteChangeReasonWakeFromSleep:
+            seccReason = @"The route changed when the device woke up from sleep.";
+            break;
+        case AVAudioSessionRouteChangeReasonOverride:
+            seccReason = @"The output route was overridden by the app.";
+            break;
+        case AVAudioSessionRouteChangeReasonCategoryChange:
+            seccReason = @"The category of the session object changed.";
+            break;
+        case AVAudioSessionRouteChangeReasonOldDeviceUnavailable:
+            seccReason = @"The previous audio output path is no longer available.";
+            break;
+        case AVAudioSessionRouteChangeReasonNewDeviceAvailable:
+            seccReason = @"A preferred new audio output path is now available.";
+            break;
+        case AVAudioSessionRouteChangeReasonUnknown:
+        default:
+            seccReason = @"The reason for the change is unknown.";
+            break;
+    }
+    
+    NSLog(@"handleRouteChange: %@ reason %@", [notification name], seccReason);
+    
+    if (reason == AVAudioSessionRouteChangeReasonOldDeviceUnavailable) {
+        NSLog(@"will pause playback beacause device became unavailable (usually headphones unplugged)");
+        
+        [self pauseInView:self.audioView];
+    }
+}
+
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event
+{
+    if (self.ignoreRemoteControlEvents) {
+        return;
+    }
+    
+    NSString *log = @"Remote Control received with event: ";
+    NSString *eventName = nil;
+    //if it is a remote control event handle it correctly
+    if (event.type == UIEventTypeRemoteControl) {
+        switch (event.subtype) {
+            case UIEventSubtypeRemoteControlPlay:
+                eventName = @"UIEventSubtypeRemoteControlPlay";
+                [self playInView:self.audioView];
+                break;
+                
+            case UIEventSubtypeRemoteControlPause:
+                eventName = @"UIEventSubtypeRemoteControlPause";
+                [self pauseInView:self.audioView];
+                break;
+                
+            case UIEventSubtypeRemoteControlTogglePlayPause:
+                eventName = @"UIEventSubtypeRemoteControlTogglePlayPause";
+                if (self.audioPlayer.state == STKAudioPlayerStatePlaying || self.audioPlayer.state == STKAudioPlayerStateBuffering) {
+                    [self pauseInView:self.audioView];
+                }
+                else {
+                    [self playInView:self.audioView];
+                }
+                break;
+                
+            case UIEventSubtypeRemoteControlNextTrack:
+                eventName = @"UIEventSubtypeRemoteControlNextTrack";
+                break;
+                
+            case UIEventSubtypeRemoteControlPreviousTrack:
+                eventName = @"UIEventSubtypeRemoteControlPreviousTrack";
+                break;
+                
+            case UIEventSubtypeRemoteControlStop:
+                eventName = @"UIEventSubtypeRemoteControlStop";
+                break;
+                
+            case UIEventSubtypeRemoteControlBeginSeekingBackward:
+                eventName = @"UIEventSubtypeRemoteControlBeginSeekingBackward";
+                break;
+                
+            case UIEventSubtypeRemoteControlBeginSeekingForward:
+                eventName = @"UIEventSubtypeRemoteControlBeginSeekingForward";
+                break;
+                
+            case UIEventSubtypeRemoteControlEndSeekingBackward:
+                eventName = @"UIEventSubtypeRemoteControlEndSeekingBackward";
+                break;
+                
+            case UIEventSubtypeRemoteControlEndSeekingForward:
+                eventName = @"UIEventSubtypeRemoteControlEndSeekingForward";
+                break;
+                
+            case UIEventSubtypeNone:
+                eventName = @"UIEventSubtypeNone";
+                break;
+                
+            default:
+                break;
+        }
+    }
+    NSLog(@"%@%@", log, eventName);
 }
 
 - (void)configureView:(WSAudioFeedItemView*)view withStreamUrl:(NSURL*)streamUrl
@@ -121,6 +323,10 @@
     }
     
     [view startUpdatingSlider];
+    
+    self.ignoreRemoteControlEvents = NO;
+    
+    [WSAudioFeedItemViewController updateNowPlayingInfo:self.artistInfo];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WSAnotherAudioPlaybackInApplicationBecomesActive"
                                                         object:nil
@@ -271,6 +477,27 @@
 -(void) audioPlayer:(STKAudioPlayer*)audioPlayer didCancelQueuedItems:(NSArray*)queuedItems
 {
     
+}
+
+#pragma mark - Static helpers
+
++ (void)updateNowPlayingInfo:(NSString*)artist
+{
+    if (artist) {
+        NSDictionary *nowPlaying = @{MPMediaItemPropertyArtist: [WSAudioFeedItemViewController applicationBundleDisplayName]
+                                     ,MPMediaItemPropertyAlbumTitle: artist
+                                     //,MPMediaItemPropertyPlaybackDuration: [NSNumber numberWithDouble:320.0]
+                                     //,MPNowPlayingInfoPropertyPlaybackRate:@1.0f
+                                     //, MPMediaItemPropertyArtwork:[songMedia valueForProperty:MPMediaItemPropertyArtwork]
+                                     };
+        
+        [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:nowPlaying];
+    }
+}
+
++ (NSString*)applicationBundleDisplayName
+{
+    return [[[NSBundle mainBundle] localizedInfoDictionary] objectForKey:(NSString*)kCFBundleNameKey];
 }
 
 

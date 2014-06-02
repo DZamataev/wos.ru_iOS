@@ -135,6 +135,7 @@
                     [_audioControllers setObject:audioController forKey:item.identifier];
                 }
                 [audioController configureView:view.audioView withStreamUrl:urlToPlay];
+                audioController.artistInfo = item.title;
             }
         }
     }

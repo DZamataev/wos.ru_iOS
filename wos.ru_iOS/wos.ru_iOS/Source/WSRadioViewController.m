@@ -49,6 +49,8 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     _radioModel = [[WSRadioModel alloc] init];
     self.audioStream = [[FSAudioStream alloc] init];
 
+    self.ignoreRemoteControlEvents = NO;
+    
     self.accentColor = [WSRootViewController defaultAccentColor];
     
     for (id vc in self.childViewControllers) {
@@ -144,6 +146,9 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionRouteChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionInterruptionNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionMediaServicesWereResetNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:FSAudioStreamStateChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:FSAudioStreamErrorNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:FSAudioStreamMetaDataNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"WSRemoteControlRecevedWithEventNotification" object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"WSAnotherAudioPlaybackInApplicationBecomesActive" object:nil];
 }
@@ -161,6 +166,7 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
     NSString *source = notification.userInfo[@"source"];
     if (![source isEqualToString:@"radio"]) {
         [self pauseAudioPlayback];
+        self.ignoreRemoteControlEvents = YES;
     }
 }
 
@@ -429,6 +435,10 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 
 - (void)remoteControlReceivedWithEvent:(UIEvent *)event
 {
+    if (self.ignoreRemoteControlEvents) {
+        return;
+    }
+    
     NSString *log = @"Remote Control received with event: ";
     NSString *eventName = nil;
     //if it is a remote control event handle it correctly
@@ -568,6 +578,7 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 
 - (void)resumeAudioPlayback {
     [self.audioStream play];
+    self.ignoreRemoteControlEvents = NO;
     [self postBecomeActiveNotification];
 }
 

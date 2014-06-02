@@ -71,11 +71,13 @@ extern NSString * const WSSleepTimerPickedInterval_UserDefaultsKey;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *sleepTimerViewContainerTopOffsetConstraint;
 @property (strong, nonatomic) NSTimer *sleepTimer;
 
+/* other */
+@property (assign, nonatomic) BOOL ignoreRemoteControlEvents;
+
 - (IBAction)toggleSleepTimerOverlayVisibility:(id)sender;
 
 - (void)pauseAudioPlayback;
 - (void)resumeAudioPlayback;
-- (void)updateControls;
 
 + (void)clearSleepTimerPickedIntervalKey;
 @end
