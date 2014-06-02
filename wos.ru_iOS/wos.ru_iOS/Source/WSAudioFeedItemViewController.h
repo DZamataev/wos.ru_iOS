@@ -7,20 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
-#import <AVFoundation/AVFoundation.h>
-#import <MediaPlayer/MediaPlayer.h>
-#import <CoreMedia/CoreMedia.h>
-#import <AVFoundation/AVAsset.h>
+#import <STKAudioPlayer.h>
 #import "WSAudioFeedItemView.h"
 #import "WSMaterial.h"
 
 @interface WSAudioFeedItemViewController : UIViewController <WSAudioFeedItemViewDelegate>
 {
-    WSAudioFeedItemView *_currentlyPlayingAudioFeedItemView;
     NSURL *_currentlyPlayingURL;
+    NSMutableDictionary *_storedValues;
 }
-@property (nonatomic, strong) AVPlayer *audioPlayer;
-@property (nonatomic, strong) id playbackTimeObserver;
+@property (nonatomic, strong) STKAudioPlayer *audioPlayer;
 - (BOOL)isCurrentlyPlayingURL:(NSURL*)url;
+- (void)configureView:(WSAudioFeedItemView*)view withStreamUrl:(NSURL*)streamUrl;
 @end

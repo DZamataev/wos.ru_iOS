@@ -35,6 +35,7 @@
 
 - (void)commonInit
 {
+    _storedValues = [NSMutableDictionary new];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(handleAnotherAudioPlaybackInApplicationBecomesActiveNotification:)
                                                  name:@"WSAnotherAudioPlaybackInApplicationBecomesActive"
@@ -62,117 +63,134 @@
 
 - (void)handleAnotherAudioPlaybackInApplicationBecomesActiveNotification:(NSNotification*)notification
 {
-    if (![notification.userInfo[@"source"] isEqualToString:@"feed"])
-        [self pause];
+    if (![notification.userInfo[@"source"] isEqualToString:@"feed"] ||
+        ![notification.userInfo[@"streamUrlString"] isEqualToString:_currentlyPlayingURL.absoluteString]) {
+        [self pauseInView:nil];
+    }
 }
 
-- (BOOL)isCurrentlyPlayingURL:(NSURL*)url
+- (void)configureView:(WSAudioFeedItemView*)view withStreamUrl:(NSURL*)streamUrl
 {
-    NSString *urlStr = [url absoluteString];
-    NSString *curUrlStr = [_currentlyPlayingURL absoluteString];
-    return [urlStr isEqualToString:curUrlStr];
+    view.delegate = self;
+    view.streamUrl = streamUrl;
+    
+    view.isPaused =  self.audioPlayer.state != STKAudioPlayerStatePlaying;
+    
+    if (view.isPaused) {
+        [view endUpdatingSlider];
+    }
+    else {
+        [view startUpdatingSlider];
+    }
+    
+    NSDictionary *storedValuesForUrl = [_storedValues objectForKey:streamUrl.absoluteString];
+    if (storedValuesForUrl) {
+        view.progressBar.value = [storedValuesForUrl[@"slider"] floatValue];
+        view.timePosLabel.text = storedValuesForUrl[@"progress"];
+        view.durationLabel.text = storedValuesForUrl[@"duration"];
+    }
+    else {
+        view.progressBar.value = 0;
+        view.timePosLabel.text = [self getStringFromTime:0];
+        view.durationLabel.text = [self getStringFromTime:0];
+    }
 }
 
-- (void)playInView:(WSAudioFeedItemView*)view fromTime:(CMTime)time
+- (void)playInView:(WSAudioFeedItemView*)view
 {
     if (!self.audioPlayer)
     {
-        self.audioPlayer = [[AVPlayer alloc] init];
-        CMTime interval = CMTimeMake(33, 1000);
-        WSAudioFeedItemViewController __weak *weakSelf = self;
-        self.playbackTimeObserver =
-        [self.audioPlayer addPeriodicTimeObserverForInterval:interval
-                                                       queue:nil
-                                                  usingBlock: ^(CMTime time) {
-                                                      if (weakSelf) {
-                                                          [weakSelf updateTime:time];
-                                                      }
-                                                  }];
+        self.audioPlayer = [[STKAudioPlayer alloc] init];
     }
     
-    [_audioPlayer pause];
-    _currentlyPlayingAudioFeedItemView.isPaused = YES;
+    if (!_currentlyPlayingURL) {
+        _currentlyPlayingURL = view.streamUrl;
+        [self.audioPlayer playURL:_currentlyPlayingURL];
+    }
+    else {
+        [self.audioPlayer resume];
+    }
     
-    _currentlyPlayingURL = view.streamUrl;
-    _currentlyPlayingAudioFeedItemView = view;
-    
-    _currentlyPlayingAudioFeedItemView.isPaused = NO;
-    
-    AVURLAsset *asset = [AVURLAsset assetWithURL:view.streamUrl];
-    view.durationLabel.text = [self getStringFromCMTime:asset.duration];
-    AVPlayerItem *item = [AVPlayerItem playerItemWithAsset: asset];
-    [_audioPlayer replaceCurrentItemWithPlayerItem:item];
-    [_audioPlayer seekToTime:time];
-    [_audioPlayer play];
+    [view startUpdatingSlider];
+    view.isPaused = NO;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WSAnotherAudioPlaybackInApplicationBecomesActive"
                                                         object:nil
-                                                      userInfo:@{@"source":@"feed"}];
+                                                      userInfo:@{@"source":@"feed",
+                                                                 @"streamUrlString" : _currentlyPlayingURL.absoluteString}];
 }
 
-- (void)pause
+- (void)pauseInView:(WSAudioFeedItemView*)view
 {
-    _currentlyPlayingAudioFeedItemView.isPaused = YES;
-    _currentlyPlayingURL = nil;
-    _currentlyPlayingAudioFeedItemView = nil;
     [_audioPlayer pause];
+    [view endUpdatingSlider];
+    view.isPaused = YES;
 }
 
-- (void)updateTime:(CMTime)time
-{
-    CMTime endTime = CMTimeConvertScale (self.audioPlayer.currentItem.asset.duration, self.audioPlayer.currentTime.timescale, kCMTimeRoundingMethod_RoundHalfAwayFromZero);
-    if (CMTimeCompare(endTime, kCMTimeZero) != 0) {
-        double normalizedTime = (double) self.audioPlayer.currentTime.value / (double) endTime.value;
-        _currentlyPlayingAudioFeedItemView.progressBar.value = normalizedTime;
-    }
-    _currentlyPlayingAudioFeedItemView.timePosLabel.text = [self getStringFromCMTime:self.audioPlayer.currentTime];
-}
-
-- (CMTime)timeOnSlider:(UISlider*)slider inView:(WSAudioFeedItemView*)view
-{
-    AVURLAsset *asset = [AVURLAsset assetWithURL:view.streamUrl];
-    CMTime seekTime = CMTimeMakeWithSeconds(
-                                            slider.value * (double)asset.duration.value / (double)asset.duration.timescale,
-                                            asset.duration.timescale
-                                            );
-    return seekTime;
-}
-
--(BOOL)audioView:(id)sender shouldChangeToPaused:(BOOL)isPaused progressBar:(UISlider *)slider
+-(BOOL)audioView:(WSAudioFeedItemView*)sender shouldChangeToPaused:(BOOL)isPaused progressBar:(UISlider *)slider
 {
     if (isPaused) {
         // should pause
-        [self pause];
+        [self pauseInView:sender];
     }
     else {
         // should play
-        [self playInView:sender fromTime:[self timeOnSlider:slider inView:sender]];
+        [self playInView:sender];
     }
     return YES;
 }
 
--(void)audioView:(id)sender progressBarChanged:(UISlider *)slider
+- (void)updateTimeInView:(WSAudioFeedItemView*)view
 {
-    if (sender == _currentlyPlayingAudioFeedItemView) {
-        [self.audioPlayer pause];
-        [self.audioPlayer seekToTime:[self timeOnSlider:slider inView:sender]];
-    }
+    view.progressBar.value = self.audioPlayer.progress / self.audioPlayer.duration;
+    view.timePosLabel.text = [self getStringFromTime:self.audioPlayer.progress];
+    view.durationLabel.text = [self getStringFromTime:self.audioPlayer.duration];
 }
 
--(void)audioView:(id)sender proressBarChangeEnded:(UISlider *)slider
+
+#pragma mark - WSAuidoFeedItemView delegate protocol implementation
+
+-(void)audioView:(WSAudioFeedItemView *)sender progressBarUpdateTick:(UISlider *)slider
 {
-    if (sender == _currentlyPlayingAudioFeedItemView) {
-        [self.audioPlayer play];
-    }
-    else {
-        [self playInView:sender fromTime:[self timeOnSlider:slider inView:sender]];
-    }
+    [self updateTimeInView:sender];
+    
+    [_storedValues setObject:@{@"slider":[NSNumber numberWithFloat:slider.value],
+                                      @"progress":sender.timePosLabel.text,
+                                      @"duration":sender.durationLabel.text}
+                             forKey:sender.streamUrl.absoluteString];
 }
 
-- (NSString*)getStringFromCMTime:(CMTime)time
+-(void)audioView:(WSAudioFeedItemView*)sender progressBarChanged:(UISlider *)slider
 {
-    Float64 duration = CMTimeGetSeconds(time);
-    int secondsDuration = (int)duration;
+    if (_currentlyPlayingURL) {
+        [self pauseInView:sender];
+        [self.audioPlayer seekToTime:slider.value * self.audioPlayer.duration];
+    }
+    
+    [self updateTimeInView:sender];
+    
+    [_storedValues setObject:@{@"slider":[NSNumber numberWithFloat:slider.value],
+                                      @"progress":sender.timePosLabel.text,
+                                      @"duration":sender.durationLabel.text}
+                             forKey:sender.streamUrl.absoluteString];
+}
+
+-(void)audioView:(WSAudioFeedItemView*)sender proressBarChangeEnded:(UISlider *)slider
+{
+    [self playInView:sender];
+    
+    [self updateTimeInView:sender];
+    
+    [_storedValues setObject:@{@"slider":[NSNumber numberWithFloat:slider.value],
+                                      @"progress":sender.timePosLabel.text,
+                                      @"duration":sender.durationLabel.text}
+                             forKey:sender.streamUrl.absoluteString];
+}
+
+
+- (NSString*)getStringFromTime:(double)time
+{
+    int secondsDuration = (int)time;
     int minutes = secondsDuration/60;
     int secondsLeft = secondsDuration%60;
     NSString *minutesString = [NSString stringWithFormat:@"%d", minutes];

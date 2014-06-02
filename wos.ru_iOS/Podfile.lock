@@ -14,10 +14,14 @@ PODS:
     - NJKWebViewProgress
   - Chivy/Core-no-arc (0.2.0):
     - Chivy/Core
-  - CocoaLumberjack (1.8.1):
+  - CocoaLumberjack (1.9.0):
+    - CocoaLumberjack/CLI
+    - CocoaLumberjack/Core
     - CocoaLumberjack/Extensions
-  - CocoaLumberjack/Core (1.8.1)
-  - CocoaLumberjack/Extensions (1.8.1):
+  - CocoaLumberjack/CLI (1.9.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Core (1.9.0)
+  - CocoaLumberjack/Extensions (1.9.0):
     - CocoaLumberjack/Core
   - DKNavbarBackButton (0.1.4):
     - DKNavbarBackButton/core
@@ -62,6 +66,7 @@ PODS:
     - SDWebImage/Core
   - SDWebImage/Core (3.6)
   - SOCKit (1.1)
+  - StreamingKit (0.1.22)
   - TransitionKit (2.0.0)
   - Wabbly (1.0.0):
     - Wabbly/Core
@@ -80,6 +85,7 @@ DEPENDENCIES:
   - RestKit (= 0.22.0)
   - RKXMLDictionarySerialization
   - SDWebImage
+  - StreamingKit
   - Wabbly
   - XMLDictionary
 
@@ -97,7 +103,7 @@ SPEC CHECKSUMS:
   ARSafariActivity: fe7568751149f1e19deaf9e62f4bfa1a29344ffe
   AutoScrollLabel: 605c089cd1ab7522b9dd11ef4e355979a245bae7
   Chivy: e92938970f750d0c2ec47b745c25b2b4ffff6282
-  CocoaLumberjack: 9d198d6e19909b3b113a38c5f06f7bb8eedd0427
+  CocoaLumberjack: 5766cdd1d0a24bcf15a133c6023747346bf786dd
   DKNavbarBackButton: 6df85c1407f7c89d4be03e10ab1f87f3c712ffd5
   FreeStreamer: 4bba63773708bc4555b9f80727f017cab94c2710
   iCarousel: c35a4e26b3c657847e523012b593e70ddbd84992
@@ -111,6 +117,7 @@ SPEC CHECKSUMS:
   RKXMLDictionarySerialization: 8b39e011e400974c6536b00b48bcbb70147e8309
   SDWebImage: c6989652c1cdf27cbdf3f56957e2030f825af5bc
   SOCKit: d8d0dd3688ae1026c12367570da8fa8e1a6980fb
+  StreamingKit: 9894c3c16383989d37172ca9b024591e6d51f0c5
   TransitionKit: 7877021649a734f3239ed176b7967de29321dcf3
   Wabbly: bedb22f9e71ee4d143ba903a9f5a7de95a6013fc
   XMLDictionary: 735e81b9a043e220b0d24e9d4f16719606f2e0fc

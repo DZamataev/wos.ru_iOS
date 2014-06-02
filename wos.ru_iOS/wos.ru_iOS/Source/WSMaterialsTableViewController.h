@@ -22,14 +22,13 @@
     WSBestMaterialsCollectionViewController *_bestMaterialsCollectionVC;
     WSBestMaterialsCarouselViewController *_bestMaterialsCarouselVC;
     WSMicroMaterialsCollectionViewController *_microMaterialsCollectionVC;
-    
-    WSAudioFeedItemViewController *_audioController;
-    
+        
     BOOL _shouldReinitBestMaterials;
     BOOL _shouldReinitMicroMaterials;
     
     UIImage *_placeholderImage;
     
+    NSMutableDictionary *_audioControllers;
 }
 @property WSMaterialsModel *materialsModel;
 @property BOOL isNeedToDisplayBestMaterialsAsCarouselInsteadOfCollection;

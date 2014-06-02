@@ -45,8 +45,27 @@
     // max track image
     UIImage *maxTrackImg = [[WSAudioFeedItemView imageWithColor:[UIColor clearColor] ofSize:CGSizeMake(10, self.frame.size.height)] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
     [self.progressBar setMaximumTrackImage:maxTrackImg forState:UIControlStateNormal];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleAnotherAudioPlaybackInApplicationBecomesActiveNotification:)
+                                                 name:@"WSAnotherAudioPlaybackInApplicationBecomesActive"
+                                               object:nil];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:@"WSAnotherAudioPlaybackInApplicationBecomesActive"
+                                                  object:nil];
+}
+
+- (void)handleAnotherAudioPlaybackInApplicationBecomesActiveNotification:(NSNotification*)notification
+{
+    if (![notification.userInfo[@"streamUrlString"] isEqualToString:self.streamUrl.absoluteString]) {
+        self.isPaused = YES;
+        [self endUpdatingSlider];
+    }
+}
 - (void)setIsPaused:(BOOL)isPaused
 {
     _isPaused = isPaused;
@@ -56,6 +75,26 @@
     else {
         [self.playButton setImage:[UIImage imageNamed:@"pausebutton"] forState:UIControlStateNormal];
     }
+}
+
+- (void)startUpdatingSlider
+{
+    self.sliderUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                              target:self
+                                                            selector:@selector(updateSlider)
+                                                            userInfo:nil
+                                                             repeats:YES];
+}
+
+- (void)endUpdatingSlider
+{
+    [self.sliderUpdateTimer invalidate];
+    self.sliderUpdateTimer = nil;
+}
+
+- (void)updateSlider
+{
+    [self.delegate audioView:self progressBarUpdateTick:self.progressBar];
 }
 
 - (IBAction)buttonTouched:(id)sender

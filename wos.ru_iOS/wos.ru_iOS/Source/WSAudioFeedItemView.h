@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class WSAudioFeedItemView;
+
 @protocol WSAudioFeedItemViewDelegate <NSObject>
--(void)audioView:(id)sender progressBarChanged:(UISlider*)slider;
--(void)audioView:(id)sender proressBarChangeEnded:(UISlider*)slider;
--(BOOL)audioView:(id)sender shouldChangeToPaused:(BOOL)isPaused progressBar:(UISlider*)slider;
+-(void)audioView:(WSAudioFeedItemView*)sender progressBarChanged:(UISlider*)slider;
+-(void)audioView:(WSAudioFeedItemView*)sender proressBarChangeEnded:(UISlider*)slider;
+-(void)audioView:(WSAudioFeedItemView*)sender progressBarUpdateTick:(UISlider*)slider;
+-(BOOL)audioView:(WSAudioFeedItemView*)sender shouldChangeToPaused:(BOOL)isPaused progressBar:(UISlider*)slider;
 @end
 
 @interface WSAudioFeedItemView : UIView
@@ -20,9 +23,12 @@
 @property (nonatomic, strong) IBOutlet UILabel *timePosLabel;
 @property (nonatomic, strong) IBOutlet UILabel *durationLabel;
 @property (nonatomic, strong) IBOutlet UISlider *progressBar;
+@property (nonatomic, strong) NSTimer *sliderUpdateTimer;
 @property (nonatomic, assign) BOOL isPaused;
 @property (nonatomic, assign) id <WSAudioFeedItemViewDelegate> delegate;
 - (IBAction)buttonTouched:(id)sender;
+- (void)startUpdatingSlider;
+- (void)endUpdatingSlider;
 @end
 
 

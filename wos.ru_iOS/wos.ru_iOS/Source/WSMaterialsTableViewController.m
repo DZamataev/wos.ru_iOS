@@ -34,7 +34,7 @@
     self.isNeedToDisplayBestMaterialsAsCarouselInsteadOfCollection = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
 //    self.isNeedToDisplayBestMaterialsAsCarouselInsteadOfCollection = YES;
     
-    _audioController = [[WSAudioFeedItemViewController alloc] init];
+    _audioControllers = [NSMutableDictionary new];
     
     _refreshControl = [[UIRefreshControl alloc] init];
     [_refreshControl addTarget:self
@@ -128,9 +128,14 @@
         
         if (view.audioView) {
             NSURL *urlToPlay = [NSURL URLWithString:item.mp3UrlStr];
-            view.audioView.isPaused = ![_audioController isCurrentlyPlayingURL:urlToPlay];
-            view.audioView.streamUrl = urlToPlay;
-            view.audioView.delegate = _audioController;
+            if (urlToPlay) {
+                WSAudioFeedItemViewController *audioController = [_audioControllers objectForKey:item.identifier];
+                if (!audioController) {
+                    audioController = [[WSAudioFeedItemViewController alloc] init];
+                    [_audioControllers setObject:audioController forKey:item.identifier];
+                }
+                [audioController configureView:view.audioView withStreamUrl:urlToPlay];
+            }
         }
     }
     view.titleLabel.text = item.title;

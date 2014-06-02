@@ -10,5 +10,6 @@ pod 'ILTranslucentView', :git => 'https://github.com/ivoleko/ILTranslucentView.g
 pod 'XMLDictionary'
 pod 'RKXMLDictionarySerialization'
 pod 'FreeStreamer'
+pod 'StreamingKit'
 pod 'AutoScrollLabel'
 pod 'iCarousel'
