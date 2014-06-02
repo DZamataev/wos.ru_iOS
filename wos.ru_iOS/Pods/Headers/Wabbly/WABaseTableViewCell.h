@@ -1,0 +1,1 @@
+../../Wabbly/Core/Source/WABaseTableViewCell.h

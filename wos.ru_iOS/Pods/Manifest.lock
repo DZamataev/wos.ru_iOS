@@ -1,0 +1,125 @@
+PODS:
+  - AFNetworking (1.3.4)
+  - ARChromeActivity (1.0.1)
+  - ARSafariActivity (0.0.1)
+  - AutoScrollLabel (0.2.1)
+  - Chivy (0.2.0):
+    - Chivy/Core
+  - Chivy/Core (0.2.0):
+    - ARChromeActivity
+    - ARSafariActivity
+    - AutoScrollLabel
+    - Chivy/Core-no-arc
+    - DKNavbarBackButton
+    - NJKWebViewProgress
+  - Chivy/Core-no-arc (0.2.0):
+    - Chivy/Core
+  - CocoaLumberjack (1.9.0):
+    - CocoaLumberjack/CLI
+    - CocoaLumberjack/Core
+    - CocoaLumberjack/Extensions
+  - CocoaLumberjack/CLI (1.9.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Core (1.9.0)
+  - CocoaLumberjack/Extensions (1.9.0):
+    - CocoaLumberjack/Core
+  - DKNavbarBackButton (0.1.4):
+    - DKNavbarBackButton/core
+  - DKNavbarBackButton/core (0.1.4)
+  - FreeStreamer (2.1.2)
+  - iCarousel (1.7.6)
+  - ILTranslucentView (0.0.1)
+  - ISO8601DateFormatterValueTransformer (0.5.0):
+    - RKValueTransformers (~> 1.0.0)
+  - NJKWebViewProgress (0.2.3):
+    - NJKWebViewProgress/Core
+    - NJKWebViewProgress/ProgressView
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
+  - OHAttributedLabel (3.5.4)
+  - RegexKitLite (4.0)
+  - RestKit (0.22.0):
+    - RestKit/Core
+  - RestKit/Core (0.22.0):
+    - RestKit/CoreData
+    - RestKit/Network
+    - RestKit/ObjectMapping
+  - RestKit/CoreData (0.22.0)
+  - RestKit/Network (0.22.0):
+    - AFNetworking (~> 1.3.0)
+    - RestKit/ObjectMapping
+    - RestKit/Support
+    - SOCKit
+  - RestKit/ObjectMapping (0.22.0):
+    - ISO8601DateFormatterValueTransformer (~> 0.5.0)
+    - RestKit/Support
+    - RKValueTransformers (~> 1.0.1)
+  - RestKit/Support (0.22.0):
+    - TransitionKit (= 2.0.0)
+  - RKValueTransformers (1.0.1)
+  - RKXMLDictionarySerialization (1.1.0):
+    - RKXMLDictionarySerialization/Core
+  - RKXMLDictionarySerialization/Core (1.1.0):
+    - RestKit
+    - XMLDictionary (>= 1.4)
+  - SDWebImage (3.6):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.6)
+  - SOCKit (1.1)
+  - StreamingKit (0.1.22)
+  - TransitionKit (2.0.0)
+  - Wabbly (1.0.0):
+    - Wabbly/Core
+  - Wabbly/Core (1.0.0)
+  - XMLDictionary (1.4)
+
+DEPENDENCIES:
+  - AutoScrollLabel
+  - Chivy (from `https://github.com/DZamataev/Chivy.git`, branch `master`)
+  - CocoaLumberjack
+  - FreeStreamer
+  - iCarousel
+  - ILTranslucentView (from `https://github.com/ivoleko/ILTranslucentView.git`, branch `master`)
+  - OHAttributedLabel
+  - RegexKitLite
+  - RestKit (= 0.22.0)
+  - RKXMLDictionarySerialization
+  - SDWebImage
+  - StreamingKit
+  - Wabbly
+  - XMLDictionary
+
+EXTERNAL SOURCES:
+  Chivy:
+    :branch: master
+    :git: https://github.com/DZamataev/Chivy.git
+  ILTranslucentView:
+    :branch: master
+    :git: https://github.com/ivoleko/ILTranslucentView.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4
+  ARChromeActivity: 2349cc1ad719665cf58914dc7a6b0f6636549e80
+  ARSafariActivity: fe7568751149f1e19deaf9e62f4bfa1a29344ffe
+  AutoScrollLabel: 605c089cd1ab7522b9dd11ef4e355979a245bae7
+  Chivy: e92938970f750d0c2ec47b745c25b2b4ffff6282
+  CocoaLumberjack: 5766cdd1d0a24bcf15a133c6023747346bf786dd
+  DKNavbarBackButton: 6df85c1407f7c89d4be03e10ab1f87f3c712ffd5
+  FreeStreamer: 4bba63773708bc4555b9f80727f017cab94c2710
+  iCarousel: c35a4e26b3c657847e523012b593e70ddbd84992
+  ILTranslucentView: e749bfe8f9659b122c0b384a6533feb9850ce32a
+  ISO8601DateFormatterValueTransformer: a7e1ecf4380d0b561306ced1a3f01bd5f65d2213
+  NJKWebViewProgress: 721b57080c840c76f70ff6c2dda4f836ee1b27c1
+  OHAttributedLabel: fcf1d1245b4c8d2df94da91369b1474901d7fb14
+  RegexKitLite: 761b4944f23cb8fe20697b2e47be0689fd832c09
+  RestKit: 6b82f862848cbe026ddc297985aa9a766b7e1a38
+  RKValueTransformers: 994503e34bffdbe0159ff6b497290dd1f8d5657f
+  RKXMLDictionarySerialization: 8b39e011e400974c6536b00b48bcbb70147e8309
+  SDWebImage: c6989652c1cdf27cbdf3f56957e2030f825af5bc
+  SOCKit: d8d0dd3688ae1026c12367570da8fa8e1a6980fb
+  StreamingKit: 9894c3c16383989d37172ca9b024591e6d51f0c5
+  TransitionKit: 7877021649a734f3239ed176b7967de29321dcf3
+  Wabbly: bedb22f9e71ee4d143ba903a9f5a7de95a6013fc
+  XMLDictionary: 735e81b9a043e220b0d24e9d4f16719606f2e0fc
+
+COCOAPODS: 0.32.1
