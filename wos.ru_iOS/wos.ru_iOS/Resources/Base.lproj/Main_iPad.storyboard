@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="xis-10-pQJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="xis-10-pQJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -555,7 +555,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0FE-0v-8dN" customClass="WSCopyableAutoScrollLabel">
-                                <rect key="frame" x="2" y="236" width="316" height="20"/>
+                                <rect key="frame" x="2" y="240" width="316" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -575,15 +575,15 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qme-xh-iQh" customClass="WSVolumeSlider">
-                                <rect key="frame" x="52" y="267" width="216" height="20"/>
+                                <rect key="frame" x="52" y="278" width="216" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="L8J-Oe-eFZ"/>
+                                    <constraint firstAttribute="height" constant="16" id="L8J-Oe-eFZ"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ws_volume_slider_higher_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="L4j-HG-E59">
-                                <rect key="frame" x="271" y="267" width="17" height="17"/>
+                                <rect key="frame" x="271" y="279" width="17" height="17"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="17" id="AcS-QJ-cDx"/>
@@ -591,7 +591,7 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ws_volume_slider_lower_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="IZ1-KQ-WOj">
-                                <rect key="frame" x="32" y="267" width="17" height="17"/>
+                                <rect key="frame" x="32" y="279" width="17" height="17"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="17" id="Msv-w3-vJn"/>
@@ -689,19 +689,19 @@
                             <constraint firstAttribute="trailing" secondItem="Szu-ge-4YB" secondAttribute="trailing" id="Aqe-hd-WmK"/>
                             <constraint firstAttribute="trailing" secondItem="Nna-vY-W5d" secondAttribute="trailing" constant="80" id="BlT-7a-SQ3"/>
                             <constraint firstAttribute="trailing" secondItem="TTo-mY-AKT" secondAttribute="trailing" id="Br3-OY-9gx"/>
-                            <constraint firstItem="0FE-0v-8dN" firstAttribute="top" secondItem="Nna-vY-W5d" secondAttribute="bottom" constant="15" id="JS1-61-EkW"/>
+                            <constraint firstItem="0FE-0v-8dN" firstAttribute="top" secondItem="Nna-vY-W5d" secondAttribute="bottom" constant="19" id="JS1-61-EkW"/>
                             <constraint firstItem="Nna-vY-W5d" firstAttribute="top" secondItem="1fz-xu-Iaj" secondAttribute="bottom" constant="61" id="Mcg-90-2JN"/>
-                            <constraint firstItem="L4j-HG-E59" firstAttribute="top" secondItem="Qme-xh-iQh" secondAttribute="bottom" constant="-20" id="OtE-LN-DlR"/>
                             <constraint firstItem="gGf-Z2-uo1" firstAttribute="centerY" secondItem="TTo-mY-AKT" secondAttribute="centerY" id="ZPI-9o-BnR"/>
-                            <constraint firstItem="Qme-xh-iQh" firstAttribute="top" secondItem="Nna-vY-W5d" secondAttribute="bottom" constant="46" id="bWy-6D-F8R"/>
+                            <constraint firstItem="Qme-xh-iQh" firstAttribute="top" secondItem="Nna-vY-W5d" secondAttribute="bottom" constant="57" id="bWy-6D-F8R"/>
                             <constraint firstItem="Nna-vY-W5d" firstAttribute="leading" secondItem="vsW-HQ-foQ" secondAttribute="leading" constant="80" id="hn3-gx-cQ6"/>
+                            <constraint firstItem="Qme-xh-iQh" firstAttribute="centerY" secondItem="IZ1-KQ-WOj" secondAttribute="centerY" constant="-1" id="jM0-7Y-J8g"/>
+                            <constraint firstItem="Qme-xh-iQh" firstAttribute="centerY" secondItem="L4j-HG-E59" secondAttribute="centerY" constant="-1" id="k9d-Kc-Iyp"/>
                             <constraint firstItem="5vh-VM-vOT" firstAttribute="top" secondItem="TTo-mY-AKT" secondAttribute="bottom" id="oOe-GM-qxJ"/>
-                            <constraint firstItem="TTo-mY-AKT" firstAttribute="top" secondItem="Qme-xh-iQh" secondAttribute="bottom" constant="34" id="oPW-4d-odS"/>
+                            <constraint firstItem="TTo-mY-AKT" firstAttribute="top" secondItem="Qme-xh-iQh" secondAttribute="bottom" constant="27" id="oPW-4d-odS"/>
                             <constraint firstItem="Szu-ge-4YB" firstAttribute="leading" secondItem="vsW-HQ-foQ" secondAttribute="leading" id="rtV-qV-rw1"/>
                             <constraint firstItem="gGf-Z2-uo1" firstAttribute="centerX" secondItem="TTo-mY-AKT" secondAttribute="centerX" id="sV6-xw-yCM"/>
                             <constraint firstItem="Szu-ge-4YB" firstAttribute="top" secondItem="vsW-HQ-foQ" secondAttribute="top" constant="1024" id="tUt-pq-nUH"/>
                             <constraint firstItem="L4j-HG-E59" firstAttribute="leading" secondItem="Qme-xh-iQh" secondAttribute="trailing" constant="3" id="uyU-mN-vLH"/>
-                            <constraint firstItem="IZ1-KQ-WOj" firstAttribute="top" secondItem="Qme-xh-iQh" secondAttribute="bottom" constant="-20" id="vP4-Eo-zr2"/>
                             <constraint firstAttribute="trailing" secondItem="0FE-0v-8dN" secondAttribute="trailing" constant="2" id="ynx-Ge-ei5"/>
                             <constraint firstItem="0FE-0v-8dN" firstAttribute="leading" secondItem="vsW-HQ-foQ" secondAttribute="leading" constant="2" id="zgB-zZ-rec"/>
                         </constraints>

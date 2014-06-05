@@ -11,6 +11,7 @@
 		920B717F18BB739200D57321 /* WSWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B717E18BB739200D57321 /* WSWindow.m */; };
 		92129295193617AA00AFD2D3 /* UIImageViewAligned.m in Sources */ = {isa = PBXBuildFile; fileRef = 92129294193617AA00AFD2D3 /* UIImageViewAligned.m */; };
 		921292981936252500AFD2D3 /* WSAudioFeedItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 921292971936252500AFD2D3 /* WSAudioFeedItemView.m */; };
+		921E7E911940919A00BC2B6E /* ws_volume_slider_bg_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 921E7E901940919A00BC2B6E /* ws_volume_slider_bg_big@2x.png */; };
 		922A0B7E18645B3500802757 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922A0B7D18645B3500802757 /* Foundation.framework */; };
 		922A0B8018645B3500802757 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922A0B7F18645B3500802757 /* CoreGraphics.framework */; };
 		922A0B8218645B3500802757 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922A0B8118645B3500802757 /* UIKit.framework */; };
@@ -101,6 +102,7 @@
 		92129294193617AA00AFD2D3 /* UIImageViewAligned.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewAligned.m; sourceTree = "<group>"; };
 		921292961936252500AFD2D3 /* WSAudioFeedItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSAudioFeedItemView.h; path = Source/WSAudioFeedItemView.h; sourceTree = "<group>"; };
 		921292971936252500AFD2D3 /* WSAudioFeedItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSAudioFeedItemView.m; path = Source/WSAudioFeedItemView.m; sourceTree = "<group>"; };
+		921E7E901940919A00BC2B6E /* ws_volume_slider_bg_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ws_volume_slider_bg_big@2x.png"; sourceTree = "<group>"; };
 		922A0B7A18645B3500802757 /* wos.ru_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wos.ru_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		922A0B7D18645B3500802757 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		922A0B7F18645B3500802757 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -311,6 +313,7 @@
 				925778AE1905872B002A1B3C /* ws-slideout-button-white.png */,
 				92E8F45718E37A4B000437A4 /* ws-slideout-button.png */,
 				92AE499718891C13003D5572 /* ws_sleeping_timer_icon@2x.png */,
+				921E7E901940919A00BC2B6E /* ws_volume_slider_bg_big@2x.png */,
 				92B1BF0A1880090F0027EAEC /* ws_volume_slider_bg@2x.png */,
 				92B1BF1018800E770027EAEC /* ws_volume_slider_higher_icon@2x.png */,
 				92B1BF1118800E770027EAEC /* ws_volume_slider_lower_icon@2x.png */,
@@ -603,6 +606,7 @@
 				92A88E001906D59E008926FB /* ico-views.png in Resources */,
 				92E8F45618E371D9000437A4 /* WSWebBrowserViewController_iPhone.xib in Resources */,
 				92B1BF1218800E770027EAEC /* ws_volume_slider_higher_icon@2x.png in Resources */,
+				921E7E911940919A00BC2B6E /* ws_volume_slider_bg_big@2x.png in Resources */,
 				92B1BF0B1880090F0027EAEC /* ws_volume_slider_bg@2x.png in Resources */,
 				922A0BC918645B7A00802757 /* Images.xcassets in Resources */,
 				925778B1190587B4002A1B3C /* ws_sleeping_timer_icon_white@2x.png in Resources */,

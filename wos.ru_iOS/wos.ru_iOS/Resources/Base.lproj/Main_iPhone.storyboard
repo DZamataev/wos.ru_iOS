@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BNQ-bs-82I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BNQ-bs-82I">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -101,7 +101,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qwd-Ll-slT" customClass="WSCopyableAutoScrollLabel">
-                                <rect key="frame" x="2" y="236" width="316" height="20"/>
+                                <rect key="frame" x="2" y="239" width="316" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -121,27 +121,27 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1h-Vc-UGs" customClass="WSVolumeSlider">
-                                <rect key="frame" x="52" y="267" width="216" height="20"/>
+                                <rect key="frame" x="52" y="280" width="216" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="dCo-jd-vrf"/>
+                                    <constraint firstAttribute="height" constant="16" id="dCo-jd-vrf"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ws_volume_slider_higher_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kab-T3-EUd">
-                                <rect key="frame" x="271" y="267" width="17" height="17"/>
+                                <rect key="frame" x="271" y="281" width="17" height="17"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="dss-yc-qjj"/>
-                                    <constraint firstAttribute="width" constant="17" id="fLf-o1-Ac6"/>
+                                    <constraint firstAttribute="width" constant="17" id="DVa-Wb-rOa"/>
+                                    <constraint firstAttribute="height" constant="17" id="Vdv-uE-cXS"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ws_volume_slider_lower_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="T24-Py-dcl">
-                                <rect key="frame" x="32" y="267" width="17" height="17"/>
+                                <rect key="frame" x="32" y="281" width="17" height="17"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="17" id="6Ke-Ou-ALL"/>
-                                    <constraint firstAttribute="height" constant="17" id="chp-th-nwh"/>
+                                    <constraint firstAttribute="width" constant="17" id="gC9-fV-cu8"/>
+                                    <constraint firstAttribute="height" constant="17" id="h5c-wa-KAS"/>
                                 </constraints>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Dy7-gE-o2y">
@@ -240,24 +240,24 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="tYa-9H-SHM" secondAttribute="trailing" id="0Qu-yR-pAi"/>
                             <constraint firstItem="g1h-Vc-UGs" firstAttribute="leading" secondItem="T24-Py-dcl" secondAttribute="trailing" constant="3" id="2x3-e0-0xn"/>
-                            <constraint firstItem="g1h-Vc-UGs" firstAttribute="top" secondItem="gpe-nV-SkX" secondAttribute="bottom" constant="46" id="7KZ-4P-Wdc"/>
+                            <constraint firstItem="g1h-Vc-UGs" firstAttribute="top" secondItem="gpe-nV-SkX" secondAttribute="bottom" constant="59" id="7KZ-4P-Wdc"/>
+                            <constraint firstItem="g1h-Vc-UGs" firstAttribute="centerY" secondItem="T24-Py-dcl" secondAttribute="centerY" constant="-1.5" id="DaZ-41-pG0"/>
                             <constraint firstItem="g1h-Vc-UGs" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" constant="52" id="DmY-6N-qJl"/>
                             <constraint firstAttribute="trailing" secondItem="gpe-nV-SkX" secondAttribute="trailing" constant="80" id="Em4-HI-Vuc"/>
-                            <constraint firstItem="Kab-T3-EUd" firstAttribute="top" secondItem="g1h-Vc-UGs" secondAttribute="bottom" constant="-20" id="GlF-2x-9hO"/>
-                            <constraint firstItem="Kab-T3-EUd" firstAttribute="leading" secondItem="g1h-Vc-UGs" secondAttribute="trailing" constant="3" id="IwV-SY-6V0"/>
                             <constraint firstItem="gpe-nV-SkX" firstAttribute="top" secondItem="pCV-N0-kdX" secondAttribute="bottom" constant="41" id="Iy8-mj-kA7"/>
                             <constraint firstItem="Dy7-gE-o2y" firstAttribute="centerX" secondItem="tYa-9H-SHM" secondAttribute="centerX" id="KGz-hp-LZz"/>
                             <constraint firstAttribute="trailing" secondItem="g1h-Vc-UGs" secondAttribute="trailing" constant="52" id="NDf-tw-6Ca"/>
                             <constraint firstItem="l0a-am-UgR" firstAttribute="top" secondItem="tYa-9H-SHM" secondAttribute="bottom" id="NIf-k4-AVs"/>
-                            <constraint firstItem="qwd-Ll-slT" firstAttribute="top" secondItem="gpe-nV-SkX" secondAttribute="bottom" constant="15" id="NQu-F5-gOT"/>
+                            <constraint firstItem="qwd-Ll-slT" firstAttribute="top" secondItem="gpe-nV-SkX" secondAttribute="bottom" constant="18" id="NQu-F5-gOT"/>
+                            <constraint firstItem="g1h-Vc-UGs" firstAttribute="centerY" secondItem="Kab-T3-EUd" secondAttribute="centerY" constant="-1.5" id="UGW-n4-cPu"/>
                             <constraint firstAttribute="trailing" secondItem="qwd-Ll-slT" secondAttribute="trailing" constant="2" id="VKO-5u-40a"/>
                             <constraint firstItem="qwd-Ll-slT" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" constant="2" id="WAa-9B-0U7"/>
+                            <constraint firstItem="Kab-T3-EUd" firstAttribute="leading" secondItem="g1h-Vc-UGs" secondAttribute="trailing" constant="3" id="Zp8-2y-itO"/>
                             <constraint firstItem="vr0-2E-vOs" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" id="e9v-Vf-9nm"/>
                             <constraint firstAttribute="trailing" secondItem="vr0-2E-vOs" secondAttribute="trailing" id="glo-2d-J40"/>
                             <constraint firstItem="vr0-2E-vOs" firstAttribute="top" secondItem="qQH-e4-89A" secondAttribute="top" constant="568" id="ihc-7Q-keZ"/>
-                            <constraint firstItem="tYa-9H-SHM" firstAttribute="top" secondItem="g1h-Vc-UGs" secondAttribute="bottom" constant="34" id="kYQ-yO-2JW"/>
+                            <constraint firstItem="tYa-9H-SHM" firstAttribute="top" secondItem="g1h-Vc-UGs" secondAttribute="bottom" constant="25" id="kYQ-yO-2JW"/>
                             <constraint firstItem="gpe-nV-SkX" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" constant="80" id="ome-Sr-83D"/>
-                            <constraint firstItem="T24-Py-dcl" firstAttribute="top" secondItem="g1h-Vc-UGs" secondAttribute="bottom" constant="-20" id="rhl-6n-teG"/>
                             <constraint firstItem="Dy7-gE-o2y" firstAttribute="centerY" secondItem="tYa-9H-SHM" secondAttribute="centerY" id="vzv-XN-ff5"/>
                             <constraint firstItem="tYa-9H-SHM" firstAttribute="leading" secondItem="qQH-e4-89A" secondAttribute="leading" id="x8J-73-tOh"/>
                         </constraints>

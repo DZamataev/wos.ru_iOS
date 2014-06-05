@@ -20,6 +20,4 @@
 }
 
 @property (strong, nonatomic) IBOutlet UIColor *accentColor;
-- (IBAction)volumeUp:(id)sender;
-- (IBAction)volumeDown:(id)sender;
 @end

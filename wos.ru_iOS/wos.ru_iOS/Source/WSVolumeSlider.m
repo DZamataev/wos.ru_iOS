@@ -30,23 +30,26 @@
     self.accentColor = WSVolumeSliderInitialAccentColor;
     
     // background image
-    UIImage* sliderBarImage = [UIImage imageNamed:@"ws_volume_slider_bg"];
-    sliderBarImage= [sliderBarImage stretchableImageWithLeftCapWidth:4.0 topCapHeight:0.0];
+    UIImage* sliderBarImage = [[UIImage imageNamed:@"ws_volume_slider_bg_big"]
+                               stretchableImageWithLeftCapWidth:4.0 topCapHeight:0.0];
     [[UISlider appearanceWhenContainedIn:[MPVolumeView class], nil]
-     setMaximumTrackImage:[[UIImage imageNamed:@"ws_volume_slider_bg"] stretchableImageWithLeftCapWidth:4.0 topCapHeight:0.0]
+     setMaximumTrackImage:sliderBarImage
      forState:UIControlStateNormal];
     
     // thumb image
-    UIImage* thumbImage = [WSVolumeSlider imageWithColor:[UIColor clearColor] ofSize:CGSizeMake(10, self.frame.size.height)];
+    UIImage* thumbImage = [WSVolumeSlider imageWithColor:[UIColor clearColor]
+                                                  ofSize:CGSizeMake(10, self.frame.size.height)];
     [self setVolumeThumbImage:thumbImage forState:UIControlStateNormal];
     [[UISlider appearanceWhenContainedIn:[MPVolumeView class], nil]
-     setThumbImage:[WSVolumeSlider imageWithColor:[UIColor clearColor] ofSize:CGSizeMake(10, self.frame.size.height)]
+     setThumbImage:thumbImage
      forState:UIControlStateNormal];
     
     // min track image
-    UIImage *minTrackImg = [WSVolumeSlider imageWithColor:self.accentColor ofSize:CGSizeMake(10, self.frame.size.height)];
+    UIImage *minTrackImg = [[WSVolumeSlider imageWithColor:self.accentColor
+                                                    ofSize:CGSizeMake(10, self.frame.size.height)]
+                            stretchableImageWithLeftCapWidth:4.0 topCapHeight:0.0];
     [[UISlider appearanceWhenContainedIn:[MPVolumeView class], nil]
-     setMinimumTrackImage:[minTrackImg stretchableImageWithLeftCapWidth:4.0 topCapHeight:0.0]
+     setMinimumTrackImage:minTrackImg
      forState:UIControlStateNormal];
 }
 
@@ -73,15 +76,6 @@
     CGContextFillRect(c, rect);
     UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
     return result;
-}
-
-- (void)volumeUp:(id)sender
-{
-}
-
-- (void)volumeDown:(id)sender
-{
-    
 }
 
 #pragma mark - Properties

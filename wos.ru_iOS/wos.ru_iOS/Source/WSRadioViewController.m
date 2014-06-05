@@ -286,7 +286,7 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
             
         case kFsAudioStreamBuffering:
             
-            WSDebugLog(@"Retrieving URL...");
+            WSDebugLog(@"Buffering...");
             // can pause
             self.playButton.isPaused = NO;
             break;
