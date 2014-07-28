@@ -27,6 +27,7 @@
     defaultAttributes.preferredStatusBarStyle = UIStatusBarStyleDefault;
     defaultAttributes.isHttpAuthenticationPromptEnabled = NO;
     defaultAttributes.progressBarViewThickness = 1.0f;
+    defaultAttributes.toolbarTintColor = nil; // will be taken from nav bar tint color
     return defaultAttributes;
 }
 
@@ -144,6 +145,7 @@
 
 - (CHValuesInAffectedViewsSetterBlock)valuesInAffectedViewsSetterBlock {
     if (!_valuesInAffectedViewsSetterBlock) {
+        NSLayoutConstraint __weak *weakBottomToolbarBottomOffsetConstraint = self.bottomToolbarBottomOffsetConstraint;
         _valuesInAffectedViewsSetterBlock = ^(UIView *topBar,
                                               float topBarYPosition,
                                               UIView *bottomBar,
@@ -158,10 +160,10 @@
                                       topBarYPosition,
                                       topBar.frame.size.width,
                                       topBar.frame.size.height);
-            bottomBar.frame = CGRectMake(bottomBar.frame.origin.x,
-                                         bottomBarYPosition,
-                                         bottomBar.frame.size.width,
-                                         bottomBar.frame.size.height);
+            if (weakBottomToolbarBottomOffsetConstraint)
+                weakBottomToolbarBottomOffsetConstraint.constant = bottomBarYPosition;
+            [bottomBar setNeedsLayout];
+            [bottomBar layoutIfNeeded];
             
             scrollView.scrollIndicatorInsets = scrollingIndicatorInsets;
             scrollView.contentInset = contentInset;
@@ -271,12 +273,21 @@
     return self.cAttributes.preferredStatusBarStyle;
 }
 
+- (BOOL)canBecomeFirstResponder
+{
+    return self.isSearchWebViewAccessoryShown;
+}
+
 #pragma mark - View lifecycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     [self.localNavigationBar removeFromSuperview];
+    [self.accessoryView removeFromSuperview];
+    self.accessoryView.frame = CGRectMake(0, 0, 320, 44);
+    self.searchWebViewTextField.inputAccessoryView = self.accessoryView;
+    self.searchWebViewAccessoryTextField.inputAccessoryView = self.accessoryView;
     
     [self recreateTitleLabelWithText:@"" force:YES];
     
@@ -300,7 +311,9 @@
         _progressDelegateProxy.progressDelegate = self;
     }
     
-    self.bottomToolbar.tintColor = self.navigationController.navigationBar.tintColor;
+    self.webViewTopOffsetConstraint.constant = self.navigationController.navigationBar.translucent ? 0 : - (CHWebBrowserNavBarHeight + CHWebBrowserStatusBarHeight);
+    
+    self.bottomToolbar.tintColor = self.cAttributes.toolbarTintColor ? self.cAttributes.toolbarTintColor : self.navigationController.navigationBar.tintColor;
     
     // we need nav bar to be shown
     self.wasNavigationBarHiddenByControllerOnEnter = self.navigationController.navigationBarHidden;
@@ -483,6 +496,36 @@
     }
 }
 
+- (IBAction)searchWebViewNextResult:(id)sender {
+    [self highlightNextResult];
+}
+
+- (IBAction)searchWebViewPreviousResult:(id)sender {
+    [self highlightPreviousResult];
+}
+
+- (IBAction)showWebViewSearchBar:(id)sender {
+    self.isSearchWebViewAccessoryShown = NO;
+    self.accessoryView.hidden = NO;
+    self.searchWebViewToolbar.hidden = NO;
+    _isForcingFirstResponder = YES;
+    [self.searchWebViewTextField becomeFirstResponder]; // that will start shownig keyboard
+    [self.searchWebViewAccessoryTextField becomeFirstResponder]; // that will target the input to the right textfield (accessory)
+    _isForcingFirstResponder = NO;
+    self.isSearchWebViewAccessoryShown = NO;
+}
+
+- (IBAction)hideWebViewSearchBar:(id)sender {
+    self.isSearchWebViewAccessoryShown = YES;
+    self.accessoryView.hidden = YES;
+    self.searchWebViewToolbar.hidden = YES;
+    _isForcingFirstResponder = YES;
+    [self becomeFirstResponder];
+    _isForcingFirstResponder = NO;
+    self.isSearchWebViewAccessoryShown = YES;
+    [self removeAllHighlights];
+}
+
 #pragma mark - Private actions
 
 - (void)showActivities {
@@ -490,15 +533,67 @@
     
     if (url && url.absoluteString.length > 0) {
         ARSafariActivity *safariActivity = [[ARSafariActivity alloc] init];
+        
         ARChromeActivity *chromeActivity = [[ARChromeActivity alloc] init];
         if (self.chromeActivityCallbackUrl) {
             chromeActivity.callbackURL = self.chromeActivityCallbackUrl;
         }
         
+        CHButtonActivity *searchWebViewActivity = [[CHButtonActivity alloc] initWithTitle:NSLocalizedStringFromTable(@"Search on page", LocalizationTableName, nil)
+                                                                                    image:[UIImage imageNamed:@"CHFindOnPageActivity"]];
+        CHWebBrowserViewController __weak *weakSelf = self;
+        searchWebViewActivity.actionBlock = ^void(CHButtonActivity *sender) {
+            if (weakSelf) {
+                [weakSelf showWebViewSearchBar:sender];
+            }
+        };
+        
         UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[url]
-                                                                                 applicationActivities:@[safariActivity, chromeActivity]];
+                                                                                 applicationActivities:@[searchWebViewActivity, safariActivity, chromeActivity]];
         [self presentViewController:activityVC animated:YES completion:nil];
     }
+}
+
+
+
+- (NSInteger)highlightAllOccurencesOfString:(NSString*)str
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"CHSearchWebView" ofType:@"js"];
+    NSString *jsCode = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    [self.webView stringByEvaluatingJavaScriptFromString:jsCode];
+    
+    NSString *startSearch = [NSString stringWithFormat:@"SPNS.search.search('%@')",str];
+    [self.webView stringByEvaluatingJavaScriptFromString:startSearch];
+    
+    [self updateFoundNubmerLabels];
+    
+    NSString *result = [self.webView stringByEvaluatingJavaScriptFromString:@"SPNS.search.SearchResultCount"];
+    return [result integerValue];
+}
+
+- (void)highlightNextResult
+{
+    [self.webView stringByEvaluatingJavaScriptFromString:@"SPNS.search.highlightNextResult()"];
+    [self updateFoundNubmerLabels];
+}
+
+- (void)highlightPreviousResult
+{
+    [self.webView stringByEvaluatingJavaScriptFromString:@"SPNS.search.highlightPreviousResult()"];
+    [self updateFoundNubmerLabels];
+}
+
+- (void)removeAllHighlights
+{
+    [self.webView stringByEvaluatingJavaScriptFromString:@"SPNS.search.RemoveAllHighlights()"];
+}
+
+- (void)updateFoundNubmerLabels
+{
+    NSString *totalFound = [self.webView stringByEvaluatingJavaScriptFromString:@"SPNS.search.SearchResultCount"];
+    NSString *currentlyChosen = [self.webView stringByEvaluatingJavaScriptFromString:@"SPNS.search.FoundElementsCurrentPosition"];
+    NSString *labelText = [NSString stringWithFormat:@"%@ %@ %@", currentlyChosen, NSLocalizedStringFromTable(@"a_of_b found", LocalizationTableName, nil), totalFound];
+    self.searchWebViewFoundLabel.text = self.searchWebViewAccessoryFoundLabel.text = labelText;
 }
 
 #pragma mark - TKAURLProtocol
@@ -640,6 +735,42 @@
     self.readBarButtonItem.enabled = YES;
 }
 
+#pragma mark - UITextFieldDelegate
+//-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+//{
+//    [self.searchWebViewToolbar removeFromSuperview];
+//    self.searchWebViewToolbar.frame = CGRectMake(0, -self.searchWebViewToolbar.frame.size.height, self.searchWebViewToolbar.frame.size.width, self.searchWebViewToolbar.frame.size.height);
+//    [self.accessoryView addSubview:self.searchWebViewToolbar];
+//    return YES;
+//}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.searchWebViewAccessoryTextField) {
+        self.searchWebViewTextField.text = self.searchWebViewAccessoryTextField.text;
+        [self.searchWebViewAccessoryTextField resignFirstResponder];
+        self.accessoryView.hidden = YES;
+        [self highlightAllOccurencesOfString:self.searchWebViewTextField.text];
+    }
+    return YES;
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    if (textField == self.searchWebViewTextField && !_isForcingFirstResponder) {
+        [self showWebViewSearchBar:textField];
+        return NO;
+    }
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+}
 
 #pragma mark - ScrollViewDelegate
 
@@ -703,9 +834,9 @@
     float topBarYPosition = [CHWebBrowserViewController clampFloat:topBar.frame.origin.y - delta
                                                        withMinimum:-CHWebBrowserNavBarHeight + CHWebBrowserStatusBarHeight
                                                         andMaximum:CHWebBrowserStatusBarHeight];
-    float bottomBarYPosition = [CHWebBrowserViewController clampFloat:_bottomToolbar.frame.origin.y + delta
-                                                         withMinimum:_webView.frame.size.height - CHWebBrowserNavBarHeight
-                                                           andMaximum:_webView.frame.size.height];
+    float bottomBarYPosition = [CHWebBrowserViewController clampFloat:self.bottomToolbarBottomOffsetConstraint.constant - delta
+                                                          withMinimum:0
+                                                           andMaximum:-self.bottomToolbar.bounds.size.height];
     
     float topInset = [CHWebBrowserViewController clampFloat:scrollView.contentInset.top - delta
                                                 withMinimum:CHWebBrowserStatusBarHeight
@@ -746,9 +877,9 @@
                               andIsHalfPassed:nil
                                andTargetLimit:&topBarYPosition];
     
-    float bottomBarYPosition = [CHWebBrowserViewController maximizeValue:self.bottomToolbar.frame.origin.y
-                                                            betweenValue:self.webView.frame.size.height - CHWebBrowserNavBarHeight
-                                                                andValue:self.webView.frame.size.height];
+    float bottomBarYPosition = [CHWebBrowserViewController maximizeValue:self.bottomToolbarBottomOffsetConstraint.constant
+                                                            betweenValue:0
+                                                                andValue:-self.bottomToolbar.bounds.size.height];
     
     float topInsetTargetValue = [CHWebBrowserViewController maximizeValue:scrollView.contentInset.top
                                                              betweenValue:CHWebBrowserStatusBarHeight
@@ -794,7 +925,7 @@
     CGFloat topBarHigherLimit = CHWebBrowserStatusBarHeight;
     float topBarDistanceLeft = fabsf(topBarHigherLimit - topBarLowerLimit);
     float topBarYPosition = topBarHigherLimit;
-    float bottomBarYPosition = self.webView.frame.size.height - CHWebBrowserNavBarHeight;
+    float bottomBarYPosition = 0;
     float topInsetTargetValue = CHWebBrowserNavBarHeight + CHWebBrowserStatusBarHeight;
     float bottomInsetTargetValue = CHWebBrowserNavBarHeight;
     UIEdgeInsets contentInset = UIEdgeInsetsMake(topInsetTargetValue,0,bottomInsetTargetValue,0);

@@ -1,7 +1,9 @@
 /*
  * This file is part of the FreeStreamer project,
- * (C)Copyright 2011-2014 Matias Muhonen.
+ * (C)Copyright 2011-2014 Matias Muhonen <mmu@iki.fi>
  * See the file ''LICENSE'' for using the code.
+ *
+ * https://github.com/muhku/FreeStreamer
  */
 
 #import "FSAudioController.h"
@@ -45,7 +47,8 @@
 
 - (void)dealloc
 {
-    [_audioStream stop];
+    _audioStream.delegate = nil;
+    _audioStream = nil;
     
     [_checkContentTypeRequest cancel];
     [_parsePlaylistRequest cancel];
@@ -229,6 +232,11 @@
 - (void)pause
 {
     [self.audioStream pause];
+}
+
+- (void)setVolume:(float)volume
+{
+    [self.audioStream setVolume:volume];
 }
 
 /*

@@ -1,7 +1,9 @@
 /*
  * This file is part of the FreeStreamer project,
- * (C)Copyright 2011-2014 Matias Muhonen.
+ * (C)Copyright 2011-2014 Matias Muhonen <mmu@iki.fi>
  * See the file ''LICENSE'' for using the code.
+ *
+ * https://github.com/muhku/FreeStreamer
  */
 
 #ifndef ASTREAMER_HTTP_STREAM_H
@@ -29,7 +31,6 @@ private:
     
     static CFStringRef httpRequestMethod;
     static CFStringRef httpUserAgentHeader;
-    static CFStringRef httpUserAgentValue;
     static CFStringRef httpRangeHeader;
     static CFStringRef icyMetaDataHeader;
     static CFStringRef icyMetaDataValue;

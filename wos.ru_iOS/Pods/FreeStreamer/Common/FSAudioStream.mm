@@ -1,7 +1,9 @@
 /*
  * This file is part of the FreeStreamer project,
- * (C)Copyright 2011-2014 Matias Muhonen.
+ * (C)Copyright 2011-2014 Matias Muhonen <mmu@iki.fi>
  * See the file ''LICENSE'' for using the code.
+ *
+ * https://github.com/muhku/FreeStreamer
  */
 
 #import "FSAudioStream.h"
@@ -10,6 +12,7 @@
 
 #include "audio_stream.h"
 #include "stream_configuration.h"
+#include "http_stream.h"
 
 #import <AVFoundation/AVFoundation.h>
 
@@ -21,40 +24,53 @@
 #import <MediaPlayer/MediaPlayer.h>
 #endif
 
-FSStreamConfiguration makeFreeStreamerDefaultConfiguration()
+@implementation FSStreamConfiguration
+
+- (id)init
 {
-    FSStreamConfiguration defaultConfiguration;
-    
-    defaultConfiguration.bufferCount    = 8;
-    defaultConfiguration.bufferSize     = 32768;
-    defaultConfiguration.maxPacketDescs = 512;
-    defaultConfiguration.decodeQueueSize = 32;
-    defaultConfiguration.httpConnectionBufferSize = 1024;
-    defaultConfiguration.outputSampleRate = 44100;
-    defaultConfiguration.outputNumChannels = 2;
-    defaultConfiguration.bounceInterval    = 10;
-    defaultConfiguration.maxBounceCount    = 4;   // Max number of bufferings in bounceInterval seconds
-    
-#if (__IPHONE_OS_VERSION_MIN_REQUIRED >= 60000)
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    double sampleRate = session.sampleRate;
-    if (sampleRate > 0) {
-        defaultConfiguration.outputSampleRate = sampleRate;
-    }
-    NSInteger channels = session.outputNumberOfChannels;
-    if (channels > 0) {
-        defaultConfiguration.outputNumChannels = channels;
-    }
-#endif
-    
+    self = [super init];
+    if (self) {
+        NSMutableString *systemVersion = [[NSMutableString alloc] init];
+        
 #if (__IPHONE_OS_VERSION_MIN_REQUIRED >= 40000)
-    /* iOS */
-    
-    #ifdef __LP64__
+        [systemVersion appendString:@"iOS "];
+        [systemVersion appendString:[[UIDevice currentDevice] systemVersion]];
+#else
+        [systemVersion appendString:@"OS X"];
+#endif
+        
+        self.bufferCount    = 8;
+        self.bufferSize     = 32768;
+        self.maxPacketDescs = 512;
+        self.decodeQueueSize = 32;
+        self.httpConnectionBufferSize = 1024;
+        self.outputSampleRate = 44100;
+        self.outputNumChannels = 2;
+        self.bounceInterval    = 10;
+        self.maxBounceCount    = 4;   // Max number of bufferings in bounceInterval seconds
+        self.startupWatchdogPeriod = 30; // If the stream doesn't start to play in this seconds, the watchdog will fail it
+        self.userAgent = [NSString stringWithFormat:@"FreeStreamer/%@ (%@)", freeStreamerReleaseVersion(), systemVersion];
+        
+#if (__IPHONE_OS_VERSION_MIN_REQUIRED >= 60000)
+        AVAudioSession *session = [AVAudioSession sharedInstance];
+        double sampleRate = session.sampleRate;
+        if (sampleRate > 0) {
+            self.outputSampleRate = sampleRate;
+        }
+        NSInteger channels = session.outputNumberOfChannels;
+        if (channels > 0) {
+            self.outputNumChannels = channels;
+        }
+#endif
+            
+#if (__IPHONE_OS_VERSION_MIN_REQUIRED >= 40000)
+        /* iOS */
+            
+#ifdef __LP64__
         /* Running on iPhone 5s or later,
          * so the default configuration is OK
          */
-    #else
+#else
         /* 32-bit CPU, a bit older iPhone/iPad, increase
          *  the buffer sizes a bit.
          *
@@ -62,18 +78,30 @@ FSStreamConfiguration makeFreeStreamerDefaultConfiguration()
          * https://github.com/muhku/FreeStreamer/issues/41
          */
         int scale = 2;
-    
-        defaultConfiguration.bufferCount    *= scale;
-        defaultConfiguration.bufferSize     *= scale;
-        defaultConfiguration.maxPacketDescs *= scale;
-    #endif
-#else
-    /* OS X */
-    
-    // Default configuration is OK
+            
+        self.bufferCount    *= scale;
+        self.bufferSize     *= scale;
+        self.maxPacketDescs *= scale;
 #endif
+#else
+            /* OS X */
+            
+            // Default configuration is OK
+#endif
+    }
     
-    return defaultConfiguration;
+    return self;
+}
+
+@end
+
+NSString *freeStreamerReleaseVersion()
+{
+    NSString *version = [NSString stringWithFormat:@"%i.%i.%i",
+                         FREESTREAMER_VERSION_MAJOR,
+                         FREESTREAMER_VERSION_MINOR,
+                         FREESTREAMER_VERSION_REVISION];
+    return version;
 }
 
 NSString* const FSAudioStreamStateChangeNotification = @"FSAudioStreamStateChangeNotification";
@@ -112,8 +140,6 @@ public:
     NSURL *_url;
     BOOL _strictContentTypeChecking;
 	AudioStreamStateObserver *_observer;
-    BOOL _wasInterrupted;
-    BOOL _wasDisconnected;
     NSString *_defaultContentType;
     Reachability *_reachability;
 #if (__IPHONE_OS_VERSION_MIN_REQUIRED >= 40000)
@@ -128,7 +154,9 @@ public:
 @property (nonatomic,assign) NSString *suggestedFileExtension;
 @property (nonatomic,assign) NSURL *outputFile;
 @property (nonatomic,assign) BOOL wasInterrupted;
-@property (readonly) FSStreamConfiguration configuration;
+@property (nonatomic,assign) BOOL wasDisconnected;
+@property (nonatomic,assign) BOOL wasContinuousStream;
+@property (readonly) FSStreamConfiguration *configuration;
 @property (readonly) NSString *formatDescription;
 @property (copy) void (^onCompletion)();
 @property (copy) void (^onFailure)();
@@ -136,11 +164,14 @@ public:
 @property (nonatomic,unsafe_unretained) id<FSPCMAudioStreamDelegate> delegate;
 @property (nonatomic,unsafe_unretained) FSAudioStream *stream;
 
+- (AudioStreamStateObserver *)streamStateObserver;
+
 - (void)reachabilityChanged:(NSNotification *)note;
 - (void)interruptionOccurred:(NSNotification *)notification;
 
 - (void)play;
 - (void)playFromURL:(NSURL*)url;
+- (void)playFromOffset:(FSSeekByteOffset)offset;
 - (void)stop;
 - (BOOL)isPlaying;
 - (void)pause;
@@ -148,6 +179,7 @@ public:
 - (void)setVolume:(float)volume;
 - (unsigned)timePlayedInSeconds;
 - (unsigned)durationInSeconds;
+- (astreamer::HTTP_Stream_Position)streamPositionForTime:(unsigned)newSeekTime;
 @end
 
 @implementation FSAudioStreamPrivate
@@ -156,13 +188,13 @@ public:
 {
     if (self = [super init]) {
         _url = nil;
-        _wasInterrupted = NO;
-        _wasDisconnected = NO;
         
         _observer = new AudioStreamStateObserver();
         _observer->priv = self;
+       
         _audioStream = new astreamer::Audio_Stream();
         _observer->source = _audioStream;
+
         _audioStream->m_delegate = _observer;
         
         _reachability = [Reachability reachabilityForInternetConnection];
@@ -192,14 +224,19 @@ public:
 
 - (void)dealloc
 {
-    [_reachability stopNotifier];
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
-    _audioStream->close();
+    [self stop];
+    
+    _delegate = nil;
     
     delete _audioStream, _audioStream = nil;
     delete _observer, _observer = nil;
+}
+
+- (AudioStreamStateObserver *)streamStateObserver
+{
+    return _observer;
 }
 
 - (void)setUrl:(NSURL *)url
@@ -250,8 +287,22 @@ public:
 
 - (void)playFromURL:(NSURL*)url
 {
-    [self setUrl:url];
-    [self play];
+   [self setUrl:url];
+   [self play];
+}
+
+- (void)playFromOffset:(FSSeekByteOffset)offset
+{
+    astreamer::HTTP_Stream_Position position;
+    position.start = offset.start;
+    position.end   = offset.end;
+    
+    _audioStream->open(&position);
+    
+    _audioStream->setSeekPosition(offset.position);
+    _audioStream->setContentLength(offset.end);
+    
+    [_reachability startNotifier];
 }
 
 - (void)setDefaultContentType:(NSString *)defaultContentType
@@ -330,9 +381,9 @@ public:
     _audioStream->setOutputFile((__bridge CFURLRef)copyOfURL);
 }
 
-- (FSStreamConfiguration)configuration
+- (FSStreamConfiguration *)configuration
 {
-    FSStreamConfiguration config;
+    FSStreamConfiguration *config = [[FSStreamConfiguration alloc] init];
     
     astreamer::Stream_Configuration *c = astreamer::Stream_Configuration::configuration();
     
@@ -345,6 +396,12 @@ public:
     config.outputNumChannels        = c->outputNumChannels;
     config.bounceInterval           = c->bounceInterval;
     config.maxBounceCount           = c->maxBounceCount;
+    config.startupWatchdogPeriod    = c->startupWatchdogPeriod;
+    
+    if (c->userAgent) {
+        // Let the Objective-C side handle the memory for the copy of the original user-agent
+        config.userAgent = (__bridge_transfer NSString *)CFStringCreateCopy(kCFAllocatorDefault, c->userAgent);
+    }
 
     return config;
 }
@@ -361,15 +418,15 @@ public:
     BOOL internetConnectionAvailable = (netStatus == ReachableViaWiFi || netStatus == ReachableViaWWAN);
     
     if ([self isPlaying] && !internetConnectionAvailable) {
-        _wasDisconnected = YES;
+        self.wasDisconnected = YES;
         
 #if defined(DEBUG) || (TARGET_IPHONE_SIMULATOR)
         NSLog(@"FSAudioStream: Error: Internet connection disconnected while playing a stream.");
 #endif
     }
     
-    if (_wasDisconnected && internetConnectionAvailable) {
-        _wasDisconnected = NO;
+    if (self.wasDisconnected && internetConnectionAvailable) {
+        self.wasDisconnected = NO;
         
 #if defined(DEBUG) || (TARGET_IPHONE_SIMULATOR)
         NSLog(@"FSAudioStream: Internet connection available again. Restarting stream playback.");
@@ -395,12 +452,20 @@ public:
     if ([interruptionType intValue] == AVAudioSessionInterruptionTypeBegan) {
         if ([self isPlaying]) {
             self.wasInterrupted = YES;
+            // Continuous streams do not have a duration.
+            self.wasContinuousStream = (0 == [self durationInSeconds]);
             
+            if (self.wasContinuousStream) {
 #if defined(DEBUG) || (TARGET_IPHONE_SIMULATOR)
-            NSLog(@"FSAudioStream: Interruption began. Pausing the stream.");
+                NSLog(@"FSAudioStream: Interruption began. Continuous stream. Stopping the stream.");
 #endif
-            
-            [self pause];
+                [self stop];
+            } else {
+#if defined(DEBUG) || (TARGET_IPHONE_SIMULATOR)
+                NSLog(@"FSAudioStream: Interruption began. Non-continuous stream. Pausing the stream.");
+#endif
+                [self pause];
+            }
         }
     } else if ([interruptionType intValue] == AVAudioSessionInterruptionTypeEnded) {
         if (self.wasInterrupted) {
@@ -408,14 +473,23 @@ public:
             
             [[AVAudioSession sharedInstance] setActive:YES error:nil];
             
+            if (self.wasContinuousStream) {
 #if defined(DEBUG) || (TARGET_IPHONE_SIMULATOR)
-            NSLog(@"FSAudioStream: Interruption ended. Unpausing the stream.");
+                NSLog(@"FSAudioStream: Interruption ended. Continuous stream. Starting the playback.");
 #endif
-            
-            /*
-             * Resume playing.
-             */
-            [self pause];
+                /*
+                 * Resume playing.
+                 */
+                [self play];
+            } else {
+#if defined(DEBUG) || (TARGET_IPHONE_SIMULATOR)
+                NSLog(@"FSAudioStream: Interruption ended. Continuous stream. Unpausing the stream.");
+#endif
+                /*
+                 * Resume playing.
+                 */
+               [self pause];
+            }
         }
     }
 #endif
@@ -472,9 +546,15 @@ public:
     return _audioStream->durationInSeconds();
 }
 
+- (astreamer::HTTP_Stream_Position)streamPositionForTime:(unsigned)newSeekTime
+{
+    return _audioStream->streamPositionForTime(newSeekTime);
+}
+
 -(NSString *)description
 {
-    return [NSString stringWithFormat:@"URL: %@\nbufferCount: %i\nbufferSize: %i\nmaxPacketDescs: %i\ndecodeQueueSize: %i\nhttpConnectionBufferSize: %i\noutputSampleRate: %f\noutputNumChannels: %ld\nbounceInterval: %i\nmaxBounceCount: %i\nformat: %@",
+    return [NSString stringWithFormat:@"[FreeStreamer %@] URL: %@\nbufferCount: %i\nbufferSize: %i\nmaxPacketDescs: %i\ndecodeQueueSize: %i\nhttpConnectionBufferSize: %i\noutputSampleRate: %f\noutputNumChannels: %ld\nbounceInterval: %i\nmaxBounceCount: %i\nstartupWatchdogPeriod: %i\nformat: %@\nuserAgent: %@",
+            freeStreamerReleaseVersion(),
             self.url,
             self.configuration.bufferCount,
             self.configuration.bufferSize,
@@ -485,7 +565,9 @@ public:
             self.configuration.outputNumChannels,
             self.configuration.bounceInterval,
             self.configuration.maxBounceCount,
-            self.formatDescription];
+            self.configuration.startupWatchdogPeriod,
+            self.formatDescription,
+            self.configuration.userAgent];
 }
 
 @end
@@ -501,7 +583,7 @@ public:
 
 -(id)init
 {
-    FSStreamConfiguration defaultConfiguration = makeFreeStreamerDefaultConfiguration();
+    FSStreamConfiguration *defaultConfiguration = [[FSStreamConfiguration alloc] init];
     
     if (self = [self initWithConfiguration:defaultConfiguration]) {
     }
@@ -516,7 +598,7 @@ public:
     return self;
 }
 
-- (id)initWithConfiguration:(FSStreamConfiguration)configuration
+- (id)initWithConfiguration:(FSStreamConfiguration *)configuration
 {
     if (self = [super init]) {
         astreamer::Stream_Configuration *c = astreamer::Stream_Configuration::configuration();
@@ -530,11 +612,30 @@ public:
         c->outputNumChannels        = configuration.outputNumChannels;
         c->maxBounceCount           = configuration.maxBounceCount;
         c->bounceInterval           = configuration.bounceInterval;
+        c->startupWatchdogPeriod    = configuration.startupWatchdogPeriod;
+        
+        if (c->userAgent) {
+            CFRelease(c->userAgent);
+        }
+        c->userAgent = CFStringCreateCopy(kCFAllocatorDefault, (__bridge CFStringRef)configuration.userAgent);
         
         _private = [[FSAudioStreamPrivate alloc] init];
         _private.stream = self;
     }
     return self;
+}
+
+- (void)dealloc
+{
+    AudioStreamStateObserver *observer = [_private streamStateObserver];
+    
+    // Break the cyclic loop so that dealloc() may be called
+    observer->priv = nil;
+    
+    _private.stream = nil;
+    _private.delegate = nil;
+    
+    _private = nil;
 }
 
 - (void)setUrl:(NSURL *)url
@@ -597,6 +698,11 @@ public:
     [_private playFromURL:url];
 }
 
+- (void)playFromOffset:(FSSeekByteOffset)offset
+{
+    [_private playFromOffset:offset];
+}
+
 - (void)stop
 {
     [_private stop];
@@ -650,6 +756,27 @@ public:
     return pos;
 }
 
+- (FSSeekByteOffset)currentSeekByteOffset
+{
+    FSSeekByteOffset offset;
+    offset.start    = 0;
+    offset.end      = 0;
+    offset.position = 0;
+    
+    if (self.continuous) {
+        return offset;
+    }
+    
+    offset.position = [_private timePlayedInSeconds];
+    
+    astreamer::HTTP_Stream_Position httpStreamPos = [_private streamPositionForTime:offset.position];
+    
+    offset.start = httpStreamPos.start;
+    offset.end   = httpStreamPos.end;
+    
+    return offset;
+}
+
 - (BOOL)continuous
 {
     FSStreamPosition duration = self.duration;
@@ -676,7 +803,7 @@ public:
     _private.onFailure = onFailure;
 }
 
-- (FSStreamConfiguration)configuration
+- (FSStreamConfiguration *)configuration
 {
     return _private.configuration;
 }

@@ -332,12 +332,19 @@
                                                         object:nil
                                                       userInfo:@{@"source":@"feed",
                                                                  @"streamUrlString" : _currentlyPlayingURL.absoluteString}];
+    
+    // Analytics
+    [PFAnalytics trackEvent:@"audio material play"];
+    //
 }
 
 - (void)pauseInView:(WSAudioFeedItemView*)view
 {
     [_audioPlayer pause];
     [view endUpdatingSlider];
+    // Analytics
+    [PFAnalytics trackEvent:@"audio material pause"];
+    //
 }
 
 -(BOOL)audioView:(WSAudioFeedItemView*)sender shouldChangeToPaused:(BOOL)isPaused progressBar:(UISlider *)slider

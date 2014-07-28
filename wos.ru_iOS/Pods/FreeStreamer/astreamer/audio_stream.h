@@ -1,7 +1,9 @@
 /*
  * This file is part of the FreeStreamer project,
- * (C)Copyright 2011-2014 Matias Muhonen.
+ * (C)Copyright 2011-2014 Matias Muhonen <mmu@iki.fi>
  * See the file ''LICENSE'' for using the code.
+ *
+ * https://github.com/muhku/FreeStreamer
  */
 
 #ifndef ASTREAMER_AUDIO_STREAM_H
@@ -51,6 +53,7 @@ public:
     virtual ~Audio_Stream();
     
     void open();
+    void open(HTTP_Stream_Position *position);
     void close();
     void pause();
     
@@ -58,11 +61,15 @@ public:
     unsigned durationInSeconds();
     void seekToTime(unsigned newSeekTime);
     
+    HTTP_Stream_Position streamPositionForTime(unsigned newSeekTime);
+    
     void setVolume(float volume);
     
     void setUrl(CFURLRef url);
     void setStrictContentTypeChecking(bool strictChecking);
     void setDefaultContentType(CFStringRef defaultContentType);
+    void setSeekPosition(unsigned seekPosition);
+    void setContentLength(size_t contentLength);
     
     void setOutputFile(CFURLRef url);
     CFURLRef outputFile();
@@ -93,7 +100,6 @@ private:
     
     bool m_httpStreamRunning;
     bool m_audioStreamParserRunning;
-    bool m_needNewQueue;
     
     size_t m_contentLength;
     
@@ -101,16 +107,20 @@ private:
     HTTP_Stream *m_httpStream;
     Audio_Queue *m_audioQueue;
     
+    CFRunLoopTimerRef m_watchdogTimer;
+    CFRunLoopTimerRef m_playbackStopTimer;
+    
     AudioFileStreamID m_audioFileStream;	// the audio file stream parser
     AudioConverterRef m_audioConverter;
     AudioStreamBasicDescription m_srcFormat;
     AudioStreamBasicDescription m_dstFormat;
+    OSStatus m_initializationError;
     
     UInt32 m_outputBufferSize;
     UInt8 *m_outputBuffer;
     
     UInt64 m_dataOffset;
-    double m_seekTime;
+    unsigned m_seekPosition;
     size_t m_bounceCount;
     CFAbsoluteTime m_firstBufferingTime;
     
@@ -142,6 +152,9 @@ private:
     void setState(State state);
     void setCookiesForStream(AudioFileStreamID inAudioFileStream);
     unsigned bitrate();
+    
+    static void watchdogTimerCallback(CFRunLoopTimerRef timer, void *info);
+    static void playbackStopTimerCallback(CFRunLoopTimerRef timer, void *info);
     
     static OSStatus encoderDataCallback(AudioConverterRef inAudioConverter, UInt32 *ioNumberDataPackets, AudioBufferList *ioData, AudioStreamPacketDescription **outDataPacketDescription, void *inUserData);
     static void propertyValueCallback(void *inClientData, AudioFileStreamID inAudioFileStream, AudioFileStreamPropertyID inPropertyID, UInt32 *ioFlags);

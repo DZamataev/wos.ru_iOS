@@ -1,11 +1,28 @@
 /*
  * This file is part of the FreeStreamer project,
- * (C)Copyright 2011-2014 Matias Muhonen.
+ * (C)Copyright 2011-2014 Matias Muhonen <mmu@iki.fi>
  * See the file ''LICENSE'' for using the code.
+ *
+ * https://github.com/muhku/FreeStreamer
  */
 
 #import <Foundation/Foundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
+
+/**
+ * The major version of the current release.
+ */
+#define FREESTREAMER_VERSION_MAJOR          2
+
+/**
+ * The minor version of the current release.
+ */
+#define FREESTREAMER_VERSION_MINOR          3
+
+/**
+ * The reversion of the current release
+ */
+#define FREESTREAMER_VERSION_REVISION       0
 
 /**
  * Follow this notification for the audio stream state changes.
@@ -62,21 +79,68 @@ typedef struct {
 } FSStreamPosition;
 
 /**
- * The low-level stream configuration.
+ * The audio stream seek byte offset.
  */
 typedef struct {
-    unsigned bufferCount;
-    unsigned bufferSize;
-    unsigned maxPacketDescs;
-    unsigned decodeQueueSize;
-    unsigned httpConnectionBufferSize;
-    double   outputSampleRate;
-    long     outputNumChannels;
-    int      bounceInterval;
-    int      maxBounceCount;
-} FSStreamConfiguration;
+    UInt64 start;
+    UInt64 end;
+    unsigned position;
+} FSSeekByteOffset;
 
-FSStreamConfiguration makeFreeStreamerDefaultConfiguration();
+/**
+ * The low-level stream configuration.
+ */
+@interface FSStreamConfiguration : NSObject {
+}
+
+/**
+ * The number of buffers.
+ */
+@property (nonatomic,assign) unsigned bufferCount;
+/**
+ * The size of each buffer.
+ */
+@property (nonatomic,assign) unsigned bufferSize;
+/**
+ * The number of packet descriptions.
+ */
+@property (nonatomic,assign) unsigned maxPacketDescs;
+/**
+ * The decode queue size.
+ */
+@property (nonatomic,assign) unsigned decodeQueueSize;
+/**
+ * The HTTP connection buffer size.
+ */
+@property (nonatomic,assign) unsigned httpConnectionBufferSize;
+/**
+ * The output sample rate.
+ */
+@property (nonatomic,assign) double   outputSampleRate;
+/**
+ * The number of output channels.
+ */
+@property (nonatomic,assign) long     outputNumChannels;
+/**
+ * The interval within the stream may enter to the buffering state before it fails.
+ */
+@property (nonatomic,assign) int      bounceInterval;
+/**
+ * The number of times the stream may enter the buffering state before it fails.
+ */
+@property (nonatomic,assign) int      maxBounceCount;
+/**
+ * The stream must start within this seconds before it fails.
+ */
+@property (nonatomic,assign) int      startupWatchdogPeriod;
+/**
+ * The HTTP user agent used for stream operations.
+ */
+@property (nonatomic,strong) NSString *userAgent;
+
+@end
+
+NSString*             freeStreamerReleaseVersion();
 
 /**
  * FSAudioStream is a class for streaming audio files from an URL.
@@ -107,7 +171,7 @@ FSStreamConfiguration makeFreeStreamerDefaultConfiguration();
  *
  * @param configuration The stream configuration.
  */
-- (id)initWithConfiguration:(FSStreamConfiguration)configuration;
+- (id)initWithConfiguration:(FSStreamConfiguration *)configuration;
 
 /**
  * Starts playing the stream. If no playback URL is
@@ -121,6 +185,15 @@ FSStreamConfiguration makeFreeStreamerDefaultConfiguration();
  * @param url The URL from which the stream data is retrieved.
  */
 - (void)playFromURL:(NSURL*)url;
+
+/**
+ * Starts playing the stream from the given offset.
+ * The offset can be retrieved from the stream with the
+ * currentSeekByteOffset property.
+ *
+ * @param offset The offset where to start playback from.
+ */
+- (void)playFromOffset:(FSSeekByteOffset)offset;
 
 /**
  * Stops the stream playback.
@@ -198,6 +271,11 @@ FSStreamConfiguration makeFreeStreamerDefaultConfiguration();
  */
 @property (nonatomic,readonly) FSStreamPosition duration;
 /**
+ * This property has the current seek byte offset of the stream, if the stream is non-continuous.
+ * Continuous streams do not have a seek byte offset.
+ */
+@property (nonatomic,readonly) FSSeekByteOffset currentSeekByteOffset;
+/**
  * The property is true if the stream is continuous (no known duration).
  */
 @property (nonatomic,readonly) BOOL continuous;
@@ -213,7 +291,7 @@ FSStreamConfiguration makeFreeStreamerDefaultConfiguration();
 /**
  * The property has the low-level stream configuration.
  */
-@property (readonly) FSStreamConfiguration configuration;
+@property (readonly) FSStreamConfiguration *configuration;
 /**
  * The last stream error.
  */

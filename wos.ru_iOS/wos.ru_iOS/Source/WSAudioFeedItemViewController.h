@@ -10,6 +10,7 @@
 #import <STKAudioPlayer.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
+#import <Parse/Parse.h>
 #import "WSAudioFeedItemView.h"
 #import "WSMaterial.h"
 

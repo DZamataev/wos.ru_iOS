@@ -270,7 +270,7 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
 {
     NSDictionary *dict = [notification userInfo];
     int state = [[dict valueForKey:FSAudioStreamNotificationKey_State] intValue];
-    
+    NSString *analytics_EventName = nil;
     switch (state) {
         case kFsAudioStreamRetrievingURL:
             WSDebugLog(@"Retrieving URL...");
@@ -282,6 +282,7 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
             WSDebugLog(@"Audio stream playback stopped");
             // can play
             self.playButton.isPaused = YES;
+            analytics_EventName = @"audio stream stops";
             break;
             
         case kFsAudioStreamBuffering:
@@ -302,14 +303,28 @@ NSString * const WSSleepTimerPickedInterval_UserDefaultsKey = @"SleepTimerPicked
             WSDebugLog(@"Playing...");
             // can pause
             self.playButton.isPaused = NO;
+            analytics_EventName = @"audio stream starts playing";
             break;
             
         case kFsAudioStreamFailed:
             WSDebugLog(@"Audio stream payback failed...");
             // can play
             self.playButton.isPaused = YES;
+            analytics_EventName = @"audio stream fails to play";
             break;
     }
+    if (analytics_EventName) {
+        NSMutableDictionary *dimensions = [NSMutableDictionary new];
+        if (self.currentStation.name)
+            [dimensions setObject:self.currentStation.name forKey:@"station name"];
+        if (self.currentStream.url.absoluteString)
+            [dimensions setObject:self.currentStream.url.absoluteString forKey:@"stream url"];
+        if (self.currentStream.bitrate)
+            [dimensions setObject:self.currentStream.bitrate.stringValue forKey:@"stream bitrate"];
+        
+        [PFAnalytics trackEvent:analytics_EventName dimensions:dimensions];
+    }
+    
 }
 
 - (void)audioStreamErrorOccurred:(NSNotification *)notification

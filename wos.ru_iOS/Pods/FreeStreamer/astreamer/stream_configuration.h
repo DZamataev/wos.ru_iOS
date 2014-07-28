@@ -1,11 +1,15 @@
 /*
  * This file is part of the FreeStreamer project,
- * (C)Copyright 2011-2014 Matias Muhonen.
+ * (C)Copyright 2011-2014 Matias Muhonen <mmu@iki.fi>
  * See the file ''LICENSE'' for using the code.
+ *
+ * https://github.com/muhku/FreeStreamer
  */
 
 #ifndef ASTREAMER_STREAM_CONFIGURATION_H
 #define ASTREAMER_STREAM_CONFIGURATION_H
+
+#import <CoreFoundation/CoreFoundation.h>
 
 namespace astreamer {
     
@@ -19,6 +23,8 @@ struct Stream_Configuration {
     long outputNumChannels;
     int bounceInterval;
     int maxBounceCount;
+    int startupWatchdogPeriod;
+    CFStringRef userAgent;
     
     static Stream_Configuration *configuration();
     

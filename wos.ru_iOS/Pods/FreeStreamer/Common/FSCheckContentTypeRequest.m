@@ -1,7 +1,9 @@
 /*
  * This file is part of the FreeStreamer project,
- * (C)Copyright 2011-2014 Matias Muhonen.
+ * (C)Copyright 2011-2014 Matias Muhonen <mmu@iki.fi>
  * See the file ''LICENSE'' for using the code.
+ *
+ * https://github.com/muhku/FreeStreamer
  */
 
 #import "FSCheckContentTypeRequest.h"
@@ -35,7 +37,7 @@
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:_url
                                                            cachePolicy:NSURLRequestReloadIgnoringCacheData
-                                                       timeoutInterval:30.0];
+                                                       timeoutInterval:10.0];
     [request setHTTPMethod:@"HEAD"];
     
     @synchronized (self) {

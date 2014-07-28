@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <RestKit.h>
 #import <RKXMLDictionarySerialization.h>
+#import <Parse/Parse.h>
 
 #import "WSMaterialsCollection.h"
 #import "WSMaterial.h"

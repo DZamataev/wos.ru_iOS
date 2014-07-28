@@ -19,3 +19,7 @@ DerivedData
 
 #CocoaPods- pods not ignored
 #Pods
+
+#ignoring the file which carries all our secrets, keys e.g.
+#it is not public
+WSSecrets.h

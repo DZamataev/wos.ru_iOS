@@ -8,9 +8,15 @@
 
 #import "WSAppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
+#import <Parse/Parse.h>
 #import "WSRadioViewController.h"
 #import "WSRootViewController.h"
 #import "WSWindow.h"
+
+// This file is not public so you cannot find it in github public repository. To recreate it define:
+//#define WS_SECRETS_PARSE_APP_ID @"YOUR APP ID"
+//#define WS_SECRETS_PARSE_CLIENT_KEY @"YOUR CLIENT KEY"
+#import "WSSecrets.h"
 
 @implementation WSAppDelegate
 
@@ -19,7 +25,94 @@
     // Override point for customization after application launch.
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     [[AVAudioSession sharedInstance] setActive: YES error: nil];
+    
+    [Parse setApplicationId:WS_SECRETS_PARSE_APP_ID
+                  clientKey:WS_SECRETS_PARSE_CLIENT_KEY];
+    
+    // enable Parse analytics
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    
+    
+    // Register for push notifications
+    [application registerForRemoteNotificationTypes:
+     UIRemoteNotificationTypeBadge |
+     UIRemoteNotificationTypeAlert |
+     UIRemoteNotificationTypeSound];
+    
+    BOOL currentInstallationUpdated = NO;
+    
+    // clear badge
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    if (currentInstallation.badge != 0) {
+        currentInstallation.badge = 0;
+        currentInstallationUpdated = YES;
+    }
+    
+    // save application_version to Parse
+    NSString *versionString = [NSString stringWithFormat:@"%@ (%@)",
+                               [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
+                               [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]];
+    NSString *oldVersionString = currentInstallation[@"application_version"];
+    if (!oldVersionString || ![versionString isEqualToString:oldVersionString]) {
+        [currentInstallation setObject:versionString forKey:@"application_version"];
+        currentInstallationUpdated = YES;
+    }
+    
+    if (currentInstallationUpdated) {
+        [currentInstallation saveEventually];
+    }
+
+    
+    // push notification analytics
+    if (application.applicationState != UIApplicationStateBackground) {
+        // Track an app open here if we launch with a push, unless
+        // "content_available" was used to trigger a background push (introduced
+        // in iOS 7). In that case, we skip tracking here to avoid double
+        // counting the app-open.
+        BOOL preBackgroundPush = ![application respondsToSelector:@selector(backgroundRefreshStatus)];
+        BOOL oldPushHandlerOnly = ![self respondsToSelector:@selector(application:didReceiveRemoteNotification:fetchCompletionHandler:)];
+        BOOL noPushPayload = ![launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        if (preBackgroundPush || oldPushHandlerOnly || noPushPayload) {
+            [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+        }
+    }
+
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return YES;
+}
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
+    // Store the deviceToken in the current installation and save it to Parse in order to be able to send push notifications.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:newDeviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    // push notifications analytics
+    if (application.applicationState == UIApplicationStateInactive) {
+        // The application was just brought from the background to the foreground,
+        // so we consider the app as having been "opened by a push notification."
+        [PFAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
+    }
+    [PFPush handlePush:userInfo];
+    [UIApplication sharedApplication].applicationIconBadgeNumber--;
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo
+fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    if (application.applicationState == UIApplicationStateInactive) {
+        [PFAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
+    }
+    [PFPush handlePush:userInfo];
+    [UIApplication sharedApplication].applicationIconBadgeNumber--;
 }
 
 - (WSWindow *)window

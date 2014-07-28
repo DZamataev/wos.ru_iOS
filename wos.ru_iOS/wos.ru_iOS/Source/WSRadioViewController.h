@@ -12,6 +12,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <ILTranslucentView.h>
 #import <FSAudioStream.h>
+#import <Parse/Parse.h>
 
 /* Protocols */
 #import "WSPlayButtonDelegate.h"

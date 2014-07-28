@@ -123,10 +123,24 @@ NSString *const WSSeenMaterialsFileName = @"WSSeenMaterials";
                                  success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                      self.materialsCollection = mappingResult.firstObject;
                                      [self.materialsCollection processMaterialsWithSeen:_seenMaterials];
+                                     // Analytics
+                                     [PFAnalytics trackEvent:@"materials loaded successfully"
+                                                  dimensions:@{@"all materials count":@(self.materialsCollection.materials.count).stringValue,
+                                                               @"best materials count":@(self.materialsCollection.bestMaterials.count).stringValue,
+                                                               @"micro materials count":@(self.materialsCollection.microMaterials.count).stringValue,
+                                                               @"other materials count":@(self.materialsCollection.otherMaterials.count).stringValue,
+                                                               @"seen materials count":@(_seenMaterials.count).stringValue}];
+                                     //
                                      completionBlock(self.materialsCollection, nil);
                                  }
                                  failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                     // Analytics
+                                     [PFAnalytics trackEvent:@"error loading materials"
+                                                  dimensions:@{@"error description":error.description}];
+                                     //
                                      completionBlock(nil, error);
                                  }];
+    
+    
 }
 @end

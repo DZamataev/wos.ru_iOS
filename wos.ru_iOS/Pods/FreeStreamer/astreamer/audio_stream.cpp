@@ -1,7 +1,9 @@
 /*
  * This file is part of the FreeStreamer project,
- * (C)Copyright 2011-2014 Matias Muhonen.
+ * (C)Copyright 2011-2014 Matias Muhonen <mmu@iki.fi>
  * See the file ''LICENSE'' for using the code.
+ *
+ * https://github.com/muhku/FreeStreamer
  */
 
 #include "audio_stream.h"
@@ -31,17 +33,19 @@ Audio_Stream::Audio_Stream() :
     m_delegate(0),
     m_httpStreamRunning(false),
     m_audioStreamParserRunning(false),
-    m_needNewQueue(false),
     m_contentLength(0),
     m_state(STOPPED),
     m_httpStream(new HTTP_Stream()),
     m_audioQueue(0),
+    m_watchdogTimer(0),
+    m_playbackStopTimer(0),
     m_audioFileStream(0),
     m_audioConverter(0),
+    m_initializationError(noErr),
     m_outputBufferSize(Stream_Configuration::configuration()->bufferSize),
     m_outputBuffer(new UInt8[m_outputBufferSize]),
     m_dataOffset(0),
-    m_seekTime(0),
+    m_seekPosition(0),
     m_bounceCount(0),
     m_firstBufferingTime(0),
 #if defined (AS_RELAX_CONTENT_TYPE_CHECK)
@@ -104,35 +108,76 @@ Audio_Stream::~Audio_Stream()
         delete m_fileOutput, m_fileOutput = 0;
     }
 }
-
+    
 void Audio_Stream::open()
 {
-    if (m_httpStreamRunning) {
+    open(0);
+}
+
+void Audio_Stream::open(HTTP_Stream_Position *position)
+{
+    if (m_httpStreamRunning || m_audioStreamParserRunning) {
         AS_TRACE("%s: already running: return\n", __PRETTY_FUNCTION__);
         return;
     }
     
-    if (m_needNewQueue && m_audioQueue) {
-        m_needNewQueue = false;
-        
-        closeAudioQueue();
-    }
-    
     m_contentLength = 0;
-    m_seekTime = 0;
+    m_seekPosition = 0;
     m_bounceCount = 0;
     m_firstBufferingTime = 0;
     m_processedPacketsCount = 0;
     m_bitrateBufferIndex = 0;
+    m_initializationError = noErr;
+    
+    if (m_watchdogTimer) {
+        CFRunLoopTimerInvalidate(m_watchdogTimer);
+        CFRelease(m_watchdogTimer), m_watchdogTimer = 0;
+    }
+    if (m_playbackStopTimer) {
+        CFRunLoopTimerInvalidate(m_playbackStopTimer);
+        CFRelease(m_playbackStopTimer), m_playbackStopTimer = 0;
+    }
+    
+    Stream_Configuration *config = Stream_Configuration::configuration();
     
     if (m_contentType) {
         CFRelease(m_contentType), m_contentType = NULL;
     }
     
-    if (m_httpStream->open()) {
+    bool success;
+    
+    if (position) {
+        success = m_httpStream->open(*position);
+    } else {
+        success = m_httpStream->open();
+    }
+    
+    if (success) {
         AS_TRACE("%s: HTTP stream opened, buffering...\n", __PRETTY_FUNCTION__);
         m_httpStreamRunning = true;
         setState(BUFFERING);
+        
+        if (config->startupWatchdogPeriod > 0) {
+            /*
+             * Start the WD if we have one requested. In this way we can track
+             * that the stream doesn't stuck forever on the buffering state
+             * (for instance some network error condition)
+             */
+            
+            CFRunLoopTimerContext ctx = {0, this, NULL, NULL, NULL};
+            
+            m_watchdogTimer = CFRunLoopTimerCreate(NULL,
+                                                   CFAbsoluteTimeGetCurrent() + config->startupWatchdogPeriod,
+                                                   0,
+                                                   0,
+                                                   0,
+                                                   watchdogTimerCallback,
+                                                   &ctx);
+            
+            AS_TRACE("Starting the startup watchdog, period %i seconds\n", config->startupWatchdogPeriod);
+            
+            CFRunLoopAddTimer(CFRunLoopGetCurrent(), m_watchdogTimer, kCFRunLoopCommonModes);
+        }
     } else {
         AS_TRACE("%s: failed to open the HTTP stream\n", __PRETTY_FUNCTION__);
         closeAndSignalError(AS_ERR_OPEN);
@@ -142,6 +187,15 @@ void Audio_Stream::open()
 void Audio_Stream::close()
 {
     AS_TRACE("%s: enter\n", __PRETTY_FUNCTION__);
+    
+    if (m_watchdogTimer) {
+        CFRunLoopTimerInvalidate(m_watchdogTimer);
+        CFRelease(m_watchdogTimer), m_watchdogTimer = 0;
+    }
+    if (m_playbackStopTimer) {
+        CFRunLoopTimerInvalidate(m_playbackStopTimer);
+        CFRelease(m_playbackStopTimer), m_playbackStopTimer = 0;
+    }
     
     /* Close the HTTP stream first so that the audio stream parser
        isn't fed with more data to parse */
@@ -162,7 +216,14 @@ void Audio_Stream::close()
     
     closeAudioQueue();
     
-    setState(STOPPED);
+    if (FAILED != state()) {
+        /*
+         * Set the stream state to stopped if the stream was stopped successfully.
+         * We don't want to cause a spurious stopped state as the fail state should
+         * be the final state in case the stream failed.
+         */
+        setState(STOPPED);
+    }
     
     /*
      * Free any remaining queud packets for encoding.
@@ -186,7 +247,7 @@ void Audio_Stream::pause()
 unsigned Audio_Stream::timePlayedInSeconds()
 {
     if (m_audioStreamParserRunning) {
-        return m_seekTime + audioQueue()->timePlayedInSeconds();
+        return m_seekPosition + audioQueue()->timePlayedInSeconds();
     }
     return 0;
 }
@@ -216,24 +277,44 @@ out:
     
 void Audio_Stream::seekToTime(unsigned newSeekTime)
 {
-    unsigned duration = durationInSeconds();
-    if (!(duration > 0)) {
-        return;
-    }
-    
     if (state() == SEEKING) {
         return;
     } else {
         setState(SEEKING);
     }
     
-    m_seekTime = newSeekTime;
+    HTTP_Stream_Position position = streamPositionForTime(newSeekTime);
+    
+    if (position.start == 0 && position.end == 0) {
+        return;
+    }
+    
+    size_t originalContentLength = m_contentLength;
+    
+    close();
+    
+    AS_TRACE("Seeking position %llu\n", position.start);
+    
+    open(&position);
+    
+    setSeekPosition(newSeekTime);
+    setContentLength(originalContentLength);
+}
+    
+HTTP_Stream_Position Audio_Stream::streamPositionForTime(unsigned newSeekTime)
+{
+    HTTP_Stream_Position position;
+    position.start = 0;
+    position.end   = 0;
+    
+    unsigned duration = durationInSeconds();
+    if (!(duration > 0)) {
+        return position;
+    }
     
     double offset = (double)newSeekTime / (double)duration;
     UInt64 seekByteOffset = m_dataOffset + offset * (contentLength() - m_dataOffset);
     
-    HTTP_Stream_Position position;
-
     position.start = seekByteOffset;
     position.end = contentLength();
     
@@ -250,17 +331,7 @@ void Audio_Stream::seekToTime(unsigned newSeekTime)
         }
     }
     
-    close();
-    
-    AS_TRACE("Seeking position %llu\n", position.start);
-    
-    if (m_httpStream->open(position)) {
-        AS_TRACE("%s: HTTP stream opened, buffering...\n", __PRETTY_FUNCTION__);
-        m_httpStreamRunning = true;
-    } else {
-        AS_TRACE("%s: failed to open the fHTTP stream\n", __PRETTY_FUNCTION__);
-        setState(FAILED);
-    }
+    return position;
 }
     
 void Audio_Stream::setVolume(float volume)
@@ -288,6 +359,16 @@ void Audio_Stream::setDefaultContentType(CFStringRef defaultContentType)
     if (defaultContentType) {
         m_defaultContentType = CFStringCreateCopy(kCFAllocatorDefault, defaultContentType);
     }
+}
+    
+void Audio_Stream::setSeekPosition(unsigned seekPosition)
+{
+    m_seekPosition = seekPosition;
+}
+    
+void Audio_Stream::setContentLength(size_t contentLength)
+{
+    m_contentLength = contentLength;
 }
     
 void Audio_Stream::setOutputFile(CFURLRef url)
@@ -389,7 +470,7 @@ void Audio_Stream::audioQueueBuffersEmpty()
     
     Stream_Configuration *config = Stream_Configuration::configuration();
     
-    if (m_httpStreamRunning) {
+    if (m_httpStreamRunning && FAILED != state()) {
         /* Still feeding the audio queue with data,
            don't stop yet */
         setState(BUFFERING);
@@ -429,20 +510,28 @@ void Audio_Stream::audioQueueBuffersEmpty()
         return;
     }
     
-    AS_TRACE("%s: closing the audio queue\n", __PRETTY_FUNCTION__);
-    
-    if (m_audioStreamParserRunning) {
-        if (AudioFileStreamClose(m_audioFileStream) != 0) {
-            AS_TRACE("%s: AudioFileStreamClose failed\n", __PRETTY_FUNCTION__);
-        }
-        m_audioStreamParserRunning = false;
-    }
-    
     // Keep the audio queue running until it has finished playing
-    audioQueue()->stop(false);
-    m_needNewQueue = true;
+    const unsigned timeLeft = durationInSeconds() - timePlayedInSeconds();
     
-    AS_TRACE("%s: leave\n", __PRETTY_FUNCTION__);
+    if (timeLeft > 0) {
+        CFRunLoopTimerContext ctx = {0, this, NULL, NULL, NULL};
+    
+        m_playbackStopTimer = CFRunLoopTimerCreate(NULL,
+                                                   CFAbsoluteTimeGetCurrent() + timeLeft,
+                                                   0,
+                                                   0,
+                                                   0,
+                                                   playbackStopTimerCallback,
+                                                   &ctx);
+    
+        AS_TRACE("Closing the audio queue after %i seconds\n", timeLeft);
+    
+        CFRunLoopAddTimer(CFRunLoopGetCurrent(), m_playbackStopTimer, kCFRunLoopCommonModes);
+    } else {
+        AS_TRACE("%s: closing the audio queue\n", __PRETTY_FUNCTION__);
+        
+        close();
+    }
 }
     
 void Audio_Stream::audioQueueOverflow()
@@ -540,6 +629,12 @@ void Audio_Stream::streamHasBytesAvailable(UInt8 *data, UInt32 numBytes)
         if (result != 0) {
             AS_TRACE("%s: AudioFileStreamParseBytes error %d\n", __PRETTY_FUNCTION__, (int)result);
             closeAndSignalError(AS_ERR_STREAM_PARSE);
+        } else if (m_initializationError == kAudioConverterErr_FormatNotSupported) {
+            AS_TRACE("Audio stream initialization failed due to unsupported format\n");
+            closeAndSignalError(AS_ERR_UNSUPPORTED_FORMAT);
+        } else if (m_initializationError != noErr) {
+            AS_TRACE("Audio stream initialization failed due to unknown error\n");
+            closeAndSignalError(AS_ERR_OPEN);
         }
     }
 }
@@ -680,6 +775,26 @@ unsigned Audio_Stream::bitrate()
     
     return sum / kAudioStreamBitrateBufferSize;
 }
+    
+void Audio_Stream::watchdogTimerCallback(CFRunLoopTimerRef timer, void *info)
+{
+    Audio_Stream *THIS = (Audio_Stream *)info;
+    
+    if (PLAYING != THIS->state()) {
+        AS_TRACE("The stream startup watchdog activated: stream didn't start to play soon enough\n");
+        
+        THIS->closeAndSignalError(AS_ERR_OPEN);
+    }
+}
+    
+void Audio_Stream::playbackStopTimerCallback(CFRunLoopTimerRef timer, void *info)
+{
+    Audio_Stream *THIS = (Audio_Stream *)info;
+    
+    AS_TRACE("Time passed, closing the audio queue\n");
+    
+    THIS->close();
+}
 
 OSStatus Audio_Stream::encoderDataCallback(AudioConverterRef inAudioConverter, UInt32 *ioNumberDataPackets, AudioBufferList *ioData, AudioStreamPacketDescription **outDataPacketDescription, void *inUserData)
 {
@@ -780,7 +895,9 @@ void Audio_Stream::propertyValueCallback(void *inClientData, AudioFileStreamID i
                                     &(THIS->m_audioConverter));
             
             if (err) {
-                AS_TRACE("Error in creating an audio converter\n");
+                AS_TRACE("Error in creating an audio converter, error %i\n", err);
+                
+                THIS->m_initializationError = err;
             }
             
             THIS->setCookiesForStream(inAudioFileStream);
@@ -844,8 +961,6 @@ void Audio_Stream::streamDataCallback(void *inClientData, UInt32 inNumberBytes, 
     Stream_Configuration *config = Stream_Configuration::configuration();
     
     if (count > config->decodeQueueSize) {
-        THIS->setState(PLAYING);
-        
         AudioBufferList outputBufferList;
         outputBufferList.mNumberBuffers = 1;
         outputBufferList.mBuffers[0].mNumberChannels = THIS->m_dstFormat.mChannelsPerFrame;
@@ -870,6 +985,15 @@ void Audio_Stream::streamDataCallback(void *inClientData, UInt32 inNumberBytes, 
         if (err == noErr) {
             AS_TRACE("%i output bytes available for the audio queue\n", (unsigned int)ioOutputDataPackets);
             
+            if (THIS->m_watchdogTimer) {
+                AS_TRACE("The stream started to play, canceling the watchdog\n");
+                
+                CFRunLoopTimerInvalidate(THIS->m_watchdogTimer);
+                CFRelease(THIS->m_watchdogTimer), THIS->m_watchdogTimer = 0;
+            }
+            
+            THIS->setState(PLAYING);
+            
             THIS->audioQueue()->handleAudioPackets(outputBufferList.mBuffers[0].mDataByteSize,
                                                    outputBufferList.mNumberBuffers,
                                                    outputBufferList.mBuffers[0].mData,
@@ -885,6 +1009,8 @@ void Audio_Stream::streamDataCallback(void *inClientData, UInt32 inNumberBytes, 
                 free(cur);
             }
             THIS->m_processedPackets.clear();
+        } else {
+            AS_TRACE("AudioConverterFillComplexBuffer failed, error %i\n", err);
         }
     } else {
         AS_TRACE("Less than %i packets queued, returning...\n", config->decodeQueueSize);

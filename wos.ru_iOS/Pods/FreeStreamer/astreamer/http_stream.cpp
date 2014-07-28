@@ -1,7 +1,9 @@
 /*
  * This file is part of the FreeStreamer project,
- * (C)Copyright 2011-2014 Matias Muhonen.
+ * (C)Copyright 2011-2014 Matias Muhonen <mmu@iki.fi>
  * See the file ''LICENSE'' for using the code.
+ *
+ * https://github.com/muhku/FreeStreamer
  */
 
 #include "http_stream.h"
@@ -28,7 +30,6 @@ namespace astreamer {
 
 CFStringRef HTTP_Stream::httpRequestMethod   = CFSTR("GET");
 CFStringRef HTTP_Stream::httpUserAgentHeader = CFSTR("User-Agent");
-CFStringRef HTTP_Stream::httpUserAgentValue  = CFSTR("aStreamer/1.0");
 CFStringRef HTTP_Stream::httpRangeHeader     = CFSTR("Range");
 CFStringRef HTTP_Stream::icyMetaDataHeader = CFSTR("Icy-MetaData");
 CFStringRef HTTP_Stream::icyMetaDataValue  = CFSTR("1"); /* always request ICY metadata, if available */
@@ -260,14 +261,19 @@ void HTTP_Stream::id3metaDataAvailable(std::map<CFStringRef,CFStringRef> metaDat
 CFReadStreamRef HTTP_Stream::createReadStream(CFURLRef url)
 {
     CFReadStreamRef readStream = 0;
-    CFHTTPMessageRef request;
-    CFDictionaryRef proxySettings;
+    CFHTTPMessageRef request = 0;
+    CFDictionaryRef proxySettings = 0;
+    
+    Stream_Configuration *config = Stream_Configuration::configuration();
     
     if (!(request = CFHTTPMessageCreateRequest(kCFAllocatorDefault, httpRequestMethod, url, kCFHTTPVersion1_1))) {
         goto out;
     }
     
-    CFHTTPMessageSetHeaderFieldValue(request, httpUserAgentHeader, httpUserAgentValue);
+    if (config->userAgent) {
+        CFHTTPMessageSetHeaderFieldValue(request, httpUserAgentHeader, config->userAgent);
+    }
+    
     CFHTTPMessageSetHeaderFieldValue(request, icyMetaDataHeader, icyMetaDataValue);
     
     if (m_position.start > 0 && m_position.end > m_position.start) {
@@ -285,13 +291,11 @@ CFReadStreamRef HTTP_Stream::createReadStream(CFURLRef url)
         goto out;
     }
     
-    CFReadStreamSetProperty(readStream,
-                            kCFStreamPropertyHTTPShouldAutoredirect,
-                            kCFBooleanTrue);
-    
     proxySettings = CFNetworkCopySystemProxySettings();
-    CFReadStreamSetProperty(readStream, kCFStreamPropertyHTTPProxy, proxySettings);
-    CFRelease(proxySettings);
+    if (proxySettings) {
+        CFReadStreamSetProperty(readStream, kCFStreamPropertyHTTPProxy, proxySettings);
+        CFRelease(proxySettings);
+    }
     
 out:
     if (request) {
@@ -658,6 +662,23 @@ void HTTP_Stream::readCallBack(CFReadStreamRef stream, CFStreamEventType eventTy
                 
                 if (CFReadStreamGetStatus(stream) == kCFStreamStatusError ||
                     bytesRead < 0) {
+                    
+#if defined (HS_DEBUG)
+                    CFErrorRef streamError = CFReadStreamCopyError(stream);
+                    
+                    if (streamError) {
+                        CFStringRef errorDesc = CFErrorCopyDescription(streamError);
+                        
+                        if (errorDesc) {
+                            HS_TRACE_CFSTRING(errorDesc);
+                            
+                            CFRelease(errorDesc);
+                        }
+                        
+                        CFRelease(streamError);
+                    }
+#endif /* HS_DEBUG */
+                    
                     if (THIS->m_delegate) {
                         THIS->m_delegate->streamErrorOccurred();
                     }

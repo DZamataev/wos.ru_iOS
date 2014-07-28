@@ -62,6 +62,10 @@
     if (pseudoData.count > indexPath.row) {
         NSNumber *selectedNumber = pseudoData[indexPath.row];
         NSLog(@"Selected sleep timer interval %i minutes", selectedNumber.intValue);
+        // Analytics
+        [PFAnalytics trackEvent:@"sleep timer set up"
+                     dimensions:@{@"interval":@(selectedNumber.intValue).stringValue}];
+        //
         if (self.delegate) [self.delegate sleepTimerPickerViewController:self pickedTimeInterval:selectedNumber];
     }
     

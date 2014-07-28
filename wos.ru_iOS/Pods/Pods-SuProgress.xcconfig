@@ -1,1 +1,0 @@
-PODS_SUPROGRESS_OTHER_LDFLAGS = -framework Foundation
