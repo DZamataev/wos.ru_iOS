@@ -76,7 +76,7 @@ PODS:
 
 DEPENDENCIES:
   - AutoScrollLabel
-  - Chivy (from `https://github.com/DZamataev/Chivy.git`, branch `master`)
+  - Chivy (from `https://github.com/DZamataev/Chivy.git`, tag `0.2.6`)
   - CocoaLumberjack
   - FreeStreamer
   - iCarousel
@@ -93,8 +93,8 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Chivy:
-    :branch: master
     :git: https://github.com/DZamataev/Chivy.git
+    :tag: 0.2.6
   ILTranslucentView:
     :branch: master
     :git: https://github.com/ivoleko/ILTranslucentView.git

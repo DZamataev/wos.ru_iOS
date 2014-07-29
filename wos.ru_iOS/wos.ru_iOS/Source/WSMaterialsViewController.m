@@ -62,6 +62,7 @@
         webBrowserController.cAttributes.isHidingBarsOnScrollingEnabled = NO;
         webBrowserController.cAttributes.isHttpAuthenticationPromptEnabled = NO;
         [CHWebBrowserViewController openWebBrowserController:webBrowserController modallyWithUrl:url animated:YES];
+        [PFAnalytics trackEvent:@"material openes in browser" dimensions:@{@"url":url.absoluteString}];
     }
 }
 

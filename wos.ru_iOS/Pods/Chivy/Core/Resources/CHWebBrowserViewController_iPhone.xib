@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHWebBrowserViewController">
             <connections>
-                <outlet property="accessoryView" destination="9HG-4e-b97" id="ce0-ky-UGY"/>
                 <outlet property="actionButton" destination="szP-jm-iiN" id="Gbx-sL-Qjb"/>
                 <outlet property="bottomToolbar" destination="dkI-8x-Vos" id="aQ5-bS-G1Z"/>
                 <outlet property="bottomToolbarBottomOffsetConstraint" destination="Mmc-X8-QqE" id="fZw-NB-MSB"/>
@@ -17,16 +16,6 @@
                 <outlet property="navigateForwardButton" destination="shM-CK-peR" id="oKU-9A-iLf"/>
                 <outlet property="readBarButtonItem" destination="ir7-VW-CWB" id="x5f-xE-KhK"/>
                 <outlet property="refreshButton" destination="YM5-0e-Eu1" id="vQH-Ez-Keq"/>
-                <outlet property="searchWebViewAccessoryFoundLabel" destination="QDL-DD-jiY" id="nBk-vT-vqD"/>
-                <outlet property="searchWebViewAccessoryNextResultButton" destination="BfL-6H-BOb" id="Fi2-EP-Qbc"/>
-                <outlet property="searchWebViewAccessoryPreviousResultButton" destination="t3l-Gf-eju" id="TVn-2R-bwK"/>
-                <outlet property="searchWebViewAccessoryTextField" destination="TuW-6D-tF9" id="djt-a0-b8H"/>
-                <outlet property="searchWebViewAccessoryToolbar" destination="Ka6-lz-YKO" id="Xyw-lc-rpL"/>
-                <outlet property="searchWebViewFoundLabel" destination="rku-e6-e39" id="KV9-Fr-P7b"/>
-                <outlet property="searchWebViewNextResultButton" destination="5Bx-Ux-krq" id="6By-3U-zPV"/>
-                <outlet property="searchWebViewPreviousResultButton" destination="VvM-H7-mtp" id="lh7-gx-0sA"/>
-                <outlet property="searchWebViewTextField" destination="tSU-Wx-WIF" id="cJR-Ng-x1s"/>
-                <outlet property="searchWebViewToolbar" destination="uXf-T2-pbG" id="QiA-Os-Irm"/>
                 <outlet property="view" destination="1" id="3"/>
                 <outlet property="webView" destination="T7w-qf-GG4" id="xXt-Af-noh"/>
                 <outlet property="webViewTopOffsetConstraint" destination="PQV-kP-njz" id="wP5-Qg-6Vm"/>
@@ -45,6 +34,36 @@
                         <outlet property="delegate" destination="-1" id="dI2-a8-aac"/>
                     </connections>
                 </webView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkI-8x-Vos">
+                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem enabled="NO" image="arrow_back.png" style="plain" id="srx-io-Le6">
+                            <connections>
+                                <action selector="goBack" destination="T7w-qf-GG4" id="HIl-DT-Bc8"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="sAG-Rx-px8"/>
+                        <barButtonItem enabled="NO" image="arrow_forward.png" style="plain" id="shM-CK-peR">
+                            <connections>
+                                <action selector="goForward" destination="T7w-qf-GG4" id="fGP-P6-9It"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="50" style="plain" systemItem="fixedSpace" id="BPF-9s-alT"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="zcI-ow-JNb"/>
+                        <barButtonItem systemItem="action" id="YM5-0e-Eu1">
+                            <connections>
+                                <action selector="buttonActionTouchUp:" destination="-1" id="jYs-RY-GUs"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="oyc-mv-ZAI"/>
+                        <barButtonItem systemItem="refresh" id="szP-jm-iiN">
+                            <connections>
+                                <action selector="reload" destination="T7w-qf-GG4" id="IJy-tk-2L4"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ig9-bL-VHb">
                     <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -85,94 +104,6 @@
                         <outlet property="delegate" destination="-1" id="Voa-jl-f0Q"/>
                     </connections>
                 </navigationBar>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkI-8x-Vos" userLabel="Bottom Toolbar">
-                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <items>
-                        <barButtonItem enabled="NO" image="arrow_back.png" style="plain" id="srx-io-Le6">
-                            <connections>
-                                <action selector="goBack" destination="T7w-qf-GG4" id="HIl-DT-Bc8"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="sAG-Rx-px8"/>
-                        <barButtonItem enabled="NO" image="arrow_forward.png" style="plain" id="shM-CK-peR">
-                            <connections>
-                                <action selector="goForward" destination="T7w-qf-GG4" id="fGP-P6-9It"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem width="50" style="plain" systemItem="fixedSpace" id="BPF-9s-alT"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="zcI-ow-JNb"/>
-                        <barButtonItem systemItem="action" id="YM5-0e-Eu1">
-                            <connections>
-                                <action selector="buttonActionTouchUp:" destination="-1" id="jYs-RY-GUs"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="oyc-mv-ZAI"/>
-                        <barButtonItem systemItem="refresh" id="szP-jm-iiN">
-                            <connections>
-                                <action selector="reload" destination="T7w-qf-GG4" id="IJy-tk-2L4"/>
-                            </connections>
-                        </barButtonItem>
-                    </items>
-                </toolbar>
-                <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uXf-T2-pbG" userLabel="SearchWebView Toolbar">
-                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <items>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Veb-UQ-tIF"/>
-                        <barButtonItem title="&lt;" id="VvM-H7-mtp">
-                            <connections>
-                                <action selector="searchWebViewPreviousResult:" destination="-1" id="2Wm-f4-gIn"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="UyB-sW-UH3"/>
-                        <barButtonItem title=">" id="5Bx-Ux-krq">
-                            <connections>
-                                <action selector="searchWebViewNextResult:" destination="-1" id="1cV-vl-ceQ"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="rPt-NV-T1J"/>
-                        <barButtonItem style="plain" id="DH7-0u-D3X">
-                            <view key="customView" contentMode="scaleToFill" id="oom-hN-mZB">
-                                <rect key="frame" x="74" y="6" width="168" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tSU-Wx-WIF">
-                                        <rect key="frame" x="-1" y="2" width="168" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="-1" id="Ruy-xM-88R"/>
-                                        </connections>
-                                    </textField>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 из 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rku-e6-e39">
-                                        <rect key="frame" x="127" y="8" width="40" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="tSU-Wx-WIF" secondAttribute="trailing" constant="1" id="Dl3-KC-JNE"/>
-                                    <constraint firstItem="tSU-Wx-WIF" firstAttribute="centerY" secondItem="rku-e6-e39" secondAttribute="centerY" constant="0.5" id="EVC-wS-5ZX"/>
-                                    <constraint firstItem="tSU-Wx-WIF" firstAttribute="leading" secondItem="oom-hN-mZB" secondAttribute="leading" constant="-1" id="ikX-4Z-mA4"/>
-                                    <constraint firstAttribute="bottom" secondItem="tSU-Wx-WIF" secondAttribute="bottom" constant="1" id="n9h-Vv-YfD"/>
-                                    <constraint firstItem="tSU-Wx-WIF" firstAttribute="top" secondItem="oom-hN-mZB" secondAttribute="top" constant="2" id="tnv-dc-uLa"/>
-                                    <constraint firstItem="tSU-Wx-WIF" firstAttribute="trailing" secondItem="rku-e6-e39" secondAttribute="trailing" id="vk6-o0-WUI"/>
-                                </constraints>
-                            </view>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="QHC-Xd-JMT"/>
-                        <barButtonItem systemItem="done" id="j0Q-2y-mIM">
-                            <connections>
-                                <action selector="hideWebViewSearchBar:" destination="-1" id="3vD-FA-qzq"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="xHH-V5-Niy"/>
-                    </items>
-                </toolbar>
             </subviews>
             <color key="backgroundColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -189,77 +120,6 @@
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-        </view>
-        <view contentMode="scaleToFill" id="9HG-4e-b97" userLabel="Accessory View">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ka6-lz-YKO" userLabel="SearchWebViewAccessory Toolbar">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <items>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="pJb-wT-gYC"/>
-                        <barButtonItem title="&lt;" id="t3l-Gf-eju">
-                            <connections>
-                                <action selector="searchWebViewPreviousResult:" destination="-1" id="zGU-JI-gTx"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="jSR-uw-4hC"/>
-                        <barButtonItem title=">" id="BfL-6H-BOb">
-                            <connections>
-                                <action selector="searchWebViewNextResult:" destination="-1" id="5kk-CZ-hl9"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="lnG-2B-YtP"/>
-                        <barButtonItem style="plain" id="Rvp-Ha-yfa">
-                            <view key="customView" contentMode="scaleToFill" id="uLu-nT-Iow">
-                                <rect key="frame" x="74" y="6" width="168" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TuW-6D-tF9">
-                                        <rect key="frame" x="-1" y="2" width="168" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="-1" id="Dto-0D-cGc"/>
-                                        </connections>
-                                    </textField>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 из 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDL-DD-jiY">
-                                        <rect key="frame" x="127" y="8" width="40" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="TuW-6D-tF9" firstAttribute="centerY" secondItem="QDL-DD-jiY" secondAttribute="centerY" constant="0.5" id="0kH-sS-0sH"/>
-                                    <constraint firstAttribute="trailing" secondItem="TuW-6D-tF9" secondAttribute="trailing" constant="1" id="44V-3F-yYr"/>
-                                    <constraint firstItem="TuW-6D-tF9" firstAttribute="top" secondItem="uLu-nT-Iow" secondAttribute="top" constant="2" id="8DB-qj-MkY"/>
-                                    <constraint firstItem="TuW-6D-tF9" firstAttribute="leading" secondItem="uLu-nT-Iow" secondAttribute="leading" constant="-1" id="Hne-NT-dYP"/>
-                                    <constraint firstItem="TuW-6D-tF9" firstAttribute="trailing" secondItem="QDL-DD-jiY" secondAttribute="trailing" id="hne-0V-5SD"/>
-                                    <constraint firstAttribute="bottom" secondItem="TuW-6D-tF9" secondAttribute="bottom" constant="1" id="sVv-5Z-pYH"/>
-                                </constraints>
-                            </view>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="gQA-Uh-mVc"/>
-                        <barButtonItem width="120" systemItem="done" id="e3R-Zz-99A">
-                            <connections>
-                                <action selector="hideWebViewSearchBar:" destination="-1" id="BiI-yW-e3a"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="wyq-IK-raT"/>
-                    </items>
-                </toolbar>
-            </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="Ka6-lz-YKO" firstAttribute="top" secondItem="9HG-4e-b97" secondAttribute="top" id="QC1-SI-0Xd"/>
-                <constraint firstItem="Ka6-lz-YKO" firstAttribute="leading" secondItem="9HG-4e-b97" secondAttribute="leading" id="QqL-Wi-RTB"/>
-                <constraint firstAttribute="trailing" secondItem="Ka6-lz-YKO" secondAttribute="trailing" id="plc-0A-29H"/>
-                <constraint firstAttribute="bottom" secondItem="Ka6-lz-YKO" secondAttribute="bottom" id="z6R-C9-cPR"/>
-            </constraints>
         </view>
     </objects>
     <resources>

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 #import "WSWebBrowserViewController.h"
 #import "WSSplitViewControllerManager.h"
 

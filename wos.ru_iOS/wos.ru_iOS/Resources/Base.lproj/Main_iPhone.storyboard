@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BNQ-bs-82I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BNQ-bs-82I">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -30,7 +30,6 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="568" id="Mqa-5Q-QOR"/>
                                                     <constraint firstAttribute="width" constant="320" id="ci8-d5-cm5"/>
                                                 </constraints>
                                                 <connections>
@@ -42,7 +41,6 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="568" id="IhX-kY-6ES"/>
                                                     <constraint firstAttribute="width" constant="320" id="a0a-Rb-h0H"/>
                                                 </constraints>
                                                 <connections>
@@ -58,6 +56,7 @@
                                             <constraint firstAttribute="width" constant="640" id="bsY-eW-qab"/>
                                             <constraint firstItem="3ki-LZ-dIB" firstAttribute="top" secondItem="dfK-uK-O56" secondAttribute="top" id="g7Q-IJ-hBl"/>
                                             <constraint firstAttribute="trailing" secondItem="eaN-Il-CzK" secondAttribute="trailing" id="kZe-Ub-nEk"/>
+                                            <constraint firstAttribute="trailing" secondItem="3ki-LZ-dIB" secondAttribute="trailing" constant="320" id="pDu-4D-3ay"/>
                                             <constraint firstAttribute="bottom" secondItem="3ki-LZ-dIB" secondAttribute="bottom" id="zTM-DY-nvd"/>
                                         </constraints>
                                     </view>
@@ -73,10 +72,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pm6-AO-f7p" firstAttribute="leading" secondItem="PLt-Vs-dZV" secondAttribute="leading" id="Obt-Xr-lTh"/>
-                            <constraint firstAttribute="trailing" secondItem="pm6-AO-f7p" secondAttribute="trailing" id="UYJ-Ds-LVn"/>
-                            <constraint firstItem="pm6-AO-f7p" firstAttribute="top" secondItem="PLt-Vs-dZV" secondAttribute="top" id="WP4-kX-jFg"/>
-                            <constraint firstAttribute="bottom" secondItem="pm6-AO-f7p" secondAttribute="bottom" id="wux-vR-GOM"/>
+                            <constraint firstItem="pm6-AO-f7p" firstAttribute="leading" secondItem="PLt-Vs-dZV" secondAttribute="leading" id="3dl-hc-WB6"/>
+                            <constraint firstAttribute="height" secondItem="eaN-Il-CzK" secondAttribute="height" id="6BF-SP-6bf"/>
+                            <constraint firstItem="pm6-AO-f7p" firstAttribute="top" secondItem="PLt-Vs-dZV" secondAttribute="top" id="JBv-Ak-bwS"/>
+                            <constraint firstAttribute="trailing" secondItem="pm6-AO-f7p" secondAttribute="trailing" id="NnR-de-PyE"/>
+                            <constraint firstItem="IgH-17-3Vo" firstAttribute="top" secondItem="pm6-AO-f7p" secondAttribute="bottom" id="VZT-9V-y9H"/>
+                            <constraint firstAttribute="height" secondItem="3ki-LZ-dIB" secondAttribute="height" id="cFZ-Ig-ehI"/>
                         </constraints>
                     </view>
                     <connections>
@@ -148,7 +149,7 @@
                                 <rect key="frame" x="142" y="426" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="tYa-9H-SHM" customClass="WSRadiostationSelectorScrollView">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="tYa-9H-SHM" customClass="WSRadiostationSelectorScrollView">
                                 <rect key="frame" x="0.0" y="321" width="320" height="247"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </scrollView>

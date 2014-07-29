@@ -15,7 +15,6 @@
 #import <NJKWebViewProgressView.h>
 #import "TKAURLProtocol.h"
 #import "NSURL+IDN.h"
-#import "CHButtonActivity.h"
 
 #ifndef CHWebBrowserNavBarHeight
 #define CHWebBrowserNavBarHeight  (self.topBar.frame.size.height) 
@@ -65,14 +64,13 @@ typedef void (^CHValuesInAffectedViewsSetterBlock)(UIView *topBar,
 + (CHWebBrowserViewControllerAttributes*)defaultAttributes;
 @end
 
-@interface CHWebBrowserViewController : UIViewController <UIWebViewDelegate, NSURLConnectionDelegate, UIAlertViewDelegate, UIActionSheetDelegate, UIBarPositioningDelegate, UIScrollViewDelegate, TKAURLProtocolDelegate, NJKWebViewProgressDelegate, UITextFieldDelegate>
+@interface CHWebBrowserViewController : UIViewController <UIWebViewDelegate, NSURLConnectionDelegate, UIAlertViewDelegate, UIActionSheetDelegate, UIBarPositioningDelegate, UIScrollViewDelegate, TKAURLProtocolDelegate, NJKWebViewProgressDelegate>
 {
     CGPoint _lastContentOffset;
     BOOL _isScrollViewScrolling;
     BOOL _isMovingViews;
     BOOL _isAnimatingViews;
     BOOL _isAnimatingResettingViews;
-    BOOL _isForcingFirstResponder;
     NJKWebViewProgress *_progressDelegateProxy;
     NJKWebViewProgressView *_progressView;
     NSInteger _loadsInProgressCount;
@@ -94,20 +92,6 @@ typedef void (^CHValuesInAffectedViewsSetterBlock)(UIView *topBar,
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *navigateForwardButton;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *actionButton;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *refreshButton;
-
-@property (nonatomic, assign) BOOL isSearchWebViewAccessoryShown;
-@property (nonatomic, strong) IBOutlet UIView *accessoryView;
-@property (nonatomic, strong) IBOutlet UIToolbar *searchWebViewAccessoryToolbar;
-@property (nonatomic, strong) IBOutlet UITextField *searchWebViewAccessoryTextField;
-@property (nonatomic, strong) IBOutlet UIBarButtonItem *searchWebViewAccessoryPreviousResultButton;
-@property (nonatomic, strong) IBOutlet UIBarButtonItem *searchWebViewAccessoryNextResultButton;
-@property (nonatomic, strong) IBOutlet UILabel *searchWebViewAccessoryFoundLabel;
-
-@property (nonatomic, strong) IBOutlet UIToolbar *searchWebViewToolbar;
-@property (nonatomic, strong) IBOutlet UITextField *searchWebViewTextField;
-@property (nonatomic, strong) IBOutlet UIBarButtonItem *searchWebViewPreviousResultButton;
-@property (nonatomic, strong) IBOutlet UIBarButtonItem *searchWebViewNextResultButton;
-@property (nonatomic, strong) IBOutlet UILabel *searchWebViewFoundLabel;
 
 @property (nonatomic, strong) IBOutlet UINavigationBar *localNavigationBar;
 @property (nonatomic, strong) IBOutlet UIView *localTitleView;
@@ -184,8 +168,5 @@ typedef void (^CHValuesInAffectedViewsSetterBlock)(UIView *topBar,
 - (void)loadUrl:(NSURL*)url;
 
 - (void)resetAffectedViewsAnimated:(BOOL)animated;
-
-- (NSInteger)highlightAllOccurencesOfString:(NSString*)str;
-- (void)removeAllHighlights;
 
 @end
